@@ -1,0 +1,37 @@
+\section{Motivation}
+Graphical User Interfaces (GUIs) are central to how indi-
+viduals engage with the digital world, serving as virtual em-
+bodied interface for a range of daily activities. Meanwhile,
+Large Language Models (LLMs) [32] were first primarily developed as chatbots.
+However, with their ability to
+comprehend complex language instructions and seamlessly
+integrate tools, have shown significant potential in performing complex tasks through building Computer-Use agents [1, 13, 16, 56].
+This progress inspires the development of intelligent Computer-Use agents that can significantly streamline human workflows based on user instructions.
+
+Early efforts in Computer-Use agents have primarily focused
+on developing language-only agents [12, 47, 55] that rely on
+closed-source, API-based LLMs like GPT-4 [32]. These
+agents leverage text-rich metadata like HTML inputs or
+accessibility trees to perform navigation and other tasks.
+However, the text-only approach is limited in real-world
+applications, because (1) specifially for Computer-Use (as opposed to web use),rich API-based metadata is not always available and (2) users typically interact with user in-
+terfaces visually—through screenshots—without access to
+the underlying structural oracle information. This limita-
+tion underscores the need for developing Computer-Use visual agents
+that can perceive and interact with UIs as humans do.
+
+The Computer-Use task conditioned on a users instruction can be roughly divided into two parts: (1) planning and (2) grounding.
+While planning is the process of generating one or a sequence of actions to perform next, grounding is the process of mapping the UI element(s) in questionto coordinates on the screen.
+This tasks is challenging because it requires rich semantic understanding of UI elements as well as the ability for precise pixel-level localization.
+Recognizing this gap, researchers
+have begun training vision-language models to acquire
+these new abilities. For instance, studies like [11,15,17] uti-
+lize web screenshot datasets to enhance large multi-modal
+models’ element-grounding capabilities.
+Despite these advancements, training multi-modal mod-
+els for GUI visual agents continues to face significant
+challenges related to modeling and training.
+(a) Availability of Training Data:  Many models remain closed-source and therefore the availability of training data is limited. Even for open-source models, the training data or exact specification of the training data is often not available.
+(b) Training Data Composition: similar to the challenge faced by language based Computer-Use agents, the availability of a rich API for the web has lead to a overrepresentation of web data in the training data.
+Professional app data is difficult to obtain with reliable annotations.
+(c) If Computer-Use agents are to be deployed in the real world and not on standardized virtual machines, the varying screenshot aspect rations, resolutions and sizes make it necesarry to either resize the screenshots or train a model which can generalize to different resolutions and sizes.

@@ -1,0 +1,161 @@
+\chapter{Conclusion and Future Work}
+
+In this chapter, we discuss key challenges encountered during the development and evaluation of Gelato, particularly focusing on reproducibility issues in agent benchmarking. We then outline limitations of the current work and promising directions for future research.
+
+\section{Reproducibility Challenges in Agent Evaluation}
+
+During our evaluation of Gelato-30B-A3B on OS-World, we encountered significant reproducibility challenges that affect the broader field of computer-use agent research. These issues, many of which align with concerns raised in public discussions of agent benchmarks, merit careful consideration.
+
+\subsection{Non-Deterministic Planning Models}
+
+Modern language models like GPT-5, used as our planning model, exhibit non-deterministic behavior even with temperature set to zero. This non-determinism, combined with insufficient trial repetitions, makes fair comparison against prior work difficult.
+
+We address this by:
+\begin{itemize}
+    \item Running three independent trials for both Gelato-30B-A3B and GTA1-32B
+    \item Using the same agent harness and evaluation environment for both models
+    \item Reporting mean and standard deviation across trials
+\end{itemize}
+
+However, we observe meaningful variance across runs ($\sigma$ = 0.66\% for Gelato, $\sigma$ = 1.47\% for GTA1-32B), indicating that single-trial evaluations can be misleading.
+
+\subsection{Evaluation Prompt Versioning}
+
+We found that evaluation prompts have changed over time without explicit versioning in the OS-World benchmark. This creates challenges when comparing results across different papers or reproducing reported numbers.
+
+Best practices for the community:
+\begin{itemize}
+    \item Version all evaluation code and prompts
+    \item Document any changes to evaluation procedures
+    \item Release evaluation snapshots alongside paper results
+\end{itemize}
+
+\subsection{Incomplete Evaluation Coverage}
+
+Our human evaluation revealed that many automated evaluation functions are incomplete or overly specific. Of the 20 tasks we manually reviewed, all showed cases where valid solutions were incorrectly marked as failures.
+
+Common patterns include:
+\begin{itemize}
+    \item Checking only one valid solution path when alternatives exist
+    \item Timing issues where evaluation occurs before the final state is saved
+    \item Over-specific assertions that reject reasonable variations
+\end{itemize}
+
+The ~3 percentage point gap between automated and human evaluation (58.71\% vs. 61.85\% for Gelato) demonstrates that automated metrics significantly underestimate true agent performance.
+
+\subsection{Ambiguous Task Specifications}
+
+Many tasks in OS-World have ambiguous specifications that fail to recognize valid alternative solutions. For example:
+\begin{itemize}
+    \item Tasks requesting "the latest version" without specifying how to determine "latest"
+    \item Tasks with multiple reasonable interpretations of the end goal
+    \item Tasks where the evaluation checks implementation details rather than outcomes
+\end{itemize}
+
+These ambiguities disproportionately affect more capable agents that may find creative solutions outside the narrow evaluation criteria.
+
+\subsection{Recommendations for Future Benchmarks}
+
+Based on our experience, we recommend that future agent benchmarks:
+
+\begin{enumerate}
+    \item \textbf{Require multiple trials}: Report mean and standard deviation across at least 3 runs
+    \item \textbf{Version everything}: Use explicit versioning for evaluation code, prompts, and environments
+    \item \textbf{Conduct human evaluation}: Include manual verification on a representative sample
+    \item \textbf{Test evaluation functions}: Validate that evaluation functions accept all valid solutions
+    \item \textbf{Clarify specifications}: Write unambiguous task descriptions that focus on outcomes rather than implementation
+    \item \textbf{Release artifacts}: Provide trajectories, evaluation snapshots, and detailed results to enable verification
+\end{enumerate}
+
+\section{Limitations}
+
+While Gelato-30B-A3B achieves strong performance, several limitations merit discussion:
+
+\subsection{Dataset Limitations}
+
+\textbf{Source diversity}: Despite our efforts to incorporate professional application data, the dataset still has imbalanced coverage across application types. Spreadsheets and text editors are well-represented, while specialized domains (CAD software, scientific tools, etc.) remain underrepresented.
+
+\textbf{Language coverage}: Click-100k primarily contains English instructions. Multilingual grounding remains an important area for future work.
+
+\textbf{Temporal dynamics}: Static screenshots cannot capture all UI interactions. Time-dependent behaviors (animations, loading states) are not well-represented in the current dataset.
+
+\subsection{Model Limitations}
+
+\textbf{Refusal calibration}: While our model can elicit refusal behavior, it requires explicit prompting. Ideally, refusal should be the default behavior when elements cannot be found, without requiring special prompts.
+
+\textbf{Resolution constraints}: The model is trained on specific input resolutions. Performance on very high-resolution displays or unusual aspect ratios may degrade.
+
+\textbf{Latency}: At 30B parameters, Gelato-30B-A3B requires significant computational resources for inference. For real-time interactive applications, smaller models or distillation may be necessary.
+
+\subsection{Evaluation Limitations}
+
+\textbf{Benchmark diversity}: Current benchmarks focus primarily on desktop applications. Mobile interfaces, web applications, and other platforms need dedicated evaluation.
+
+\textbf{Long-horizon tasks}: OS-World tasks typically complete in under 50 steps. Evaluating performance on longer-horizon tasks requiring sustained grounding across many interactions remains an open challenge.
+
+\textbf{Error recovery}: Current evaluation does not measure how well models recover from grounding errors or handle unexpected interface states.
+
+\section{Future Directions}
+
+\subsection{Scaling and Efficiency}
+
+\textbf{Model distillation}: Distilling Gelato-30B-A3B into smaller, faster models while retaining performance is an important direction for practical deployment.
+
+\textbf{Multimodal fusion}: Incorporating additional modalities (e.g., accessibility tree information, OCR outputs) could improve grounding accuracy and efficiency.
+
+\textbf{Sparse architectures}: Exploring mixture-of-experts or other sparse architectures could enable larger capacity with lower inference cost.
+
+\subsection{Dataset Expansion}
+
+\textbf{Broader application coverage}: Systematically expanding professional application coverage, particularly for specialized domains, would improve generalization.
+
+\textbf{Multilingual data}: Creating multilingual versions of Click-100k would enable grounding across language boundaries.
+
+\textbf{Temporal grounding}: Incorporating video data to handle time-dependent UI interactions and animations.
+
+\textbf{Synthetic data generation}: Exploring methods to synthesize high-quality grounding data at scale, potentially using rendered interfaces or procedural generation.
+
+\subsection{Training Methodology}
+
+\textbf{Multi-task learning}: Joint training on grounding alongside related tasks (action prediction, outcome prediction, error detection) could improve overall agent capabilities.
+
+\textbf{Iterative refinement}: Enabling models to make multiple attempts at grounding with feedback could improve robustness.
+
+\textbf{Reward shaping}: More sophisticated reward functions beyond binary success/failure could accelerate learning and improve fine-grained control.
+
+\subsection{Agent Architecture}
+
+\textbf{Unified models}: Exploring architectures that combine planning and grounding in a single model rather than separate modules.
+
+\textbf{Memory and context}: Incorporating longer-term memory of past interactions and UI states could improve grounding in complex multi-step tasks.
+
+\textbf{Self-verification}: Enabling agents to verify their own grounding predictions before execution could reduce errors.
+
+\subsection{Evaluation and Analysis}
+
+\textbf{Diagnostic benchmarks}: Creating targeted benchmarks that test specific grounding capabilities (occlusion handling, similarity discrimination, spatial reasoning, etc.).
+
+\textbf{Failure analysis}: Systematic categorization of grounding failures to identify common error modes and guide improvements.
+
+\textbf{Human-agent comparison}: Detailed comparison of how humans and models approach grounding tasks could reveal fundamental limitations or opportunities.
+
+\section{Conclusion}
+
+This thesis presented Gelato-30B-A3B, a state-of-the-art grounding model for GUI computer-use tasks. Through careful data curation, novel filtering approaches, and effective reinforcement learning training, we achieved significant improvements over prior work on multiple benchmarks.
+
+Our key contributions include:
+
+\begin{itemize}
+    \item \textbf{Click-100k}: A high-quality, open-source dataset built through principled filtering and enrichment
+    \item \textbf{Filtering methodology}: Model-based difficulty and alignment filtering that significantly improves dataset quality
+    \item \textbf{Training recipe}: Effective RL training approach building on GRPO with practical simplifications
+    \item \textbf{Strong results}: State-of-the-art performance on ScreenSpot-Pro (63.88\%) and OS-World-G (69.15\% / 74.65\%)
+    \item \textbf{Agent performance}: Demonstrated end-to-end agent improvements on OS-World (61.85\% with human evaluation)
+\end{itemize}
+
+Beyond these technical contributions, our work highlights important challenges in agent evaluation and reproducibility. The ~3 percentage point gap between automated and human evaluation, combined with non-deterministic planning models and incomplete evaluation functions, suggests that the field needs more rigorous evaluation practices.
+
+Looking forward, grounding models remain a critical component of computer-use agents. As we push toward more capable and general-purpose agents, continued improvements in grounding accuracy, efficiency, and robustness will be essential. We hope that our open-source release of Click-100k, trained models, and evaluation artifacts will accelerate progress in this important area.
+
+The path to truly general-purpose computer-use agents is long, but strong grounding models like Gelato represent an important step forward. By combining high-quality data, effective training methods, and rigorous evaluation, we can continue to narrow the gap between human and machine capabilities in navigating digital interfaces.
+

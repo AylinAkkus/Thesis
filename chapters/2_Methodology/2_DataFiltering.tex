@@ -1,0 +1,50 @@
+\section{Data Filtering}
+\paragraph{Hypothesis Testing}
+To enable empirical testing of our data recipe, we require fast iterative evaluation. We therefore employ offline benchmarks (ScreenSpot-Pro, ScreenSpot v2, and OS-World), which provide significantly faster evaluation compared to online agentic benchmarks. Furthermore, we use supervised fine-tuning (SFT) on Qwen2.5-VL to accelerate iteration compared to reinforcement learning approaches. We make the assumption that online agentic performance will transfer from offline benchmarks and that data recipes which work well with SFT will work well with RL.
+
+\paragraph{Data Quality Issues}
+After normalization, we apply additional filtering to eliminate noisy and trivial samples. The main quality issues we encounter are: (1) overly simple interactions, such as trivial hyperlink clicks, which are easy to generate since they do not require sophisticated semantic understanding of GUI interfaces and can be bootstrapped from their text content; and (2) misaligned instructions, where the instruction text and target region diverge due to artifacts from dataset creation errors.
+
+\includegraphics[width=0.5\textwidth]{figures/DataQuality.png}
+
+\paragraph{OmniParser Filtering}
+To address the data quality issues described above, we employ OmniParser \cite{omniparser} to discard cases where the target click location lies outside detected UI elements, effectively filtering out misaligned samples.
+% TODO get OmniParser image
+
+\paragraph{Instruction Relabeling}
+We experiment with instruction relabeling as an alternative approach to fix misaligned instructions. However, we observe that relabeling is not effective for this purpose. We hypothesize that this ineffectiveness is due to hallucinations in the relabeled instructions. We also note that performance is sensitive to the model used for relabeling: Claude Sonnet 3.7 is expensive but may be stronger than Qwen2.5-VL for this task.
+% TODO: describe relabeling process and add prompt to appendix
+
+\paragraph{Difficulty Filtering}
+To filter samples by difficulty, we use Qwen2.5VL-7B (for autofiltering) or SE-3B for easy sample filtering, and GTA1-7B, UI-7B, or SE-3B for hard sample filtering. To validate this approach, we conduct detailed ablations by fine-tuning Qwen2.5-7B-VL on a source-balanced 10k subset and evaluating on ScreenSpot-Pro[3]. We find that using Qwen2.5-7B-VL as the difficulty filter and GTA1-7B-2507 as the alignment filter produces a +9 percentage point accuracy gain over unfiltered data and outperforms other filtering model combinations.
+
+\includegraphics[width=0.5\textwidth]{figures/FilteringAblation.png}
+\cite
+\paragraph{Overrepresentation of Text}
+\paragraph{Stabilizing RL Training}
+Existing RL algorithms suffer from a gradient-decreasing problem when some prompts have accuracy equal to 1. For example, in GRPO, if all outputs $\{o_i\}_{i=1}^{G}$ of a particular prompt are correct and receive the same reward, the resulting advantage for this group is zero. A zero advantage results in zero policy gradients, shrinking the gradient magnitude and increasing the noise sensitivity of the batch gradient, thereby degrading sample efficiency.
+
+Let the intended batch size be $B$ and the effective batch size be $B_{\text{eff}}$. Then
+\[
+B_{\text{eff}} = \sum_{i=1}^{B} \mathbf{1}\{A_i \neq 0\}.
+\]
+
+Under the i.i.d. assumption,
+\[
+B_{\text{eff}} \sim \mathrm{Binomial}(B, 1-p).
+\]
+
+The expected effective batch size is
+\[
+\mathbb{E}[B_{\text{eff}}] = B(1-p).
+\]
+The variance is
+\[
+\mathrm{Var}(B_{\text{eff}}) = B(1-p)p.
+\]
+
+This formulation reveals two problems: (1) a priori imbalance in sample difficulties, and (2) the number of samples with accuracy equal to 1 continues to increase during training, further exacerbating the problem. While DAPO focuses on online over-sampling and filtering to address this issue, we also employ a priori filtering. Without a priori filtering, we would need to oversample more aggressively and may exhaust the oversampling budget, resulting in increased variance in the effective batch size.
+
+% TODO: does easyr1 implement DAPO style oversampling?
+
+To this end, we propose filtering out prompts with accuracy equal to 1 and 0 before training, thereby decreasing the probability $p$ and maintaining more stable RL training throughout the optimization process.

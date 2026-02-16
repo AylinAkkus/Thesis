@@ -1,0 +1,76 @@
+\documentclass[a4paper, oneside]{discothesis}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{bookmark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT METADATA
+
+\thesistype{Master's Thesis} % Master's Thesis, Bachelor's Thesis, Semester Thesis, Group Project
+\title{Training a State of the Art Model Grounding Model}
+
+\author{Aylin Akkus}
+\email{aakkus@ethz.ch}
+
+\institute{Distributed Computing Group \\[2pt]
+Computer Engineering and Networks Laboratory \\[2pt]
+ETH Zürich}
+
+% Optionally, you can put in your own logo here
+%\logo{\includegraphics[width=0.2\columnwidth]{figures/disco_logo_faded}}
+
+\supervisors{Supervisor 1, Supervisor 2\\[2pt] Prof.\ Dr.\ Roger Wattenhofer}
+
+% Optionally, keywords and categories of the work can be shown (on the Abstract page)
+%\keywords{Keywords go here.}
+%\categories{ACM categories go here.}
+
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frontmatter % do not remove this line
+\maketitle
+
+\cleardoublepage
+
+\begin{acknowledgements}
+	We thank Florian Brand for sharing details on OS-World task quality issues and Yan Yang for details on GTA1 agent evaluation.
+
+We gratefully acknowledge computing time granted for the project synthesis by the JARA on the supercomputer JURECA at Juelich Supercomputing Center (JSC) and storage resources on JUST granted and operated by JSC and supported by Helmholtz Data Federation (HDF).
+\end{acknowledgements}
+
+
+\begin{abstract}
+We present Gelato-30B-A3B, a state-of-the-art grounding model for GUI computer-use tasks. Gelato is trained on our open-sourced Click-100k dataset and achieves 63.88\% accuracy on ScreenSpot-Pro and 69.15\% / 74.65\% on OS-World-G / OS-World-G (Refined), surpassing prior specialized computer grounding models like GTA1-32B and much larger vision-language models including Qwen3-VL-235B-A22B-Instruct. When combined with GPT-5, Gelato enables strong agentic performance at 58.71\% automated success rate (61.85\% with human evaluation) versus 56.97\% (59.47\% with human evaluation) for GTA1-32B on OS-World. This thesis describes the complete pipeline from data curation and filtering to reinforcement learning training that enables these results.
+\end{abstract}
+
+\tableofcontents
+
+\mainmatter % do not remove this line
+
+% Main Chapters (5 chapters as per thesis structure)
+% Chapter 1: Introduction (including Related Work)
+\include{chapters/1_Introduction/Introduction}
+
+% Chapter 2: Methodology (including Data Curation and Training)
+\include{chapters/2_Methodology/Methodology}
+
+% Chapter 3: Results
+\include{chapters/3_Results/Results}
+
+% Chapter 4: Conclusion and Future Work
+\include{chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork}
+
+% This displays the bibliography for all cited external documents. All references have to be defined in the file references.bib and can then be cited from within this document.
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+% Chapter 5: Appendix
+\appendix
+\include{chapters/5_Appendix/Appendix}
+
+\end{document}

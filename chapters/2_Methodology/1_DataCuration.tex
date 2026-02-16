@@ -1,0 +1,36 @@
+\section{Data Curation}
+
+We curate our training data from existing datasets for web and desktop GUI grounding. Each dataset sample contains a screenshot image, a natural language instruction describing the desired interaction, and ground truth bounding box coordinates for the target UI element. Our data curation pipeline draws from eight complementary sources: ShowUI \cite{lin2024showui} (covering both web and desktop environments), AutoGUI \cite{li2025autogui}, PC-Agent-E \cite{he2025pcagente}, WaveUI \cite{agentsea2024waveui}, OS-Atlas \cite{wu2024osatlas}, UGround \cite{gou2024uground}, PixMo \cite{deitke2024molmo}, and SeeClick \cite{cheng2024seeclick}. Table~\ref{tab:dataset_statistics} summarizes the scale and composition of these datasets, yielding approximately 9.8 million training samples.
+
+\begin{table}[h]
+\centering
+\caption{Dataset Statistics}
+\label{tab:dataset_statistics}
+\begin{tabular}{lrr}
+\hline
+\textbf{Dataset} & \textbf{\# of Samples} & \textbf{\# Text Tokens (M)} \\
+\hline
+AutoGUI & 701,861 & 52.22 \\
+PC-Agent-E & 27,782 & 42.09 \\
+WaveUI & 24,977 & 1.74 \\
+SeeClick & 27,193 & 1.80 \\
+OS-ATLAS & 61,534 & 4.12 \\
+UGround & 8,290,455 & 618.48 \\
+ShowUI-Web & 598,856 & 40.48 \\
+ShowUI-Desktop & 7,496 & 0.48 \\
+PixMo Points & 92,477 & 5.81 \\
+\hline
+\textbf{Total} & \textbf{9,832,631} & \textbf{767.22} \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Normalization}
+To ensure consistency across heterogeneous data sources, we normalize all grounding datasets into a unified format. This normalization process includes partitioning mobile and desktop samples into separate subsets and filtering the data to retain only click action annotations relevant to our grounding task.
+\paragraph{Processing}
+Two datasets require additional preprocessing to extract suitable training samples. For PC-Agent-E, we extract individual click actions from recorded computer-use trajectories and generate corresponding natural language instructions by processing each action's reasoning chain through Claude 3.7 Sonnet. For PixMo Points, we employ Qwen2.5-7B-VL as a filtering mechanism to identify and retain only samples depicting valid computer screen images.
+\paragraph{Resizing}
+Both Qwen2.5-VL \cite{qwen2025qwen25vl} and Qwen3-VL \cite{qwen2025qwen3vl} employ flexible patching mechanisms, where input images are dynamically resized to multiples of 28 pixels before being processed by the Vision Transformer (ViT). Failure to account for this preprocessing step can result in coordinate misalignment between predictions and ground truth annotations. To prevent such artifacts, we standardize all training and evaluation images by resizing them to dimensions that are multiples of 28 prior to model input.
+\paragraph{Coordinate System}
+The two model families employ distinct coordinate representation schemes. While Qwen2.5-VL uses absolute pixel coordinates, Qwen3-VL adopts a normalized coordinate system scaled to the range [0, 1000]. This normalization improves robustness to variations in image resolution and aspect ratio across diverse inputs, while also simplifying post-processing and enhancing the usability of predicted coordinates in downstream applications. To maintain consistency with each model's native representation, we adapt our data preparation accordingly: absolute coordinates for Qwen2.5-VL experiments (facilitating direct comparison with other models built on the same backbone) and normalized coordinates for Qwen3-VL experiments.
+

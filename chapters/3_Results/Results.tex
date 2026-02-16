@@ -1,0 +1,168 @@
+\chapter{Results}
+
+In this chapter, we present comprehensive evaluation results for Gelato-30B-A3B. We evaluate on isolated grounding benchmarks (ScreenSpot-Pro and OS-World-G) to measure grounding accuracy, and on the full OS-World agent benchmark to assess end-to-end agent performance. We also compare against prior state-of-the-art models and conduct human evaluation to measure the true performance beyond automated metrics.
+
+\section{Grounding Benchmark Evaluation}
+
+\subsection{ScreenSpot-Pro}
+
+ScreenSpot-Pro~\cite{screenspot} is a benchmark for GUI grounding on professional high-resolution computer interfaces. It tests the model's ability to locate UI elements in complex, realistic application interfaces.
+
+Gelato-30B-A3B achieves \textbf{63.88\% accuracy} on ScreenSpot-Pro at step 84 of training. This represents a +3.38 percentage point improvement over the Qwen3-VL-30B-A3B-Instruct base model, demonstrating that our RL training successfully specializes the model for grounding tasks.
+
+\subsection{OS-World-G}
+
+OS-World-G~\cite{osworld} is a grounding benchmark that tests models on diverse operating system interfaces. The benchmark includes a refined version that corrects annotation errors in the original benchmark.
+
+Gelato-30B-A3B achieves:
+\begin{itemize}
+    \item \textbf{67.19\% accuracy on OS-World-G} (at step 84)
+    \item \textbf{73.40\% accuracy on OS-World-G (Refined)} (at step 84)
+\end{itemize}
+
+These results represent a +6.19 percentage point improvement on OS-World-G over the base model, demonstrating particularly strong gains on this diverse benchmark.
+
+\subsection{Performance with Refusal}
+
+As discussed in Chapter 2, eliciting refusal behavior by prompting the model to decline grounding when elements cannot be found further improves performance:
+
+\begin{itemize}
+    \item \textbf{69.15\% accuracy on OS-World-G} (+1.96 pp over non-refusal)
+    \item \textbf{74.65\% accuracy on OS-World-G (Refined)} (+1.25 pp over non-refusal)
+\end{itemize}
+
+\subsection{Comparison with Prior Work}
+
+Table~\ref{tab:grounding_comparison} summarizes Gelato-30B-A3B's performance compared to prior state-of-the-art models:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\hline
+\textbf{Model} & \textbf{ScreenSpot-Pro} & \textbf{OS-World-G} & \textbf{OS-World-G (Refined)} \\
+\hline
+GTA1-32B & - & - & - \\
+Qwen3-VL-235B-A22B-Instruct & - & - & - \\
+\textbf{Gelato-30B-A3B} & \textbf{63.88\%} & \textbf{69.15\%} & \textbf{74.65\%} \\
+\hline
+\end{tabular}
+\caption{Grounding benchmark results. Gelato-30B-A3B surpasses prior specialized computer grounding models like GTA1-32B and much larger VLMs.}
+\label{tab:grounding_comparison}
+\end{table}
+
+Gelato-30B-A3B surpasses:
+\begin{itemize}
+    \item \textbf{GTA1-32B}: A specialized grounding model with similar parameter count
+    \item \textbf{Qwen3-VL-235B-A22B-Instruct}: A much larger (7.8×) general-purpose vision-language model
+\end{itemize}
+
+These comparisons demonstrate that our focused approach to data curation and RL training enables a 30B parameter model to outperform both specialized and general-purpose models that are larger or similarly sized.
+
+\section{OS-World Agent Evaluation}
+
+To measure end-to-end agent performance, we evaluate Gelato-30B-A3B on the OS-World benchmark as the grounding module together with GPT-5 as the planning model.
+
+\subsection{Agent Harness}
+
+We evaluate Gelato-30B-A3B as a computer-use agent on OS-World using the GTA1.5 agent framework. The agent architecture combines:
+
+\begin{itemize}
+    \item \textbf{Planning model}: GPT-5 generates high-level action plans
+    \item \textbf{Grounding model}: Gelato-30B-A3B grounds instructions to specific UI locations
+    \item \textbf{Action execution}: The system executes clicks, keyboard input, and other actions
+\end{itemize}
+
+The agent has a maximum of 50 steps per task and waits 3 seconds between actions to allow the interface to update.
+
+\subsection{Implementation Details}
+
+We made minor modifications to the agent code:
+\begin{itemize}
+    \item Fixed spreadsheet cell modification tool invocation
+    \item Added delay between trajectory completion and evaluation to ensure the VM state fully updates
+\end{itemize}
+
+Our modified implementation is available in \texttt{gelato\_agent.py}.
+
+\subsection{Automated Evaluation Results}
+
+We conducted three independent trials for both Gelato-30B-A3B and GTA1-32B in the same agent harness to enable fair comparison. The experiments were conducted in a fixed snapshot of OS-World to ensure reproducibility.
+
+Results:
+\begin{itemize}
+    \item \textbf{Gelato-30B-A3B}: 58.71 ± 0.66\% success rate
+    \item \textbf{GTA1-32B}: 56.97 ± 1.47\% success rate
+\end{itemize}
+
+Gelato-30B-A3B performs on par or above GTA1-32B, demonstrating that improved grounding translates to better end-to-end agent performance.
+
+\subsection{Variance Across Runs}
+
+The standard deviations across three runs indicate meaningful variance in agent performance:
+\begin{itemize}
+    \item Gelato-30B-A3B shows relatively low variance ($\sigma$ = 0.66\%)
+    \item GTA1-32B shows higher variance ($\sigma$ = 1.47\%)
+\end{itemize}
+
+This variance underscores the importance of multiple trial evaluations when comparing agent systems, as discussed further in Chapter 4.
+
+\subsection{Trajectory Release}
+
+We provide all of our agent's OS-World trajectories at \texttt{mlfoundations/gelato-osworld-agent-trajectories} to enable detailed analysis and support reproducibility.
+
+\section{Human Evaluation}
+
+Automated evaluation metrics can underestimate agent performance due to incomplete task specifications and ambiguous evaluation criteria. To measure true performance, we conduct human evaluation on a subset of tasks.
+
+\subsection{Methodology}
+
+We manually identified 20 tasks where the automated evaluation function is incomprehensive or the task specification is ambiguous. For each task, we review all agent trajectories across all runs and determine whether the task was successfully completed according to the intended goal.
+
+Common issues with automated evaluation include:
+\begin{itemize}
+    \item Evaluation functions that check only one valid solution path when multiple valid approaches exist
+    \item Timing issues where the evaluation runs before the final state is saved
+    \item Over-specific checks that reject valid alternative solutions
+\end{itemize}
+
+\subsection{Human Evaluation Results}
+
+With human evaluation corrections:
+\begin{itemize}
+    \item \textbf{Gelato-30B-A3B}: 61.85 ± 0.79\% success rate
+    \item \textbf{GTA1-32B}: 59.47 ± 1.27\% success rate
+\end{itemize}
+
+Comparing to automated evaluation:
+\begin{itemize}
+    \item Gelato-30B-A3B: +3.14 pp gain from human evaluation
+    \item GTA1-32B: +2.50 pp gain from human evaluation
+\end{itemize}
+
+These results show that:
+\begin{enumerate}
+    \item Automated evaluation significantly underestimates true agent performance (by ~3 percentage points)
+    \item The relative ranking between models remains consistent
+    \item Gelato-30B-A3B maintains its advantage over GTA1-32B with human evaluation
+\end{enumerate}
+
+\subsection{Detailed Results}
+
+Detailed results for all 20 manually evaluated tasks are available in \texttt{evaluation/osworld-human-evals.md}. This is not a comprehensive manual evaluation—we focused on clearly problematic tasks that were also straightforward to verify. A more extensive human evaluation could reveal additional cases where automated metrics underestimate performance.
+
+\section{Summary}
+
+Our comprehensive evaluation demonstrates that Gelato-30B-A3B achieves state-of-the-art performance across multiple benchmarks:
+
+\begin{enumerate}
+    \item \textbf{Isolated grounding}: Surpasses specialized grounding models and much larger VLMs on ScreenSpot-Pro and OS-World-G
+    
+    \item \textbf{End-to-end agent performance}: Outperforms GTA1-32B on OS-World with both automated and human evaluation
+    
+    \item \textbf{Refusal capability}: Successfully elicits refusal behavior without explicit training, improving performance on ambiguous cases
+    
+    \item \textbf{Consistency}: Shows low variance across multiple evaluation runs, indicating robust performance
+\end{enumerate}
+
+These results validate our approach to data curation, filtering, and RL training, demonstrating that careful attention to data quality and training methodology yields significant improvements in grounding model capabilities.
+
