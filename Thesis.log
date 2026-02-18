@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  18 FEB 2026 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  18 FEB 2026 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -671,46 +671,55 @@ File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
 
+(/usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip61
+\enit@outerparindent=\dimen269
+\enit@toks=\toks46
+\enit@inbox=\box67
+\enit@count@id=\count332
+\enitdp@description=\count333
+)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count332
-\l__pdf_internal_box=\box67
+\l__color_backend_stack_int=\count334
+\l__pdf_internal_box=\box68
 )
 (./Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
-\scratchdimen=\dimen269
-\scratchbox=\box68
-\nofMPsegments=\count334
-\nofMParguments=\count335
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count336
-\MPscratchDim=\dimen270
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count335
+\scratchdimen=\dimen270
+\scratchbox=\box69
+\nofMPsegments=\count336
+\nofMParguments=\count337
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count338
+\MPscratchDim=\dimen271
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
+\everyMPtoPDFconversion=\toks48
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -720,8 +729,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 35.
-\c@lstlisting=\count339
+Package hyperref Info: Link coloring ON on input line 23.
+\c@lstlisting=\count341
 Package epstopdf Info: Source file: <figures/eth_logo_black.eps>
 (epstopdf)                    date: 2026-02-03 10:56:40
 (epstopdf)                    size: 258515 bytes
@@ -731,13 +740,13 @@ f>
 (epstopdf)                    size: 14056 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/eth_logo_black-eps
 -converted-to.pdf figures/eth_logo_black.eps>
-(epstopdf)             \includegraphics on input line 39.
+(epstopdf)             \includegraphics on input line 27.
 Package epstopdf Info: Output file is already uptodate.
 <figures/eth_logo_black-eps-converted-to.pdf, id=7, 191.71625pt x 57.21375pt>
 File: figures/eth_logo_black-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/eth_logo_black-eps-converted-to.pdf>
 Package pdftex.def Info: figures/eth_logo_black-eps-converted-to.pdf  used on i
-nput line 39.
+nput line 27.
 (pdftex.def)             Requested size: 177.66374pt x 47.17624pt.
 
 
@@ -754,43 +763,41 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.49 \begin{abstract}
-                      [1
+l.53     \item I
+                 did not participate in the video annotation process for the...
+[1
 
 
-]
-Overfull \hbox (7.2174pt too wide) in paragraph at lines 50--51
-\T1/cmr/m/n/10.95 We present Gelato-30B-A3B, a state-of-the-art ground-ing mode
-l for GUI computer-
- []
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 
+[2]
 
-[2
+[3
 
 ] (./Thesis.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-[3
+[4
 
 ]
 
-[4])
+[5])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
 
 
-[5] (./chapters/1_Introduction/Introduction.tex
+[6] (./chapters/1_Introduction/Introduction.tex
 Chapter 1.
 (./chapters/1_Introduction/1_Motivation/Motivation.tex
 
@@ -798,46 +805,23 @@ Chapter 1.
 
 
 ]
-<figures/GroundingTask.png, id=219, 867.24pt x 487.8225pt>
+<figures/GroundingTask.png, id=233, 867.24pt x 487.8225pt>
 File: figures/GroundingTask.png Graphic file (type png)
 <use figures/GroundingTask.png>
-Package pdftex.def Info: figures/GroundingTask.png  used on input line 12.
+Package pdftex.def Info: figures/GroundingTask.png  used on input line 91.
 (pdftex.def)             Requested size: 343.25766pt x 193.086pt.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \c@* 
-l.18 \begin{enumerate}[label=(\alph*
-                                    )]
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.19     \item \textbf
-                      {Availability of Unfiltered Training Data:} Whereas LL...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 
 
 [2 <./figures/GroundingTask.png>]
-Overfull \hbox (2.85698pt too wide) in paragraph at lines 20--21
+Overfull \hbox (2.85698pt too wide) in paragraph at lines 114--121
 []\T1/cmr/bx/n/10.95 Training Data Com-po-si-tion: \T1/cmr/m/n/10.95 Mir-ror-in
 g the chal-lenges faced by language-
  []
 
-) (./chapters/1_Introduction/2_RelatedWork/RelatedWork.tex
-(./chapters/1_Introduction/2_RelatedWork/VisionLanguageModels.tex)
-(./chapters/1_Introduction/2_RelatedWork/GroundingModels.tex)
-(./chapters/1_Introduction/2_RelatedWork/DataSets.tex
+) (./chapters/1_Introduction/2_Background/Background.tex
+(./chapters/1_Introduction/2_Background/VisionLanguageModels.tex)
+(./chapters/1_Introduction/2_Background/GroundingModels.tex)
+(./chapters/1_Introduction/2_Background/DataSets.tex
 
 [3]
 Overfull \hbox (1.21011pt too wide) in paragraph at lines 13--14
@@ -845,26 +829,44 @@ Overfull \hbox (1.21011pt too wide) in paragraph at lines 13--14
 n ac-tion model for gen-er-al-ist GUI agents,
  []
 
-) (./chapters/1_Introduction/2_RelatedWork/EvaluationBenchmarks.tex
-Overfull \hbox (4.06523pt too wide) in paragraph at lines 3--4
-\T1/cmr/m/n/10.95 resolution com-puter use, pro-vid-ing a chal-leng-ing bench-m
-ark for mea-sur-ing ground-
+) (./chapters/1_Introduction/2_Background/EvaluationBenchmarks.tex
+
+[4]
+
+LaTeX Warning: Citation `screenspotv2' on page 5 undefined on input line 9.
+
+) (./chapters/1_Introduction/2_Background/ReinforcementLearning.tex
+
+[5])) (./chapters/1_Introduction/3_RelatedWork/RelatedWork.tex)
+(./chapters/1_Introduction/4_Contributions/Contribution.tex
+Overfull \hbox (37.93343pt too wide) in paragraph at lines 11--12
+\T1/cmr/m/n/10.95 Gelato-30B-A3B, achieves 63.88% ac-cu-racy on ScreenSpot-Pro 
+and 69.15%/74.65%
  []
 
-) (./chapters/1_Introduction/2_RelatedWork/ReinforcementLearning.tex
 
-[4])) (./chapters/1_Introduction/3_Contributions/Contribution.tex)
-(./chapters/1_Introduction/4_ThesisStructure/ThesisStructure.tex))
-(./chapters/2_Methodology/Methodology.tex
+Overfull \hbox (6.98294pt too wide) in paragraph at lines 11--12
+\T1/cmr/m/n/10.95 on OS-World-G/OS-World-G (Re-fined), sur-pass-ing prior spe-c
+ial-ized ground-
+ []
 
-[5]
+) (./chapters/1_Introduction/5_ThesisStructure/ThesisStructure.tex
+
+[6]
+Overfull \hbox (10.77107pt too wide) in paragraph at lines 6--7
+[]\T1/cmr/m/n/10.95 Summarizes the main con-tri-bu-tions,
+ []
+
+)) (./chapters/2_Methodology/Methodology.tex
+
+[7]
 Chapter 2.
 (./chapters/2_Methodology/1_DataCuration.tex
 
-[6
+[8
 
 ]
-<figures/DataQuality.png, id=303, 2569.6pt x 1686.3pt>
+<figures/DataQuality.png, id=343, 2569.6pt x 1686.3pt>
 File: figures/DataQuality.png Graphic file (type png)
 <use figures/DataQuality.png>
 Package pdftex.def Info: figures/DataQuality.png  used on input line 44.
@@ -875,20 +877,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./chapters/2_Methodology/2_DataFiltering.tex
 
-[7]
+[9]
 
-[8 <./figures/DataQuality.png (PNG copy)>]
-<figures/Omniparser.png, id=326, 1284.8pt x 803.0pt>
+[10 <./figures/DataQuality.png (PNG copy)>]
+<figures/Omniparser.png, id=365, 1284.8pt x 803.0pt>
 File: figures/Omniparser.png Graphic file (type png)
 <use figures/Omniparser.png>
 Package pdftex.def Info: figures/Omniparser.png  used on input line 14.
 (pdftex.def)             Requested size: 343.25766pt x 214.53387pt.
-<figures/FilteringAblation.png, id=330, 642.4803pt x 642.4803pt>
+<figures/FilteringAblation.png, id=369, 642.4803pt x 642.4803pt>
 File: figures/FilteringAblation.png Graphic file (type png)
 <use figures/FilteringAblation.png>
 Package pdftex.def Info: figures/FilteringAblation.png  used on input line 23.
 (pdftex.def)             Requested size: 190.7pt x 190.69666pt.
-<figures/FilteringAllEvals.png, id=331, 859.2903pt x 570.933pt>
+<figures/FilteringAllEvals.png, id=370, 859.2903pt x 570.933pt>
 File: figures/FilteringAllEvals.png Graphic file (type png)
 <use figures/FilteringAllEvals.png>
 Package pdftex.def Info: figures/FilteringAllEvals.png  used on input line 24.
@@ -900,9 +902,9 @@ Overfull \hbox (19.42162pt too wide) in paragraph at lines 23--25
 
 
 
-[9 <./figures/Omniparser.png (PNG copy)>]
+[11 <./figures/Omniparser.png (PNG copy)>]
 
-[10 <./figures/FilteringAblation.png> <./figures/FilteringAllEvals.png>]
+[12 <./figures/FilteringAblation.png> <./figures/FilteringAllEvals.png>]
 Overfull \hbox (7.6297pt too wide) in paragraph at lines 54--55
 []\T1/cmr/m/n/10.95 Overall, ShowUI-Web ex-hibits con-sis-tently strong per-for
 -mance across all bench-
@@ -915,10 +917,10 @@ Overfull \hbox (78.38205pt too wide) in paragraph at lines 62--74
 
 
 
-[11]) (./chapters/2_Methodology/3_SupplementalData.tex
+[13]) (./chapters/2_Methodology/3_SupplementalData.tex
 
-[12]
-<figures/accuracy_by_resolution_and_aspect.png, id=374, 1727.253pt x 573.342pt>
+[14]
+<figures/accuracy_by_resolution_and_aspect.png, id=413, 1727.253pt x 573.342pt>
 
 File: figures/accuracy_by_resolution_and_aspect.png Graphic file (type png)
 <use figures/accuracy_by_resolution_and_aspect.png>
@@ -929,7 +931,7 @@ Package pdftex.def Info: figures/accuracy_by_resolution_and_aspect.png  used on
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/accuracy_heatmap_resolution_aspect.png, id=375, 933.7284pt x 717.882pt
+<figures/accuracy_heatmap_resolution_aspect.png, id=414, 933.7284pt x 717.882pt
 >
 File: figures/accuracy_heatmap_resolution_aspect.png Graphic file (type png)
 <use figures/accuracy_heatmap_resolution_aspect.png>
@@ -941,48 +943,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[13]
-! You can't use `macro parameter character #' in vertical mode.
-l.75 #
-      # Results
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+[15]
 
-! You can't use `macro parameter character #' in vertical mode.
-l.75 ##
-        Results
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[14 <./figures/accuracy_by_resolution_and_aspect.png>]
+[16 <./figures/accuracy_by_resolution_and_aspect.png>]
 
-[15 <./figures/accuracy_heatmap_resolution_aspect.png>]
-! You can't use `macro parameter character #' in vertical mode.
-l.102 #
-       # Results
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+[17 <./figures/accuracy_heatmap_resolution_aspect.png>]
 
-! You can't use `macro parameter character #' in vertical mode.
-l.102 ##
-         Results
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-
-[16]
-Overfull \hbox (68.05836pt too wide) in paragraph at lines 140--149
+[18]
+Overfull \hbox (68.05836pt too wide) in paragraph at lines 156--165
  [][] 
  []
 
@@ -994,16 +966,15 @@ L al-go-rithms suf-fer from a gradient-decreasing
 
 
 
-[17])) (./chapters/3_Results/Results.tex
+[19])) (./chapters/3_Results/Results.tex
 
-[18]
+[20]
 Chapter 3.
 
 
-[19
+[21
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-
+]
 Overfull \hbox (94.50964pt too wide) in paragraph at lines 40--49
  [][] 
  []
@@ -1016,9 +987,9 @@ er (7.8\TS1/cmr/m/n/10.95 Ö\T1/cmr/m/n/10.95 ) general-purpose
 
 
 
-[20]
+[22]
 
-[21]
+[23]
 Overfull \hbox (136.02007pt too wide) in paragraph at lines 111--112
 \T1/cmr/m/n/10.95 We pro-vide all of our agent's OS-World tra-jec-to-ries at \T
 1/cmtt/m/n/10.95 mlfoundations/gelato-osworld-agent-trajectories
@@ -1026,7 +997,7 @@ Overfull \hbox (136.02007pt too wide) in paragraph at lines 111--112
 
 
 
-[22]
+[24]
 Overfull \hbox (118.49272pt too wide) in paragraph at lines 151--152
 \T1/cmr/m/n/10.95 Detailed re-sults for all 20 man-u-ally eval-u-ated tasks are
  avail-able in \T1/cmtt/m/n/10.95 evaluation/osworld-human-evals.md\T1/cmr/m/n/
@@ -1035,11 +1006,11 @@ Overfull \hbox (118.49272pt too wide) in paragraph at lines 151--152
 
 ) (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
 
-[23]
+[25]
 Chapter 4.
 
 
-[24
+[26
 
 ]
 Overfull \hbox (4.90349pt too wide) in paragraph at lines 44--45
@@ -1049,11 +1020,11 @@ an eval-u-a-tion (58.71%
 
 
 
-[25]
-
-[26]
-
 [27]
+
+[28]
+
+[29]
 Overfull \hbox (5.43532pt too wide) in paragraph at lines 122--123
 []\T1/cmr/bx/n/10.95 Iterative re-fine-ment\T1/cmr/m/n/10.95 : En-abling mod-el
 s to make mul-ti-ple at-tempts at ground-
@@ -1067,25 +1038,23 @@ ed bench-marks that test spe-cific ground-
 
 
 
-[28]) (./Thesis.bbl
-
-[29]
-
-[30
-
-]
+[30]) (./Thesis.bbl
 
 [31]
 
-[32]
+[32
+
+]
 
 [33]
 
 [34]
 
-[35])
+[35]
 
-[36] (./chapters/5_Appendix/Appendix.tex
+[36])
+
+[37] (./chapters/5_Appendix/Appendix.tex
 Overfull \hbox (53.37968pt too wide) in paragraph at lines 11--37
  [][] 
  []
@@ -1137,43 +1106,53 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 23779 strings out of 473190
- 434732 string characters out of 5715801
- 1281750 words of memory out of 5000000
- 46275 multiletter control sequences out of 15000+600000
- 578862 words of font info for 79 fonts, out of 8000000 for 9000
+ 24167 strings out of 473190
+ 441751 string characters out of 5715801
+ 1289897 words of memory out of 5000000
+ 46626 multiletter control sequences out of 15000+600000
+ 582100 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,8n,132p,1947b,1278s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
-/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/l
-ocal/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loc
-al/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local
-/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/t
-exlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/tex
-live/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texli
-ve/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive
-/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2
-025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/202
-5/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/
-texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/public/cm-super/sfsc1095.pfb></usr/local/texlive/2025/texm
-f-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-
-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-di
-st/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist
-/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on Thesis.pdf (48 pages, 3187791 bytes).
+ 128i,8n,132p,1131b,1278s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{chapter*.32} has been referenced but does not exist
+, replaced by a fixed one
+
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/l
+ocal/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/loc
+al/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local
+/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/tex
+live/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texli
+ve/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive
+/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2
+025/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/202
+5/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/public/cm-super/sfsc1095.pfb></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fon
+ts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts
+/type1/public/cm-super/sftt1095.pfb>
+Output written on Thesis.pdf (50 pages, 3234493 bytes).
 PDF statistics:
- 1060 PDF objects out of 1200 (max. 8388607)
- 938 compressed objects within 10 object streams
- 301 named destinations out of 1000 (max. 500000)
- 533 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1121 PDF objects out of 1200 (max. 8388607)
+ 993 compressed objects within 10 object streams
+ 326 named destinations out of 1000 (max. 500000)
+ 541 words of extra memory for PDF output out of 10000 (max. 10000000)
 

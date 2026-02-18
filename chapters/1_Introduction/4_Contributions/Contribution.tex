@@ -1,0 +1,13 @@
+\section{Contributions}
+This thesis investigates data-centric and training strategies for GUI grounding tasks.
+We unify multiple heterogeneous datasets into a single, standardized collection and conduct detailed ablations over different filtering methods.
+We furthermore explore ways of enriching the resulting dataset in underrepresented domains such as professional desktop applications.
+Finally, we study training dynamics ranging from supervised fine-tuning to reinforcement learning.
+The main contributions are as follows:
+\begin{enumerate}
+    \item \textbf{Filtering pipeline.} We develop a comprehensive filtering pipeline that leverages a variety of pre-existing models to systematically curate a large, multi-source data pool into a high-quality training set.
+    \item \textbf{Supplemental data collection.} We introduce a pipeline for collecting and annotating screen frames extracted from GUI tutorial videos, enabling the acquisition of training data for underrepresented domains that lack access to rich APIs typically available on the web.
+    \item \textbf{Reinforcement learning training recipe.} We develop a reinforcement learning training recipe tailored to GUI grounding tasks and study the effects of task difficulty and reward function design on model performance.
+    \item \textbf{State-of-the-art results.} We demonstrate that the resulting model, Gelato-30B-A3B, achieves 63.88\% accuracy on ScreenSpot-Pro and 69.15\%\,/\,74.65\% on OS-World-G\,/\,OS-World-G (Refined), surpassing prior specialized grounding models such as GTA1-32B and much larger vision-language models including Qwen3-VL-235B-A22B-Instruct.
+    \item \textbf{Open source.} We publicly release the Gelato-30B-A3B model, the Click-100k dataset, and the accompanying code to foster further research and ensure reproducibility.
+\end{enumerate}

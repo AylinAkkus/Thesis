@@ -55,6 +55,70 @@ M.~Cherti, R.~Beaumont, R.~Wightman, M.~Wortsman, G.~Ilharco, C.~Gordon,
   \url{http://dx.doi.org/10.1109/CVPR52729.2023.00276}
 \BIBentrySTDinterwordspacing
 
+\bibitem{openai2024gpt4technicalreport}
+\BIBentryALTinterwordspacing
+OpenAI, J.~Achiam, S.~Adler, S.~Agarwal, L.~Ahmad, I.~Akkaya, F.~L. Aleman,
+  D.~Almeida, J.~Altenschmidt, S.~Altman, S.~Anadkat, R.~Avila, I.~Babuschkin,
+  S.~Balaji, V.~Balcom, P.~Baltescu, H.~Bao, M.~Bavarian, J.~Belgum, I.~Bello,
+  J.~Berdine, G.~Bernadett-Shapiro, C.~Berner, L.~Bogdonoff, O.~Boiko, M.~Boyd,
+  A.-L. Brakman, G.~Brockman, T.~Brooks, M.~Brundage, K.~Button, T.~Cai,
+  R.~Campbell, A.~Cann, B.~Carey, C.~Carlson, R.~Carmichael, B.~Chan, C.~Chang,
+  F.~Chantzis, D.~Chen, S.~Chen, R.~Chen, J.~Chen, M.~Chen, B.~Chess, C.~Cho,
+  C.~Chu, H.~W. Chung, D.~Cummings, J.~Currier, Y.~Dai, C.~Decareaux, T.~Degry,
+  N.~Deutsch, D.~Deville, A.~Dhar, D.~Dohan, S.~Dowling, S.~Dunning,
+  A.~Ecoffet, A.~Eleti, T.~Eloundou, D.~Farhi, L.~Fedus, N.~Felix, S.~P.
+  Fishman, J.~Forte, I.~Fulford, L.~Gao, E.~Georges, C.~Gibson, V.~Goel,
+  T.~Gogineni, G.~Goh, R.~Gontijo-Lopes, J.~Gordon, M.~Grafstein, S.~Gray,
+  R.~Greene, J.~Gross, S.~S. Gu, Y.~Guo, C.~Hallacy, J.~Han, J.~Harris, Y.~He,
+  M.~Heaton, J.~Heidecke, C.~Hesse, A.~Hickey, W.~Hickey, P.~Hoeschele,
+  B.~Houghton, K.~Hsu, S.~Hu, X.~Hu, J.~Huizinga, S.~Jain, S.~Jain, J.~Jang,
+  A.~Jiang, R.~Jiang, H.~Jin, D.~Jin, S.~Jomoto, B.~Jonn, H.~Jun, T.~Kaftan,
+  Łukasz Kaiser, A.~Kamali, I.~Kanitscheider, N.~S. Keskar, T.~Khan,
+  L.~Kilpatrick, J.~W. Kim, C.~Kim, Y.~Kim, J.~H. Kirchner, J.~Kiros,
+  M.~Knight, D.~Kokotajlo, Łukasz Kondraciuk, A.~Kondrich, A.~Konstantinidis,
+  K.~Kosic, G.~Krueger, V.~Kuo, M.~Lampe, I.~Lan, T.~Lee, J.~Leike, J.~Leung,
+  D.~Levy, C.~M. Li, R.~Lim, M.~Lin, S.~Lin, M.~Litwin, T.~Lopez, R.~Lowe,
+  P.~Lue, A.~Makanju, K.~Malfacini, S.~Manning, T.~Markov, Y.~Markovski,
+  B.~Martin, K.~Mayer, A.~Mayne, B.~McGrew, S.~M. McKinney, C.~McLeavey,
+  P.~McMillan, J.~McNeil, D.~Medina, A.~Mehta, J.~Menick, L.~Metz,
+  A.~Mishchenko, P.~Mishkin, V.~Monaco, E.~Morikawa, D.~Mossing, T.~Mu,
+  M.~Murati, O.~Murk, D.~Mély, A.~Nair, R.~Nakano, R.~Nayak, A.~Neelakantan,
+  R.~Ngo, H.~Noh, L.~Ouyang, C.~O'Keefe, J.~Pachocki, A.~Paino, J.~Palermo,
+  A.~Pantuliano, G.~Parascandolo, J.~Parish, E.~Parparita, A.~Passos,
+  M.~Pavlov, A.~Peng, A.~Perelman, F.~de~Avila Belbute~Peres, M.~Petrov, H.~P.
+  de~Oliveira~Pinto, Michael, Pokorny, M.~Pokrass, V.~H. Pong, T.~Powell,
+  A.~Power, B.~Power, E.~Proehl, R.~Puri, A.~Radford, J.~Rae, A.~Ramesh,
+  C.~Raymond, F.~Real, K.~Rimbach, C.~Ross, B.~Rotsted, H.~Roussez, N.~Ryder,
+  M.~Saltarelli, T.~Sanders, S.~Santurkar, G.~Sastry, H.~Schmidt, D.~Schnurr,
+  J.~Schulman, D.~Selsam, K.~Sheppard, T.~Sherbakov, J.~Shieh, S.~Shoker,
+  P.~Shyam, S.~Sidor, E.~Sigler, M.~Simens, J.~Sitkin, K.~Slama, I.~Sohl,
+  B.~Sokolowsky, Y.~Song, N.~Staudacher, F.~P. Such, N.~Summers, I.~Sutskever,
+  J.~Tang, N.~Tezak, M.~B. Thompson, P.~Tillet, A.~Tootoonchian, E.~Tseng,
+  P.~Tuggle, N.~Turley, J.~Tworek, J.~F.~C. Uribe, A.~Vallone, A.~Vijayvergiya,
+  C.~Voss, C.~Wainwright, J.~J. Wang, A.~Wang, B.~Wang, J.~Ward, J.~Wei,
+  C.~Weinmann, A.~Welihinda, P.~Welinder, J.~Weng, L.~Weng, M.~Wiethoff,
+  D.~Willner, C.~Winter, S.~Wolrich, H.~Wong, L.~Workman, S.~Wu, J.~Wu, M.~Wu,
+  K.~Xiao, T.~Xu, S.~Yoo, K.~Yu, Q.~Yuan, W.~Zaremba, R.~Zellers, C.~Zhang,
+  M.~Zhang, S.~Zhao, T.~Zheng, J.~Zhuang, W.~Zhuk, and B.~Zoph, ``Gpt-4
+  technical report,'' 2024. [Online]. Available:
+  \url{https://arxiv.org/abs/2303.08774}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rombach2022highresolutionimagesynthesislatent}
+\BIBentryALTinterwordspacing
+R.~Rombach, A.~Blattmann, D.~Lorenz, P.~Esser, and B.~Ommer, ``High-resolution
+  image synthesis with latent diffusion models,'' 2022. [Online]. Available:
+  \url{https://arxiv.org/abs/2112.10752}
+\BIBentrySTDinterwordspacing
+
+\bibitem{radford2021learningtransferablevisualmodels}
+\BIBentryALTinterwordspacing
+A.~Radford, J.~W. Kim, C.~Hallacy, A.~Ramesh, G.~Goh, S.~Agarwal, G.~Sastry,
+  A.~Askell, P.~Mishkin, J.~Clark, G.~Krueger, and I.~Sutskever, ``Learning
+  transferable visual models from natural language supervision,'' 2021.
+  [Online]. Available: \url{https://arxiv.org/abs/2103.00020}
+\BIBentrySTDinterwordspacing
+
 \bibitem{sambasivan2021datacascades}
 \BIBentryALTinterwordspacing
 N.~Sambasivan, S.~Kapania, H.~Highfill, D.~Akrong, P.~Paritosh, and L.~M.
@@ -144,55 +208,6 @@ L.~Ouyang, J.~Wu, X.~Jiang, D.~Almeida, C.~L. Wainwright, P.~Mishkin, C.~Zhang,
   2022. [Online]. Available: \url{https://arxiv.org/abs/2203.02155}
 \BIBentrySTDinterwordspacing
 
-\bibitem{openai2024gpt4technicalreport}
-\BIBentryALTinterwordspacing
-OpenAI, J.~Achiam, S.~Adler, S.~Agarwal, L.~Ahmad, I.~Akkaya, F.~L. Aleman,
-  D.~Almeida, J.~Altenschmidt, S.~Altman, S.~Anadkat, R.~Avila, I.~Babuschkin,
-  S.~Balaji, V.~Balcom, P.~Baltescu, H.~Bao, M.~Bavarian, J.~Belgum, I.~Bello,
-  J.~Berdine, G.~Bernadett-Shapiro, C.~Berner, L.~Bogdonoff, O.~Boiko, M.~Boyd,
-  A.-L. Brakman, G.~Brockman, T.~Brooks, M.~Brundage, K.~Button, T.~Cai,
-  R.~Campbell, A.~Cann, B.~Carey, C.~Carlson, R.~Carmichael, B.~Chan, C.~Chang,
-  F.~Chantzis, D.~Chen, S.~Chen, R.~Chen, J.~Chen, M.~Chen, B.~Chess, C.~Cho,
-  C.~Chu, H.~W. Chung, D.~Cummings, J.~Currier, Y.~Dai, C.~Decareaux, T.~Degry,
-  N.~Deutsch, D.~Deville, A.~Dhar, D.~Dohan, S.~Dowling, S.~Dunning,
-  A.~Ecoffet, A.~Eleti, T.~Eloundou, D.~Farhi, L.~Fedus, N.~Felix, S.~P.
-  Fishman, J.~Forte, I.~Fulford, L.~Gao, E.~Georges, C.~Gibson, V.~Goel,
-  T.~Gogineni, G.~Goh, R.~Gontijo-Lopes, J.~Gordon, M.~Grafstein, S.~Gray,
-  R.~Greene, J.~Gross, S.~S. Gu, Y.~Guo, C.~Hallacy, J.~Han, J.~Harris, Y.~He,
-  M.~Heaton, J.~Heidecke, C.~Hesse, A.~Hickey, W.~Hickey, P.~Hoeschele,
-  B.~Houghton, K.~Hsu, S.~Hu, X.~Hu, J.~Huizinga, S.~Jain, S.~Jain, J.~Jang,
-  A.~Jiang, R.~Jiang, H.~Jin, D.~Jin, S.~Jomoto, B.~Jonn, H.~Jun, T.~Kaftan,
-  Łukasz Kaiser, A.~Kamali, I.~Kanitscheider, N.~S. Keskar, T.~Khan,
-  L.~Kilpatrick, J.~W. Kim, C.~Kim, Y.~Kim, J.~H. Kirchner, J.~Kiros,
-  M.~Knight, D.~Kokotajlo, Łukasz Kondraciuk, A.~Kondrich, A.~Konstantinidis,
-  K.~Kosic, G.~Krueger, V.~Kuo, M.~Lampe, I.~Lan, T.~Lee, J.~Leike, J.~Leung,
-  D.~Levy, C.~M. Li, R.~Lim, M.~Lin, S.~Lin, M.~Litwin, T.~Lopez, R.~Lowe,
-  P.~Lue, A.~Makanju, K.~Malfacini, S.~Manning, T.~Markov, Y.~Markovski,
-  B.~Martin, K.~Mayer, A.~Mayne, B.~McGrew, S.~M. McKinney, C.~McLeavey,
-  P.~McMillan, J.~McNeil, D.~Medina, A.~Mehta, J.~Menick, L.~Metz,
-  A.~Mishchenko, P.~Mishkin, V.~Monaco, E.~Morikawa, D.~Mossing, T.~Mu,
-  M.~Murati, O.~Murk, D.~Mély, A.~Nair, R.~Nakano, R.~Nayak, A.~Neelakantan,
-  R.~Ngo, H.~Noh, L.~Ouyang, C.~O'Keefe, J.~Pachocki, A.~Paino, J.~Palermo,
-  A.~Pantuliano, G.~Parascandolo, J.~Parish, E.~Parparita, A.~Passos,
-  M.~Pavlov, A.~Peng, A.~Perelman, F.~de~Avila Belbute~Peres, M.~Petrov, H.~P.
-  de~Oliveira~Pinto, Michael, Pokorny, M.~Pokrass, V.~H. Pong, T.~Powell,
-  A.~Power, B.~Power, E.~Proehl, R.~Puri, A.~Radford, J.~Rae, A.~Ramesh,
-  C.~Raymond, F.~Real, K.~Rimbach, C.~Ross, B.~Rotsted, H.~Roussez, N.~Ryder,
-  M.~Saltarelli, T.~Sanders, S.~Santurkar, G.~Sastry, H.~Schmidt, D.~Schnurr,
-  J.~Schulman, D.~Selsam, K.~Sheppard, T.~Sherbakov, J.~Shieh, S.~Shoker,
-  P.~Shyam, S.~Sidor, E.~Sigler, M.~Simens, J.~Sitkin, K.~Slama, I.~Sohl,
-  B.~Sokolowsky, Y.~Song, N.~Staudacher, F.~P. Such, N.~Summers, I.~Sutskever,
-  J.~Tang, N.~Tezak, M.~B. Thompson, P.~Tillet, A.~Tootoonchian, E.~Tseng,
-  P.~Tuggle, N.~Turley, J.~Tworek, J.~F.~C. Uribe, A.~Vallone, A.~Vijayvergiya,
-  C.~Voss, C.~Wainwright, J.~J. Wang, A.~Wang, B.~Wang, J.~Ward, J.~Wei,
-  C.~Weinmann, A.~Welihinda, P.~Welinder, J.~Weng, L.~Weng, M.~Wiethoff,
-  D.~Willner, C.~Winter, S.~Wolrich, H.~Wong, L.~Workman, S.~Wu, J.~Wu, M.~Wu,
-  K.~Xiao, T.~Xu, S.~Yoo, K.~Yu, Q.~Yuan, W.~Zaremba, R.~Zellers, C.~Zhang,
-  M.~Zhang, S.~Zhao, T.~Zheng, J.~Zhuang, W.~Zhuk, and B.~Zoph, ``Gpt-4
-  technical report,'' 2024. [Online]. Available:
-  \url{https://arxiv.org/abs/2303.08774}
-\BIBentrySTDinterwordspacing
-
 \bibitem{thoppilan2022lamdalanguagemodelsdialog}
 \BIBentryALTinterwordspacing
 R.~Thoppilan, D.~D. Freitas, J.~Hall, N.~Shazeer, A.~Kulshreshtha, H.-T. Cheng,
@@ -249,78 +264,8 @@ R.~Nakano, J.~Hilton, S.~Balaji, J.~Wu, L.~Ouyang, C.~Kim, C.~Hesse, S.~Jain,
 
 \bibitem{singh2025openaigpt5card}
 \BIBentryALTinterwordspacing
-A.~Singh, A.~Fry, A.~Perelman, A.~Tart, A.~Ganesh, A.~El-Kishky, A.~McLaughlin,
-  A.~Low, A.~Ostrow, A.~Ananthram, A.~Nathan, A.~Luo, A.~Helyar, A.~Madry,
-  A.~Efremov, A.~Spyra, A.~Baker-Whitcomb, A.~Beutel, A.~Karpenko, A.~Makelov,
-  A.~Neitz, A.~Wei, A.~Barr, A.~Kirchmeyer, A.~Ivanov, A.~Christakis,
-  A.~Gillespie, A.~Tam, A.~Bennett, A.~Wan, A.~Huang, A.~M. Sandjideh, A.~Yang,
-  A.~Kumar, A.~Saraiva, A.~Vallone, A.~Gheorghe, A.~G. Garcia, A.~Braunstein,
-  A.~Liu, A.~Schmidt, A.~Mereskin, A.~Mishchenko, A.~Applebaum, A.~Rogerson,
-  A.~Rajan, A.~Wei, A.~Kotha, A.~Srivastava, A.~Agrawal, A.~Vijayvergiya,
-  A.~Tyra, A.~Nair, A.~Nayak, B.~Eggers, B.~Ji, B.~Hoover, B.~Chen, B.~Chen,
-  B.~Barak, B.~Minaiev, B.~Hao, B.~Baker, B.~Lightcap, B.~McKinzie, B.~Wang,
-  B.~Quinn, B.~Fioca, B.~Hsu, B.~Yang, B.~Yu, B.~Zhang, B.~Brenner, C.~R.
-  Zetino, C.~Raymond, C.~Lugaresi, C.~Paz, C.~Hudson, C.~Whitney, C.~Li,
-  C.~Chen, C.~Cole, C.~Voss, C.~Ding, C.~Shen, C.~Huang, C.~Colby, C.~Hallacy,
-  C.~Koch, C.~Lu, C.~Kaplan, C.~Kim, C.~Minott-Henriques, C.~Frey, C.~Yu,
-  C.~Czarnecki, C.~Reid, C.~Wei, C.~Decareaux, C.~Scheau, C.~Zhang, C.~Forbes,
-  D.~Tang, D.~Goldberg, D.~Roberts, D.~Palmie, D.~Kappler, D.~Levine,
-  D.~Wright, D.~Leo, D.~Lin, D.~Robinson, D.~Grabb, D.~Chen, D.~Lim, D.~Salama,
-  D.~Bhattacharjee, D.~Tsipras, D.~Li, D.~Yu, D.~Strouse, D.~Williams, D.~Hunn,
-  E.~Bayes, E.~Arbus, E.~Akyurek, E.~Y. Le, E.~Widmann, E.~Yani, E.~Proehl,
-  E.~Sert, E.~Cheung, E.~Schwartz, E.~Han, E.~Jiang, E.~Mitchell, E.~Sigler,
-  E.~Wallace, E.~Ritter, E.~Kavanaugh, E.~Mays, E.~Nikishin, F.~Li, F.~P. Such,
-  F.~de~Avila Belbute~Peres, F.~Raso, F.~Bekerman, F.~Tsimpourlas, F.~Chantzis,
-  F.~Song, F.~Zhang, G.~Raila, G.~McGrath, G.~Briggs, G.~Yang, G.~Parascandolo,
-  G.~Chabot, G.~Kim, G.~Zhao, G.~Valiant, G.~Leclerc, H.~Salman, H.~Wang,
-  H.~Sheng, H.~Jiang, H.~Wang, H.~Jin, H.~Sikchi, H.~Schmidt, H.~Aspegren,
-  H.~Chen, H.~Qiu, H.~Lightman, I.~Covert, I.~Kivlichan, I.~Silber, I.~Sohl,
-  I.~Hammoud, I.~Clavera, I.~Lan, I.~Akkaya, I.~Kostrikov, I.~Kofman,
-  I.~Etinger, I.~Singal, J.~Hehir, J.~Huh, J.~Pan, J.~Wilczynski, J.~Pachocki,
-  J.~Lee, J.~Quinn, J.~Kiros, J.~Kalra, J.~Samaroo, J.~Wang, J.~Wolfe, J.~Chen,
-  J.~Wang, J.~Harb, J.~Han, J.~Wang, J.~Zhao, J.~Chen, J.~Yang, J.~Tworek,
-  J.~Chand, J.~Landon, J.~Liang, J.~Lin, J.~Liu, J.~Wang, J.~Tang, J.~Yin,
-  J.~Jang, J.~Morris, J.~Flynn, J.~Ferstad, J.~Heidecke, J.~Fishbein,
-  J.~Hallman, J.~Grant, J.~Chien, J.~Gordon, J.~Park, J.~Liss, J.~Kraaijeveld,
-  J.~Guay, J.~Mo, J.~Lawson, J.~McGrath, J.~Vendrow, J.~Jiao, J.~Lee,
-  J.~Steele, J.~Wang, J.~Mao, K.~Chen, K.~Hayashi, K.~Xiao, K.~Salahi, K.~Wu,
-  K.~Sekhri, K.~Sharma, K.~Singhal, K.~Li, K.~Nguyen, K.~Gu-Lemberg, K.~King,
-  K.~Liu, K.~Stone, K.~Yu, K.~Ying, K.~Georgiev, K.~Lim, K.~Tirumala,
-  K.~Miller, L.~Ahmad, L.~Lv, L.~Clare, L.~Fauconnet, L.~Itow, L.~Yang,
-  L.~Romaniuk, L.~Anise, L.~Byron, L.~Pathak, L.~Maksin, L.~Lo, L.~Ho, L.~Jing,
-  L.~Wu, L.~Xiong, L.~Mamitsuka, L.~Yang, L.~McCallum, L.~Held, L.~Bourgeois,
-  L.~Engstrom, L.~Kuhn, L.~Feuvrier, L.~Zhang, L.~Switzer, L.~Kondraciuk,
-  L.~Kaiser, M.~Joglekar, M.~Singh, M.~Shah, M.~Stratta, M.~Williams, M.~Chen,
-  M.~Sun, M.~Cayton, M.~Li, M.~Zhang, M.~Aljubeh, M.~Nichols, M.~Haines,
-  M.~Schwarzer, M.~Gupta, M.~Shah, M.~Huang, M.~Dong, M.~Wang, M.~Glaese,
-  M.~Carroll, M.~Lampe, M.~Malek, M.~Sharman, M.~Zhang, M.~Wang, M.~Pokrass,
-  M.~Florian, M.~Pavlov, M.~Wang, M.~Chen, M.~Wang, M.~Feng, M.~Bavarian,
-  M.~Lin, M.~Abdool, M.~Rohaninejad, N.~Soto, N.~Staudacher, N.~LaFontaine,
-  N.~Marwell, N.~Liu, N.~Preston, N.~Turley, N.~Ansman, N.~Blades, N.~Pancha,
-  N.~Mikhaylin, N.~Felix, N.~Handa, N.~Rai, N.~Keskar, N.~Brown, O.~Nachum,
-  O.~Boiko, O.~Murk, O.~Watkins, O.~Gleeson, P.~Mishkin, P.~Lesiewicz,
-  P.~Baltescu, P.~Belov, P.~Zhokhov, P.~Pronin, P.~Guo, P.~Thacker, Q.~Liu,
-  Q.~Yuan, Q.~Liu, R.~Dias, R.~Puckett, R.~Arora, R.~T. Mullapudi, R.~Gaon,
-  R.~Miyara, R.~Song, R.~Aggarwal, R.~Marsan, R.~Yemiru, R.~Xiong,
-  R.~Kshirsagar, R.~Nuttall, R.~Tsiupa, R.~Eldan, R.~Wang, R.~James, R.~Ziv,
-  R.~Shu, R.~Nigmatullin, S.~Jain, S.~Talaie, S.~Altman, S.~Arnesen, S.~Toizer,
-  S.~Toyer, S.~Miserendino, S.~Agarwal, S.~Yoo, S.~Heon, S.~Ethersmith,
-  S.~Grove, S.~Taylor, S.~Bubeck, S.~Banesiu, S.~Amdo, S.~Zhao, S.~Wu,
-  S.~Santurkar, S.~Zhao, S.~R. Chaudhuri, S.~Krishnaswamy, Shuaiqi, Xia,
-  S.~Cheng, S.~Anadkat, S.~P. Fishman, S.~Tobin, S.~Fu, S.~Jain, S.~Mei,
-  S.~Egoian, S.~Kim, S.~Golden, S.~Mah, S.~Lin, S.~Imm, S.~Sharpe,
-  S.~Yadlowsky, S.~Choudhry, S.~Eum, S.~Sanjeev, T.~Khan, T.~Stramer, T.~Wang,
-  T.~Xin, T.~Gogineni, T.~Christianson, T.~Sanders, T.~Patwardhan, T.~Degry,
-  T.~Shadwell, T.~Fu, T.~Gao, T.~Garipov, T.~Sriskandarajah, T.~Sherbakov,
-  T.~Kaftan, T.~Hiratsuka, T.~Wang, T.~Song, T.~Zhao, T.~Peterson,
-  V.~Kharitonov, V.~Chernova, V.~Kosaraju, V.~Kuo, V.~Pong, V.~Verma,
-  V.~Petrov, W.~Jiang, W.~Zhang, W.~Zhou, W.~Xie, W.~Zhan, W.~McCabe, W.~DePue,
-  W.~Ellsworth, W.~Bain, W.~Thompson, X.~Chen, X.~Qi, X.~Xiang, X.~Shi,
-  Y.~Dubois, Y.~Yu, Y.~Khakbaz, Y.~Wu, Y.~Qian, Y.~T. Lee, Y.~Chen, Y.~Zhang,
-  Y.~Xiong, Y.~Tian, Y.~Cha, Y.~Bai, Y.~Yang, Y.~Yuan, Y.~Li, Y.~Zhang,
-  Y.~Yang, Y.~Jin, Y.~Jiang, Y.~Wang, Y.~Wang, Y.~Liu, Z.~Stubenvoll, Z.~Dou,
-  Z.~Wu, and Z.~Wang, ``Openai gpt-5 system card,'' 2025. [Online]. Available:
-  \url{https://arxiv.org/abs/2601.03267}
+A.~Singh \emph{et~al.}, ``Openai gpt-5 system card,'' 2025. [Online].
+  Available: \url{https://arxiv.org/abs/2601.03267}
 \BIBentrySTDinterwordspacing
 
 \bibitem{qin2025uitars}
@@ -422,6 +367,13 @@ A.~Nayak \emph{et~al.}, ``Ui-vision: A desktop-centric gui benchmark for visual
   \url{https://arxiv.org/abs/2503.15661}
 \BIBentrySTDinterwordspacing
 
+\bibitem{cheng2024seeclickharnessingguigrounding}
+\BIBentryALTinterwordspacing
+K.~Cheng, Q.~Sun, Y.~Chu, F.~Xu, Y.~Li, J.~Zhang, and Z.~Wu, ``Seeclick:
+  Harnessing gui grounding for advanced visual gui agents,'' 2024. [Online].
+  Available: \url{https://arxiv.org/abs/2401.10935}
+\BIBentrySTDinterwordspacing
+
 \bibitem{li2025screenspotpro}
 \BIBentryALTinterwordspacing
 Y.~Li \emph{et~al.}, ``Screenspot-pro: Gui grounding for professional
@@ -434,6 +386,15 @@ Y.~Li \emph{et~al.}, ``Screenspot-pro: Gui grounding for professional
 T.~Xie \emph{et~al.}, ``Scaling computer-use grounding via user interface
   decomposition and synthesis,'' 2025. [Online]. Available:
   \url{https://arxiv.org/abs/2505.13227}
+\BIBentrySTDinterwordspacing
+
+\bibitem{xie2024osworldbenchmarkingmultimodalagents}
+\BIBentryALTinterwordspacing
+T.~Xie, D.~Zhang, J.~Chen, X.~Li, S.~Zhao, R.~Cao, T.~J. Hua, Z.~Cheng,
+  D.~Shin, F.~Lei, Y.~Liu, Y.~Xu, S.~Zhou, S.~Savarese, C.~Xiong, V.~Zhong, and
+  T.~Yu, ``Osworld: Benchmarking multimodal agents for open-ended tasks in real
+  computer environments,'' 2024. [Online]. Available:
+  \url{https://arxiv.org/abs/2404.07972}
 \BIBentrySTDinterwordspacing
 
 \bibitem{shao2024deepseekmathgrpo}

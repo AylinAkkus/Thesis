@@ -72,18 +72,27 @@ We normalize, resize and convert the UI Vision \cite{nayak2025uivision} and JEDI
 We obtain 5,733 samples from UI Vision and 18,032 samples from JEDI.
 We added UI-Vision and Jedi to the data pool. UI-Vision is a dataset of UI elements that we collected from Youtube and Jedi is a dataset of UI elements that we collected from Jedi.
 
-## Results
+\paragraph{Supplemental Data Experiments}
+We conducted experiments using DeepSpeed ZeRO Stage 3 on 4 nodes with 4 40GB A100 GPUs at a batch size of 16. Table~\ref{tab:supplemental_data_results} shows the impact of adding UI-Vision and JEDI data to the training set.
 
-Deepspeed ZeRO Stage 3 on 4 nodes with 4 40GB A100 GPUs at a batch size of 16:
-
-| Model | Learning Rate | SS Pro Accuracy | OS-World-G Accuracy |
-|-------|----------------|-----------------|---------------------|
-| SFT-7B (38k) | 1e-6 | 49.3% | 57.4% |
-| SFT-7B (38k) - 2 epochs (same as older SFT-7B (80k) but doubled BS) | 1e-6 | 50.16% | 56.0% |
-| SFT-7B (44k) - add UI-Vision and manual label icons from YT | 1e-6 | 47.6% | 58.6% |
-| SFT-7B (49k) - add UI-Vision and manual label icons from YT and 5k from Jedi | 1e-6 | 47.9% | 60.8% |
-| SFT-7B (63k) - add UI-Vision and manual label icons from YT and all of Jedi | 1e-6 | 50.09% | 60.1% |
-| SFT-7B (63k) - add UI-Vision and manual label icons from YT and all of Jedi (BS 8 w/ offload on 2 nodes) | 1e-6 | 48.26% | 60.4% |
+\begin{table}[h]
+\centering
+\caption{Impact of Supplemental Data on Model Performance}
+\label{tab:supplemental_data_results}
+\small
+\begin{tabular}{lrcc}
+\hline
+\textbf{Model Configuration} & \textbf{LR} & \textbf{SS Pro} & \textbf{OS-World-G} \\
+\hline
+SFT-7B (38k) & 1e-6 & 49.3\% & 57.4\% \\
+SFT-7B (38k) - 2 epochs & 1e-6 & 50.16\% & 56.0\% \\
+SFT-7B (44k) + UI-Vision + YT icons & 1e-6 & 47.6\% & 58.6\% \\
+SFT-7B (49k) + UI-Vision + YT + 5k JEDI & 1e-6 & 47.9\% & 60.8\% \\
+SFT-7B (63k) + UI-Vision + YT + all JEDI & 1e-6 & 50.09\% & 60.1\% \\
+SFT-7B (63k) + all data (BS 8, 2 nodes) & 1e-6 & 48.26\% & 60.4\% \\
+\hline
+\end{tabular}
+\end{table}
 
 \paragraph{Video Data Collection}
 % todo make a picture of the pipeline
@@ -97,15 +106,22 @@ In the third stage, we sample a fixed number of frames (default: 250) across a s
 
 In the fourth stage, we construct the final instruction dataset from the sampled frames. Natural language instructions are generated using Claude, producing structured instruction--target pairs for each screenshot. Each training sample consists of a single screenshot paired with two instructions corresponding to distinct UI segments. To mitigate redundancy, we deduplicate samples within each video using token-level overlap thresholds.
 
-We added the in-house professional app data we collected from Youtube to the training data, added it to the model difficulty filtered data and sampled 10k samples total. We find that the performance slightly improves from 45.22% to 46.11% on SS Pro.
+We added the in-house professional app data we collected from Youtube to the training data, added it to the model difficulty filtered data and sampled 10k samples total. We find that the performance slightly improves from 45.22% to 46.11% on SS Pro, as shown in Table~\ref{tab:youtube_professional_data}.
 
-## Results
-
-| Data scale | SS Pro Accuracy | SS V2 Accuracy | Showdown Clicks Accuracy | OS-World G Accuracy |
-|--------|----------------|----------------|--------------------------|--------------------|
-| 10k | 45.22% | 91.05% | 66.97% | N/A |
-| 10k (with in-house professional app data) | 46.11% | 90.27% | 67.50% | N/A |
-
+\begin{table}[h]
+\centering
+\caption{Impact of In-house Professional Application Data}
+\label{tab:youtube_professional_data}
+\small
+\begin{tabular}{lcccc}
+\hline
+\textbf{Data Configuration} & \textbf{SS Pro} & \textbf{SS V2} & \textbf{Showdown} & \textbf{OS-World-G} \\
+\hline
+10k baseline & 45.22\% & 91.05\% & 66.97\% & N/A \\
+10k + in-house prof. app data & 46.11\% & 90.27\% & 67.50\% & N/A \\
+\hline
+\end{tabular}
+\end{table}
 
 \paragraph{DOM Tree Methods}
 For VSCode, Cursor and For Word, PowerPoint, Excel

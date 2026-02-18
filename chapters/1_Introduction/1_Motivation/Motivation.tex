@@ -1,22 +1,129 @@
 \section{Motivation}
-Recent progress in machine learning has been largely driven by scaling laws~\cite{kaplan2020scaling, hestness2017deeplearningscalingpredictable, aghajanyan2023scalinglawsgenerativemixedmodal, cherti2023reproducible}, as exemplified by models such as GPT-4, Stable Diffusion, and CLIP. These advances rest on three pillars: (1)~compute, (2)~model size, and (3)~training data. Of these, training data has received the least systematic attention---despite its crucial role, datasets are rarely the subject of dedicated research~\cite{sambasivan2021datacascades}. On the modeling side, empirical experimentation is relatively straightforward: given sufficient compute, permutations of architecture width, depth, normalization, and training hyperparameters can be rigorously evaluated, yielding consistent improvements over the years~\cite{touvron2023llamaopenefficientfoundation, adept2023persimmon}. The dataset side, however, remains far less transparent. Most large-scale training sets are not publicly released, leaving the community to pursue open reproductions~\cite{schuhmann2021laion400mopendatasetclipfiltered, kakaobrain2022coyo700m, gao2020pile800gbdatasetdiverse}---efforts that are often one-off and lack the iterative refinement that models enjoy. While recent initiatives such as DataPerf, DataComp, and MetaCLIP~\cite{mazumder2023dataperfbenchmarksdatacentricai, gadre2023datacompsearchgenerationmultimodal, xu2025demystifyingclipdata} have begun to bridge this gap by providing consistent evaluation and reproduction frameworks, we argue that dataset design can and should leverage the same principled methodology as model design. In particular, large-scale dataset construction can generally be decomposed into two phases: uncurated data collection and dataset filtering.
 
-This challenge is especially pronounced in the emerging domain of Computer-Use agents. Graphical User Interfaces (GUIs) are central to how people interact with the digital world, serving as the primary medium for a wide range of daily tasks. Large Language Models (LLMs), originally developed as conversational chatbots~\cite{ouyang2022traininglanguagemodelsfollow, openai2024gpt4technicalreport, thoppilan2022lamdalanguagemodelsdialog}, have since proven capable of far more: their ability to comprehend complex language instructions and seamlessly integrate external tools has revealed significant potential for automating complex workflows through Computer-Use agents~\cite{yao2023reactsynergizingreasoningacting, schick2023toolformerlanguagemodelsteach}. This progress has motivated the development of intelligent agents that can substantially streamline human–computer interaction based on natural language instructions.
+Recent progress in machine learning has been largely driven by scaling
+laws~\cite{kaplan2020scaling, hestness2017deeplearningscalingpredictable,
+aghajanyan2023scalinglawsgenerativemixedmodal, cherti2023reproducible},
+as exemplified by models such as GPT-4, CLIP and Stable Diffusion \cite{openai2024gpt4technicalreport, rombach2022highresolutionimagesynthesislatent,radford2021learningtransferablevisualmodels}
+These advances rest on three pillars: Compute, Model size, and Training data.
+Of these, training data has received the least systematic
+attention---despite its crucial role, datasets are rarely the subject of
+dedicated research~\cite{sambasivan2021datacascades}.
 
-Early work in this area focused on language-only agents~\cite{deng2023mind2webgeneralistagentweb, browseruse2024, nakano2022webgptbrowserassistedquestionansweringhuman} built on top of closed-source, API-based LLMs such as GPT-5~\cite{singh2025openaigpt5card}, leveraging text-rich metadata like HTML inputs or accessibility trees to perform navigation and other tasks. However, this text-only paradigm faces fundamental limitations in practice: (1)~unlike web environments, general Computer-Use scenarios do not always expose rich API-based metadata, and (2)~users typically interact with interfaces visually---through screenshots---without access to the underlying structural information. These limitations underscore the need for Computer-Use \textit{visual} agents that can perceive and interact with UIs in the same way humans do.
+On the modeling side, empirical experimentation is relatively
+straightforward: given sufficient compute, permutations of architecture
+width, depth, normalization, and training hyperparameters can be
+rigorously evaluated, yielding consistent improvements over the
+years~\cite{touvron2023llamaopenefficientfoundation, adept2023persimmon}.
+The dataset side, however, remains far less transparent.
+Most large-scale training sets are not publicly released, leaving the
+community to pursue open
+reproductions~\cite{schuhmann2021laion400mopendatasetclipfiltered,
+kakaobrain2022coyo700m, gao2020pile800gbdatasetdiverse}.
+While recent initiatives such as DataPerf, DataComp, and
+MetaCLIP~\cite{mazumder2023dataperfbenchmarksdatacentricai,
+gadre2023datacompsearchgenerationmultimodal, xu2025demystifyingclipdata}
+have begun to bridge this gap by providing consistent evaluation and
+reproduction frameworks, we argue that dataset design can and should
+leverage the same principled methodology as model design.
+In particular, large-scale dataset construction can generally be
+decomposed into two phases: uncurated data collection and dataset
+filtering.
 
-Given a user instruction, the Computer-Use task can be broadly decomposed into two components: (1)~\textit{planning}---generating one or a sequence of actions to execute---and (2)~\textit{grounding}---mapping the relevant UI element(s) to precise coordinates on the screen by autoregressively predicting the bounding box or, in our case, the center of the target UI element. Figure~\ref{fig:grounding_task} illustrates this grounding process: given a screenshot and a natural language instruction, a Vision-Language Model (VLM) predicts the target coordinates on the screen. This decomposition highlights the core difficulty of the problem, as it demands both rich semantic understanding of UI elements and accurate pixel-level localization. To address these requirements, researchers have begun training vision-language models specifically with these capabilities in mind; for instance, \cite{qin2025uitars, yang2025gta1, gu2025uivenus, yuan2025segui} utilize web screenshot datasets to enhance large multi-modal models' element-grounding abilities.
+\medskip
+
+This challenge is especially pronounced in the emerging domain of
+Computer-Use agents.
+Graphical User Interfaces (GUIs) are central to how people interact with
+the digital world, serving as the primary medium for a wide range of
+daily tasks.
+Large Language Models (LLMs), originally developed as conversational
+chatbots~\cite{ouyang2022traininglanguagemodelsfollow,
+openai2024gpt4technicalreport, thoppilan2022lamdalanguagemodelsdialog},
+have since proven capable of far more: their ability to comprehend
+complex language instructions and seamlessly integrate external tools has
+revealed significant potential for automating complex workflows through
+Computer-Use agents~\cite{yao2023reactsynergizingreasoningacting,
+schick2023toolformerlanguagemodelsteach}.
+This progress has motivated the development of intelligent agents that
+can substantially streamline human--computer interaction based on natural
+language instructions.
+
+\medskip
+
+Early work in this area focused on language-only
+agents~\cite{deng2023mind2webgeneralistagentweb, browseruse2024,
+nakano2022webgptbrowserassistedquestionansweringhuman} built on top of
+closed-source, API-based LLMs such as
+GPT-5~\cite{singh2025openaigpt5card}, leveraging text-rich metadata like
+HTML inputs or accessibility trees to perform navigation and other tasks.
+However, this text-only paradigm faces fundamental limitations in
+practice:
+(1)~unlike web environments, general Computer-Use scenarios do not always
+expose rich API-based metadata, and
+(2)~users typically interact with interfaces visually---through
+screenshots---without access to the underlying structural information.
+These limitations underscore the need for Computer-Use \textit{visual}
+agents that can perceive and interact with UIs in the same way humans do.
+
+\medskip
+
+Given a user instruction, the Computer-Use task can be broadly
+decomposed into two components:
+(1)~\textit{planning}---generating one or a sequence of actions to
+execute---and
+(2)~\textit{grounding}---mapping the relevant UI element(s) to precise
+coordinates on the screen by autoregressively predicting the bounding box
+or, in our case, the center of the target UI element.
+Figure~\ref{fig:grounding_task} illustrates this grounding process: given
+a screenshot and a natural language instruction, a Vision-Language Model
+(VLM) predicts the target coordinates on the screen.
+This decomposition highlights the core difficulty of the problem, as it
+demands both rich semantic understanding of UI elements and accurate
+pixel-level localization.
+To address these requirements, researchers have begun training
+vision-language models specifically with these capabilities in mind; for
+instance, \cite{qin2025uitars, yang2025gta1, gu2025uivenus,
+yuan2025segui} utilize web screenshot datasets to enhance large
+multi-modal models' element-grounding abilities.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/GroundingTask.png}
-\caption{Overview of the grounding task. Given a screenshot and a user instruction (e.g., ``Open a new tab.''), a Vision-Language Model (VLM) predicts the coordinates of the target UI element on the screen.}
+\caption{Overview of the grounding task. Given a screenshot and a user
+  instruction (e.g., ``Open a new tab.''), a Vision-Language Model (VLM)
+  predicts the coordinates of the target UI element on the screen.}
 \label{fig:grounding_task}
 \end{figure}
 
-Despite this progress, training multi-modal models for GUI visual agents continues to face several significant challenges:
+\medskip
+
+Despite this progress, training multi-modal models for GUI visual agents
+continues to face several significant challenges:
 \begin{enumerate}[label=(\alph*)]
-    \item \textbf{Availability of Unfiltered Training Data:} Whereas LLM and VLM pretraining can draw on vast pools of (albeit low-quality) data such as Common Crawl~\cite{commoncrawl}, the Computer-Use domain does not yet benefit from a comparable abundance of raw data. Multiple heterogeneous sources exist, but they must first be normalized and unified before any filtering can even begin. Moreover, many state-of-the-art models remain closed-source, restricting access to their training data. Even among open-source models~\cite{qin2025uitars}, the training data or its exact specification is often unavailable, making it difficult to reproduce or build upon existing work.
-    \item \textbf{Training Data Composition:} Mirroring the challenges faced by language-based Computer-Use agents, the availability of rich APIs for the web has led to a pronounced overrepresentation of web-based data in existing training sets. Professional desktop application data, by contrast, is considerably more difficult to obtain with reliable annotations, resulting in a significant domain imbalance.
-    \item \textbf{Resolution and Aspect Ratio Variability:} If Computer-Use agents are to be deployed in real-world settings rather than on standardized virtual machines, they must contend with widely varying screenshot aspect ratios, resolutions, and sizes. This necessitates either resizing screenshots---at the cost of information loss---or training models that can generalize robustly across heterogeneous display configurations.
+    \item \textbf{Availability of Unfiltered Training Data:}
+    Whereas LLM and VLM pretraining can draw on vast pools of (albeit
+    low-quality) data such as Common Crawl~\cite{commoncrawl}, the
+    Computer-Use domain does not yet benefit from a comparable abundance
+    of raw data.
+    Multiple heterogeneous sources exist, but they must first be
+    normalized and unified before any filtering can even begin.
+    Even among open-source models~\cite{qin2025uitars}, the training data
+    or its exact specification is often unavailable, making it difficult
+    to reproduce or build upon existing work.
+
+    \item \textbf{Training Data Composition:}
+    Mirroring the challenges faced by language-based Computer-Use agents,
+    the availability of rich APIs for the web has led to a pronounced
+    overrepresentation of web-based data in existing training sets.
+    Professional desktop application data, by contrast, is considerably
+    more difficult to obtain with reliable annotations, resulting in a
+    significant domain imbalance.
+
+    \item \textbf{Resolution and Aspect Ratio Variability:}
+    If Computer-Use agents are to be deployed in real-world settings
+    rather than on standardized virtual machines, they must contend with
+    widely varying screenshot aspect ratios, resolutions, and sizes.
+    This necessitates either resizing screenshots---at the cost of
+    information loss---or training models that can generalize robustly
+    across heterogeneous display configurations.
 \end{enumerate}

@@ -5,29 +5,17 @@
 \usepackage{bookmark}
 \usepackage{xcolor}
 \usepackage{listings}
+\usepackage{enumitem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT METADATA
 
 \thesistype{Master's Thesis} % Master's Thesis, Bachelor's Thesis, Semester Thesis, Group Project
-\title{Training a State of the Art Model Grounding Model}
-
+\title{Gelato-30B-A3B: Training a State of the Art Model Grounding Model}
 \author{Aylin Akkus}
 \email{aakkus@ethz.ch}
-
-\institute{Distributed Computing Group \\[2pt]
-Computer Engineering and Networks Laboratory \\[2pt]
-ETH Zürich}
-
-% Optionally, you can put in your own logo here
-%\logo{\includegraphics[width=0.2\columnwidth]{figures/disco_logo_faded}}
-
-\supervisors{Supervisor 1, Supervisor 2\\[2pt] Prof.\ Dr.\ Roger Wattenhofer}
-
-% Optionally, keywords and categories of the work can be shown (on the Abstract page)
-%\keywords{Keywords go here.}
-%\categories{ACM categories go here.}
-
+\institute{Distributed Computing Group \\[2pt] Computer Engineering and Networks Laboratory \\[2pt] ETH Zürich}
+\supervisors{Prof.\ Dr.\ Roger Wattenhofer, Prof.\ Dr.\ Ludwig Schmidt}
 \date{\today}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,14 +28,38 @@ ETH Zürich}
 \cleardoublepage
 
 \begin{acknowledgements}
-	We thank Florian Brand for sharing details on OS-World task quality issues and Yan Yang for details on GTA1 agent evaluation.
+I would like to express my sincere gratitude to my supervisors, Prof.\ Dr.\ Roger Wattenhofer, Prof.\ Dr.\ Ludwig Schmidt, and Prof.\ Dr.\ Yejin Choi, for their invaluable guidance and support throughout my Master's thesis. Their expertise and insightful feedback have been instrumental in shaping this research.
 
-We gratefully acknowledge computing time granted for the project synthesis by the JARA on the supercomputer JURECA at Juelich Supercomputing Center (JSC) and storage resources on JUST granted and operated by JSC and supported by Helmholtz Data Federation (HDF).
+I am also grateful to Anas Awadalla and Drubha Ghosh for their collaboration on the project. The discussions and support within the team have been a great source of motivation.
+I furthermore thank Florian Brand for sharing details on OS-World task quality issues and Yan Yang for details on GTA1 agent evaluation.
+
+I gratefully acknowledge computing time granted for the project synthesis by the JARA on the supercomputer JURECA at Jülich Supercomputing Center (JSC), as well as storage resources on JUST granted and operated by JSC and supported by the Helmholtz Data Federation (HDF).
+
+Finally, I am deeply thankful to my life partner, Mert Unsal, for his constant love, patience, and understanding throughout this journey.
+
+\paragraph{Unique Contributions.}
+As most of this work was possible only as a collaborative effort, I would like to outline my unique contributions to this Master's thesis. In particular, I:
+\begin{itemize}
+    \item Participated in the search and normalization of the existing data sources.
+    \item Ran experiments with different filtering methods for the difficulty-based filtering, trained models, and evaluated the results on the offline benchmarks.
+    \item Developed methods to utilize APIs (DOM trees and Accessibility Trees) to supplement training data beyond the web, leveraging richer semantic information to generate instructions.
+    \item Studied the effect of dense vs.\ sparse rewards on model performance during reinforcement learning training.
+    \item Wrote an agentic harness to evaluate the model on the OS-World benchmark and conducted human evaluation to mitigate the limitations of automated evaluators.
+    \item Wrote this thesis in full (all text, figure selection and placement, and experimental narration).
+\end{itemize}
+
+\paragraph{Scope and Non-Contributions.}
+\begin{itemize}
+    \item I did not participate in the video annotation process for the supplemental data collection.
+    \item I did not participate in running the online OS-World evaluations using containerization and VMs.
+\end{itemize}
 \end{acknowledgements}
 
 
 \begin{abstract}
-We present Gelato-30B-A3B, a state-of-the-art grounding model for GUI computer-use tasks. Gelato is trained on our open-sourced Click-100k dataset and achieves 63.88\% accuracy on ScreenSpot-Pro and 69.15\% / 74.65\% on OS-World-G / OS-World-G (Refined), surpassing prior specialized computer grounding models like GTA1-32B and much larger vision-language models including Qwen3-VL-235B-A22B-Instruct. When combined with GPT-5, Gelato enables strong agentic performance at 58.71\% automated success rate (61.85\% with human evaluation) versus 56.97\% (59.47\% with human evaluation) for GTA1-32B on OS-World. This thesis describes the complete pipeline from data curation and filtering to reinforcement learning training that enables these results.
+Recent progress in machine learning has been driven largely by scaling compute, model size, and training data---yet of these three pillars, training data has received the least systematic attention. This gap is especially pronounced for Computer-Use agents, where limited heterogeneous data sources exist and data practices remain closed source.
+
+In this thesis we apply a data-centric methodology to the Graphical User Interface (GUI) grounding problem and introduce \textbf{Click-100k}, an open-source dataset assembled through a complete pipeline of data curation, filtering, and quality control across diverse GUI domains. We then train \textbf{Gelato-30B-A3B}, a state-of-the-art grounding model for GUI computer-use tasks, on Click-100k using reinforcement learning. Gelato achieves 63.88\% accuracy on ScreenSpot-Pro and 69.15\,/\,74.65\% on OS-World-G\,/\,OS-World-G (Refined), surpassing prior specialized grounding models such as GTA1-32B and much larger vision-language models including Qwen3-VL-235B-A22B-Instruct. When paired with GPT-5 as the planning backbone, Gelato enables strong agentic performance at 58.71\% automated success rate (61.85\% with human evaluation) versus 56.97\% (59.47\% with human evaluation) for GTA1-32B on OS-World. We describe the complete pipeline---from data curation and filtering to reinforcement learning training---that enables these results and open-source both the dataset and the model.
 \end{abstract}
 
 \tableofcontents

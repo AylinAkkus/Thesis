@@ -1,0 +1,22 @@
+\subsection{Evaluation Benchmarks}
+\subsubsection{Offline Benchmarks}
+We evaluate grounding performance using four offline benchmarks and one online benchmark. Offline benchmarks pair a screenshot with a natural-language instruction and require the model to predict the coordinates of the referenced UI element; performance is measured via spatial containment between the predicted coordinates and annotated bounding boxes. They are fast and inexpensive to run.
+
+\paragraph{ScreenSpot.}
+ScreenSpot~\cite{cheng2024seeclickharnessingguigrounding} was the first realistic GUI grounding benchmark spanning mobile, desktop, and web environments, comprising over 600 screenshots and more than 1,200 instructions. However, recent models have largely saturated ScreenSpot, achieving approximately 90\% accuracy, which limits its discriminative power.
+
+\paragraph{ScreenSpot-V2.}
+ScreenSpot-V2~\cite{screenspotv2} addresses annotation quality issues in the original ScreenSpot benchmark by identifying and re-annotating 11.32\% of incorrect samples, providing a more reliable evaluation baseline.
+Despite being nearly saturated, ScreenSpot-V2 was still used as a benchmark for evaluating grounding performance.
+
+\paragraph{ScreenSpot-Pro.}
+ScreenSpot-Pro~\cite{li2025screenspotpro} targets complex, high-resolution professional desktop environments. It contains 1,581 authentic full-screen images from 23 professional applications across five industries and three operating systems. Grounding targets are extremely small---on average only 0.07\% of the screen area---and embedded in dense, multi-window workflows, making ScreenSpot-Pro substantially more challenging than its predecessors.
+
+\paragraph{OS-World-G.}
+OS-World-G~\cite{xie2025jedi} is a fine-grained grounding benchmark built on screenshots from the OS-World online environment. It comprises 564 manually annotated examples covering text matching, element recognition, layout understanding, fine-grained manipulation, and infeasible instruction handling. A corrected variant, OS-World-G (Refined), fixes annotation errors in the original set.
+
+\subsubsection{Online Benchmarks}
+Online benchmarks instead provide a high-level task instruction and grant the model access to a live virtual machine, where it must interact through mouse and keyboard actions; they are more realistic but substantially harder to evaluate.
+
+\paragraph{OS-World.}
+OS-World~\cite{xie2024osworldbenchmarkingmultimodalagents} is an online benchmark providing a scalable virtual-machine infrastructure across operating systems. It includes 369 open-ended tasks derived from real-world use cases---spanning web browsing, office software, file operations, coding, and multi-application workflows---each equipped with an initial state configuration and an execution-based evaluation script. Agents interact through raw mouse and keyboard actions, making OS-World the most realistic evaluation setting used in this thesis.
