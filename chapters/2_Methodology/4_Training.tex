@@ -1,1 +1,30 @@
 \section{Training}
+
+
+\paragraph{Stabilizing RL Training}
+Existing RL algorithms suffer from a gradient-decreasing problem when some prompts have accuracy equal to 1. For example, in GRPO, if all outputs $\{o_i\}_{i=1}^{G}$ of a particular prompt are correct and receive the same reward, the resulting advantage for this group is zero. A zero advantage results in zero policy gradients, shrinking the gradient magnitude and increasing the noise sensitivity of the batch gradient, thereby degrading sample efficiency.
+
+Let the intended batch size be $B$ and the effective batch size be $B_{\text{eff}}$. Then
+\[
+B_{\text{eff}} = \sum_{i=1}^{B} \mathbf{1}\{A_i \neq 0\}.
+\]
+
+Under the i.i.d. assumption,
+\[
+B_{\text{eff}} \sim \mathrm{Binomial}(B, 1-p).
+\]
+
+The expected effective batch size is
+\[
+\mathbb{E}[B_{\text{eff}}] = B(1-p).
+\]
+The variance is
+\[
+\mathrm{Var}(B_{\text{eff}}) = B(1-p)p.
+\]
+
+This formulation reveals two problems: (1) a priori imbalance in sample difficulties, and (2) the number of samples with accuracy equal to 1 continues to increase during training, further exacerbating the problem. While DAPO focuses on online over-sampling and filtering to address this issue, we also employ a priori filtering. Without a priori filtering, we would need to oversample more aggressively and may exhaust the oversampling budget, resulting in increased variance in the effective batch size.
+
+% TODO: does easyr1 implement DAPO style oversampling?
+
+To this end, we propose filtering out prompts with accuracy equal to 1 and 0 before training, thereby decreasing the probability $p$ and maintaining more stable RL training throughout the optimization process.

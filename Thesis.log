@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  14 FEB 2026 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  16 FEB 2026 23:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,67 +643,85 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
 )
 \BKM@id=\count323
 ))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count324
+\lst@gtempboxa=\box65
+\lst@token=\toks45
+\lst@length=\count325
+\lst@currlwidth=\dimen265
+\lst@column=\count326
+\lst@pos=\count327
+\lst@lostspace=\dimen266
+\lst@width=\dimen267
+\lst@newlines=\count328
+\lst@lineno=\count329
+\lst@maxwidth=\dimen268
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count330
+\lst@skipnumbers=\count331
+\lst@framebox=\box66
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+
 (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count324
-\l__pdf_internal_box=\box65
+\l__color_backend_stack_int=\count332
+\l__pdf_internal_box=\box67
 )
-(./Thesis.aux (./chapters/1_Introduction/Introduction.aux)
-(./chapters/2_Methodology/Methodology.aux) (./chapters/3_Results/Results.aux)
-(./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.aux)
-(./chapters/5_Appendix/Appendix.aux))
+(./Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count325
-\scratchdimen=\dimen265
-\scratchbox=\box66
-\nofMPsegments=\count326
-\nofMParguments=\count327
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count328
-\MPscratchDim=\dimen266
-\MPnumerator=\count329
-\makeMPintoPDFobject=\count330
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count333
+\scratchdimen=\dimen269
+\scratchbox=\box68
+\nofMPsegments=\count334
+\nofMParguments=\count335
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count336
+\MPscratchDim=\dimen270
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
+\everyMPtoPDFconversion=\toks47
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 33.
+Package hyperref Info: Link coloring ON on input line 35.
+\c@lstlisting=\count339
 Package epstopdf Info: Source file: <figures/eth_logo_black.eps>
 (epstopdf)                    date: 2026-02-03 10:56:40
 (epstopdf)                    size: 258515 bytes
@@ -713,13 +731,13 @@ f>
 (epstopdf)                    size: 14056 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/eth_logo_black-eps
 -converted-to.pdf figures/eth_logo_black.eps>
-(epstopdf)             \includegraphics on input line 37.
+(epstopdf)             \includegraphics on input line 39.
 Package epstopdf Info: Output file is already uptodate.
 <figures/eth_logo_black-eps-converted-to.pdf, id=7, 191.71625pt x 57.21375pt>
 File: figures/eth_logo_black-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/eth_logo_black-eps-converted-to.pdf>
 Package pdftex.def Info: figures/eth_logo_black-eps-converted-to.pdf  used on i
-nput line 37.
+nput line 39.
 (pdftex.def)             Requested size: 177.66374pt x 47.17624pt.
 
 
@@ -736,12 +754,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 \begin{abstract}
+l.49 \begin{abstract}
                       [1
 
 
 ]
-Overfull \hbox (7.2174pt too wide) in paragraph at lines 48--49
+Overfull \hbox (7.2174pt too wide) in paragraph at lines 50--51
 \T1/cmr/m/n/10.95 We present Gelato-30B-A3B, a state-of-the-art ground-ing mode
 l for GUI computer-
  []
@@ -764,16 +782,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [3
 
-])
+]
+
+[4])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
 
 
-[4]
-\openout2 = `chapters/1_Introduction/Introduction.aux'.
-
- (./chapters/1_Introduction/Introduction.tex
+[5] (./chapters/1_Introduction/Introduction.tex
 Chapter 1.
 (./chapters/1_Introduction/1_Motivation/Motivation.tex)
 (./chapters/1_Introduction/2_RelatedWork/RelatedWork.tex
@@ -781,64 +798,57 @@ Chapter 1.
 [1
 
 
-
-]
-
-[2]
-Chapter 2.
-(./chapters/1_Introduction/2_RelatedWork/VisionLanguageModels.tex)
+] (./chapters/1_Introduction/2_RelatedWork/VisionLanguageModels.tex)
 (./chapters/1_Introduction/2_RelatedWork/GroundingModels.tex
 
-LaTeX Warning: Citation `gta1' on page 3 undefined on input line 3.
+LaTeX Warning: Citation `gta1' on page 2 undefined on input line 3.
 
 
-LaTeX Warning: Citation `uitars' on page 3 undefined on input line 5.
+LaTeX Warning: Citation `uitars' on page 2 undefined on input line 5.
 
 
-LaTeX Warning: Citation `uivenus' on page 3 undefined on input line 7.
+LaTeX Warning: Citation `uivenus' on page 2 undefined on input line 7.
 
 
-LaTeX Warning: Citation `segui' on page 3 undefined on input line 9.
+LaTeX Warning: Citation `segui' on page 2 undefined on input line 9.
 
 
-LaTeX Warning: Citation `omniparser' on page 3 undefined on input line 11.
+LaTeX Warning: Citation `omniparser' on page 2 undefined on input line 11.
 
 ) (./chapters/1_Introduction/2_RelatedWork/DataSets.tex
 
-LaTeX Warning: Citation `showui' on page 3 undefined on input line 5.
+LaTeX Warning: Citation `showui' on page 2 undefined on input line 5.
 
 
-LaTeX Warning: Citation `autogui' on page 3 undefined on input line 7.
+LaTeX Warning: Citation `autogui' on page 2 undefined on input line 7.
 
 
-LaTeX Warning: Citation `seeclick' on page 3 undefined on input line 9.
+LaTeX Warning: Citation `seeclick' on page 2 undefined on input line 9.
 
 
 
-[3
+[2]
 
-]
-
-LaTeX Warning: Citation `pixmo' on page 4 undefined on input line 11.
+LaTeX Warning: Citation `pixmo' on page 3 undefined on input line 11.
 
 
-LaTeX Warning: Citation `osatlas' on page 4 undefined on input line 13.
+LaTeX Warning: Citation `osatlas' on page 3 undefined on input line 13.
 
 
-LaTeX Warning: Citation `uground' on page 4 undefined on input line 15.
+LaTeX Warning: Citation `uground' on page 3 undefined on input line 15.
 
 
-LaTeX Warning: Citation `waveui' on page 4 undefined on input line 17.
+LaTeX Warning: Citation `waveui' on page 3 undefined on input line 17.
 
 
-LaTeX Warning: Citation `pcagente' on page 4 undefined on input line 19.
+LaTeX Warning: Citation `pcagente' on page 3 undefined on input line 19.
 
 
-LaTeX Warning: Citation `uivision' on page 4 undefined on input line 21.
+LaTeX Warning: Citation `uivision' on page 3 undefined on input line 21.
 
 ) (./chapters/1_Introduction/2_RelatedWork/EvaluationBenchmarks.tex
 
-LaTeX Warning: Citation `screenspot' on page 4 undefined on input line 3.
+LaTeX Warning: Citation `screenspot' on page 3 undefined on input line 3.
 
 
 Overfull \hbox (17.01564pt too wide) in paragraph at lines 3--4
@@ -847,124 +857,133 @@ Overfull \hbox (17.01564pt too wide) in paragraph at lines 3--4
  []
 
 
-LaTeX Warning: Citation `osworld' on page 4 undefined on input line 5.
+LaTeX Warning: Citation `osworld' on page 3 undefined on input line 5.
 
 ) (./chapters/1_Introduction/2_RelatedWork/ReinforcementLearning.tex
 
-LaTeX Warning: Citation `grpo' on page 4 undefined on input line 3.
+LaTeX Warning: Citation `grpo' on page 3 undefined on input line 3.
 
 
-LaTeX Warning: Citation `dapo' on page 4 undefined on input line 5.
+LaTeX Warning: Citation `dapo' on page 3 undefined on input line 5.
 
-)) (./chapters/1_Introduction/3_Contributions/Contribution.tex
+)) (./chapters/1_Introduction/3_Contributions/Contribution.tex)
+(./chapters/1_Introduction/4_ThesisStructure/ThesisStructure.tex))
+(./chapters/2_Methodology/Methodology.tex
 
-[4]
-Chapter 3.
-) (./chapters/1_Introduction/4_ThesisStructure/ThesisStructure.tex
-
-[5
-
-]
-Chapter 4.
-))
-
-[6
-
-]
-\openout2 = `chapters/2_Methodology/Methodology.aux'.
-
- (./chapters/2_Methodology/Methodology.tex
-Chapter 5.
+[3]
+Chapter 2.
 (./chapters/2_Methodology/1_DataCuration.tex
 
-LaTeX Warning: Citation `lin2024showui' on page 7 undefined on input line 3.
+LaTeX Warning: Citation `lin2024showui' on page 4 undefined on input line 3.
 
 
-LaTeX Warning: Citation `li2025autogui' on page 7 undefined on input line 3.
+LaTeX Warning: Citation `li2025autogui' on page 4 undefined on input line 3.
 
 
-LaTeX Warning: Citation `he2025pcagente' on page 7 undefined on input line 3.
+LaTeX Warning: Citation `he2025pcagente' on page 4 undefined on input line 3.
 
 
-LaTeX Warning: Citation `agentsea2024waveui' on page 7 undefined on input line 
+LaTeX Warning: Citation `agentsea2024waveui' on page 4 undefined on input line 
 3.
 
 
-LaTeX Warning: Citation `wu2024osatlas' on page 7 undefined on input line 3.
+LaTeX Warning: Citation `wu2024osatlas' on page 4 undefined on input line 3.
 
 
-LaTeX Warning: Citation `gou2024uground' on page 7 undefined on input line 3.
+LaTeX Warning: Citation `gou2024uground' on page 4 undefined on input line 3.
 
 
-LaTeX Warning: Citation `deitke2024molmo' on page 7 undefined on input line 3.
+LaTeX Warning: Citation `deitke2024molmo' on page 4 undefined on input line 3.
 
 
-LaTeX Warning: Citation `cheng2024seeclick' on page 7 undefined on input line 3
+LaTeX Warning: Citation `cheng2024seeclick' on page 4 undefined on input line 3
 .
 
 
 
-[7
-
-
-
+[4
 
 ]
 
-LaTeX Warning: Citation `qwen2025qwen25vl' on page 8 undefined on input line 33
+LaTeX Warning: Citation `qwen2025qwen25vl' on page 5 undefined on input line 33
 .
 
 
-LaTeX Warning: Citation `qwen2025qwen3vl' on page 8 undefined on input line 33.
+LaTeX Warning: Citation `qwen2025qwen3vl' on page 5 undefined on input line 33.
 
 
 ) (./chapters/2_Methodology/2_DataFiltering.tex
 
-[8]
-<figures/DataQuality.png, id=192, 2569.6pt x 1686.3pt>
+[5]
+<figures/DataQuality.png, id=194, 2569.6pt x 1686.3pt>
 File: figures/DataQuality.png Graphic file (type png)
 <use figures/DataQuality.png>
 Package pdftex.def Info: figures/DataQuality.png  used on input line 8.
 (pdftex.def)             Requested size: 190.7pt x 125.12903pt.
 
 
-LaTeX Warning: Citation `omniparser' on page 9 undefined on input line 11.
+LaTeX Warning: Citation `omniparser' on page 6 undefined on input line 11.
 
-<figures/FilteringAblation.png, id=193, 642.4803pt x 642.4803pt>
+<figures/FilteringAblation.png, id=195, 642.4803pt x 642.4803pt>
 File: figures/FilteringAblation.png Graphic file (type png)
 <use figures/FilteringAblation.png>
-Package pdftex.def Info: figures/FilteringAblation.png  used on input line 21.
+Package pdftex.def Info: figures/FilteringAblation.png  used on input line 17.
 (pdftex.def)             Requested size: 190.7pt x 190.69666pt.
+<figures/FilteringAllEvals.png, id=197, 859.2903pt x 570.933pt>
+File: figures/FilteringAllEvals.png Graphic file (type png)
+<use figures/FilteringAllEvals.png>
+Package pdftex.def Info: figures/FilteringAllEvals.png  used on input line 18.
+(pdftex.def)             Requested size: 190.7pt x 126.70332pt.
+
+Overfull \hbox (19.42162pt too wide) in paragraph at lines 17--19
+[][] [] 
+ []
 
 
-[9 <./figures/DataQuality.png (PNG copy)>]
-Overfull \hbox (19.2284pt too wide) in paragraph at lines 25--26
+Overfull \hbox (19.2284pt too wide) in paragraph at lines 22--23
  []\T1/cmr/bx/n/10.95 Stabilizing RL Train-ing[] \T1/cmr/m/n/10.95 Ex-ist-ing R
 L al-go-rithms suf-fer from a gradient-decreasing
  []
 
+
+
+[6 <./figures/DataQuality.png (PNG copy)> <./figures/FilteringAblation.png> <./
+figures/FilteringAllEvals.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[7]
+Overfull \hbox (7.6297pt too wide) in paragraph at lines 75--76
+[]\T1/cmr/m/n/10.95 Overall, ShowUI-Web ex-hibits con-sis-tently strong per-for
+-mance across all bench-
+ []
+
+
+Overfull \hbox (78.38205pt too wide) in paragraph at lines 83--95
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 ) (./chapters/2_Methodology/3_SupplementalData.tex
 
-[10 <./figures/FilteringAblation.png>])
-(./chapters/2_Methodology/4_Training.tex))
+[8]) (./chapters/2_Methodology/4_Training.tex))
+(./chapters/3_Results/Results.tex
 
-[11]
-\openout2 = `chapters/3_Results/Results.aux'.
+[9]
+Chapter 3.
 
- (./chapters/3_Results/Results.tex
-Chapter 6.
-
-LaTeX Warning: Citation `screenspot' on page 12 undefined on input line 9.
+LaTeX Warning: Citation `screenspot' on page 10 undefined on input line 9.
 
 
-LaTeX Warning: Citation `osworld' on page 12 undefined on input line 15.
+LaTeX Warning: Citation `osworld' on page 10 undefined on input line 15.
 
 
 
-[12
-
-
-
+[10
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
@@ -980,9 +999,9 @@ er (7.8\TS1/cmr/m/n/10.95 Ö\T1/cmr/m/n/10.95 ) general-purpose
 
 
 
-[13]
+[11]
 
-[14]
+[12]
 Overfull \hbox (136.02007pt too wide) in paragraph at lines 111--112
 \T1/cmr/m/n/10.95 We pro-vide all of our agent's OS-World tra-jec-to-ries at \T
 1/cmtt/m/n/10.95 mlfoundations/gelato-osworld-agent-trajectories
@@ -990,26 +1009,20 @@ Overfull \hbox (136.02007pt too wide) in paragraph at lines 111--112
 
 
 
-[15]
+[13]
 Overfull \hbox (118.49272pt too wide) in paragraph at lines 151--152
 \T1/cmr/m/n/10.95 Detailed re-sults for all 20 man-u-ally eval-u-ated tasks are
  avail-able in \T1/cmtt/m/n/10.95 evaluation/osworld-human-evals.md\T1/cmr/m/n/
 10.95 .
  []
 
-)
+) (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
 
-[16]
-\openout2 = `chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.aux'.
-
- (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
-Chapter 7.
+[14]
+Chapter 4.
 
 
-[17
-
-
-
+[15
 
 ]
 Overfull \hbox (4.90349pt too wide) in paragraph at lines 44--45
@@ -1019,11 +1032,11 @@ an eval-u-a-tion (58.71%
 
 
 
+[16]
+
+[17]
+
 [18]
-
-[19]
-
-[20]
 Overfull \hbox (5.43532pt too wide) in paragraph at lines 122--123
 []\T1/cmr/bx/n/10.95 Iterative re-fine-ment\T1/cmr/m/n/10.95 : En-abling mod-el
 s to make mul-ti-ple at-tempts at ground-
@@ -1037,24 +1050,51 @@ ed bench-marks that test spe-cific ground-
 
 
 
-[21])
-
-[22]
+[19])
 No file Thesis.bbl.
-\openout2 = `chapters/5_Appendix/Appendix.aux'.
 
-(./chapters/5_Appendix/Appendix.tex)
+
+[20] (./chapters/5_Appendix/Appendix.tex
+Overfull \hbox (60.3109pt too wide) in paragraph at lines 16--28
+ [][] 
+ []
+
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 46.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 
 [1
 
 
+]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (135.76894pt too wide) in paragraph at lines 194--204
+ [][] 
+ []
 
 
 
-] (./Thesis.aux (./chapters/1_Introduction/Introduction.aux)
-(./chapters/2_Methodology/Methodology.aux) (./chapters/3_Results/Results.aux)
-(./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.aux)
-(./chapters/5_Appendix/Appendix.aux))
+[2])
+
+[3]
+
+[4]
+
+[5]
+
+[6] (./Thesis.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1063,52 +1103,42 @@ L3 programming layer <2025-01-18>
 
 LaTeX Warning: There were undefined references.
 
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 23 ({)
-### bottom level
-(\end occurred when \iftrue on line 23 was incomplete)
-(\end occurred when \ifx on line 23 was incomplete)
-(\end occurred when \ifx on line 23 was incomplete)
-(\end occurred when \iftrue on line 60 was incomplete)
-(\end occurred when \ifx on line 60 was incomplete)
-(\end occurred when \ifnum on line 60 was incomplete) 
+ ) 
 Here is how much of TeX's memory you used:
- 21960 strings out of 473190
- 411733 string characters out of 5715801
- 773449 words of memory out of 5000000
- 44640 multiletter control sequences out of 15000+600000
- 577860 words of font info for 77 fonts, out of 8000000 for 9000
+ 23595 strings out of 473190
+ 430261 string characters out of 5715801
+ 1277687 words of memory out of 5000000
+ 46178 multiletter control sequences out of 15000+600000
+ 578173 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,8n,132p,916b,684s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-di
-st/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist
-/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/f
-onts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fon
-ts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2025/texmf-dist/fonts
-/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
-ype1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
-e1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
-/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publi
-c/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/
-cm-super/sfsc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm
--super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-s
-uper/sftt1095.pfb>
-Output written on Thesis.pdf (28 pages, 1697876 bytes).
+ 128i,8n,132p,983b,1278s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
+cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/l
+ocal/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loc
+al/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local
+/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/tex
+live/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texli
+ve/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive
+/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2
+025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/202
+5/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/cm-super/sfsc1095.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on Thesis.pdf (32 pages, 1821110 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 493 compressed objects within 5 object streams
- 110 named destinations out of 1000 (max. 500000)
- 460 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 756 PDF objects out of 1000 (max. 8388607)
+ 662 compressed objects within 7 object streams
+ 218 named destinations out of 1000 (max. 500000)
+ 505 words of extra memory for PDF output out of 10000 (max. 10000000)
 

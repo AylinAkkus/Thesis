@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "n_samples": 1,
+    "layer_idx": 46,
+    "m": 100,
+    "num_problems": 1,
+    "temperature": 0.7,
+    "max_new_tokens": 32,
+    "timestamp": "20260217_154327"
+  },
+  "results": [
+    {
+      "problem_id": "aime_0",
+      "prompt": "Find the sum of all integer bases $b>9$ for which $17_b$ is a divisor of $97_b.$",
+      "ground_truth": 70,
+      "samples": [
+        {
+          "sample_idx": 0,
+          "generated_text": "We are given that $17_b$ divides $97_b$, and we are to find the **sum of all integer bases $b > 9",
+          "extracted_answer": 9,
+          "ground_truth": 70,
+          "is_correct": false,
+          "prompt_len": 36,
+          "total_len": 68,
+          "num_checkpoints": 2,
+          "checkpoint_positions": [
+            36,
+            68
+          ],
+          "state_shape": [
+            1,
+            32,
+            128,
+            128
+          ],
+          "state_file": "problem_aime_0_sample_0_states.pt"
+        }
+      ]
+    }
+  ]
+}

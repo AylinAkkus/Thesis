@@ -3,6 +3,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{bookmark}
+\usepackage{xcolor}
+\usepackage{listings}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT METADATA
@@ -54,16 +56,16 @@ We present Gelato-30B-A3B, a state-of-the-art grounding model for GUI computer-u
 
 % Main Chapters (5 chapters as per thesis structure)
 % Chapter 1: Introduction (including Related Work)
-\include{chapters/1_Introduction/Introduction}
+\input{chapters/1_Introduction/Introduction}
 
 % Chapter 2: Methodology (including Data Curation and Training)
-\include{chapters/2_Methodology/Methodology}
+\input{chapters/2_Methodology/Methodology}
 
 % Chapter 3: Results
-\include{chapters/3_Results/Results}
+\input{chapters/3_Results/Results}
 
 % Chapter 4: Conclusion and Future Work
-\include{chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork}
+\input{chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork}
 
 % This displays the bibliography for all cited external documents. All references have to be defined in the file references.bib and can then be cited from within this document.
 \bibliographystyle{IEEEtran}
@@ -71,6 +73,6 @@ We present Gelato-30B-A3B, a state-of-the-art grounding model for GUI computer-u
 
 % Chapter 5: Appendix
 \appendix
-\include{chapters/5_Appendix/Appendix}
+\input{chapters/5_Appendix/Appendix}
 
 \end{document}
