@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  16 FEB 2026 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  18 FEB 2026 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -792,198 +792,215 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [5] (./chapters/1_Introduction/Introduction.tex
 Chapter 1.
-(./chapters/1_Introduction/1_Motivation/Motivation.tex)
-(./chapters/1_Introduction/2_RelatedWork/RelatedWork.tex
+(./chapters/1_Introduction/1_Motivation/Motivation.tex
 
 [1
 
 
-] (./chapters/1_Introduction/2_RelatedWork/VisionLanguageModels.tex)
-(./chapters/1_Introduction/2_RelatedWork/GroundingModels.tex
+]
+<figures/GroundingTask.png, id=219, 867.24pt x 487.8225pt>
+File: figures/GroundingTask.png Graphic file (type png)
+<use figures/GroundingTask.png>
+Package pdftex.def Info: figures/GroundingTask.png  used on input line 12.
+(pdftex.def)             Requested size: 343.25766pt x 193.086pt.
 
-LaTeX Warning: Citation `gta1' on page 2 undefined on input line 3.
-
-
-LaTeX Warning: Citation `uitars' on page 2 undefined on input line 5.
-
-
-LaTeX Warning: Citation `uivenus' on page 2 undefined on input line 7.
-
-
-LaTeX Warning: Citation `segui' on page 2 undefined on input line 9.
-
-
-LaTeX Warning: Citation `omniparser' on page 2 undefined on input line 11.
-
-) (./chapters/1_Introduction/2_RelatedWork/DataSets.tex
-
-LaTeX Warning: Citation `showui' on page 2 undefined on input line 5.
+! Missing number, treated as zero.
+<to be read again> 
+                   \c@* 
+l.18 \begin{enumerate}[label=(\alph*
+                                    )]
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
 
-LaTeX Warning: Citation `autogui' on page 2 undefined on input line 7.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19     \item \textbf
+                      {Availability of Unfiltered Training Data:} Whereas LL...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Citation `seeclick' on page 2 undefined on input line 9.
 
-
-
-[2]
-
-LaTeX Warning: Citation `pixmo' on page 3 undefined on input line 11.
-
-
-LaTeX Warning: Citation `osatlas' on page 3 undefined on input line 13.
-
-
-LaTeX Warning: Citation `uground' on page 3 undefined on input line 15.
-
-
-LaTeX Warning: Citation `waveui' on page 3 undefined on input line 17.
-
-
-LaTeX Warning: Citation `pcagente' on page 3 undefined on input line 19.
-
-
-LaTeX Warning: Citation `uivision' on page 3 undefined on input line 21.
-
-) (./chapters/1_Introduction/2_RelatedWork/EvaluationBenchmarks.tex
-
-LaTeX Warning: Citation `screenspot' on page 3 undefined on input line 3.
-
-
-Overfull \hbox (17.01564pt too wide) in paragraph at lines 3--4
-\T1/cmr/bx/n/10.95 ScreenSpot-Pro \T1/cmr/m/n/10.95 [[]] of-fers GUI ground-ing
- eval-u-a-tion for pro-fes-sional high-resolution
+[2 <./figures/GroundingTask.png>]
+Overfull \hbox (2.85698pt too wide) in paragraph at lines 20--21
+[]\T1/cmr/bx/n/10.95 Training Data Com-po-si-tion: \T1/cmr/m/n/10.95 Mir-ror-in
+g the chal-lenges faced by language-
  []
 
+) (./chapters/1_Introduction/2_RelatedWork/RelatedWork.tex
+(./chapters/1_Introduction/2_RelatedWork/VisionLanguageModels.tex)
+(./chapters/1_Introduction/2_RelatedWork/GroundingModels.tex)
+(./chapters/1_Introduction/2_RelatedWork/DataSets.tex
 
-LaTeX Warning: Citation `osworld' on page 3 undefined on input line 5.
+[3]
+Overfull \hbox (1.21011pt too wide) in paragraph at lines 13--14
+[]\T1/cmr/bx/n/10.95 OS-Atlas \T1/cmr/m/n/10.95 [[]] in-tro-duces a foun-da-tio
+n ac-tion model for gen-er-al-ist GUI agents,
+ []
+
+) (./chapters/1_Introduction/2_RelatedWork/EvaluationBenchmarks.tex
+Overfull \hbox (4.06523pt too wide) in paragraph at lines 3--4
+\T1/cmr/m/n/10.95 resolution com-puter use, pro-vid-ing a chal-leng-ing bench-m
+ark for mea-sur-ing ground-
+ []
 
 ) (./chapters/1_Introduction/2_RelatedWork/ReinforcementLearning.tex
 
-LaTeX Warning: Citation `grpo' on page 3 undefined on input line 3.
-
-
-LaTeX Warning: Citation `dapo' on page 3 undefined on input line 5.
-
-)) (./chapters/1_Introduction/3_Contributions/Contribution.tex)
+[4])) (./chapters/1_Introduction/3_Contributions/Contribution.tex)
 (./chapters/1_Introduction/4_ThesisStructure/ThesisStructure.tex))
 (./chapters/2_Methodology/Methodology.tex
 
-[3]
+[5]
 Chapter 2.
 (./chapters/2_Methodology/1_DataCuration.tex
 
-LaTeX Warning: Citation `lin2024showui' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Citation `li2025autogui' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Citation `he2025pcagente' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Citation `agentsea2024waveui' on page 4 undefined on input line 
-3.
-
-
-LaTeX Warning: Citation `wu2024osatlas' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Citation `gou2024uground' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Citation `deitke2024molmo' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Citation `cheng2024seeclick' on page 4 undefined on input line 3
-.
-
-
-
-[4
+[6
 
 ]
+<figures/DataQuality.png, id=303, 2569.6pt x 1686.3pt>
+File: figures/DataQuality.png Graphic file (type png)
+<use figures/DataQuality.png>
+Package pdftex.def Info: figures/DataQuality.png  used on input line 44.
+(pdftex.def)             Requested size: 381.4pt x 250.28381pt.
 
-LaTeX Warning: Citation `qwen2025qwen25vl' on page 5 undefined on input line 33
-.
 
-
-LaTeX Warning: Citation `qwen2025qwen3vl' on page 5 undefined on input line 33.
-
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./chapters/2_Methodology/2_DataFiltering.tex
 
-[5]
-<figures/DataQuality.png, id=194, 2569.6pt x 1686.3pt>
-File: figures/DataQuality.png Graphic file (type png)
-<use figures/DataQuality.png>
-Package pdftex.def Info: figures/DataQuality.png  used on input line 8.
-(pdftex.def)             Requested size: 190.7pt x 125.12903pt.
+[7]
 
-
-LaTeX Warning: Citation `omniparser' on page 6 undefined on input line 11.
-
-<figures/FilteringAblation.png, id=195, 642.4803pt x 642.4803pt>
+[8 <./figures/DataQuality.png (PNG copy)>]
+<figures/Omniparser.png, id=326, 1284.8pt x 803.0pt>
+File: figures/Omniparser.png Graphic file (type png)
+<use figures/Omniparser.png>
+Package pdftex.def Info: figures/Omniparser.png  used on input line 14.
+(pdftex.def)             Requested size: 343.25766pt x 214.53387pt.
+<figures/FilteringAblation.png, id=330, 642.4803pt x 642.4803pt>
 File: figures/FilteringAblation.png Graphic file (type png)
 <use figures/FilteringAblation.png>
-Package pdftex.def Info: figures/FilteringAblation.png  used on input line 17.
+Package pdftex.def Info: figures/FilteringAblation.png  used on input line 23.
 (pdftex.def)             Requested size: 190.7pt x 190.69666pt.
-<figures/FilteringAllEvals.png, id=197, 859.2903pt x 570.933pt>
+<figures/FilteringAllEvals.png, id=331, 859.2903pt x 570.933pt>
 File: figures/FilteringAllEvals.png Graphic file (type png)
 <use figures/FilteringAllEvals.png>
-Package pdftex.def Info: figures/FilteringAllEvals.png  used on input line 18.
+Package pdftex.def Info: figures/FilteringAllEvals.png  used on input line 24.
 (pdftex.def)             Requested size: 190.7pt x 126.70332pt.
 
-Overfull \hbox (19.42162pt too wide) in paragraph at lines 17--19
+Overfull \hbox (19.42162pt too wide) in paragraph at lines 23--25
 [][] [] 
  []
 
 
-Overfull \hbox (19.2284pt too wide) in paragraph at lines 22--23
+
+[9 <./figures/Omniparser.png (PNG copy)>]
+
+[10 <./figures/FilteringAblation.png> <./figures/FilteringAllEvals.png>]
+Overfull \hbox (7.6297pt too wide) in paragraph at lines 54--55
+[]\T1/cmr/m/n/10.95 Overall, ShowUI-Web ex-hibits con-sis-tently strong per-for
+-mance across all bench-
+ []
+
+
+Overfull \hbox (78.38205pt too wide) in paragraph at lines 62--74
+ [][] 
+ []
+
+
+
+[11]) (./chapters/2_Methodology/3_SupplementalData.tex
+
+[12]
+<figures/accuracy_by_resolution_and_aspect.png, id=374, 1727.253pt x 573.342pt>
+
+File: figures/accuracy_by_resolution_and_aspect.png Graphic file (type png)
+<use figures/accuracy_by_resolution_and_aspect.png>
+Package pdftex.def Info: figures/accuracy_by_resolution_and_aspect.png  used on
+ input line 53.
+(pdftex.def)             Requested size: 305.12115pt x 101.28119pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/accuracy_heatmap_resolution_aspect.png, id=375, 933.7284pt x 717.882pt
+>
+File: figures/accuracy_heatmap_resolution_aspect.png Graphic file (type png)
+<use figures/accuracy_heatmap_resolution_aspect.png>
+Package pdftex.def Info: figures/accuracy_heatmap_resolution_aspect.png  used o
+n input line 60.
+(pdftex.def)             Requested size: 305.12115pt x 234.57954pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[13]
+! You can't use `macro parameter character #' in vertical mode.
+l.75 #
+      # Results
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.75 ##
+        Results
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+
+[14 <./figures/accuracy_by_resolution_and_aspect.png>]
+
+[15 <./figures/accuracy_heatmap_resolution_aspect.png>]
+! You can't use `macro parameter character #' in vertical mode.
+l.102 #
+       # Results
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.102 ##
+         Results
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+
+[16]
+Overfull \hbox (68.05836pt too wide) in paragraph at lines 140--149
+ [][] 
+ []
+
+) (./chapters/2_Methodology/4_Training.tex
+Overfull \hbox (19.2284pt too wide) in paragraph at lines 5--6
  []\T1/cmr/bx/n/10.95 Stabilizing RL Train-ing[] \T1/cmr/m/n/10.95 Ex-ist-ing R
 L al-go-rithms suf-fer from a gradient-decreasing
  []
 
 
 
-[6 <./figures/DataQuality.png (PNG copy)> <./figures/FilteringAblation.png> <./
-figures/FilteringAllEvals.png>]
+[17])) (./chapters/3_Results/Results.tex
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-[7]
-Overfull \hbox (7.6297pt too wide) in paragraph at lines 75--76
-[]\T1/cmr/m/n/10.95 Overall, ShowUI-Web ex-hibits con-sis-tently strong per-for
--mance across all bench-
- []
-
-
-Overfull \hbox (78.38205pt too wide) in paragraph at lines 83--95
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./chapters/2_Methodology/3_SupplementalData.tex
-
-[8]) (./chapters/2_Methodology/4_Training.tex))
-(./chapters/3_Results/Results.tex
-
-[9]
+[18]
 Chapter 3.
 
-LaTeX Warning: Citation `screenspot' on page 10 undefined on input line 9.
 
-
-LaTeX Warning: Citation `osworld' on page 10 undefined on input line 15.
-
-
-
-[10
+[19
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
@@ -999,9 +1016,9 @@ er (7.8\TS1/cmr/m/n/10.95 Ö\T1/cmr/m/n/10.95 ) general-purpose
 
 
 
-[11]
+[20]
 
-[12]
+[21]
 Overfull \hbox (136.02007pt too wide) in paragraph at lines 111--112
 \T1/cmr/m/n/10.95 We pro-vide all of our agent's OS-World tra-jec-to-ries at \T
 1/cmtt/m/n/10.95 mlfoundations/gelato-osworld-agent-trajectories
@@ -1009,7 +1026,7 @@ Overfull \hbox (136.02007pt too wide) in paragraph at lines 111--112
 
 
 
-[13]
+[22]
 Overfull \hbox (118.49272pt too wide) in paragraph at lines 151--152
 \T1/cmr/m/n/10.95 Detailed re-sults for all 20 man-u-ally eval-u-ated tasks are
  avail-able in \T1/cmtt/m/n/10.95 evaluation/osworld-human-evals.md\T1/cmr/m/n/
@@ -1018,11 +1035,11 @@ Overfull \hbox (118.49272pt too wide) in paragraph at lines 151--152
 
 ) (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
 
-[14]
+[23]
 Chapter 4.
 
 
-[15
+[24
 
 ]
 Overfull \hbox (4.90349pt too wide) in paragraph at lines 44--45
@@ -1032,11 +1049,11 @@ an eval-u-a-tion (58.71%
 
 
 
-[16]
+[25]
 
-[17]
+[26]
 
-[18]
+[27]
 Overfull \hbox (5.43532pt too wide) in paragraph at lines 122--123
 []\T1/cmr/bx/n/10.95 Iterative re-fine-ment\T1/cmr/m/n/10.95 : En-abling mod-el
 s to make mul-ti-ple at-tempts at ground-
@@ -1050,19 +1067,28 @@ ed bench-marks that test spe-cific ground-
 
 
 
-[19])
-No file Thesis.bbl.
+[28]) (./Thesis.bbl
 
+[29]
 
-[20] (./chapters/5_Appendix/Appendix.tex
-Overfull \hbox (60.3109pt too wide) in paragraph at lines 16--28
+[30
+
+]
+
+[31]
+
+[32]
+
+[33]
+
+[34]
+
+[35])
+
+[36] (./chapters/5_Appendix/Appendix.tex
+Overfull \hbox (53.37968pt too wide) in paragraph at lines 11--37
  [][] 
  []
-
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 46.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
@@ -1070,19 +1096,31 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (135.76894pt too wide) in paragraph at lines 194--204
+Overfull \hbox (60.3109pt too wide) in paragraph at lines 46--58
  [][] 
  []
+
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 76.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (135.76894pt too wide) in paragraph at lines 224--234
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
@@ -1099,19 +1137,15 @@ Overfull \hbox (135.76894pt too wide) in paragraph at lines 194--204
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 23595 strings out of 473190
- 430261 string characters out of 5715801
- 1277687 words of memory out of 5000000
- 46178 multiletter control sequences out of 15000+600000
- 578173 words of font info for 78 fonts, out of 8000000 for 9000
+ 23779 strings out of 473190
+ 434732 string characters out of 5715801
+ 1281750 words of memory out of 5000000
+ 46275 multiletter control sequences out of 15000+600000
+ 578862 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,8n,132p,983b,1278s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,8n,132p,1947b,1278s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -1132,13 +1166,14 @@ ve/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive
 5/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/
 texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/te
 xmf-dist/fonts/type1/public/cm-super/sfsc1095.pfb></usr/local/texlive/2025/texm
-f-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-
-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-di
-st/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on Thesis.pdf (32 pages, 1821110 bytes).
+f-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on Thesis.pdf (48 pages, 3187791 bytes).
 PDF statistics:
- 756 PDF objects out of 1000 (max. 8388607)
- 662 compressed objects within 7 object streams
- 218 named destinations out of 1000 (max. 500000)
- 505 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1060 PDF objects out of 1200 (max. 8388607)
+ 938 compressed objects within 10 object streams
+ 301 named destinations out of 1000 (max. 500000)
+ 533 words of extra memory for PDF output out of 10000 (max. 10000000)
 

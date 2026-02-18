@@ -1,0 +1,700 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Thesis.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(./discothesis.cls
+Document Class: discothesis 2005/09/16 v1.4f.a Modified from Standard LaTeX doc
+ument class book.cls by Khaireel A. Mohamed April 2007 and by Tobias Langner No
+vember 2009 and June 2011
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/bk11.clo))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (/usr/local/texlive/2025/texmf-dist/tex/latex/todonotes/todonotes.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
+tered.code.tex))
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def)))
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex))
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex)))
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypositioning.code.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/calc.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bkm-pdftex.def))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./Thesis.aux)
+(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+[1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
+ocal/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./figur
+es/eth_logo_black-eps-converted-to.pdf>]
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.49 \begin{abstract}
+                      [1]
+Overfull \hbox (7.2174pt too wide) in paragraph at lines 50--51
+\T1/cmr/m/n/10.95 We present Gelato-30B-A3B, a state-of-the-art ground-ing mode
+l for GUI computer-
+
+[2] (./Thesis.toc
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd)
+[3]
+[4])
+[5] (./chapters/1_Introduction/Introduction.tex
+Chapter 1.
+(./chapters/1_Introduction/1_Motivation/Motivation.tex
+
+LaTeX Warning: Citation `kaplan2020scaling' on page 1 undefined on input line 2
+.
+
+
+LaTeX Warning: Citation `hestness2017deeplearningscalingpredictable' on page 1 
+undefined on input line 2.
+
+
+LaTeX Warning: Citation `aghajanyan2023scalinglawsgenerativemixedmodal' on page
+ 1 undefined on input line 2.
+
+
+LaTeX Warning: Citation `cherti2023reproducible' on page 1 undefined on input l
+ine 2.
+
+
+LaTeX Warning: Citation `sambasivan2021datacascades' on page 1 undefined on inp
+ut line 2.
+
+
+LaTeX Warning: Citation `touvron2023llamaopenefficientfoundation' on page 1 und
+efined on input line 2.
+
+
+LaTeX Warning: Citation `adept2023persimmon' on page 1 undefined on input line 
+2.
+
+
+LaTeX Warning: Citation `schuhmann2021laion400mopendatasetclipfiltered' on page
+ 1 undefined on input line 2.
+
+
+LaTeX Warning: Citation `kakaobrain2022coyo700m' on page 1 undefined on input l
+ine 2.
+
+
+LaTeX Warning: Citation `gao2020pile800gbdatasetdiverse' on page 1 undefined on
+ input line 2.
+
+
+LaTeX Warning: Citation `mazumder2023dataperfbenchmarksdatacentricai' on page 1
+ undefined on input line 2.
+
+
+LaTeX Warning: Citation `gadre2023datacompsearchgenerationmultimodal' on page 1
+ undefined on input line 2.
+
+
+LaTeX Warning: Citation `xu2025demystifyingclipdata' on page 1 undefined on inp
+ut line 2.
+
+
+LaTeX Warning: Citation `ouyang2022traininglanguagemodelsfollow' on page 1 unde
+fined on input line 4.
+
+
+LaTeX Warning: Citation `openai2024gpt4technicalreport' on page 1 undefined on 
+input line 4.
+
+
+LaTeX Warning: Citation `thoppilan2022lamdalanguagemodelsdialog' on page 1 unde
+fined on input line 4.
+
+
+LaTeX Warning: Citation `yao2023reactsynergizingreasoningacting' on page 1 unde
+fined on input line 4.
+
+
+LaTeX Warning: Citation `schick2023toolformerlanguagemodelsteach' on page 1 und
+efined on input line 4.
+
+
+LaTeX Warning: Citation `deng2023mind2webgeneralistagentweb' on page 1 undefine
+d on input line 6.
+
+
+LaTeX Warning: Citation `browseruse2024' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation `nakano2022webgptbrowserassistedquestionansweringhuman'
+ on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation `singh2025openaigpt5card' on page 1 undefined on input 
+line 6.
+
+
+[1]
+
+LaTeX Warning: Reference `fig:grounding_task' on page 2 undefined on input line
+ 8.
+
+
+LaTeX Warning: Citation `qin2025uitars' on page 2 undefined on input line 8.
+
+
+LaTeX Warning: Citation `yang2025gta1' on page 2 undefined on input line 8.
+
+
+LaTeX Warning: Citation `gu2025uivenus' on page 2 undefined on input line 8.
+
+
+LaTeX Warning: Citation `yuan2025segui' on page 2 undefined on input line 8.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \c@* 
+l.18 \begin{enumerate}[label=(\alph*
+                                    )]
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19     \item \textbf
+                      {Availability of Unfiltered Training Data:} Whereas LL...
+
+
+LaTeX Warning: Citation `commoncrawl' on page 2 undefined on input line 19.
+
+
+LaTeX Warning: Citation `qin2025uitars' on page 2 undefined on input line 19.
+
+
+[2 <./figures/GroundingTask.png>]
+Overfull \hbox (2.85698pt too wide) in paragraph at lines 20--21
+[]\T1/cmr/bx/n/10.95 Training Data Com-po-si-tion: \T1/cmr/m/n/10.95 Mir-ror-in
+g the chal-lenges faced by language-
+) (./chapters/1_Introduction/2_RelatedWork/RelatedWork.tex
+(./chapters/1_Introduction/2_RelatedWork/VisionLanguageModels.tex)
+(./chapters/1_Introduction/2_RelatedWork/GroundingModels.tex
+
+LaTeX Warning: Citation `gta1' on page 3 undefined on input line 3.
+
+
+LaTeX Warning: Citation `uitars' on page 3 undefined on input line 5.
+
+
+LaTeX Warning: Citation `uivenus' on page 3 undefined on input line 7.
+
+
+LaTeX Warning: Citation `segui' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Citation `omniparser' on page 3 undefined on input line 11.
+
+) (./chapters/1_Introduction/2_RelatedWork/DataSets.tex
+[3]
+
+LaTeX Warning: Citation `showui' on page 4 undefined on input line 5.
+
+
+LaTeX Warning: Citation `autogui' on page 4 undefined on input line 7.
+
+
+LaTeX Warning: Citation `seeclick' on page 4 undefined on input line 9.
+
+
+LaTeX Warning: Citation `pixmo' on page 4 undefined on input line 11.
+
+
+LaTeX Warning: Citation `osatlas' on page 4 undefined on input line 13.
+
+
+LaTeX Warning: Citation `uground' on page 4 undefined on input line 15.
+
+
+LaTeX Warning: Citation `waveui' on page 4 undefined on input line 17.
+
+
+LaTeX Warning: Citation `pcagente' on page 4 undefined on input line 19.
+
+
+LaTeX Warning: Citation `uivision' on page 4 undefined on input line 21.
+
+) (./chapters/1_Introduction/2_RelatedWork/EvaluationBenchmarks.tex
+
+LaTeX Warning: Citation `screenspot' on page 4 undefined on input line 3.
+
+
+Overfull \hbox (17.01564pt too wide) in paragraph at lines 3--4
+\T1/cmr/bx/n/10.95 ScreenSpot-Pro \T1/cmr/m/n/10.95 [[]] of-fers GUI ground-ing
+ eval-u-a-tion for pro-fes-sional high-resolution
+
+LaTeX Warning: Citation `osworld' on page 4 undefined on input line 5.
+
+) (./chapters/1_Introduction/2_RelatedWork/ReinforcementLearning.tex
+
+LaTeX Warning: Citation `grpo' on page 4 undefined on input line 3.
+
+
+LaTeX Warning: Citation `dapo' on page 4 undefined on input line 5.
+
+
+[4])) (./chapters/1_Introduction/3_Contributions/Contribution.tex)
+(./chapters/1_Introduction/4_ThesisStructure/ThesisStructure.tex))
+(./chapters/2_Methodology/Methodology.tex
+[5]
+Chapter 2.
+(./chapters/2_Methodology/1_DataCuration.tex
+
+LaTeX Warning: Citation `lin2024showui' on page 6 undefined on input line 4.
+
+
+LaTeX Warning: Citation `li2025autogui' on page 6 undefined on input line 4.
+
+
+LaTeX Warning: Citation `he2025pcagente' on page 6 undefined on input line 4.
+
+
+LaTeX Warning: Citation `agentsea2024waveui' on page 6 undefined on input line 
+4.
+
+
+LaTeX Warning: Citation `wu2024osatlas' on page 6 undefined on input line 4.
+
+
+LaTeX Warning: Citation `gou2024uground' on page 6 undefined on input line 4.
+
+
+LaTeX Warning: Citation `deitke2024molmo' on page 6 undefined on input line 4.
+
+
+LaTeX Warning: Citation `cheng2024seeclick' on page 6 undefined on input line 4
+.
+
+
+[6]
+
+LaTeX Warning: Citation `qwen2025qwen25vl' on page 7 undefined on input line 35
+.
+
+
+LaTeX Warning: Citation `qwen2025qwen3vl' on page 7 undefined on input line 35.
+
+
+
+LaTeX Warning: Reference `fig:data_quality' on page 7 undefined on input line 4
+0.
+
+
+LaTeX Warning: Reference `sec:data_filtering' on page 7 undefined on input line
+ 40.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./chapters/2_Methodology/2_DataFiltering.tex
+[7]
+
+LaTeX Warning: Citation `omniparser' on page 8 undefined on input line 8.
+
+
+LaTeX Warning: Reference `fig:omniparser_yolo' on page 8 undefined on input lin
+e 8.
+
+
+Overfull \hbox (0.75676pt too wide) in paragraph at lines 8--9
+\T1/cmr/m/n/10.95 trated in Fig-ure []. This ap-proach en-ables pars-ing of di-
+verse GUI environments---
+
+LaTeX Warning: Reference `fig:data_quality' on page 8 undefined on input line 1
+0.
+
+
+[8 <./figures/DataQuality.png (PNG copy)>]
+
+LaTeX Warning: Citation `yuan2025segui' on page 9 undefined on input line 21.
+
+
+LaTeX Warning: Citation `yang2025gta1' on page 9 undefined on input line 21.
+
+
+LaTeX Warning: Citation `gu2025uivenus' on page 9 undefined on input line 21.
+
+
+Overfull \hbox (19.42162pt too wide) in paragraph at lines 23--25
+[][] [] 
+
+[9 <./figures/Omniparser.png (PNG copy)>]
+[10 <./figures/FilteringAblation.png> <./figures/FilteringAllEvals.png>]
+Overfull \hbox (7.6297pt too wide) in paragraph at lines 54--55
+[]\T1/cmr/m/n/10.95 Overall, ShowUI-Web ex-hibits con-sis-tently strong per-for
+-mance across all bench-
+
+Overfull \hbox (78.38205pt too wide) in paragraph at lines 62--74
+ [][] 
+
+LaTeX Warning: Reference `tab:data_scaling' on page 11 undefined on input line 
+79.
+
+
+[11]) (./chapters/2_Methodology/3_SupplementalData.tex
+
+LaTeX Warning: Reference `sec:data_curation' on page 12 undefined on input line
+ 2.
+
+
+LaTeX Warning: Reference `sec:data_filtering' on page 12 undefined on input lin
+e 2.
+
+
+[12]
+
+LaTeX Warning: Reference `fig:resolution_aspect_analysis' on page 13 undefined 
+on input line 49.
+
+
+LaTeX Warning: Reference `fig:resolution_aspect_heatmap' on page 13 undefined o
+n input line 49.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+[13]
+
+LaTeX Warning: Citation `nayak2025uivision' on page 14 undefined on input line 
+68.
+
+
+LaTeX Warning: Citation `nayak2025uivision' on page 14 undefined on input line 
+71.
+
+
+LaTeX Warning: Citation `2025jedi' on page 14 undefined on input line 71.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.75 #
+      # Results
+! You can't use `macro parameter character #' in vertical mode.
+l.75 ##
+        Results
+
+[14 <./figures/accuracy_by_resolution_and_aspect.png>]
+
+LaTeX Warning: Reference `tab:youtube_apps' on page 15 undefined on input line 
+92.
+
+
+[15 <./figures/accuracy_heatmap_resolution_aspect.png>]
+! You can't use `macro parameter character #' in vertical mode.
+l.102 #
+       # Results
+! You can't use `macro parameter character #' in vertical mode.
+l.102 ##
+         Results
+
+LaTeX Warning: Reference `tab:composed_frames' on page 16 undefined on input li
+ne 117.
+
+
+[16]
+
+LaTeX Warning: Citation `zhang2025phiground' on page 17 undefined on input line
+ 134.
+
+
+LaTeX Warning: Reference `tab:random_resize' on page 17 undefined on input line
+ 134.
+
+
+Overfull \hbox (68.05836pt too wide) in paragraph at lines 140--149
+ [][] 
+) (./chapters/2_Methodology/4_Training.tex
+Overfull \hbox (19.2284pt too wide) in paragraph at lines 5--6
+ []\T1/cmr/bx/n/10.95 Stabilizing RL Train-ing[] \T1/cmr/m/n/10.95 Ex-ist-ing R
+L al-go-rithms suf-fer from a gradient-decreasing
+
+[17])) (./chapters/3_Results/Results.tex
+[18]
+Chapter 3.
+
+LaTeX Warning: Citation `screenspot' on page 19 undefined on input line 9.
+
+
+LaTeX Warning: Citation `osworld' on page 19 undefined on input line 15.
+
+
+[19{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.en
+c}]
+Overfull \hbox (94.50964pt too wide) in paragraph at lines 40--49
+ [][] 
+
+Overfull \hbox (2.38956pt too wide) in paragraph at lines 56--57
+[]\T1/cmr/bx/n/10.95 Qwen3-VL-235B-A22B-Instruct\T1/cmr/m/n/10.95 : A much larg
+er (7.8\TS1/cmr/m/n/10.95 Ö\T1/cmr/m/n/10.95 ) general-purpose
+
+[20]
+[21]
+Overfull \hbox (136.02007pt too wide) in paragraph at lines 111--112
+\T1/cmr/m/n/10.95 We pro-vide all of our agent's OS-World tra-jec-to-ries at \T
+1/cmtt/m/n/10.95 mlfoundations/gelato-osworld-agent-trajectories
+
+[22]
+Overfull \hbox (118.49272pt too wide) in paragraph at lines 151--152
+\T1/cmr/m/n/10.95 Detailed re-sults for all 20 man-u-ally eval-u-ated tasks are
+ avail-able in \T1/cmtt/m/n/10.95 evaluation/osworld-human-evals.md\T1/cmr/m/n/
+10.95 .
+) (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
+[23]
+Chapter 4.
+
+[24]
+Overfull \hbox (4.90349pt too wide) in paragraph at lines 44--45
+[]\T1/cmr/m/n/10.95 The  3 per-cent-age point gap be-tween au-to-mated and hu-m
+an eval-u-a-tion (58.71%
+
+[25]
+[26]
+[27]
+Overfull \hbox (5.43532pt too wide) in paragraph at lines 122--123
+[]\T1/cmr/bx/n/10.95 Iterative re-fine-ment\T1/cmr/m/n/10.95 : En-abling mod-el
+s to make mul-ti-ple at-tempts at ground-
+
+Overfull \hbox (11.68048pt too wide) in paragraph at lines 136--137
+\T1/cmr/bx/n/10.95 Diagnostic bench-marks\T1/cmr/m/n/10.95 : Cre-at-ing tar-get
+ed bench-marks that test spe-cific ground-
+
+[28])
+No file Thesis.bbl.
+
+[29] (./chapters/5_Appendix/Appendix.tex
+Overfull \hbox (53.37968pt too wide) in paragraph at lines 11--37
+ [][] 
+
+[1]
+Overfull \hbox (60.3109pt too wide) in paragraph at lines 46--58
+ [][] 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (135.76894pt too wide) in paragraph at lines 224--234
+ [][] 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+[2])
+[3]
+[4]
+[5]
+[6] (./Thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dis
+t/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/
+fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fo
+nts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/font
+s/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2025/texmf-dist/fonts/
+type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/ty
+pe1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type
+1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/
+public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publ
+ic/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public
+/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/c
+m-super/sfsc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-
+super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-su
+per/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-supe
+r/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/
+sftt1095.pfb>
+Output written on Thesis.pdf (41 pages, 3150681 bytes).
+Transcript written on Thesis.log.
