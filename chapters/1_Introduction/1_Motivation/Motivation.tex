@@ -67,36 +67,6 @@ agents that can perceive and interact with UIs in the same way humans do.
 
 \medskip
 
-Given a user instruction, the Computer-Use task can be broadly
-decomposed into two components:
-(1)~\textit{planning}---generating one or a sequence of actions to
-execute---and
-(2)~\textit{grounding}---mapping the relevant UI element(s) to precise
-coordinates on the screen by autoregressively predicting the bounding box
-or, in our case, the center of the target UI element.
-Figure~\ref{fig:grounding_task} illustrates this grounding process: given
-a screenshot and a natural language instruction, a Vision-Language Model
-(VLM) predicts the target coordinates on the screen.
-This decomposition highlights the core difficulty of the problem, as it
-demands both rich semantic understanding of UI elements and accurate
-pixel-level localization.
-To address these requirements, researchers have begun training
-vision-language models specifically with these capabilities in mind; for
-instance, \cite{qin2025uitars, yang2025gta1, gu2025uivenus,
-yuan2025segui} utilize web screenshot datasets to enhance large
-multi-modal models' element-grounding abilities.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.9\textwidth]{figures/GroundingTask.png}
-\caption{Overview of the grounding task. Given a screenshot and a user
-  instruction (e.g., ``Open a new tab.''), a Vision-Language Model (VLM)
-  predicts the coordinates of the target UI element on the screen.}
-\label{fig:grounding_task}
-\end{figure}
-
-\medskip
-
 Despite this progress, training multi-modal models for GUI visual agents
 continues to face several significant challenges:
 \begin{enumerate}[label=(\alph*)]

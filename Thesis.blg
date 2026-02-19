@@ -14,45 +14,45 @@ Warning--I didn't find a database entry for "screenspotv2"
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 48 entries,
+You've used 46 entries,
             4024 wiz_defined-function locations,
-            1025 strings with 24853 characters,
-and the built_in function-call counts, 40502 in all, are:
-= -- 2249
-> -- 2719
+            1017 strings with 24568 characters,
+and the built_in function-call counts, 39692 in all, are:
+= -- 2185
+> -- 2703
 < -- 17
-+ -- 1351
-- -- 670
-* -- 2083
-:= -- 5500
-add.period$ -- 98
-call.type$ -- 48
-change.case$ -- 53
++ -- 1343
+- -- 666
+* -- 2049
+:= -- 5352
+add.period$ -- 94
+call.type$ -- 46
+change.case$ -- 51
 chr.to.int$ -- 45
-cite$ -- 48
-duplicate$ -- 2831
-empty$ -- 3073
-format.name$ -- 712
-if$ -- 9081
+cite$ -- 46
+duplicate$ -- 2763
+empty$ -- 2997
+format.name$ -- 706
+if$ -- 8909
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 966
-newline$ -- 263
-num.names$ -- 48
-pop$ -- 2925
+int.to.str$ -- 46
+missing$ -- 950
+newline$ -- 253
+num.names$ -- 46
+pop$ -- 2875
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2680
+skip$ -- 2622
 stack$ -- 0
-substring$ -- 162
-swap$ -- 2151
+substring$ -- 160
+swap$ -- 2113
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 48
+type$ -- 46
 warning$ -- 0
-while$ -- 56
-width$ -- 50
-write$ -- 517
+while$ -- 54
+width$ -- 48
+write$ -- 497
 (There was 1 warning)

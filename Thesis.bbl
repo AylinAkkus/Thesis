@@ -268,33 +268,6 @@ A.~Singh \emph{et~al.}, ``Openai gpt-5 system card,'' 2025. [Online].
   Available: \url{https://arxiv.org/abs/2601.03267}
 \BIBentrySTDinterwordspacing
 
-\bibitem{qin2025uitars}
-\BIBentryALTinterwordspacing
-Y.~Qin \emph{et~al.}, ``Ui-tars: Pioneering automated gui interaction with
-  native agents,'' 2025. [Online]. Available:
-  \url{https://arxiv.org/abs/2501.12326}
-\BIBentrySTDinterwordspacing
-
-\bibitem{yang2025gta1}
-\BIBentryALTinterwordspacing
-Z.~Yang \emph{et~al.}, ``Gta1: Gui test-time scaling agent,'' 2025. [Online].
-  Available: \url{https://arxiv.org/abs/2507.05791}
-\BIBentrySTDinterwordspacing
-
-\bibitem{gu2025uivenus}
-\BIBentryALTinterwordspacing
-Z.~Gu \emph{et~al.}, ``Ui-venus technical report: Building high-performance ui
-  agents with rft,'' 2025. [Online]. Available:
-  \url{https://arxiv.org/abs/2508.10833}
-\BIBentrySTDinterwordspacing
-
-\bibitem{yuan2025segui}
-\BIBentryALTinterwordspacing
-S.~Yuan \emph{et~al.}, ``Enhancing visual grounding for gui agents via
-  self-evolutionary reinforcement learning,'' 2025. [Online]. Available:
-  \url{https://arxiv.org/abs/2505.12370}
-\BIBentrySTDinterwordspacing
-
 \bibitem{commoncrawl}
 \BIBentryALTinterwordspacing
 {Common Crawl}, ``Common crawl: A free, open repository of web crawl data,''
@@ -302,10 +275,11 @@ S.~Yuan \emph{et~al.}, ``Enhancing visual grounding for gui agents via
   founded 2007. [Online]. Available: \url{https://commoncrawl.org}
 \BIBentrySTDinterwordspacing
 
-\bibitem{lu2024omniparser}
+\bibitem{qin2025uitars}
 \BIBentryALTinterwordspacing
-Y.~Lu \emph{et~al.}, ``Omniparser for pure vision based gui agent,'' 2024.
-  [Online]. Available: \url{https://arxiv.org/abs/2408.00203}
+Y.~Qin \emph{et~al.}, ``Ui-tars: Pioneering automated gui interaction with
+  native agents,'' 2025. [Online]. Available:
+  \url{https://arxiv.org/abs/2501.12326}
 \BIBentrySTDinterwordspacing
 
 \bibitem{lin2024showui}
@@ -397,19 +371,6 @@ T.~Xie, D.~Zhang, J.~Chen, X.~Li, S.~Zhao, R.~Cao, T.~J. Hua, Z.~Cheng,
   \url{https://arxiv.org/abs/2404.07972}
 \BIBentrySTDinterwordspacing
 
-\bibitem{shao2024deepseekmathgrpo}
-\BIBentryALTinterwordspacing
-Z.~Shao \emph{et~al.}, ``Deepseekmath: Pushing the limits of mathematical
-  reasoning in open language models,'' 2024. [Online]. Available:
-  \url{https://arxiv.org/abs/2402.03300}
-\BIBentrySTDinterwordspacing
-
-\bibitem{yu2025dapo}
-\BIBentryALTinterwordspacing
-T.~Yu \emph{et~al.}, ``Dapo: An open-source llm reinforcement learning system
-  at scale,'' 2025. [Online]. Available: \url{https://arxiv.org/abs/2503.14476}
-\BIBentrySTDinterwordspacing
-
 \bibitem{qwen2025qwen25vl}
 \BIBentryALTinterwordspacing
 {Qwen Team}, ``Qwen2.5-vl technical report,'' Mar. 2025, arXiv preprint
@@ -420,6 +381,32 @@ T.~Yu \emph{et~al.}, ``Dapo: An open-source llm reinforcement learning system
 \BIBentryALTinterwordspacing
 {Qwen Team}, ``Qwen3-vl technical report,'' Dec. 2025, arXiv preprint
   arXiv:2511.21631. [Online]. Available: \url{https://arxiv.org/abs/2511.21631}
+\BIBentrySTDinterwordspacing
+
+\bibitem{lu2024omniparser}
+\BIBentryALTinterwordspacing
+Y.~Lu \emph{et~al.}, ``Omniparser for pure vision based gui agent,'' 2024.
+  [Online]. Available: \url{https://arxiv.org/abs/2408.00203}
+\BIBentrySTDinterwordspacing
+
+\bibitem{yuan2025segui}
+\BIBentryALTinterwordspacing
+S.~Yuan \emph{et~al.}, ``Enhancing visual grounding for gui agents via
+  self-evolutionary reinforcement learning,'' 2025. [Online]. Available:
+  \url{https://arxiv.org/abs/2505.12370}
+\BIBentrySTDinterwordspacing
+
+\bibitem{yang2025gta1}
+\BIBentryALTinterwordspacing
+Z.~Yang \emph{et~al.}, ``Gta1: Gui test-time scaling agent,'' 2025. [Online].
+  Available: \url{https://arxiv.org/abs/2507.05791}
+\BIBentrySTDinterwordspacing
+
+\bibitem{gu2025uivenus}
+\BIBentryALTinterwordspacing
+Z.~Gu \emph{et~al.}, ``Ui-venus technical report: Building high-performance ui
+  agents with rft,'' 2025. [Online]. Available:
+  \url{https://arxiv.org/abs/2508.10833}
 \BIBentrySTDinterwordspacing
 
 \bibitem{zhang2025phiground}
