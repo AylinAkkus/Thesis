@@ -8,8 +8,19 @@ where actions are low-level operations (clicks, typing, scrolling) that decompos
 \paragraph{Language-based vs. Vision-based Agents}
 Early language-only approaches operated over structured textual representations (DOM trees, accessibility trees) to generate tool calls (Figure~\ref{fig:grounding_comparison}a). While effective in constrained settings, these methods require privileged system access and handcrafted filtering pipelines, limiting generalization to visually-dependent tasks. Vision-based agents using VLMs instead process raw screenshots (Figure~\ref{fig:grounding_comparison}b), eliminating dependency on internal program structures. This paradigm shift changes the observation space from structured text to high-dimensional visual input, requiring models to extract semantic meaning and identify interactive elements directly from pixels.
 
-\paragraph{Planner-Grounder Framework}
-Vision-based agents decompose interaction into two problems: deciding \emph{what} to do (planning) and \emph{where} to execute it (grounding). The \emph{planner} operates at the semantic level, reasoning over instruction, screenshot, and interaction history to propose abstract actions (e.g., "click the Settings button"). The \emph{grounder} operates at the perceptual level, mapping abstract action descriptions to precise screen coordinates. This modularization enables specialization: stronger reasoning models serve as planners while lightweight models optimize spatial localization.
+\paragraph{End-to-End vs. Two-Stage Agents}
+Computer-use agents can be categorized into two architectural paradigms based on how they decompose the task execution pipeline.
+
+\textbf{End-to-end agents} process the complete perception-action cycle within a single model \cite{uitars15,uitars2}. These systems learns to jointly handle perception, planning, memory, and action execution in a unified forward pass. While conceptually simple, this approach requires the model to simultaneously master multiple capabilities: understanding visual interfaces, maintaining task context, reasoning about multi-step procedures, and predicting precise interaction coordinates. Examples include Claude Computer Use and recent native computer-use models that output tool calls directly from screenshots. Critically, training these end-to-end models requires large amounts of data trajectory data which is hard to collect and quality maintain.
+
+\textbf{Two-stage agents} \cite{gta1,segui} decompose the problem into planning and grounding, each handled by specialized modules:
+\begin{itemize}
+    \item \textit{Planner}: A high-level reasoning model (typically closed-source models like GPT-4o or Claude 3.7 Sonnet) generates action proposals for each step based on the user task instruction, using real-time UI screenshots and past trajectories as context. The planner outputs natural language descriptions of intended actions (e.g., ''click the New Tab button'').
+    \item \textit{Grounder}: A separate grounding module maps these natural language action proposals to specific UI elements by predicting precise screen coordinates. This vision-based component localizes semantic descriptions within the current screenshot.
+\end{itemize}
+This separation of concerns enables leveraging the reasoning capabilities of large proprietary models for planning while training specialized vision models for the grounding task. The two-stage approach is particularly advantageous when training data for end-to-end computer use is limited, as grounding data (screenshot-instruction-coordinate triples) is more readily available than full task trajectories.
+
+This work adopts the two-stage paradigm, focusing specifically on the grounding component. By training specialized vision-language models for GUI element localization, we enable integration with arbitrary planning models without requiring end-to-end retraining for each new planner configuration.
 
 \paragraph{GUI Grounding}
 GUI grounding maps abstract interaction intents to spatial locations. Given screenshot $s$ and action proposal $a$, the grounding model predicts target coordinates:

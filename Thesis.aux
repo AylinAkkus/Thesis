@@ -46,11 +46,21 @@
 \BKM@entry{id=6,dest={73756273656374696F6E2E312E322E31},srcline={1}}{5C3337365C3337375C303030315C3030302E5C303030325C3030302E5C303030315C3030305C3034305C303030435C3030306F5C3030306D5C303030705C303030755C303030745C303030655C303030725C3030305C3034305C303030555C303030735C303030655C3030305C3034305C303030415C303030675C303030655C3030306E5C303030745C30303073}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Background}{2}{section.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Computer Use Agents}{2}{subsection.1.2.1}\protected@file@percent }
-\BKM@entry{id=7,dest={73756273656374696F6E2E312E322E32},srcline={1}}{5C3337365C3337375C303030315C3030302E5C303030325C3030302E5C303030325C3030305C3034305C303030475C303030555C303030495C3030305C3034305C303030475C303030725C3030306F5C303030755C3030306E5C303030645C303030695C3030306E5C303030675C3030305C3034305C303030445C303030615C303030745C303030615C303030735C303030655C303030745C30303073}
+\citation{uitars15}
+\citation{uitars2}
+\citation{gta1}
+\citation{segui}
 \@writefile{toc}{\contentsline {paragraph}{Language-based vs. Vision-based Agents}{3}{section*.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Planner-Grounder Framework}{3}{section*.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{GUI Grounding}{3}{section*.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}GUI Grounding Datasets}{3}{subsection.1.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{End-to-End vs. Two-Stage Agents}{3}{section*.7}\protected@file@percent }
+\BKM@entry{id=7,dest={73756273656374696F6E2E312E322E32},srcline={1}}{5C3337365C3337375C303030315C3030302E5C303030325C3030302E5C303030325C3030305C3034305C303030475C303030555C303030495C3030305C3034305C303030475C303030725C3030306F5C303030755C3030306E5C303030645C303030695C3030306E5C303030675C3030305C3034305C303030445C303030615C303030745C303030615C303030735C303030655C303030745C30303073}
+\@writefile{toc}{\contentsline {paragraph}{GUI Grounding}{4}{section*.8}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:language_grounding}{{1.1a}{4}{Language-based grounding: The model receives a filtered DOM tree as input and predicts coordinates based on structured text representations of UI elements}{figure.caption.9}{}}
+\newlabel{sub@fig:language_grounding}{{a}{4}{Language-based grounding: The model receives a filtered DOM tree as input and predicts coordinates based on structured text representations of UI elements}{figure.caption.9}{}}
+\newlabel{fig:visual_grounding}{{1.1b}{4}{Visual grounding: The model operates directly on screenshots and predicts coordinates from high-dimensional visual input}{figure.caption.9}{}}
+\newlabel{sub@fig:visual_grounding}{{b}{4}{Visual grounding: The model operates directly on screenshots and predicts coordinates from high-dimensional visual input}{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Comparison of grounding approaches. Both methods receive the instruction ``Open a new tab'' and predict coordinates, but differ in their input modality: (a) language-based grounding uses structured DOM representations, while (b) visual grounding processes raw screenshots.}}{4}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:grounding_comparison}{{1.1}{4}{Comparison of grounding approaches. Both methods receive the instruction ``Open a new tab'' and predict coordinates, but differ in their input modality: (a) language-based grounding uses structured DOM representations, while (b) visual grounding processes raw screenshots}{figure.caption.9}{}}
 \citation{gou2024uground}
 \citation{li2025autogui}
 \citation{lin2024showui}
@@ -61,35 +71,43 @@
 \citation{cheng2024seeclick}
 \citation{nayak2025uivision}
 \citation{xie2025jedi}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:language_grounding}{{1.1a}{4}{Language-based grounding: The model receives a filtered DOM tree as input and predicts coordinates based on structured text representations of UI elements}{figure.caption.9}{}}
-\newlabel{sub@fig:language_grounding}{{a}{4}{Language-based grounding: The model receives a filtered DOM tree as input and predicts coordinates based on structured text representations of UI elements}{figure.caption.9}{}}
-\newlabel{fig:visual_grounding}{{1.1b}{4}{Visual grounding: The model operates directly on screenshots and predicts coordinates from high-dimensional visual input}{figure.caption.9}{}}
-\newlabel{sub@fig:visual_grounding}{{b}{4}{Visual grounding: The model operates directly on screenshots and predicts coordinates from high-dimensional visual input}{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Comparison of grounding approaches. Both methods receive the instruction ``Open a new tab'' and predict coordinates, but differ in their input modality: (a) language-based grounding uses structured DOM representations, while (b) visual grounding processes raw screenshots.}}{4}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:grounding_comparison}{{1.1}{4}{Comparison of grounding approaches. Both methods receive the instruction ``Open a new tab'' and predict coordinates, but differ in their input modality: (a) language-based grounding uses structured DOM representations, while (b) visual grounding processes raw screenshots}{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{General-Purpose Training Data}{4}{section*.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Professional Application Data}{4}{section*.11}\protected@file@percent }
 \BKM@entry{id=8,dest={73756273656374696F6E2E312E322E33},srcline={1}}{5C3337365C3337375C303030315C3030302E5C303030325C3030302E5C303030335C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030425C303030655C3030306E5C303030635C303030685C3030306D5C303030615C303030725C3030306B5C30303073}
 \citation{cheng2024seeclickharnessingguigrounding}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}GUI Grounding Datasets}{5}{subsection.1.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{General-Purpose Training Data}{5}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Professional Application Data}{5}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Evaluation Benchmarks}{5}{subsection.1.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Offline Benchmarks}{5}{section*.12}\protected@file@percent }
 \citation{screenspotv2}
 \citation{li2025screenspotpro}
 \citation{xie2025jedi}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Evaluation Benchmarks}{5}{subsection.1.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Offline Benchmarks}{5}{section*.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{ScreenSpot.}{5}{section*.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{ScreenSpot-V2.}{5}{section*.14}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{ScreenSpot-Pro.}{5}{section*.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{OS-World-G.}{5}{section*.16}\protected@file@percent }
 \citation{xie2024osworldbenchmarkingmultimodalagents}
 \BKM@entry{id=9,dest={73656374696F6E2E312E33},srcline={1}}{5C3337365C3337375C303030315C3030302E5C303030335C3030305C3034305C303030525C303030655C3030306C5C303030615C303030745C303030655C303030645C3030305C3034305C303030575C3030306F5C303030725C3030306B}
-\BKM@entry{id=10,dest={73656374696F6E2E312E34},srcline={1}}{5C3337365C3337375C303030315C3030302E5C303030345C3030305C3034305C303030435C3030306F5C3030306E5C303030745C303030725C303030695C303030625C303030755C303030745C303030695C3030306F5C3030306E5C30303073}
+\@writefile{toc}{\contentsline {paragraph}{ScreenSpot.}{6}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ScreenSpot-V2.}{6}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ScreenSpot-Pro.}{6}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{OS-World-G.}{6}{section*.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Online Benchmarks}{6}{section*.17}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{OS-World.}{6}{section*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Related Work}{6}{section.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Contributions}{6}{section.1.4}\protected@file@percent }
+\citation{qwen2025qwen25vl}
+\citation{qwen2025qwen3vl}
+\citation{qin2025uitars}
+\citation{qin2025uitars15}
+\citation{wang2025uitars2}
+\citation{xie2025jedi}
+\citation{cheng2024seeclick}
+\citation{yuan2025segui}
+\citation{yang2025gta1}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Related Work}{7}{section.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Closed-Source Computer-Use Models}{7}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{General-Purpose Vision-Language Models}{7}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{End-to-End GUI Agents}{7}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Specialized GUI Grounding Models}{7}{section*.22}\protected@file@percent }
+\citation{yang2025gta1}
+\BKM@entry{id=10,dest={73656374696F6E2E312E34},srcline={1}}{5C3337365C3337375C303030315C3030302E5C303030345C3030305C3034305C303030435C3030306F5C3030306E5C303030745C303030725C303030695C303030625C303030755C303030745C303030695C3030306F5C3030306E5C30303073}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Contributions}{8}{section.1.4}\protected@file@percent }
 \BKM@entry{id=11,dest={73656374696F6E2E312E35},srcline={1}}{5C3337365C3337375C303030315C3030302E5C303030355C3030305C3034305C303030545C303030685C303030655C303030735C303030695C303030735C3030305C3034305C303030535C303030745C303030725C303030755C303030635C303030745C303030755C303030725C30303065}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Thesis Structure}{7}{section.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Thesis Structure}{9}{section.1.5}\protected@file@percent }
 \BKM@entry{id=12,open,dest={636861707465722E32},srcline={1}}{5C3337365C3337375C303030325C3030305C3034305C3030304D5C303030655C303030745C303030685C3030306F5C303030645C3030306F5C3030306C5C3030306F5C303030675C30303079}
 \BKM@entry{id=13,dest={73656374696F6E2E322E31},srcline={1}}{5C3337365C3337375C303030325C3030302E5C303030315C3030305C3034305C303030445C303030615C303030745C303030615C3030305C3034305C303030435C303030755C303030725C303030615C303030745C303030695C3030306F5C3030306E}
 \citation{lin2024showui}
@@ -100,164 +118,166 @@
 \citation{gou2024uground}
 \citation{deitke2024molmo}
 \citation{cheng2024seeclick}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Methodology}{8}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Methodology}{10}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Data Curation}{8}{section.2.1}\protected@file@percent }
-\newlabel{sec:data_curation}{{2.1}{8}{Data Curation}{section.2.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Dataset Statistics}}{8}{table.caption.19}\protected@file@percent }
-\newlabel{tab:dataset_statistics}{{2.1}{8}{Dataset Statistics}{table.caption.19}{}}
-\@writefile{toc}{\contentsline {paragraph}{Normalization}{8}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Data Curation}{10}{section.2.1}\protected@file@percent }
+\newlabel{sec:data_curation}{{2.1}{10}{Data Curation}{section.2.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Dataset Statistics}}{10}{table.caption.23}\protected@file@percent }
+\newlabel{tab:dataset_statistics}{{2.1}{10}{Dataset Statistics}{table.caption.23}{}}
+\@writefile{toc}{\contentsline {paragraph}{Normalization}{10}{section*.24}\protected@file@percent }
 \citation{qwen2025qwen25vl}
 \citation{qwen2025qwen3vl}
 \BKM@entry{id=14,dest={73656374696F6E2E322E32},srcline={1}}{5C3337365C3337375C303030325C3030302E5C303030325C3030305C3034305C303030445C303030615C303030745C303030615C3030305C3034305C303030465C303030695C3030306C5C303030745C303030655C303030725C303030695C3030306E5C30303067}
-\@writefile{toc}{\contentsline {paragraph}{Processing}{9}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Resizing}{9}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Coordinate System}{9}{section*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Data Quality Issues}{9}{section*.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Data Filtering}{9}{section.2.2}\protected@file@percent }
-\newlabel{sec:data_filtering}{{2.2}{9}{Data Filtering}{section.2.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Hypothesis Testing}{9}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Processing}{11}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Resizing}{11}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Coordinate System}{11}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Data Quality Issues}{11}{section*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Data Filtering}{11}{section.2.2}\protected@file@percent }
+\newlabel{sec:data_filtering}{{2.2}{11}{Data Filtering}{section.2.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Hypothesis Testing}{11}{section*.30}\protected@file@percent }
+\citation{gta1}
 \citation{lu2024omniparser}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Examples of data quality issues encountered in curated datasets and their resolution through our filtering pipeline. Top left: misaligned bounding box; top right: simple task successfully filtered; bottom left: ambiguous task filtered by GTA1-7B; bottom right: unclear instruction filtered by GTA1-7B.}}{10}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:data_quality}{{2.1}{10}{Examples of data quality issues encountered in curated datasets and their resolution through our filtering pipeline. Top left: misaligned bounding box; top right: simple task successfully filtered; bottom left: ambiguous task filtered by GTA1-7B; bottom right: unclear instruction filtered by GTA1-7B}{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {paragraph}{OmniParser Filtering}{10}{section*.27}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Examples of data quality issues encountered in curated datasets and their resolution through our filtering pipeline. Top left: misaligned bounding box; top right: simple task successfully filtered; bottom left: ambiguous task filtered by GTA1-7B; bottom right: unclear instruction filtered by GTA1-7B.}}{12}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:data_quality}{{2.1}{12}{Examples of data quality issues encountered in curated datasets and their resolution through our filtering pipeline. Top left: misaligned bounding box; top right: simple task successfully filtered; bottom left: ambiguous task filtered by GTA1-7B; bottom right: unclear instruction filtered by GTA1-7B}{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {paragraph}{OmniParser Filtering}{12}{section*.31}\protected@file@percent }
+\citation{segui}
 \citation{yuan2025segui}
 \citation{yang2025gta1}
 \citation{gu2025uivenus}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces OmniParser filtering pipeline. The system detects UI elements and their bounding boxes (shown as colored rectangles), enabling validation of ground truth annotations. Samples where the target click location (red dot) falls outside all detected elements are filtered out as misaligned.}}{11}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:omniparser_yolo}{{2.2}{11}{OmniParser filtering pipeline. The system detects UI elements and their bounding boxes (shown as colored rectangles), enabling validation of ground truth annotations. Samples where the target click location (red dot) falls outside all detected elements are filtered out as misaligned}{figure.caption.28}{}}
-\@writefile{toc}{\contentsline {paragraph}{Difficulty Filtering}{11}{section*.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Overrepresentation of Text}{12}{section*.30}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Data Source Analysis}{12}{section*.31}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Performance of individual data sources on downstream benchmarks. Each data source was trained separately on Qwen 2.5 VL 7B with 4.9k samples.}}{12}{table.caption.32}\protected@file@percent }
-\newlabel{tab:individual_data_sources}{{2.2}{12}{Performance of individual data sources on downstream benchmarks. Each data source was trained separately on Qwen 2.5 VL 7B with 4.9k samples}{table.caption.32}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Impact of removing poorest performing data sources on downstream task performance.}}{13}{table.caption.33}\protected@file@percent }
-\newlabel{tab:data_source_removal}{{2.3}{13}{Impact of removing poorest performing data sources on downstream task performance}{table.caption.33}{}}
-\@writefile{toc}{\contentsline {paragraph}{Data Sampling and Scale}{13}{section*.34}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces OmniParser filtering pipeline. The system detects UI elements and their bounding boxes (shown as colored rectangles), enabling validation of ground truth annotations. Samples where the target click location (red dot) falls outside all detected elements are filtered out as misaligned.}}{13}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:omniparser_yolo}{{2.2}{13}{OmniParser filtering pipeline. The system detects UI elements and their bounding boxes (shown as colored rectangles), enabling validation of ground truth annotations. Samples where the target click location (red dot) falls outside all detected elements are filtered out as misaligned}{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {paragraph}{Difficulty Filtering}{13}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Overrepresentation of Text}{14}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Data Source Analysis}{14}{section*.35}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Performance of individual data sources on downstream benchmarks. Each data source was trained separately on Qwen 2.5 VL 7B with 4.9k samples.}}{14}{table.caption.36}\protected@file@percent }
+\newlabel{tab:individual_data_sources}{{2.2}{14}{Performance of individual data sources on downstream benchmarks. Each data source was trained separately on Qwen 2.5 VL 7B with 4.9k samples}{table.caption.36}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Impact of removing poorest performing data sources on downstream task performance.}}{15}{table.caption.37}\protected@file@percent }
+\newlabel{tab:data_source_removal}{{2.3}{15}{Impact of removing poorest performing data sources on downstream task performance}{table.caption.37}{}}
+\@writefile{toc}{\contentsline {paragraph}{Data Sampling and Scale}{15}{section*.38}\protected@file@percent }
 \BKM@entry{id=15,dest={73656374696F6E2E322E33},srcline={1}}{5C3337365C3337375C303030325C3030302E5C303030335C3030305C3034305C303030535C303030755C303030705C303030705C3030306C5C303030655C3030306D5C303030655C3030306E5C303030745C303030615C3030306C5C3030305C3034305C303030445C303030615C303030745C30303061}
-\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Impact of Training Data Scale on Model Performance}}{14}{table.caption.35}\protected@file@percent }
-\newlabel{tab:data_scaling}{{2.4}{14}{Impact of Training Data Scale on Model Performance}{table.caption.35}{}}
-\@writefile{toc}{\contentsline {paragraph}{Additional Experiments}{14}{section*.36}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Supplemental Data}{14}{section.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Performance Analysis by Image Resolution and Aspect Ratio}{15}{section*.37}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.5}{\ignorespaces Model performance stratified by image resolution on ScreenSpot Pro. The model achieves 736 correct predictions out of 1,581 total samples.}}{15}{table.caption.38}\protected@file@percent }
-\newlabel{tab:resolution_performance}{{2.5}{15}{Model performance stratified by image resolution on ScreenSpot Pro. The model achieves 736 correct predictions out of 1,581 total samples}{table.caption.38}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.6}{\ignorespaces Model performance stratified by aspect ratio on ScreenSpot Pro. Ultra-wide displays (3.6 aspect ratio) present significant challenges.}}{15}{table.caption.39}\protected@file@percent }
-\newlabel{tab:aspect_ratio_performance}{{2.6}{15}{Model performance stratified by aspect ratio on ScreenSpot Pro. Ultra-wide displays (3.6 aspect ratio) present significant challenges}{table.caption.39}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Impact of Training Data Scale on Model Performance}}{16}{table.caption.39}\protected@file@percent }
+\newlabel{tab:data_scaling}{{2.4}{16}{Impact of Training Data Scale on Model Performance}{table.caption.39}{}}
+\@writefile{toc}{\contentsline {paragraph}{Additional Experiments}{16}{section*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Supplemental Data}{16}{section.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Performance Analysis by Image Resolution and Aspect Ratio}{17}{section*.41}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.5}{\ignorespaces Model performance stratified by image resolution on ScreenSpot Pro. The model achieves 736 correct predictions out of 1,581 total samples.}}{17}{table.caption.42}\protected@file@percent }
+\newlabel{tab:resolution_performance}{{2.5}{17}{Model performance stratified by image resolution on ScreenSpot Pro. The model achieves 736 correct predictions out of 1,581 total samples}{table.caption.42}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.6}{\ignorespaces Model performance stratified by aspect ratio on ScreenSpot Pro. Ultra-wide displays (3.6 aspect ratio) present significant challenges.}}{17}{table.caption.43}\protected@file@percent }
+\newlabel{tab:aspect_ratio_performance}{{2.6}{17}{Model performance stratified by aspect ratio on ScreenSpot Pro. Ultra-wide displays (3.6 aspect ratio) present significant challenges}{table.caption.43}{}}
 \citation{nayak2025uivision}
 \citation{nayak2025uivision}
 \citation{xie2025jedi}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Model performance across different image resolutions and aspect ratios on ScreenSpot Pro. Error bars indicate 95\% confidence intervals.}}{16}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:resolution_aspect_analysis}{{2.3}{16}{Model performance across different image resolutions and aspect ratios on ScreenSpot Pro. Error bars indicate 95\% confidence intervals}{figure.caption.40}{}}
-\@writefile{toc}{\contentsline {paragraph}{UI Vision and JEDI}{16}{section*.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Supplemental Data Experiments}{16}{section*.43}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Performance heatmap showing accuracy by resolution and aspect ratio combinations. Darker regions indicate lower accuracy, highlighting performance bottlenecks at extreme configurations.}}{17}{figure.caption.41}\protected@file@percent }
-\newlabel{fig:resolution_aspect_heatmap}{{2.4}{17}{Performance heatmap showing accuracy by resolution and aspect ratio combinations. Darker regions indicate lower accuracy, highlighting performance bottlenecks at extreme configurations}{figure.caption.41}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.7}{\ignorespaces Impact of Supplemental Data on Model Performance}}{17}{table.caption.44}\protected@file@percent }
-\newlabel{tab:supplemental_data_results}{{2.7}{17}{Impact of Supplemental Data on Model Performance}{table.caption.44}{}}
-\@writefile{toc}{\contentsline {paragraph}{Video Data Collection}{17}{section*.45}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.8}{\ignorespaces Impact of In-house Professional Application Data}}{18}{table.caption.46}\protected@file@percent }
-\newlabel{tab:youtube_professional_data}{{2.8}{18}{Impact of In-house Professional Application Data}{table.caption.46}{}}
-\@writefile{toc}{\contentsline {paragraph}{DOM Tree Methods}{18}{section*.47}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Data Augmentation}{18}{section*.48}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{Composing High-Resolution Frames.}{18}{section*.49}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Model performance across different image resolutions and aspect ratios on ScreenSpot Pro. Error bars indicate 95\% confidence intervals.}}{18}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:resolution_aspect_analysis}{{2.3}{18}{Model performance across different image resolutions and aspect ratios on ScreenSpot Pro. Error bars indicate 95\% confidence intervals}{figure.caption.44}{}}
+\@writefile{toc}{\contentsline {paragraph}{UI Vision and JEDI}{18}{section*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Supplemental Data Experiments}{18}{section*.47}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Performance heatmap showing accuracy by resolution and aspect ratio combinations. Darker regions indicate lower accuracy, highlighting performance bottlenecks at extreme configurations.}}{19}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:resolution_aspect_heatmap}{{2.4}{19}{Performance heatmap showing accuracy by resolution and aspect ratio combinations. Darker regions indicate lower accuracy, highlighting performance bottlenecks at extreme configurations}{figure.caption.45}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.7}{\ignorespaces Impact of Supplemental Data on Model Performance}}{19}{table.caption.48}\protected@file@percent }
+\newlabel{tab:supplemental_data_results}{{2.7}{19}{Impact of Supplemental Data on Model Performance}{table.caption.48}{}}
+\@writefile{toc}{\contentsline {paragraph}{Video Data Collection}{19}{section*.49}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.8}{\ignorespaces Impact of In-house Professional Application Data}}{20}{table.caption.50}\protected@file@percent }
+\newlabel{tab:youtube_professional_data}{{2.8}{20}{Impact of In-house Professional Application Data}{table.caption.50}{}}
+\@writefile{toc}{\contentsline {paragraph}{DOM Tree Methods}{20}{section*.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Data Augmentation}{20}{section*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{Composing High-Resolution Frames.}{20}{section*.53}\protected@file@percent }
 \citation{zhang2025phiground}
 \BKM@entry{id=16,dest={73656374696F6E2E322E34},srcline={1}}{5C3337365C3337375C303030325C3030302E5C303030345C3030305C3034305C303030545C303030725C303030615C303030695C3030306E5C303030695C3030306E5C30303067}
-\@writefile{lot}{\contentsline {table}{\numberline {2.9}{\ignorespaces Effect of composing high-resolution frames on ScreenSpot-Pro accuracy.}}{19}{table.caption.50}\protected@file@percent }
-\newlabel{tab:composed_frames}{{2.9}{19}{Effect of composing high-resolution frames on ScreenSpot-Pro accuracy}{table.caption.50}{}}
-\@writefile{toc}{\contentsline {subparagraph}{Random Image Upscaling.}{19}{section*.51}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.10}{\ignorespaces Effect of random image upscaling on benchmark accuracy.}}{19}{table.caption.52}\protected@file@percent }
-\newlabel{tab:random_resize}{{2.10}{19}{Effect of random image upscaling on benchmark accuracy}{table.caption.52}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Training}{19}{section.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Stabilizing RL Training}{19}{section*.53}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.9}{\ignorespaces Effect of composing high-resolution frames on ScreenSpot-Pro accuracy.}}{21}{table.caption.54}\protected@file@percent }
+\newlabel{tab:composed_frames}{{2.9}{21}{Effect of composing high-resolution frames on ScreenSpot-Pro accuracy}{table.caption.54}{}}
+\@writefile{toc}{\contentsline {subparagraph}{Random Image Upscaling.}{21}{section*.55}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.10}{\ignorespaces Effect of random image upscaling on benchmark accuracy.}}{21}{table.caption.56}\protected@file@percent }
+\newlabel{tab:random_resize}{{2.10}{21}{Effect of random image upscaling on benchmark accuracy}{table.caption.56}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Training}{21}{section.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Stabilizing RL Training}{21}{section*.57}\protected@file@percent }
 \BKM@entry{id=17,open,dest={636861707465722E33},srcline={1}}{5C3337365C3337375C303030335C3030305C3034305C303030525C303030655C303030735C303030755C3030306C5C303030745C30303073}
 \BKM@entry{id=18,dest={73656374696F6E2E332E31},srcline={5}}{5C3337365C3337375C303030335C3030302E5C303030315C3030305C3034305C303030475C303030725C3030306F5C303030755C3030306E5C303030645C303030695C3030306E5C303030675C3030305C3034305C303030425C303030655C3030306E5C303030635C303030685C3030306D5C303030615C303030725C3030306B5C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
 \BKM@entry{id=19,dest={73756273656374696F6E2E332E312E31},srcline={7}}{5C3337365C3337375C303030335C3030302E5C303030315C3030302E5C303030315C3030305C3034305C303030535C303030635C303030725C303030655C303030655C3030306E5C303030535C303030705C3030306F5C303030745C3030302D5C303030505C303030725C3030306F}
 \citation{li2025screenspotpro}
 \BKM@entry{id=20,dest={73756273656374696F6E2E332E312E32},srcline={13}}{5C3337365C3337375C303030335C3030302E5C303030315C3030302E5C303030325C3030305C3034305C3030304F5C303030535C3030302D5C303030575C3030306F5C303030725C3030306C5C303030645C3030302D5C30303047}
 \citation{xie2025jedi}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Results}{21}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Results}{23}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Grounding Benchmark Evaluation}{21}{section.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}ScreenSpot-Pro}{21}{subsection.3.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}OS-World-G}{21}{subsection.3.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Grounding Benchmark Evaluation}{23}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}ScreenSpot-Pro}{23}{subsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}OS-World-G}{23}{subsection.3.1.2}\protected@file@percent }
 \BKM@entry{id=21,dest={73756273656374696F6E2E332E312E33},srcline={25}}{5C3337365C3337375C303030335C3030302E5C303030315C3030302E5C303030335C3030305C3034305C303030505C303030655C303030725C303030665C3030306F5C303030725C3030306D5C303030615C3030306E5C303030635C303030655C3030305C3034305C303030775C303030695C303030745C303030685C3030305C3034305C303030525C303030655C303030665C303030755C303030735C303030615C3030306C}
 \BKM@entry{id=22,dest={73756273656374696F6E2E332E312E34},srcline={34}}{5C3337365C3337375C303030335C3030302E5C303030315C3030302E5C303030345C3030305C3034305C303030435C3030306F5C3030306D5C303030705C303030615C303030725C303030695C303030735C3030306F5C3030306E5C3030305C3034305C303030775C303030695C303030745C303030685C3030305C3034305C303030505C303030725C303030695C3030306F5C303030725C3030305C3034305C303030575C3030306F5C303030725C3030306B}
 \BKM@entry{id=23,dest={73656374696F6E2E332E32},srcline={61}}{5C3337365C3337375C303030335C3030302E5C303030325C3030305C3034305C3030304F5C303030535C3030302D5C303030575C3030306F5C303030725C3030306C5C303030645C3030305C3034305C303030415C303030675C303030655C3030306E5C303030745C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
 \BKM@entry{id=24,dest={73756273656374696F6E2E332E322E31},srcline={65}}{5C3337365C3337375C303030335C3030302E5C303030325C3030302E5C303030315C3030305C3034305C303030415C303030675C303030655C3030306E5C303030745C3030305C3034305C303030485C303030615C303030725C3030306E5C303030655C303030735C30303073}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Performance with Refusal}{22}{subsection.3.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Comparison with Prior Work}{22}{subsection.3.1.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Grounding benchmark results. Gelato-30B-A3B surpasses prior specialized computer grounding models like GTA1-32B and much larger VLMs.}}{22}{table.caption.54}\protected@file@percent }
-\newlabel{tab:grounding_comparison}{{3.1}{22}{Grounding benchmark results. Gelato-30B-A3B surpasses prior specialized computer grounding models like GTA1-32B and much larger VLMs}{table.caption.54}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}OS-World Agent Evaluation}{22}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Performance with Refusal}{24}{subsection.3.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Comparison with Prior Work}{24}{subsection.3.1.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Grounding benchmark results. Gelato-30B-A3B surpasses prior specialized computer grounding models like GTA1-32B and much larger VLMs.}}{24}{table.caption.58}\protected@file@percent }
+\newlabel{tab:grounding_comparison}{{3.1}{24}{Grounding benchmark results. Gelato-30B-A3B surpasses prior specialized computer grounding models like GTA1-32B and much larger VLMs}{table.caption.58}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}OS-World Agent Evaluation}{24}{section.3.2}\protected@file@percent }
 \BKM@entry{id=25,dest={73756273656374696F6E2E332E322E32},srcline={77}}{5C3337365C3337375C303030335C3030302E5C303030325C3030302E5C303030325C3030305C3034305C303030495C3030306D5C303030705C3030306C5C303030655C3030306D5C303030655C3030306E5C303030745C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030445C303030655C303030745C303030615C303030695C3030306C5C30303073}
 \BKM@entry{id=26,dest={73756273656374696F6E2E332E322E33},srcline={87}}{5C3337365C3337375C303030335C3030302E5C303030325C3030302E5C303030335C3030305C3034305C303030415C303030755C303030745C3030306F5C3030306D5C303030615C303030745C303030655C303030645C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030525C303030655C303030735C303030755C3030306C5C303030745C30303073}
 \BKM@entry{id=27,dest={73756273656374696F6E2E332E322E34},srcline={99}}{5C3337365C3337375C303030335C3030302E5C303030325C3030302E5C303030345C3030305C3034305C303030565C303030615C303030725C303030695C303030615C3030306E5C303030635C303030655C3030305C3034305C303030415C303030635C303030725C3030306F5C303030735C303030735C3030305C3034305C303030525C303030755C3030306E5C30303073}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{23}{subsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Implementation Details}{23}{subsection.3.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Automated Evaluation Results}{23}{subsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{25}{subsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Implementation Details}{25}{subsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Automated Evaluation Results}{25}{subsection.3.2.3}\protected@file@percent }
 \BKM@entry{id=28,dest={73756273656374696F6E2E332E322E35},srcline={109}}{5C3337365C3337375C303030335C3030302E5C303030325C3030302E5C303030355C3030305C3034305C303030545C303030725C303030615C3030306A5C303030655C303030635C303030745C3030306F5C303030725C303030795C3030305C3034305C303030525C303030655C3030306C5C303030655C303030615C303030735C30303065}
 \BKM@entry{id=29,dest={73656374696F6E2E332E33},srcline={113}}{5C3337365C3337375C303030335C3030302E5C303030335C3030305C3034305C303030485C303030755C3030306D5C303030615C3030306E5C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
 \BKM@entry{id=30,dest={73756273656374696F6E2E332E332E31},srcline={117}}{5C3337365C3337375C303030335C3030302E5C303030335C3030302E5C303030315C3030305C3034305C3030304D5C303030655C303030745C303030685C3030306F5C303030645C3030306F5C3030306C5C3030306F5C303030675C30303079}
 \BKM@entry{id=31,dest={73756273656374696F6E2E332E332E32},srcline={128}}{5C3337365C3337375C303030335C3030302E5C303030335C3030302E5C303030325C3030305C3034305C303030485C303030755C3030306D5C303030615C3030306E5C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030525C303030655C303030735C303030755C3030306C5C303030745C30303073}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Variance Across Runs}{24}{subsection.3.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Trajectory Release}{24}{subsection.3.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Human Evaluation}{24}{section.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Methodology}{24}{subsection.3.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Human Evaluation Results}{24}{subsection.3.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Variance Across Runs}{26}{subsection.3.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Trajectory Release}{26}{subsection.3.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Human Evaluation}{26}{section.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Methodology}{26}{subsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Human Evaluation Results}{26}{subsection.3.3.2}\protected@file@percent }
 \BKM@entry{id=32,dest={73756273656374696F6E2E332E332E33},srcline={149}}{5C3337365C3337375C303030335C3030302E5C303030335C3030302E5C303030335C3030305C3034305C303030445C303030655C303030745C303030615C303030695C3030306C5C303030655C303030645C3030305C3034305C303030525C303030655C303030735C303030755C3030306C5C303030745C30303073}
 \BKM@entry{id=33,dest={73656374696F6E2E332E34},srcline={153}}{5C3337365C3337375C303030335C3030302E5C303030345C3030305C3034305C303030535C303030755C3030306D5C3030306D5C303030615C303030725C30303079}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Detailed Results}{25}{subsection.3.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Summary}{25}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Detailed Results}{27}{subsection.3.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Summary}{27}{section.3.4}\protected@file@percent }
 \BKM@entry{id=34,open,dest={636861707465722E34},srcline={1}}{5C3337365C3337375C303030345C3030305C3034305C303030435C3030306F5C3030306E5C303030635C3030306C5C303030755C303030735C303030695C3030306F5C3030306E5C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030465C303030755C303030745C303030755C303030725C303030655C3030305C3034305C303030575C3030306F5C303030725C3030306B}
 \BKM@entry{id=35,dest={73656374696F6E2E342E31},srcline={5}}{5C3337365C3337375C303030345C3030302E5C303030315C3030305C3034305C303030525C303030655C303030705C303030725C3030306F5C303030645C303030755C303030635C303030695C303030625C303030695C3030306C5C303030695C303030745C303030795C3030305C3034305C303030435C303030685C303030615C3030306C5C3030306C5C303030655C3030306E5C303030675C303030655C303030735C3030305C3034305C303030695C3030306E5C3030305C3034305C303030415C303030675C303030655C3030306E5C303030745C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
 \BKM@entry{id=36,dest={73756273656374696F6E2E342E312E31},srcline={9}}{5C3337365C3337375C303030345C3030302E5C303030315C3030302E5C303030315C3030305C3034305C3030304E5C3030306F5C3030306E5C3030302D5C303030445C303030655C303030745C303030655C303030725C3030306D5C303030695C3030306E5C303030695C303030735C303030745C303030695C303030635C3030305C3034305C303030505C3030306C5C303030615C3030306E5C3030306E5C303030695C3030306E5C303030675C3030305C3034305C3030304D5C3030306F5C303030645C303030655C3030306C5C30303073}
 \BKM@entry{id=37,dest={73756273656374696F6E2E342E312E32},srcline={22}}{5C3337365C3337375C303030345C3030302E5C303030315C3030302E5C303030325C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030505C303030725C3030306F5C3030306D5C303030705C303030745C3030305C3034305C303030565C303030655C303030725C303030735C303030695C3030306F5C3030306E5C303030695C3030306E5C30303067}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{26}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{28}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Reproducibility Challenges in Agent Evaluation}{26}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Non-Deterministic Planning Models}{26}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Reproducibility Challenges in Agent Evaluation}{28}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Non-Deterministic Planning Models}{28}{subsection.4.1.1}\protected@file@percent }
 \BKM@entry{id=38,dest={73756273656374696F6E2E342E312E33},srcline={33}}{5C3337365C3337375C303030345C3030302E5C303030315C3030302E5C303030335C3030305C3034305C303030495C3030306E5C303030635C3030306F5C3030306D5C303030705C3030306C5C303030655C303030745C303030655C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030435C3030306F5C303030765C303030655C303030725C303030615C303030675C30303065}
 \BKM@entry{id=39,dest={73756273656374696F6E2E342E312E34},srcline={46}}{5C3337365C3337375C303030345C3030302E5C303030315C3030302E5C303030345C3030305C3034305C303030415C3030306D5C303030625C303030695C303030675C303030755C3030306F5C303030755C303030735C3030305C3034305C303030545C303030615C303030735C3030306B5C3030305C3034305C303030535C303030705C303030655C303030635C303030695C303030665C303030695C303030635C303030615C303030745C303030695C3030306F5C3030306E5C30303073}
 \BKM@entry{id=40,dest={73756273656374696F6E2E342E312E35},srcline={57}}{5C3337365C3337375C303030345C3030302E5C303030315C3030302E5C303030355C3030305C3034305C303030525C303030655C303030635C3030306F5C3030306D5C3030306D5C303030655C3030306E5C303030645C303030615C303030745C303030695C3030306F5C3030306E5C303030735C3030305C3034305C303030665C3030306F5C303030725C3030305C3034305C303030465C303030755C303030745C303030755C303030725C303030655C3030305C3034305C303030425C303030655C3030306E5C303030635C303030685C3030306D5C303030615C303030725C3030306B5C30303073}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Evaluation Prompt Versioning}{27}{subsection.4.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Incomplete Evaluation Coverage}{27}{subsection.4.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Ambiguous Task Specifications}{27}{subsection.4.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Evaluation Prompt Versioning}{29}{subsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Incomplete Evaluation Coverage}{29}{subsection.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Ambiguous Task Specifications}{29}{subsection.4.1.4}\protected@file@percent }
 \BKM@entry{id=41,dest={73656374696F6E2E342E32},srcline={70}}{5C3337365C3337375C303030345C3030302E5C303030325C3030305C3034305C3030304C5C303030695C3030306D5C303030695C303030745C303030615C303030745C303030695C3030306F5C3030306E5C30303073}
 \BKM@entry{id=42,dest={73756273656374696F6E2E342E322E31},srcline={74}}{5C3337365C3337375C303030345C3030302E5C303030325C3030302E5C303030315C3030305C3034305C303030445C303030615C303030745C303030615C303030735C303030655C303030745C3030305C3034305C3030304C5C303030695C3030306D5C303030695C303030745C303030615C303030745C303030695C3030306F5C3030306E5C30303073}
 \BKM@entry{id=43,dest={73756273656374696F6E2E342E322E32},srcline={82}}{5C3337365C3337375C303030345C3030302E5C303030325C3030302E5C303030325C3030305C3034305C3030304D5C3030306F5C303030645C303030655C3030306C5C3030305C3034305C3030304C5C303030695C3030306D5C303030695C303030745C303030615C303030745C303030695C3030306F5C3030306E5C30303073}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}Recommendations for Future Benchmarks}{28}{subsection.4.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Limitations}{28}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Dataset Limitations}{28}{subsection.4.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Model Limitations}{28}{subsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}Recommendations for Future Benchmarks}{30}{subsection.4.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Limitations}{30}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Dataset Limitations}{30}{subsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Model Limitations}{30}{subsection.4.2.2}\protected@file@percent }
 \BKM@entry{id=44,dest={73756273656374696F6E2E342E322E33},srcline={90}}{5C3337365C3337375C303030345C3030302E5C303030325C3030302E5C303030335C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C3030304C5C303030695C3030306D5C303030695C303030745C303030615C303030745C303030695C3030306F5C3030306E5C30303073}
 \BKM@entry{id=45,dest={73656374696F6E2E342E33},srcline={98}}{5C3337365C3337375C303030345C3030302E5C303030335C3030305C3034305C303030465C303030755C303030745C303030755C303030725C303030655C3030305C3034305C303030445C303030695C303030725C303030655C303030635C303030745C303030695C3030306F5C3030306E5C30303073}
 \BKM@entry{id=46,dest={73756273656374696F6E2E342E332E31},srcline={100}}{5C3337365C3337375C303030345C3030302E5C303030335C3030302E5C303030315C3030305C3034305C303030535C303030635C303030615C3030306C5C303030695C3030306E5C303030675C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030455C303030665C303030665C303030695C303030635C303030695C303030655C3030306E5C303030635C30303079}
 \BKM@entry{id=47,dest={73756273656374696F6E2E342E332E32},srcline={108}}{5C3337365C3337375C303030345C3030302E5C303030335C3030302E5C303030325C3030305C3034305C303030445C303030615C303030745C303030615C303030735C303030655C303030745C3030305C3034305C303030455C303030785C303030705C303030615C3030306E5C303030735C303030695C3030306F5C3030306E}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Evaluation Limitations}{29}{subsection.4.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Future Directions}{29}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Scaling and Efficiency}{29}{subsection.4.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Dataset Expansion}{29}{subsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Evaluation Limitations}{31}{subsection.4.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Future Directions}{31}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Scaling and Efficiency}{31}{subsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Dataset Expansion}{31}{subsection.4.3.2}\protected@file@percent }
 \BKM@entry{id=48,dest={73756273656374696F6E2E342E332E33},srcline={118}}{5C3337365C3337375C303030345C3030302E5C303030335C3030302E5C303030335C3030305C3034305C303030545C303030725C303030615C303030695C3030306E5C303030695C3030306E5C303030675C3030305C3034305C3030304D5C303030655C303030745C303030685C3030306F5C303030645C3030306F5C3030306C5C3030306F5C303030675C30303079}
 \BKM@entry{id=49,dest={73756273656374696F6E2E342E332E34},srcline={126}}{5C3337365C3337375C303030345C3030302E5C303030335C3030302E5C303030345C3030305C3034305C303030415C303030675C303030655C3030306E5C303030745C3030305C3034305C303030415C303030725C303030635C303030685C303030695C303030745C303030655C303030635C303030745C303030755C303030725C30303065}
 \BKM@entry{id=50,dest={73756273656374696F6E2E342E332E35},srcline={134}}{5C3337365C3337375C303030345C3030302E5C303030335C3030302E5C303030355C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030415C3030306E5C303030615C3030306C5C303030795C303030735C303030695C30303073}
 \BKM@entry{id=51,dest={73656374696F6E2E342E34},srcline={142}}{5C3337365C3337375C303030345C3030302E5C303030345C3030305C3034305C303030435C3030306F5C3030306E5C303030635C3030306C5C303030755C303030735C303030695C3030306F5C3030306E}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Training Methodology}{30}{subsection.4.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Agent Architecture}{30}{subsection.4.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Evaluation and Analysis}{30}{subsection.4.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Conclusion}{30}{section.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Training Methodology}{32}{subsection.4.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Agent Architecture}{32}{subsection.4.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Evaluation and Analysis}{32}{subsection.4.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Conclusion}{32}{section.4.4}\protected@file@percent }
 \bibstyle{IEEEtran}
 \bibdata{references}
-\BKM@entry{id=52,open,dest={636861707465722A2E3535},srcline={2}}{5C3337365C3337375C303030425C303030695C303030625C3030306C5C303030695C3030306F5C303030675C303030725C303030615C303030705C303030685C30303079}
+\BKM@entry{id=52,open,dest={636861707465722A2E3539},srcline={2}}{5C3337365C3337375C303030425C303030695C303030625C3030306C5C303030695C3030306F5C303030675C303030725C303030615C303030705C303030685C30303079}
 \bibcite{kaplan2020scaling}{1}
 \bibcite{hestness2017deeplearningscalingpredictable}{2}
 \bibcite{aghajanyan2023scalinglawsgenerativemixedmodal}{3}
 \bibcite{cherti2023reproducible}{4}
 \bibcite{openai2024gpt4technicalreport}{5}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{32}{chapter*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{34}{chapter*.59}\protected@file@percent }
 \bibcite{rombach2022highresolutionimagesynthesislatent}{6}
 \bibcite{radford2021learningtransferablevisualmodels}{7}
 \bibcite{sambasivan2021datacascades}{8}
@@ -306,26 +326,26 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {A.1}Supplemental Data}{A-1}{section.U.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Complete list of professional applications covered by the YouTube tutorial data collection pipeline.}}{A-1}{table.caption.57}\protected@file@percent }
-\newlabel{tab:youtube_apps}{{A.1}{A-1}{Complete list of professional applications covered by the YouTube tutorial data collection pipeline}{table.caption.57}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Complete list of professional applications covered by the YouTube tutorial data collection pipeline.}}{A-1}{table.caption.61}\protected@file@percent }
+\newlabel{tab:youtube_apps}{{A.1}{A-1}{Complete list of professional applications covered by the YouTube tutorial data collection pipeline}{table.caption.61}{}}
 \BKM@entry{id=56,dest={73656374696F6E2E552E33},srcline={114}}{5C3337365C3337375C303030415C3030302E5C303030335C3030305C3034305C303030545C303030725C303030615C303030695C3030306E5C303030695C3030306E5C303030675C3030305C3034305C303030505C303030725C3030306F5C3030306D5C303030705C303030745C3030305C3034305C303030415C303030625C3030306C5C303030615C303030745C303030695C3030306F5C3030306E}
 \BKM@entry{id=57,dest={73656374696F6E2E552E34},srcline={238}}{5C3337365C3337375C303030415C3030302E5C303030345C3030305C3034305C303030485C303030795C303030705C303030655C303030725C303030705C303030615C303030725C303030615C3030306D5C303030655C303030745C303030655C303030725C3030305C3034305C303030535C303030655C303030615C303030725C303030635C303030685C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C3030304D5C3030306F5C303030645C303030655C3030306C5C3030305C3034305C303030435C3030306F5C3030306E5C303030665C303030695C303030675C303030755C303030725C303030615C303030745C303030695C3030306F5C3030306E}
 \BKM@entry{id=58,dest={73756273656374696F6E2E552E342E31},srcline={240}}{5C3337365C3337375C303030415C3030302E5C303030345C3030302E5C303030315C3030305C3034305C303030565C303030695C303030735C303030695C3030306F5C3030306E5C3030305C3034305C303030545C3030306F5C303030775C303030655C303030725C3030305C3034305C303030465C303030695C3030306E5C303030655C3030302D5C303030745C303030755C3030306E5C303030695C3030306E5C30303067}
 \@writefile{toc}{\contentsline {section}{\numberline {A.2}Instruction Relabeling Experiments}{A-2}{section.U.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.58}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Impact of prompt rewriting strategies on downstream task performance.}}{A-2}{table.caption.59}\protected@file@percent }
-\newlabel{tab:prompt_rewriting}{{A.2}{A-2}{Impact of prompt rewriting strategies on downstream task performance}{table.caption.59}{}}
+\@writefile{toc}{\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.62}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Impact of prompt rewriting strategies on downstream task performance.}}{A-2}{table.caption.63}\protected@file@percent }
+\newlabel{tab:prompt_rewriting}{{A.2}{A-2}{Impact of prompt rewriting strategies on downstream task performance}{table.caption.63}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.3}Training Prompt Ablation}{A-2}{section.U.3}\protected@file@percent }
 \BKM@entry{id=59,dest={73756273656374696F6E2E552E342E32},srcline={257}}{5C3337365C3337375C303030415C3030302E5C303030345C3030302E5C303030325C3030305C3034305C3030304C5C303030655C303030615C303030725C3030306E5C303030695C3030306E5C303030675C3030305C3034305C303030525C303030615C303030745C303030655C3030305C3034305C303030535C303030655C303030615C303030725C303030635C30303068}
-\@writefile{lot}{\contentsline {table}{\numberline {A.3}{\ignorespaces Impact of training prompt on downstream task performance for Qwen 2.5 VL 7B trained on 10k samples.}}{A-3}{table.caption.64}\protected@file@percent }
-\newlabel{tab:prompt_ablation}{{A.3}{A-3}{Impact of training prompt on downstream task performance for Qwen 2.5 VL 7B trained on 10k samples}{table.caption.64}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.3}{\ignorespaces Impact of training prompt on downstream task performance for Qwen 2.5 VL 7B trained on 10k samples.}}{A-3}{table.caption.68}\protected@file@percent }
+\newlabel{tab:prompt_ablation}{{A.3}{A-3}{Impact of training prompt on downstream task performance for Qwen 2.5 VL 7B trained on 10k samples}{table.caption.68}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.4}Hyperparameter Search and Model Configuration}{A-3}{section.U.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.4.1}Vision Tower Fine-tuning}{A-3}{subsection.U.4.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.4}{\ignorespaces Comparison of full fine-tuning versus freezing the vision tower for Qwen 2.5 VL 7B.}}{A-3}{table.caption.65}\protected@file@percent }
-\newlabel{tab:vision_tower}{{A.4}{A-3}{Comparison of full fine-tuning versus freezing the vision tower for Qwen 2.5 VL 7B}{table.caption.65}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.4}{\ignorespaces Comparison of full fine-tuning versus freezing the vision tower for Qwen 2.5 VL 7B.}}{A-3}{table.caption.69}\protected@file@percent }
+\newlabel{tab:vision_tower}{{A.4}{A-3}{Comparison of full fine-tuning versus freezing the vision tower for Qwen 2.5 VL 7B}{table.caption.69}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.4.2}Learning Rate Search}{A-3}{subsection.U.4.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.5}{\ignorespaces Learning rate sweep results. The optimal learning rate of 1e-6 (bold) achieves the best performance across all benchmarks.}}{A-3}{table.caption.66}\protected@file@percent }
-\newlabel{tab:learning_rate_sweep}{{A.5}{A-3}{Learning rate sweep results. The optimal learning rate of 1e-6 (bold) achieves the best performance across all benchmarks}{table.caption.66}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.5}{\ignorespaces Learning rate sweep results. The optimal learning rate of 1e-6 (bold) achieves the best performance across all benchmarks.}}{A-3}{table.caption.70}\protected@file@percent }
+\newlabel{tab:learning_rate_sweep}{{A.5}{A-3}{Learning rate sweep results. The optimal learning rate of 1e-6 (bold) achieves the best performance across all benchmarks}{table.caption.70}{}}
 \newlabel{lst:cleaning_prompt}{{A.1}{A-4}{Prompt template used for instruction cleaning}{lstlisting.U.1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.1}{\ignorespaces Prompt template used for instruction cleaning.}}{A-4}{lstlisting.U.1}\protected@file@percent }
 \newlabel{lst:prompt_default}{{A.2}{A-5}{Default Prompt (no resolution)}{lstlisting.U.2}{}}
@@ -334,4 +354,4 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.3}{\ignorespaces Default Prompt + Image Resolution.}}{A-5}{lstlisting.U.3}\protected@file@percent }
 \newlabel{lst:prompt_qwen_tool}{{A.4}{A-6}{Qwen Tool Calling Prompt + Image Resolution (abbreviated)}{lstlisting.U.4}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.4}{\ignorespaces Qwen Tool Calling Prompt + Image Resolution (abbreviated).}}{A-6}{lstlisting.U.4}\protected@file@percent }
-\gdef \@abspage@last{50}
+\gdef \@abspage@last{52}

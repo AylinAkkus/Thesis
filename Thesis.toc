@@ -7,88 +7,92 @@
 \contentsline {section}{\numberline {1.2}Background}{2}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Computer Use Agents}{2}{subsection.1.2.1}%
 \contentsline {paragraph}{Language-based vs. Vision-based Agents}{3}{section*.6}%
-\contentsline {paragraph}{Planner-Grounder Framework}{3}{section*.7}%
-\contentsline {paragraph}{GUI Grounding}{3}{section*.8}%
-\contentsline {subsection}{\numberline {1.2.2}GUI Grounding Datasets}{3}{subsection.1.2.2}%
-\contentsline {paragraph}{General-Purpose Training Data}{4}{section*.10}%
-\contentsline {paragraph}{Professional Application Data}{4}{section*.11}%
+\contentsline {paragraph}{End-to-End vs. Two-Stage Agents}{3}{section*.7}%
+\contentsline {paragraph}{GUI Grounding}{4}{section*.8}%
+\contentsline {subsection}{\numberline {1.2.2}GUI Grounding Datasets}{5}{subsection.1.2.2}%
+\contentsline {paragraph}{General-Purpose Training Data}{5}{section*.10}%
+\contentsline {paragraph}{Professional Application Data}{5}{section*.11}%
 \contentsline {subsection}{\numberline {1.2.3}Evaluation Benchmarks}{5}{subsection.1.2.3}%
 \contentsline {subsubsection}{Offline Benchmarks}{5}{section*.12}%
-\contentsline {paragraph}{ScreenSpot.}{5}{section*.13}%
-\contentsline {paragraph}{ScreenSpot-V2.}{5}{section*.14}%
-\contentsline {paragraph}{ScreenSpot-Pro.}{5}{section*.15}%
-\contentsline {paragraph}{OS-World-G.}{5}{section*.16}%
+\contentsline {paragraph}{ScreenSpot.}{6}{section*.13}%
+\contentsline {paragraph}{ScreenSpot-V2.}{6}{section*.14}%
+\contentsline {paragraph}{ScreenSpot-Pro.}{6}{section*.15}%
+\contentsline {paragraph}{OS-World-G.}{6}{section*.16}%
 \contentsline {subsubsection}{Online Benchmarks}{6}{section*.17}%
 \contentsline {paragraph}{OS-World.}{6}{section*.18}%
-\contentsline {section}{\numberline {1.3}Related Work}{6}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Contributions}{6}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Thesis Structure}{7}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Methodology}{8}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Data Curation}{8}{section.2.1}%
-\contentsline {paragraph}{Normalization}{8}{section*.20}%
-\contentsline {paragraph}{Processing}{9}{section*.21}%
-\contentsline {paragraph}{Resizing}{9}{section*.22}%
-\contentsline {paragraph}{Coordinate System}{9}{section*.23}%
-\contentsline {paragraph}{Data Quality Issues}{9}{section*.24}%
-\contentsline {section}{\numberline {2.2}Data Filtering}{9}{section.2.2}%
-\contentsline {paragraph}{Hypothesis Testing}{9}{section*.26}%
-\contentsline {paragraph}{OmniParser Filtering}{10}{section*.27}%
-\contentsline {paragraph}{Difficulty Filtering}{11}{section*.29}%
-\contentsline {paragraph}{Overrepresentation of Text}{12}{section*.30}%
-\contentsline {paragraph}{Data Source Analysis}{12}{section*.31}%
-\contentsline {paragraph}{Data Sampling and Scale}{13}{section*.34}%
-\contentsline {paragraph}{Additional Experiments}{14}{section*.36}%
-\contentsline {section}{\numberline {2.3}Supplemental Data}{14}{section.2.3}%
-\contentsline {paragraph}{Performance Analysis by Image Resolution and Aspect Ratio}{15}{section*.37}%
-\contentsline {paragraph}{UI Vision and JEDI}{16}{section*.42}%
-\contentsline {paragraph}{Supplemental Data Experiments}{16}{section*.43}%
-\contentsline {paragraph}{Video Data Collection}{17}{section*.45}%
-\contentsline {paragraph}{DOM Tree Methods}{18}{section*.47}%
-\contentsline {paragraph}{Data Augmentation}{18}{section*.48}%
-\contentsline {subparagraph}{Composing High-Resolution Frames.}{18}{section*.49}%
-\contentsline {subparagraph}{Random Image Upscaling.}{19}{section*.51}%
-\contentsline {section}{\numberline {2.4}Training}{19}{section.2.4}%
-\contentsline {paragraph}{Stabilizing RL Training}{19}{section*.53}%
-\contentsline {chapter}{\numberline {3}Results}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Grounding Benchmark Evaluation}{21}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}ScreenSpot-Pro}{21}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}OS-World-G}{21}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Performance with Refusal}{22}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Comparison with Prior Work}{22}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}OS-World Agent Evaluation}{22}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{23}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Implementation Details}{23}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Automated Evaluation Results}{23}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Variance Across Runs}{24}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Trajectory Release}{24}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Human Evaluation}{24}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Methodology}{24}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Human Evaluation Results}{24}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Detailed Results}{25}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Summary}{25}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{26}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Reproducibility Challenges in Agent Evaluation}{26}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Non-Deterministic Planning Models}{26}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Evaluation Prompt Versioning}{27}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Incomplete Evaluation Coverage}{27}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Ambiguous Task Specifications}{27}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Recommendations for Future Benchmarks}{28}{subsection.4.1.5}%
-\contentsline {section}{\numberline {4.2}Limitations}{28}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Dataset Limitations}{28}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Model Limitations}{28}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Evaluation Limitations}{29}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Future Directions}{29}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Scaling and Efficiency}{29}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Dataset Expansion}{29}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Training Methodology}{30}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Agent Architecture}{30}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Evaluation and Analysis}{30}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Conclusion}{30}{section.4.4}%
-\contentsline {chapter}{Bibliography}{32}{chapter*.55}%
+\contentsline {section}{\numberline {1.3}Related Work}{7}{section.1.3}%
+\contentsline {paragraph}{Closed-Source Computer-Use Models}{7}{section*.19}%
+\contentsline {paragraph}{General-Purpose Vision-Language Models}{7}{section*.20}%
+\contentsline {paragraph}{End-to-End GUI Agents}{7}{section*.21}%
+\contentsline {paragraph}{Specialized GUI Grounding Models}{7}{section*.22}%
+\contentsline {section}{\numberline {1.4}Contributions}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Thesis Structure}{9}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Methodology}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Data Curation}{10}{section.2.1}%
+\contentsline {paragraph}{Normalization}{10}{section*.24}%
+\contentsline {paragraph}{Processing}{11}{section*.25}%
+\contentsline {paragraph}{Resizing}{11}{section*.26}%
+\contentsline {paragraph}{Coordinate System}{11}{section*.27}%
+\contentsline {paragraph}{Data Quality Issues}{11}{section*.28}%
+\contentsline {section}{\numberline {2.2}Data Filtering}{11}{section.2.2}%
+\contentsline {paragraph}{Hypothesis Testing}{11}{section*.30}%
+\contentsline {paragraph}{OmniParser Filtering}{12}{section*.31}%
+\contentsline {paragraph}{Difficulty Filtering}{13}{section*.33}%
+\contentsline {paragraph}{Overrepresentation of Text}{14}{section*.34}%
+\contentsline {paragraph}{Data Source Analysis}{14}{section*.35}%
+\contentsline {paragraph}{Data Sampling and Scale}{15}{section*.38}%
+\contentsline {paragraph}{Additional Experiments}{16}{section*.40}%
+\contentsline {section}{\numberline {2.3}Supplemental Data}{16}{section.2.3}%
+\contentsline {paragraph}{Performance Analysis by Image Resolution and Aspect Ratio}{17}{section*.41}%
+\contentsline {paragraph}{UI Vision and JEDI}{18}{section*.46}%
+\contentsline {paragraph}{Supplemental Data Experiments}{18}{section*.47}%
+\contentsline {paragraph}{Video Data Collection}{19}{section*.49}%
+\contentsline {paragraph}{DOM Tree Methods}{20}{section*.51}%
+\contentsline {paragraph}{Data Augmentation}{20}{section*.52}%
+\contentsline {subparagraph}{Composing High-Resolution Frames.}{20}{section*.53}%
+\contentsline {subparagraph}{Random Image Upscaling.}{21}{section*.55}%
+\contentsline {section}{\numberline {2.4}Training}{21}{section.2.4}%
+\contentsline {paragraph}{Stabilizing RL Training}{21}{section*.57}%
+\contentsline {chapter}{\numberline {3}Results}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Grounding Benchmark Evaluation}{23}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}ScreenSpot-Pro}{23}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}OS-World-G}{23}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Performance with Refusal}{24}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Comparison with Prior Work}{24}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}OS-World Agent Evaluation}{24}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{25}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Implementation Details}{25}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Automated Evaluation Results}{25}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Variance Across Runs}{26}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Trajectory Release}{26}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Human Evaluation}{26}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Methodology}{26}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Human Evaluation Results}{26}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Detailed Results}{27}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Summary}{27}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{28}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Reproducibility Challenges in Agent Evaluation}{28}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Non-Deterministic Planning Models}{28}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Evaluation Prompt Versioning}{29}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Incomplete Evaluation Coverage}{29}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Ambiguous Task Specifications}{29}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Recommendations for Future Benchmarks}{30}{subsection.4.1.5}%
+\contentsline {section}{\numberline {4.2}Limitations}{30}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Dataset Limitations}{30}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Model Limitations}{30}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Evaluation Limitations}{31}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Future Directions}{31}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Scaling and Efficiency}{31}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Dataset Expansion}{31}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Training Methodology}{32}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Agent Architecture}{32}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Evaluation and Analysis}{32}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Conclusion}{32}{section.4.4}%
+\contentsline {chapter}{Bibliography}{34}{chapter*.59}%
 \contentsline {chapter}{\numberline {A}Appendix}{A-1}{appendix.U}%
 \contentsline {section}{\numberline {A.1}Supplemental Data}{A-1}{section.U.1}%
 \contentsline {section}{\numberline {A.2}Instruction Relabeling Experiments}{A-2}{section.U.2}%
-\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.58}%
+\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.62}%
 \contentsline {section}{\numberline {A.3}Training Prompt Ablation}{A-2}{section.U.3}%
 \contentsline {section}{\numberline {A.4}Hyperparameter Search and Model Configuration}{A-3}{section.U.4}%
 \contentsline {subsection}{\numberline {A.4.1}Vision Tower Fine-tuning}{A-3}{subsection.U.4.1}%

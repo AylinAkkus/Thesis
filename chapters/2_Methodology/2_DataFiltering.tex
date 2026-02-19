@@ -5,6 +5,7 @@
 To enable empirical testing of our data recipe, we require fast iterative evaluation. At this stage we therefore employ offline benchmarks (ScreenSpot-Pro, ScreenSpot v2, and OS-World), which provide significantly faster evaluation compared to online agentic benchmarks. Furthermore, we use supervised fine-tuning (SFT) on Qwen2.5-VL to accelerate iteration compared to reinforcement learning approaches. We make the assumption that online agentic performance will transfer from our suite of offline benchmarks and that data recipes which work well with SFT will work well with RL.
 
 \paragraph{OmniParser Filtering}
+Inspired by \cite{gta1} IoU overlap.
 To address the data quality issues described above, we employ model-based filtering using the detection component of OmniParser \cite{lu2024omniparser}, a vision-based screen parsing system. OmniParser's detection model is YOLO-based and identifies interactable UI elements by producing bounding boxes without requiring access to underlying code structures or accessibility trees, as illustrated in Figure~\ref{fig:omniparser_yolo}. This approach enables parsing of diverse GUI environments---including web browsers, desktop applications, and mobile interfaces---where traditional DOM-based methods are unavailable or unreliable.
 
 We leverage OmniParser's YOLO detector to validate the spatial alignment between instruction targets and actual UI elements. Specifically, we discard training samples where the ground truth click location lies outside all detected UI element bounding boxes, as illustrated in Figure~\ref{fig:data_quality}. This filtering step effectively removes misaligned annotations that would otherwise introduce noise during training. For element classification (distinguishing text-based from icon-based UI elements), we apply EasyOCR to the detected bounding box regions. By operating purely on visual features, this approach generalizes across application types and platforms, making it particularly valuable for desktop-centric datasets where structured metadata is scarce.
@@ -18,6 +19,7 @@ We leverage OmniParser's YOLO detector to validate the spatial alignment between
 
 
 \paragraph{Difficulty Filtering}
+Inspired by \cite{segui} difficulty filtering. However, they only sample too easy samples and not too hard samples.
 To filter samples by difficulty, we use Qwen2.5VL-7B (for autofiltering) or SE-3B \cite{yuan2025segui} for easy sample filtering, and GTA1-7B \cite{yang2025gta1}, UI-7B \cite{gu2025uivenus}, or SE-3B for hard sample filtering. To validate this approach, we conduct detailed ablations by fine-tuning Qwen2.5-7B-VL on a source-balanced 10k subset and evaluating on ScreenSpot-Pro[3]. We find that using Qwen2.5-7B-VL as the difficulty filter and GTA1-7B-2507 as the alignment filter produces a +9 percentage point accuracy gain over unfiltered data and outperforms other filtering model combinations.
 
 \includegraphics[width=0.5\textwidth]{figures/FilteringAblation.png}
@@ -59,16 +61,16 @@ Based on these data source experiments, we investigated the effect of removing t
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lcccc}
+\begin{tabular}{lccc}
 \hline
-Data Pool & SS Pro & SS V2 & Showdown Clicks & OS-World G \\
- & Accuracy & Accuracy & Accuracy & Accuracy \\
+Data Pool & SS Pro & SS V2 & Showdown Clicks \\
+ & Accuracy & Accuracy & Accuracy \\
 \hline
-All Data Sources & 45.22\% & 91.05\% & 66.97\% & N/A \\
-Remove Bottom 3 on SS Pro & 45.03\% & 90.14\% & 68.94\% & N/A \\
-(SeeClick, Pixmo Points, UGround) & & & & \\
-Remove Worst one on SS Pro & 44.78\% & 90.79\% & 67.68\% & N/A \\
-(Pixmo Points) & & & & \\
+All Data Sources & 45.22\% & 91.05\% & 66.97\% \\
+Remove Bottom 3 on SS Pro & 45.03\% & 90.14\% & 68.94\% \\
+(SeeClick, Pixmo Points, UGround) & & & \\
+Remove Worst one on SS Pro & 44.78\% & 90.79\% & 67.68\% \\
+(Pixmo Points) & & & \\
 \hline
 \end{tabular}
 \caption{Impact of removing poorest performing data sources on downstream task performance.}
@@ -82,17 +84,17 @@ To investigate the impact of training set size on model performance, we conduct 
 \centering
 \caption{Impact of Training Data Scale on Model Performance}
 \label{tab:data_scaling}
-\begin{tabular}{lcccc}
+\begin{tabular}{lccc}
 \hline
-\textbf{Configuration} & \textbf{SS Pro} & \textbf{SS V2} & \textbf{Showdown} & \textbf{OS-World G} \\
- & \textbf{Acc.} & \textbf{Acc.} & \textbf{Clicks Acc.} & \textbf{Acc.} \\
+\textbf{Configuration} & \textbf{SS Pro} & \textbf{SS V2} & \textbf{Showdown} \\
+ & \textbf{Acc.} & \textbf{Acc.} & \textbf{Clicks Acc.} \\
 \hline
-10k (w/o replacement) & 45.22\% & 91.05\% & 66.97\% & N/A \\
-10k + best prompt & 46.23\% & --- & 67.50\% & N/A \\
-20k (w/ replacement) & 45.41\% & 90.66\% & 66.61\% & N/A \\
-20k (w/o replacement) & 46.55\% & 90.27\% & 67.14\% & N/A \\
-35k (w/o replacement) & 47.18\% & 90.66\% & 69.12\% & N/A \\
-80k + improvements & 49.65\% & 90.79\% & 68.40\% & N/A \\
+10k (w/o replacement) & 45.22\% & 91.05\% & 66.97\% \\
+10k + best prompt & 46.23\% & --- & 67.50\% \\
+20k (w/ replacement) & 45.41\% & 90.66\% & 66.61\% \\
+20k (w/o replacement) & 46.55\% & 90.27\% & 67.14\% \\
+35k (w/o replacement) & 47.18\% & 90.66\% & 69.12\% \\
+80k + improvements & 49.65\% & 90.79\% & 68.40\% \\
 \hline
 \end{tabular}
 \end{table}

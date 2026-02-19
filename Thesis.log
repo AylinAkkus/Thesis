@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 FEB 2026 15:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 FEB 2026 19:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -844,37 +844,71 @@ g the chal-lenges faced by language-
 (./chapters/1_Introduction/2_Background/ComputerUse.tex
 
 [2]
-<figures/LanguageGrounding.png, id=243, 867.24pt x 487.8225pt>
+
+LaTeX Warning: Citation `uitars15' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation `uitars2' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation `gta1' on page 3 undefined on input line 16.
+
+
+LaTeX Warning: Citation `segui' on page 3 undefined on input line 16.
+
+
+
+[3]
+<figures/LanguageGrounding.png, id=250, 867.24pt x 487.8225pt>
 File: figures/LanguageGrounding.png Graphic file (type png)
 <use figures/LanguageGrounding.png>
-Package pdftex.def Info: figures/LanguageGrounding.png  used on input line 24.
+Package pdftex.def Info: figures/LanguageGrounding.png  used on input line 35.
 (pdftex.def)             Requested size: 183.06532pt x 102.97423pt.
 
-Underfull \hbox (badness 5696) in paragraph at lines 25--25
+Underfull \hbox (badness 5696) in paragraph at lines 36--36
 []\T1/cmr/m/n/10 (a) |Language-based ground-ing: The
  []
 
-<figures/VisualGroundingTask.png, id=245, 867.24pt x 487.8225pt>
+<figures/VisualGroundingTask.png, id=252, 867.24pt x 487.8225pt>
 File: figures/VisualGroundingTask.png Graphic file (type png)
 <use figures/VisualGroundingTask.png>
-Package pdftex.def Info: figures/VisualGroundingTask.png  used on input line 31
+Package pdftex.def Info: figures/VisualGroundingTask.png  used on input line 42
 .
 (pdftex.def)             Requested size: 183.06532pt x 102.97423pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 ) (./chapters/1_Introduction/2_Background/DataSets.tex
 
-[3]) (./chapters/1_Introduction/2_Background/EvaluationBenchmarks.tex
+[4 <./figures/LanguageGrounding.png> <./figures/VisualGroundingTask.png>])
+(./chapters/1_Introduction/2_Background/EvaluationBenchmarks.tex
 
-[4 <./figures/LanguageGrounding.png> <./figures/VisualGroundingTask.png>]
+[5]
 
-LaTeX Warning: Citation `screenspotv2' on page 5 undefined on input line 9.
+LaTeX Warning: Citation `screenspotv2' on page 6 undefined on input line 9.
+
+)) (./chapters/1_Introduction/3_RelatedWork/RelatedWork.tex
+
+[6]
+Overfull \hbox (7.69258pt too wide) in paragraph at lines 7--8
+\T1/cmr/m/n/10.95 on agen-tic and GUI-centric bench-marks. De-spite this in-cre
+as-ing fo-cus on computer-
+ []
+
+
+LaTeX Warning: Citation `qin2025uitars15' on page 7 undefined on input line 10.
 
 
 
-[5])) (./chapters/1_Introduction/3_RelatedWork/RelatedWork.tex)
-(./chapters/1_Introduction/4_Contributions/Contribution.tex
+LaTeX Warning: Citation `wang2025uitars2' on page 7 undefined on input line 10.
+
+
+
+Overfull \hbox (4.16864pt too wide) in paragraph at lines 10--11
+ []\T1/cmr/bx/n/10.95 End-to-End GUI Agents[] \T1/cmr/m/n/10.95 Build-ing on Qw
+en-based vision-language back-bones,
+ []
+
+
+
+[7]) (./chapters/1_Introduction/4_Contributions/Contribution.tex
 Overfull \hbox (37.93343pt too wide) in paragraph at lines 11--12
 \T1/cmr/m/n/10.95 Gelato-30B-A3B, achieves 63.88% ac-cu-racy on ScreenSpot-Pro 
 and 69.15%/74.65%
@@ -888,21 +922,21 @@ ial-ized ground-
 
 
 
-[6]) (./chapters/1_Introduction/5_ThesisStructure/ThesisStructure.tex
+[8]) (./chapters/1_Introduction/5_ThesisStructure/ThesisStructure.tex
 Overfull \hbox (10.77107pt too wide) in paragraph at lines 6--7
 []\T1/cmr/m/n/10.95 Summarizes the main con-tri-bu-tions,
  []
 
 )) (./chapters/2_Methodology/Methodology.tex
 
-[7]
+[9]
 Chapter 2.
 (./chapters/2_Methodology/1_DataCuration.tex
 
-[8
+[10
 
 ]
-<figures/DataQuality.png, id=340, 2569.6pt x 1686.3pt>
+<figures/DataQuality.png, id=364, 2569.6pt x 1686.3pt>
 File: figures/DataQuality.png Graphic file (type png)
 <use figures/DataQuality.png>
 Package pdftex.def Info: figures/DataQuality.png  used on input line 44.
@@ -913,50 +947,58 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./chapters/2_Methodology/2_DataFiltering.tex
 
-[9]
+[11]
 
-[10 <./figures/DataQuality.png (PNG copy)>]
-<figures/Omniparser.png, id=364, 1284.8pt x 803.0pt>
+LaTeX Warning: Citation `gta1' on page 12 undefined on input line 8.
+
+
+
+[12 <./figures/DataQuality.png (PNG copy)>]
+<figures/Omniparser.png, id=387, 1284.8pt x 803.0pt>
 File: figures/Omniparser.png Graphic file (type png)
 <use figures/Omniparser.png>
-Package pdftex.def Info: figures/Omniparser.png  used on input line 14.
+Package pdftex.def Info: figures/Omniparser.png  used on input line 15.
 (pdftex.def)             Requested size: 343.25766pt x 214.53387pt.
-<figures/FilteringAblation.png, id=368, 642.4803pt x 642.4803pt>
+
+
+LaTeX Warning: Citation `segui' on page 13 undefined on input line 22.
+
+<figures/FilteringAblation.png, id=391, 642.4803pt x 642.4803pt>
 File: figures/FilteringAblation.png Graphic file (type png)
 <use figures/FilteringAblation.png>
-Package pdftex.def Info: figures/FilteringAblation.png  used on input line 23.
+Package pdftex.def Info: figures/FilteringAblation.png  used on input line 25.
 (pdftex.def)             Requested size: 190.7pt x 190.69666pt.
-<figures/FilteringAllEvals.png, id=369, 859.2903pt x 570.933pt>
+<figures/FilteringAllEvals.png, id=392, 859.2903pt x 570.933pt>
 File: figures/FilteringAllEvals.png Graphic file (type png)
 <use figures/FilteringAllEvals.png>
-Package pdftex.def Info: figures/FilteringAllEvals.png  used on input line 24.
+Package pdftex.def Info: figures/FilteringAllEvals.png  used on input line 26.
 (pdftex.def)             Requested size: 190.7pt x 126.70332pt.
 
-Overfull \hbox (19.42162pt too wide) in paragraph at lines 23--25
+Overfull \hbox (19.42162pt too wide) in paragraph at lines 25--27
 [][] [] 
  []
 
 
 
-[11 <./figures/Omniparser.png (PNG copy)>]
+[13 <./figures/Omniparser.png (PNG copy)>]
 
-[12 <./figures/FilteringAblation.png> <./figures/FilteringAllEvals.png>]
-Overfull \hbox (7.6297pt too wide) in paragraph at lines 54--55
+[14 <./figures/FilteringAblation.png> <./figures/FilteringAllEvals.png>]
+Overfull \hbox (7.6297pt too wide) in paragraph at lines 56--57
 []\T1/cmr/m/n/10.95 Overall, ShowUI-Web ex-hibits con-sis-tently strong per-for
 -mance across all bench-
  []
 
 
-Overfull \hbox (78.38205pt too wide) in paragraph at lines 62--74
+Overfull \hbox (7.0352pt too wide) in paragraph at lines 64--76
  [][] 
  []
 
 
 
-[13]) (./chapters/2_Methodology/3_SupplementalData.tex
+[15]) (./chapters/2_Methodology/3_SupplementalData.tex
 
-[14]
-<figures/accuracy_by_resolution_and_aspect.png, id=418, 1727.253pt x 573.342pt>
+[16]
+<figures/accuracy_by_resolution_and_aspect.png, id=439, 1727.253pt x 573.342pt>
 
 File: figures/accuracy_by_resolution_and_aspect.png Graphic file (type png)
 <use figures/accuracy_by_resolution_and_aspect.png>
@@ -967,7 +1009,7 @@ Package pdftex.def Info: figures/accuracy_by_resolution_and_aspect.png  used on
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/accuracy_heatmap_resolution_aspect.png, id=419, 933.7284pt x 717.882pt
+<figures/accuracy_heatmap_resolution_aspect.png, id=440, 933.7284pt x 717.882pt
 >
 File: figures/accuracy_heatmap_resolution_aspect.png Graphic file (type png)
 <use figures/accuracy_heatmap_resolution_aspect.png>
@@ -979,22 +1021,17 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[15]
+[17]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[16 <./figures/accuracy_by_resolution_and_aspect.png>]
+[18 <./figures/accuracy_by_resolution_and_aspect.png>]
 
-[17 <./figures/accuracy_heatmap_resolution_aspect.png>]
+[19 <./figures/accuracy_heatmap_resolution_aspect.png>]
 
-[18]
-Overfull \hbox (68.05836pt too wide) in paragraph at lines 156--165
- [][] 
- []
-
-) (./chapters/2_Methodology/4_Training.tex
+[20]) (./chapters/2_Methodology/4_Training.tex
 Overfull \hbox (19.2284pt too wide) in paragraph at lines 5--6
  []\T1/cmr/bx/n/10.95 Stabilizing RL Train-ing[] \T1/cmr/m/n/10.95 Ex-ist-ing R
 L al-go-rithms suf-fer from a gradient-decreasing
@@ -1002,13 +1039,13 @@ L al-go-rithms suf-fer from a gradient-decreasing
 
 
 
-[19])) (./chapters/3_Results/Results.tex
+[21])) (./chapters/3_Results/Results.tex
 
-[20]
+[22]
 Chapter 3.
 
 
-[21
+[23
 
 ]
 Overfull \hbox (94.50964pt too wide) in paragraph at lines 40--49
@@ -1023,9 +1060,9 @@ er (7.8\TS1/cmr/m/n/10.95 Ö\T1/cmr/m/n/10.95 ) general-purpose
 
 
 
-[22]
+[24]
 
-[23]
+[25]
 Overfull \hbox (136.02007pt too wide) in paragraph at lines 111--112
 \T1/cmr/m/n/10.95 We pro-vide all of our agent's OS-World tra-jec-to-ries at \T
 1/cmtt/m/n/10.95 mlfoundations/gelato-osworld-agent-trajectories
@@ -1033,7 +1070,7 @@ Overfull \hbox (136.02007pt too wide) in paragraph at lines 111--112
 
 
 
-[24]
+[26]
 Overfull \hbox (118.49272pt too wide) in paragraph at lines 151--152
 \T1/cmr/m/n/10.95 Detailed re-sults for all 20 man-u-ally eval-u-ated tasks are
  avail-able in \T1/cmtt/m/n/10.95 evaluation/osworld-human-evals.md\T1/cmr/m/n/
@@ -1042,11 +1079,11 @@ Overfull \hbox (118.49272pt too wide) in paragraph at lines 151--152
 
 ) (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
 
-[25]
+[27]
 Chapter 4.
 
 
-[26
+[28
 
 ]
 Overfull \hbox (4.90349pt too wide) in paragraph at lines 44--45
@@ -1056,11 +1093,11 @@ an eval-u-a-tion (58.71%
 
 
 
-[27]
-
-[28]
-
 [29]
+
+[30]
+
+[31]
 Overfull \hbox (5.43532pt too wide) in paragraph at lines 122--123
 []\T1/cmr/bx/n/10.95 Iterative re-fine-ment\T1/cmr/m/n/10.95 : En-abling mod-el
 s to make mul-ti-ple at-tempts at ground-
@@ -1074,23 +1111,23 @@ ed bench-marks that test spe-cific ground-
 
 
 
-[30]) (./Thesis.bbl
-
-[31]
-
-[32
-
-]
+[32]) (./Thesis.bbl
 
 [33]
 
-[34]
+[34
+
+]
 
 [35]
 
-[36])
+[36]
 
-[37] (./chapters/5_Appendix/Appendix.tex
+[37]
+
+[38])
+
+[39] (./chapters/5_Appendix/Appendix.tex
 Overfull \hbox (53.37968pt too wide) in paragraph at lines 11--37
  [][] 
  []
@@ -1151,63 +1188,75 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 25609 strings out of 473190
- 469235 string characters out of 5715801
- 1317436 words of memory out of 5000000
+ 25618 strings out of 473190
+ 469341 string characters out of 5715801
+ 1316436 words of memory out of 5000000
  48048 multiletter control sequences out of 15000+600000
  582100 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,9n,132p,1131b,1293s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,9n,132p,1310b,1293s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-pdfTeX warning (dest): name{table.caption.48} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.52} has been referenced but does not 
 exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.55} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.57} has been referenced but does not 
 exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.42} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.44} has been referenced but does not 
 exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{figure.caption.39} has been referenced but does not
+pdfTeX warning (dest): name{figure.caption.41} has been referenced but does not
  exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{figure.caption.38} has been referenced but does not
+pdfTeX warning (dest): name{figure.caption.40} has been referenced but does not
  exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.63} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.66} has been referenced but does not 
 exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.62} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.65} has been referenced but does not 
 exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.31} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.59} has been referenced but does not 
 exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.30} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.64} has been referenced but does not 
 exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{figure.caption.26} has been referenced but does not
+pdfTeX warning (dest): name{table.caption.35} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.33} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.32} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.28} has been referenced but does not
  exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{figure.caption.23} has been referenced but does not
+pdfTeX warning (dest): name{figure.caption.25} has been referenced but does not
  exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.17} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.19} has been referenced but does not 
 exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{chapter*.53} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter*.55} has been referenced but does not exist
 , replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
@@ -1236,10 +1285,10 @@ st/fonts/type1/public/cm-super/sfsc1095.pfb></usr/local/texlive/2025/texmf-dist
 onts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fon
 ts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts
 /type1/public/cm-super/sftt1095.pfb>
-Output written on Thesis.pdf (50 pages, 3307968 bytes).
+Output written on Thesis.pdf (52 pages, 3313939 bytes).
 PDF statistics:
- 1126 PDF objects out of 1200 (max. 8388607)
- 996 compressed objects within 10 object streams
- 343 named destinations out of 1000 (max. 500000)
+ 1151 PDF objects out of 1200 (max. 8388607)
+ 1018 compressed objects within 11 object streams
+ 352 named destinations out of 1000 (max. 500000)
  530 words of extra memory for PDF output out of 10000 (max. 10000000)
 
