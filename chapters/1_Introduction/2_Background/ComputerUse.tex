@@ -1,57 +1,34 @@
 \subsection{Computer Use Agents}
-Computer-use agents aim to enable Large Language Models (LLMs) to operate a computer on behalf of a user. Instead of merely generating text, the model is placed in a perception–action loop: it receives an instruction (e.g., “book the cheapest flight tomorrow”), observes the current computer state (such as a screenshot or structured interface representation), predicts the next action (e.g., click, type, scroll), executes it, and then receives an updated observation. This process repeats until the task is completed.
-Formally, the agent learns a policy that maps
-(
-instruction
-,
-history
-,
-current observation
-)
-→
-next action
-.
-(instruction,history,current observation)→next action.
-Actions are typically low-level interface operations such as clicking at coordinates, typing text, scrolling, pressing hotkeys, or invoking system commands. Through sequential decision-making, the agent decomposes high-level goals into executable steps, effectively translating natural language into GUI interactions.
+Computer-use agents enable Large Language Models (LLMs) to operate computers autonomously through a perception–action loop. The agent observes the interface state, predicts an action, executes it, and receives feedback until task completion. Formally, the agent learns a policy:
+\[
+(\text{instruction}, \text{history}, \text{current observation}) \rightarrow \text{next action}
+\]
+where actions are low-level operations (clicks, typing, scrolling) that decompose high-level natural language instructions into executable GUI interactions.
 
-\paragraph{Computer Use Agents with Language-only Paradigm}
-Early approaches relied on language-only interaction. The model operated over structured textual representations of interfaces—such as DOM Trees, accessibility trees, or API descriptions—and produced tool calls or code snippets that manipulated the environment (see Figure~\ref{fig:grounding_comparison}a). While effective in constrained settings, these methods depend on privileged system access such as APIs and handcrafted pipelines (for example to filter the prohibitively large DOM tree), and they struggle with visually grounded tasks where layout, icons, or rendered state changes matter.
+\paragraph{Language-based vs. Vision-based Agents}
+Early language-only approaches operated over structured textual representations (DOM trees, accessibility trees) to generate tool calls (Figure~\ref{fig:grounding_comparison}a). While effective in constrained settings, these methods require privileged system access and handcrafted filtering pipelines, limiting generalization to visually-dependent tasks. Vision-based agents using VLMs instead process raw screenshots (Figure~\ref{fig:grounding_comparison}b), eliminating dependency on internal program structures. This paradigm shift changes the observation space from structured text to high-dimensional visual input, requiring models to extract semantic meaning and identify interactive elements directly from pixels.
 
-\paragraph{Multi-modal Computer Use Agents}
-By operating directly on images of the browser or desktop environment, the agent no longer depends on privileged APIs or internal program structures. Instead, it receives the same information a human user would (see Figure~\ref{fig:grounding_comparison}b).
-This shift fundamentally changes the observation space of the agent. Rather than conditioning on pre-filtered structured text describing interface elements, the model now conditions on high-dimensional visual input. The current state at each time step is an image, which must be interpreted to extract semantic meaning, identify interactive elements, and infer affordances. The agent must learn to associate visual patterns with functional behavior—for example, recognizing that a rectangular region with specific styling likely corresponds to a button, or that a text field expects typed input.
-
-\paragraph{Planner-Grounder framework}
-In screenshot-based computer use, the agent must solve two conceptually distinct problems at every interaction step: deciding \emph{what} to do next and determining \emph{where} to execute it. This observation has led to the widespread adoption of a planner–grounder framework, in which high-level decision making is separated from low-level spatial execution.
-The planner operates at the semantic level. Conditioned on the user instruction, the current screenshot, and the trajectory of previous interactions, it proposes the next action in natural language or structured form (e.g., “click the Settings button” or “type the email address into the login field”). The planner therefore reasons over task progress, interface state, and user intent, producing an abstract action proposal without committing to pixel coordinates.
-The grounder, in contrast, operates at the perceptual level. Given the current screenshot and the planner’s abstract action description, it predicts the precise interaction parameters required for execution—typically screen coordinates for clicks or drag operations. This modularization improves robustness: high-level reasoning is decoupled from pixel-level localization, allowing each component to specialize. Moreover, it enables stronger reasoning models to be used as planners while keeping the grounding module lightweight and optimized for spatial precision.
+\paragraph{Planner-Grounder Framework}
+Vision-based agents decompose interaction into two problems: deciding \emph{what} to do (planning) and \emph{where} to execute it (grounding). The \emph{planner} operates at the semantic level, reasoning over instruction, screenshot, and interaction history to propose abstract actions (e.g., "click the Settings button"). The \emph{grounder} operates at the perceptual level, mapping abstract action descriptions to precise screen coordinates. This modularization enables specialization: stronger reasoning models serve as planners while lightweight models optimize spatial localization.
 
 \paragraph{GUI Grounding}
-GUI grounding refers to the task of mapping an abstract interaction intent to a concrete spatial location in the image. Formally, given a screenshot 
-s
-s and an action proposal 
-a
-a that refers to a target UI element, the grounding model predicts coordinates 
-(
-x
-,
-y
-)
-(x,y) corresponding to the region of the intended element.
-Grounding is non-trivial for several reasons. First, GUI layouts are highly structured and information-dense, often containing dozens or hundreds of small interactive elements. Second, interfaces vary significantly across platforms, resolutions, and application domains. Third, visual cues such as color, typography, proximity, and grouping influence how elements are perceived and distinguished.
-Early approaches typically trained models in a supervised fashion to predict the center of the annotated bounding box of the target element. However, this formulation introduces a misalignment between training objective and task requirement: any coordinate inside the target region constitutes a valid interaction, yet center-point regression penalizes otherwise correct predictions. Recent methods therefore optimize grounding more directly by rewarding clicks that fall within the target region, aligning the learning signal with the actual success criterion of interaction.
+GUI grounding maps abstract interaction intents to spatial locations. Given screenshot $s$ and action proposal $a$, the grounding model predicts target coordinates:
+\[
+f_{\text{ground}}: (s, a) \rightarrow (x, y)
+\]
+This task is challenging due to information-dense layouts with numerous small elements, significant cross-platform interface variation, and reliance on visual cues (color, typography, proximity) for element discrimination. Early supervised approaches predicted bounding box centers, creating train-test misalignment: any coordinate within the target region constitutes valid interaction, yet center-point regression penalizes such predictions. Recent methods directly optimize for region-based success, aligning training objectives with actual interaction requirements.
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[t]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figures/LanguageGrounding.png}
+        \includegraphics[width=\textwidth,height=5cm,keepaspectratio]{figures/LanguageGrounding.png}
         \caption{Language-based grounding: The model receives a filtered DOM tree as input and predicts coordinates based on structured text representations of UI elements.}
         \label{fig:language_grounding}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[t]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figures/VisualGroundingTask.png}
+        \includegraphics[width=\textwidth,height=5cm,keepaspectratio]{figures/VisualGroundingTask.png}
         \caption{Visual grounding: The model operates directly on screenshots and predicts coordinates from high-dimensional visual input.}
         \label{fig:visual_grounding}
     \end{subfigure}
