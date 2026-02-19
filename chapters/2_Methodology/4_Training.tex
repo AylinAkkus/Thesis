@@ -1,30 +1,153 @@
 \section{Training}
+\label{sec:training}
 
+After establishing our data recipe through supervised fine-tuning experiments, we turn to reinforcement learning (RL) to try to push model performance beyond the SFT plateau similar to \cite{yang2025gta1, yuan2025segui}. We adopt Group Relative Policy Optimization (GRPO)~\cite{shao2024deepseekmathgrpo} as our base RL algorithm and progressively refine the training pipeline through a series of experiments, ultimately incorporating key ideas from DAPO~\cite{yu2025dapo} leading to our final best-performing Gelato-30B-A3B model. Both GRPO and DAPO are implemented with the EasyR1 framework \cite{zheng2025easyr1}. This section describes the training methodology; all experimental results are presented in Chapter~\ref{ch:results}.
 
-\paragraph{Stabilizing RL Training}
-Existing RL algorithms suffer from a gradient-decreasing problem when some prompts have accuracy equal to 1. For example, in GRPO, if all outputs $\{o_i\}_{i=1}^{G}$ of a particular prompt are correct and receive the same reward, the resulting advantage for this group is zero. A zero advantage results in zero policy gradients, shrinking the gradient magnitude and increasing the noise sensitivity of the batch gradient, thereby degrading sample efficiency.
+\subsection{Initial GRPO Setup}
+\label{sec:initial_grpo}
 
+Our first RL experiment applied GRPO to both the Qwen2.5-VL-7B-Instruct base model and a model already trained with one round of SFT on the training data to see if we can improve performance beyond the SFT baseline. We used 8 rollouts per prompt at temperature 1.1 with KL divergence disabled, training on a pool of approximately 63k samples. As shown in Figure~\ref{fig:initial_grpo}, RL did not boost performance beyond the SFT baseline in either setting: ScreenSpot-Pro accuracy remained flat around the SFT level, while OS-World-G (refined) showed only marginal fluctuation.
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/grpo_63k_qwen25vl_refined_label.png}
+    \caption{GRPO on base Qwen2.5-VL-7B-Instruct (RL only, no SFT).}
+    \label{fig:initial_grpo_base}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/GRPO_63k_Qwen2.5VL-63k-SFT.png}
+    \caption{GRPO on Qwen2.5-VL-7B after 63k SFT (SFT + RL).}
+    \label{fig:initial_grpo_sft}
+\end{subfigure}
+\caption{Initial GRPO experiments. Validation accuracy on ScreenSpot-Pro (orange) and OS-World-G refined (blue) over training steps. Dashed lines indicate the SFT baseline. In both settings, RL training fails to improve over the SFT checkpoint, motivating the subsequent improvements to the training pipeline.}
+\label{fig:initial_grpo}
+\end{figure}
+
+\subsection{Reward Function}
+\label{sec:reward_function}
+
+Unlike mathematical reasoning tasks where reward is binary (correct/incorrect), GUI grounding allows for a natural continuous reward signal based on spatial proximity. Both our reward functions are based on the Euclidean distance $d = \lVert (x, y) - (c_x, c_y) \rVert$ between the predicted point $(x, y)$ and the center $(c_x, c_y)$ of the ground truth region $R$; they differ only in the normalization constant and in whether a signal is provided outside $R$.
+
+We implement a \emph{sparse} reward function that assigns non-zero reward only when the predicted coordinate falls inside the ground truth region:
+\[
+r_{\text{sparse}}(x, y) = \begin{cases}
+1 - \dfrac{d}{d_R} & \text{if } (x, y) \in R, \\[6pt]
+0 & \text{otherwise,}
+\end{cases}
+\]
+where $d_R$ is the maximum distance from the center to any corner of $R$ (i.e.\ the half-diagonal of the bounding box). This reward is maximal (1.0) when the prediction coincides with the region center and decreases smoothly toward zero at the corners. We do not include a format reward, as the model's output format (a coordinate pair) is simple and reliably learned during SFT.
+
+\paragraph{Sparse vs.\ Dense Reward Function.}
+Inspired by \cite{yuan2025segui} which use a dense reward function, we ablate our sparse reward against a dense variant.
+The \emph{dense} reward provides a distance-based signal over the entire viewport, rather than only inside the ground truth region. The motivation is that for hard samples with small bounding boxes, the sparse reward assigns zero reward to predictions that are close but just outside the region boundary, providing no gradient signal to improve. Using the same distance $d$, the dense reward is defined as:
+\[
+r_{\text{dense}}(x, y) = \begin{cases}
+1.0 + \left(1 - \dfrac{d}{D_v}\right)^2 & \text{if } (x, y) \in R, \\[6pt]
+\left(1 - \dfrac{d}{D_v}\right)^2 & \text{otherwise,}
+\end{cases}
+\]
+where $D_v = \sqrt{W^2 + H^2}$ is the viewport diagonal. Predictions inside $R$ receive a base reward of $1.0$ plus a smooth bonus that peaks at the box center, while predictions outside $R$ still receive a continuous signal that decays smoothly with distance. This ensures that near-misses receive positive reward rather than zero, providing useful gradient signal even for hard samples. In contrast, the sparse reward provides no learning signal whatsoever for predictions outside $R$, regardless of proximity.
+We compare the two reward functions under identical training conditions starting from a Qwen2.5-VL-7B-Instruct model already trained with one round of SFT on the training data, doing RL on the same training data using the GRPO algorithm (Figure~\ref{fig:dense_vs_sparse_reward}). Despite the richer gradient signal, the dense reward does not consistently outperform the sparse variant: performance is comparable on ScreenSpot-Pro and slightly worse on OS-World-G. We therefore retain the sparse reward for all subsequent experiments.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/dense_vs_sparse_reward.png}
+\caption{Comparison of sparse and dense reward functions in GRPO training \textbf{Left:} ScreenSpot-Pro accuracy. \textbf{Right:} OS-World-G accuracy. The sparse reward (orange, dashed) performs comparably or slightly better than the dense variant (blue, solid), despite providing no signal outside the ground truth region.}
+\label{fig:dense_vs_sparse_reward}
+\end{figure}
+
+\paragraph{Entropy Decay Problem}
+
+Existing RL algorithms suffer from a gradient-diminishing problem when some prompts have accuracy equal to 1. In GRPO, if all outputs $\{o_i\}_{i=1}^{G}$ of a particular prompt are correct and receive the same reward, the resulting advantage for this group is zero. A zero advantage yields zero policy gradients, shrinking the effective gradient magnitude and increasing the noise sensitivity of the batch gradient, thereby degrading sample efficiency.
+We already mitigated this problem by filtering based on easy and hard problems out prompts with accuracy equal to 1 and 0 before training in a prefiltering step.
 Let the intended batch size be $B$ and the effective batch size be $B_{\text{eff}}$. Then
 \[
 B_{\text{eff}} = \sum_{i=1}^{B} \mathbf{1}\{A_i \neq 0\}.
 \]
 
-Under the i.i.d. assumption,
+Under the i.i.d.\ assumption,
 \[
-B_{\text{eff}} \sim \mathrm{Binomial}(B, 1-p).
+B_{\text{eff}} \sim \mathrm{Binomial}(B, 1-p),
 \]
-
+where $p$ is the probability that all rollouts for a prompt yield the same reward.
 The expected effective batch size is
 \[
-\mathbb{E}[B_{\text{eff}}] = B(1-p).
+\mathbb{E}[B_{\text{eff}}] = B(1-p),
 \]
-The variance is
+with variance
 \[
 \mathrm{Var}(B_{\text{eff}}) = B(1-p)p.
 \]
 
-This formulation reveals two problems: (1) a priori imbalance in sample difficulties, and (2) the number of samples with accuracy equal to 1 continues to increase during training, further exacerbating the problem. While DAPO focuses on online over-sampling and filtering to address this issue, we also employ a priori filtering. Without a priori filtering, we would need to oversample more aggressively and may exhaust the oversampling budget, resulting in increased variance in the effective batch size.
+Our filtering pipeline reduces the probability $p$ of all rollouts being correct to a negligible level, making the batch variance smaller. Therefore the difficulty of the tasks in the dataset are just right. However, as RL progresses and the model gets better, certain prompts are solved with high probability and the probability $p$ increases again. To mitigate this problem, we decide to implement DAPO style dynamic sampling and asymmetric clipping.
 
-% TODO: does easyr1 implement DAPO style oversampling?
+\subsection{DAPO: Dynamic Sampling and Asymmetric Clipping}
+\label{sec:dapo}
 
-To this end, we propose filtering out prompts with accuracy equal to 1 and 0 before training, thereby decreasing the probability $p$ and maintaining more stable RL training throughout the optimization process.
+We incorporate key techniques from DAPO~\cite{yu2025dapo}. In total, the final Gelato GRPO objective differs from vanilla GRPO in three ways: (1) the KL-divergence term is removed, (2) the probability ratio is clipped asymmetrically, and (3) zero-advantage rollouts are skipped via dynamic sampling.
+
+\paragraph{Dynamic Sampling.}
+Rather than relying solely on our a priori filtering pipeline, DAPO performs online oversampling during training. For each batch, more prompts are sampled than needed, rollouts are generated, and prompts where the mean reward falls below a threshold $\tau_{\text{low}}$ or above $\tau_{\text{high}}$ are discarded. We set $\tau_{\text{low}} = 0.01$ and $\tau_{\text{high}} = 0.5$, which ensures that each training batch contains only prompts with non-trivial advantage signal. This approach complements our a~priori filtering by additionally removing prompts that become too easy during training.
+
+\paragraph{Asymmetric Clipping.}
+Standard GRPO clips the probability ratio symmetrically at $[1 - \epsilon, 1 + \epsilon]$. DAPO introduces an asymmetric upper clip $\epsilon_{\text{high}} > \epsilon_{\text{low}}$, which allows the policy to increase the probability of high-advantage actions more aggressively than it decreases the probability of low-advantage ones. We set $\epsilon_{\text{low}} = 0.2$ and $\epsilon_{\text{high}} = 0.28$ following the DAPO recommendations.
+
+\paragraph{Removing Ambiguous Data Sources in RL stage.}
+While SeeClick, PixMo, and UGround were weakest in earlier SFT experiments, excluding them did not yield consistent improvements. Yet in the RL stage we see that these datapoints have problematic ambiguous annotations which prohibit the model from solving them consistently. We therefore remove them from the RL training set. The remaining sources form the Click-100k RL training set.
+
+\paragraph{Application to 7B Models.}
+We apply the DAPO modifications on top of UI-TARS-1.5-7B~\cite{qin2025uitars15}---the same base model used by GTA1-7B-2507~\cite{yang2025gta1}---to enable a direct comparison between our data and training recipe and GTA1's, isolating the effect of our improvements from the choice of base model. We train with the full DAPO setup (dynamic sampling, asymmetric clipping, no KL) on the Click-100k dataset.
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/DAPO_screenspot_prro.png}
+    \caption{ScreenSpot-Pro accuracy over training steps.}
+    \label{fig:dapo_sspro}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/DAPO_Osworld.png}
+    \caption{OS-World-G accuracy over training steps.}
+    \label{fig:dapo_osworld}
+\end{subfigure}
+\caption{DAPO training on UI-TARS-1.5-7B with the Click-100k dataset. Solid lines show our DAPO run; dashed lines indicate the GTA1-7B-2507 baseline. On both benchmarks, DAPO training steadily improves accuracy and ultimately surpasses the GTA1 baseline.}
+\label{fig:dapo_training}
+\end{figure}
+
+Figure~\ref{fig:recipe_comparison} summarizes the overall impact. Starting from the same UI-TARS-1.5-7B base model (42.2\% ScreenSpot-Pro, 52.8\% OS-World-G), the GTA recipe improves performance to 50.1\% and 55.3\%, respectively. The Gelato recipe pushes further to 50.8\% on ScreenSpot-Pro and 59.0\% on OS-World-G, demonstrating that our curated data and DAPO training pipeline yield consistent gains over GTA1's recipe on the same base model.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/FinalRecipeComparison.png}
+\caption{Comparison of training recipes applied to the same UI-TARS-1.5-7B base model. The Gelato recipe (DAPO on Click-100k) outperforms the GTA recipe on both ScreenSpot-Pro (+8.6~pp over base, +0.7~pp over GTA) and OS-World-G (+6.2~pp over base, +3.7~pp over GTA).}
+\label{fig:recipe_comparison}
+\end{figure}
+
+\subsection{Scaling to Gelato-30B-A3B}
+\label{sec:gelato_30b}
+
+Having established the Gelato recipe on 7B models, we scale to a larger base model: Qwen3-VL-30B-A3B-Instruct~\cite{qwen2025qwen3vl}, a mixture-of-experts VLM with 30B total parameters and 3B active parameters per token. We initialize Gelato-30B-A3B from Qwen3-VL-30B-A3B-Instruct and train with the full DAPO setup (dynamic sampling, asymmetric clipping, no KL) on the Click-100k dataset for 100 steps on $32\times$40\,GB A100 GPUs.
+Figure~\ref{fig:rl_progression} shows the training dynamics.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/RLProgression.png}
+\caption{Gelato-30B-A3B training progression over 100 DAPO steps. \textbf{Top left:} training reward. \textbf{Top right:} average evaluation accuracy. \textbf{Bottom left:} ScreenSpot-Pro accuracy. \textbf{Bottom right:} OS-World-G accuracy. Dashed lines indicate GTA1-32B and Qwen3-VL-235B baselines. The green cross marks the best checkpoint at step~84.}
+\label{fig:rl_progression}
+\end{figure}
+
+Figure~\ref{fig:final_performance} places Gelato-30B-A3B in context against leading models. Despite using only 3B active parameters per token, Gelato-30B-A3B achieves \textbf{63.8\%} on ScreenSpot-Pro and \textbf{69.1\%} on OS-World-G, outperforming GTA1-32B, Qwen3-VL-235B-Instruct, and OpenCUA-72B on both benchmarks. Detailed per-category results are presented in Section~\ref{sec:results_gelato30b}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/FinalPerformance.png}
+\caption{Final benchmark comparison of Gelato-30B-A3B against leading models. \textbf{Left:} OS-World-G accuracy. \textbf{Right:} ScreenSpot-Pro accuracy. Gelato-30B-A3B achieves the highest accuracy on both benchmarks despite having fewer active parameters than all competitors.}
+\label{fig:final_performance_methodology}
+\end{figure}

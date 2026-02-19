@@ -9,25 +9,24 @@ Of these, training data has received the least systematic
 attention---despite its crucial role, datasets are rarely the subject of
 dedicated research~\cite{sambasivan2021datacascades}.
 
-On the modeling side, empirical experimentation is relatively
-straightforward: given sufficient compute, permutations of architecture
-width, depth, normalization, and training hyperparameters can be
-rigorously evaluated, yielding consistent improvements over the
-years~\cite{touvron2023llamaopenefficientfoundation, adept2023persimmon}.
-The dataset side, however, remains far less transparent.
-Most large-scale training sets are not publicly released, leaving the
-community to pursue open
-reproductions~\cite{schuhmann2021laion400mopendatasetclipfiltered,
+On the modeling side, progress is comparatively well-understood:
+given sufficient compute, systematic sweeps over architecture width,
+depth, normalization, and training hyperparameters produce reliable,
+reproducible gains~\cite{touvron2023llamaopenefficientfoundation, adept2023persimmon}.
+Data, by contrast, remains a blind spot.
+The vast majority of large-scale training sets are proprietary, forcing
+the community to reverse-engineer or independently
+reconstruct them~\cite{schuhmann2021laion400mopendatasetclipfiltered,
 kakaobrain2022coyo700m, gao2020pile800gbdatasetdiverse}.
-While recent initiatives such as DataPerf, DataComp, and
+Efforts such as DataPerf, DataComp, and
 MetaCLIP~\cite{mazumder2023dataperfbenchmarksdatacentricai,
 gadre2023datacompsearchgenerationmultimodal, xu2025demystifyingclipdata}
-have begun to bridge this gap by providing consistent evaluation and
-reproduction frameworks, we argue that dataset design can and should
-leverage the same principled methodology as model design.
-In particular, large-scale dataset construction can generally be
-decomposed into two phases: uncurated data collection and dataset
-filtering.
+have made important strides toward standardized evaluation and
+reproducibility, yet dataset engineering as a discipline still lags far
+behind model engineering.
+We contend that it demands the same rigorous, principled treatment.
+In practice, large-scale dataset construction can be decomposed into
+two distinct phases: uncurated data collection and dataset filtering.
 
 \medskip
 

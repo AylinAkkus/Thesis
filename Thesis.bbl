@@ -277,15 +277,45 @@ A.~Singh \emph{et~al.}, ``Openai gpt-5 system card,'' 2025. [Online].
 
 \bibitem{qin2025uitars}
 \BIBentryALTinterwordspacing
-Y.~Qin \emph{et~al.}, ``Ui-tars: Pioneering automated gui interaction with
+Y.~Qin, Y.~Ye, J.~Fang, H.~Wang, S.~Liang, S.~Tian, J.~Zhang, J.~Li, Y.~Li,
+  S.~Huang \emph{et~al.}, ``Ui-tars: Pioneering automated gui interaction with
   native agents,'' 2025. [Online]. Available:
   \url{https://arxiv.org/abs/2501.12326}
 \BIBentrySTDinterwordspacing
 
-\bibitem{lin2024showui}
+\bibitem{qin2025uitars15}
 \BIBentryALTinterwordspacing
-Z.~Lin \emph{et~al.}, ``Showui: One vision-language-action model for gui visual
-  agent,'' 2024. [Online]. Available: \url{https://arxiv.org/abs/2411.17465}
+{ByteDance Seed}, ``Ui-tars-1.5: Open-source multimodal agent with
+  reinforcement learning,'' Hugging Face model card, 2025, built upon UI-TARS
+  with advanced reasoning via reinforcement learning. [Online]. Available:
+  \url{https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B}
+\BIBentrySTDinterwordspacing
+
+\bibitem{wang2025uitars2}
+\BIBentryALTinterwordspacing
+H.~Wang, H.~Zou, H.~Song \emph{et~al.}, ``Ui-tars-2 technical report: Advancing
+  gui agent with multi-turn reinforcement learning,'' 2025. [Online].
+  Available: \url{https://arxiv.org/abs/2509.02544}
+\BIBentrySTDinterwordspacing
+
+\bibitem{yang2025gta1}
+\BIBentryALTinterwordspacing
+Z.~Yang \emph{et~al.}, ``Gta1: Gui test-time scaling agent,'' 2025. [Online].
+  Available: \url{https://arxiv.org/abs/2507.05791}
+\BIBentrySTDinterwordspacing
+
+\bibitem{yuan2025segui}
+\BIBentryALTinterwordspacing
+S.~Yuan \emph{et~al.}, ``Enhancing visual grounding for gui agents via
+  self-evolutionary reinforcement learning,'' 2025. [Online]. Available:
+  \url{https://arxiv.org/abs/2505.12370}
+\BIBentrySTDinterwordspacing
+
+\bibitem{gou2024uground}
+\BIBentryALTinterwordspacing
+Y.~Gou \emph{et~al.}, ``Navigating the digital world as humans do: Universal
+  visual grounding for gui agents,'' 2024. [Online]. Available:
+  \url{https://arxiv.org/abs/2410.05243}
 \BIBentrySTDinterwordspacing
 
 \bibitem{li2025autogui}
@@ -295,31 +325,16 @@ W.~Li \emph{et~al.}, ``Autogui: Scaling gui grounding with automatic functional
   \url{https://arxiv.org/abs/2502.01977}
 \BIBentrySTDinterwordspacing
 
-\bibitem{cheng2024seeclick}
+\bibitem{lin2024showui}
 \BIBentryALTinterwordspacing
-K.~Cheng \emph{et~al.}, ``Seeclick: Harnessing gui grounding for advanced
-  visual gui agents,'' 2024. [Online]. Available:
-  \url{https://arxiv.org/abs/2401.10935}
-\BIBentrySTDinterwordspacing
-
-\bibitem{deitke2024molmo}
-\BIBentryALTinterwordspacing
-M.~Deitke \emph{et~al.}, ``Molmo and pixmo: Open weights and open data for
-  state-of-the-art vision-language models,'' 2024. [Online]. Available:
-  \url{https://arxiv.org/abs/2409.17146}
+Z.~Lin \emph{et~al.}, ``Showui: One vision-language-action model for gui visual
+  agent,'' 2024. [Online]. Available: \url{https://arxiv.org/abs/2411.17465}
 \BIBentrySTDinterwordspacing
 
 \bibitem{wu2024osatlas}
 \BIBentryALTinterwordspacing
 Z.~Wu \emph{et~al.}, ``Os-atlas: A foundation action model for generalist gui
   agents,'' 2024. [Online]. Available: \url{https://arxiv.org/abs/2410.23218}
-\BIBentrySTDinterwordspacing
-
-\bibitem{gou2024uground}
-\BIBentryALTinterwordspacing
-Y.~Gou \emph{et~al.}, ``Navigating the digital world as humans do: Universal
-  visual grounding for gui agents,'' 2024. [Online]. Available:
-  \url{https://arxiv.org/abs/2410.05243}
 \BIBentrySTDinterwordspacing
 
 \bibitem{agentsea2024waveui}
@@ -334,11 +349,32 @@ X.~He \emph{et~al.}, ``Efficient agent training for computer use,'' 2025.
   [Online]. Available: \url{https://arxiv.org/abs/2505.13909}
 \BIBentrySTDinterwordspacing
 
+\bibitem{deitke2024molmo}
+\BIBentryALTinterwordspacing
+M.~Deitke \emph{et~al.}, ``Molmo and pixmo: Open weights and open data for
+  state-of-the-art vision-language models,'' 2024. [Online]. Available:
+  \url{https://arxiv.org/abs/2409.17146}
+\BIBentrySTDinterwordspacing
+
+\bibitem{cheng2024seeclick}
+\BIBentryALTinterwordspacing
+K.~Cheng \emph{et~al.}, ``Seeclick: Harnessing gui grounding for advanced
+  visual gui agents,'' 2024. [Online]. Available:
+  \url{https://arxiv.org/abs/2401.10935}
+\BIBentrySTDinterwordspacing
+
 \bibitem{nayak2025uivision}
 \BIBentryALTinterwordspacing
 A.~Nayak \emph{et~al.}, ``Ui-vision: A desktop-centric gui benchmark for visual
   perception and interaction,'' 2025. [Online]. Available:
   \url{https://arxiv.org/abs/2503.15661}
+\BIBentrySTDinterwordspacing
+
+\bibitem{xie2025jedi}
+\BIBentryALTinterwordspacing
+T.~Xie \emph{et~al.}, ``Scaling computer-use grounding via user interface
+  decomposition and synthesis,'' 2025. [Online]. Available:
+  \url{https://arxiv.org/abs/2505.13227}
 \BIBentrySTDinterwordspacing
 
 \bibitem{cheng2024seeclickharnessingguigrounding}
@@ -348,18 +384,18 @@ K.~Cheng, Q.~Sun, Y.~Chu, F.~Xu, Y.~Li, J.~Zhang, and Z.~Wu, ``Seeclick:
   Available: \url{https://arxiv.org/abs/2401.10935}
 \BIBentrySTDinterwordspacing
 
+\bibitem{wu2024screenspotv2}
+\BIBentryALTinterwordspacing
+Z.~Wu, Z.~Wu, F.~Xu, Y.~Wang, Q.~Sun, C.~Jia, K.~Cheng, Z.~Ding, L.~Chen, P.~P.
+  Liang, and Y.~Qiao, ``Os-atlas: A foundation action model for generalist gui
+  agents,'' 2024. [Online]. Available: \url{https://arxiv.org/abs/2410.23218}
+\BIBentrySTDinterwordspacing
+
 \bibitem{li2025screenspotpro}
 \BIBentryALTinterwordspacing
 Y.~Li \emph{et~al.}, ``Screenspot-pro: Gui grounding for professional
   high-resolution computer use,'' 2025. [Online]. Available:
   \url{https://arxiv.org/abs/2504.07981}
-\BIBentrySTDinterwordspacing
-
-\bibitem{xie2025jedi}
-\BIBentryALTinterwordspacing
-T.~Xie \emph{et~al.}, ``Scaling computer-use grounding via user interface
-  decomposition and synthesis,'' 2025. [Online]. Available:
-  \url{https://arxiv.org/abs/2505.13227}
 \BIBentrySTDinterwordspacing
 
 \bibitem{xie2024osworldbenchmarkingmultimodalagents}
@@ -389,24 +425,18 @@ Y.~Lu \emph{et~al.}, ``Omniparser for pure vision based gui agent,'' 2024.
   [Online]. Available: \url{https://arxiv.org/abs/2408.00203}
 \BIBentrySTDinterwordspacing
 
-\bibitem{yuan2025segui}
-\BIBentryALTinterwordspacing
-S.~Yuan \emph{et~al.}, ``Enhancing visual grounding for gui agents via
-  self-evolutionary reinforcement learning,'' 2025. [Online]. Available:
-  \url{https://arxiv.org/abs/2505.12370}
-\BIBentrySTDinterwordspacing
-
-\bibitem{yang2025gta1}
-\BIBentryALTinterwordspacing
-Z.~Yang \emph{et~al.}, ``Gta1: Gui test-time scaling agent,'' 2025. [Online].
-  Available: \url{https://arxiv.org/abs/2507.05791}
-\BIBentrySTDinterwordspacing
-
 \bibitem{gu2025uivenus}
 \BIBentryALTinterwordspacing
 Z.~Gu \emph{et~al.}, ``Ui-venus technical report: Building high-performance ui
   agents with rft,'' 2025. [Online]. Available:
   \url{https://arxiv.org/abs/2508.10833}
+\BIBentrySTDinterwordspacing
+
+\bibitem{fang2023datafilteringnetworks}
+\BIBentryALTinterwordspacing
+A.~Fang, A.~M. Jose, A.~Jain, L.~Schmidt, A.~Toshev, and V.~Shankar, ``Data
+  filtering networks,'' 2023. [Online]. Available:
+  \url{https://arxiv.org/abs/2309.17425}
 \BIBentrySTDinterwordspacing
 
 \bibitem{zhang2025phiground}
@@ -416,5 +446,39 @@ M.~Zhang, Z.~Xu, J.~Zhu, Q.~Dai, K.~Qiu, Y.~Yang, C.~Luo, T.~Chen, J.~Wagle,
   gui grounding,'' 2025. [Online]. Available:
   \url{https://arxiv.org/abs/2507.23779}
 \BIBentrySTDinterwordspacing
+
+\bibitem{shao2024deepseekmathgrpo}
+\BIBentryALTinterwordspacing
+Z.~Shao \emph{et~al.}, ``Deepseekmath: Pushing the limits of mathematical
+  reasoning in open language models,'' 2024. [Online]. Available:
+  \url{https://arxiv.org/abs/2402.03300}
+\BIBentrySTDinterwordspacing
+
+\bibitem{yu2025dapo}
+\BIBentryALTinterwordspacing
+T.~Yu \emph{et~al.}, ``Dapo: An open-source llm reinforcement learning system
+  at scale,'' 2025. [Online]. Available: \url{https://arxiv.org/abs/2503.14476}
+\BIBentrySTDinterwordspacing
+
+\bibitem{zheng2025easyr1}
+\BIBentryALTinterwordspacing
+Y.~Zheng, J.~Lu, S.~Wang, Z.~Feng, D.~Kuang, and Y.~Xiong, ``Easyr1: An
+  efficient, scalable, multi-modality rl training framework,''
+  \url{https://github.com/hiyouga/EasyR1}, 2025, gitHub repository. [Online].
+  Available: \url{https://github.com/hiyouga/EasyR1}
+\BIBentrySTDinterwordspacing
+
+\bibitem{osworld_gta15_agent}
+\BIBentryALTinterwordspacing
+T.~Xie, D.~Zhang, J.~Chen, X.~Li, S.~Zhao, ..., and T.~Yu, ``{gta15\_agent.py
+  (OSWorld Module)},'' GitHub repository, 2024, commit
+  ddb8372a6cbb51a29583cc1c0fe8c090e61219b7. [Online]. Available:
+  \url{https://github.com/xlang-ai/OSWorld/blob/ddb8372a6cbb51a29583cc1c0fe8c090e61219b7/mm_agents/gta1/gta15_agent.py}
+\BIBentrySTDinterwordspacing
+
+\bibitem{brand2025osworld}
+F.~Brand and G.~Burnham, ``What does osworld tell us about ai's ability to use
+  computers?'' Epoch AI Blog, 2025,
+  \url{https://epoch.ai/blog/what-does-osworld-tell-us-about-ais-ability-to-use-computers}.
 
 \end{thebibliography}

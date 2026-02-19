@@ -5,7 +5,7 @@
 To enable empirical testing of our data recipe, we require fast iterative evaluation. At this stage we therefore employ offline benchmarks (ScreenSpot-Pro, ScreenSpot v2, and OS-World), which provide significantly faster evaluation compared to online agentic benchmarks. Furthermore, we use supervised fine-tuning (SFT) on Qwen2.5-VL to accelerate iteration compared to reinforcement learning approaches. We make the assumption that online agentic performance will transfer from our suite of offline benchmarks and that data recipes which work well with SFT will work well with RL.
 
 \paragraph{OmniParser Filtering}
-Inspired by \cite{gta1} IoU overlap.
+Inspired by \cite{yang2025gta1} IoU overlap.
 To address the data quality issues described above, we employ model-based filtering using the detection component of OmniParser \cite{lu2024omniparser}, a vision-based screen parsing system. OmniParser's detection model is YOLO-based and identifies interactable UI elements by producing bounding boxes without requiring access to underlying code structures or accessibility trees, as illustrated in Figure~\ref{fig:omniparser_yolo}. This approach enables parsing of diverse GUI environments---including web browsers, desktop applications, and mobile interfaces---where traditional DOM-based methods are unavailable or unreliable.
 
 We leverage OmniParser's YOLO detector to validate the spatial alignment between instruction targets and actual UI elements. Specifically, we discard training samples where the ground truth click location lies outside all detected UI element bounding boxes, as illustrated in Figure~\ref{fig:data_quality}. This filtering step effectively removes misaligned annotations that would otherwise introduce noise during training. For element classification (distinguishing text-based from icon-based UI elements), we apply EasyOCR to the detected bounding box regions. By operating purely on visual features, this approach generalizes across application types and platforms, making it particularly valuable for desktop-centric datasets where structured metadata is scarce.
@@ -19,39 +19,38 @@ We leverage OmniParser's YOLO detector to validate the spatial alignment between
 
 
 \paragraph{Difficulty Filtering}
-Inspired by \cite{segui} difficulty filtering. However, they only sample too easy samples and not too hard samples.
+Inspired by \cite{yuan2025segui} difficulty filtering. However, they only sample too easy samples and not too hard samples.
 To filter samples by difficulty, we use Qwen2.5VL-7B (for autofiltering) or SE-3B \cite{yuan2025segui} for easy sample filtering, and GTA1-7B \cite{yang2025gta1}, UI-7B \cite{gu2025uivenus}, or SE-3B for hard sample filtering. To validate this approach, we conduct detailed ablations by fine-tuning Qwen2.5-7B-VL on a source-balanced 10k subset and evaluating on ScreenSpot-Pro[3]. We find that using Qwen2.5-7B-VL as the difficulty filter and GTA1-7B-2507 as the alignment filter produces a +9 percentage point accuracy gain over unfiltered data and outperforms other filtering model combinations.
 
 \includegraphics[width=0.5\textwidth]{figures/FilteringAblation.png}
 \includegraphics[width=0.5\textwidth]{figures/FilteringAllEvals.png}
-
-\paragraph{Overrepresentation of Text}
+While it might seem that filtering out hard samples with a stronger model like GTA1-7B would limit the model in becoming better than that model, this is - counterintuitively - not the case. Previous work has shown that filtering a data pool using a weaker CLIP model can produce a stronger CLIP model when trained on the filtered data pool \cite{fang2023datafilteringnetworks}. An intuitive explanation might be that the trained model is able to learn cleaner representations of the data.
 
 \paragraph{Data Source Analysis}
 In the previous filtering pipeline, we trained on a balanced set from all data sources. Our current data pool comprises a mixture of multiple data sources, and we seek to determine which sources have the greatest impact on downstream task performance. To investigate this, we trained Qwen 2.5 VL 7B on each data source separately, capping the number of samples at 4.9k to control for the confounding effect of data repetition.
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lcccc}
+\begin{tabular}{lccc}
 \hline
-Data Source & SS Pro & SS V2 & Showdown Clicks & OS-World G \\
- & Accuracy & Accuracy & Accuracy & Accuracy \\
+Data Source & SS Pro & SS V2 & OS-World G \\
+ & Accuracy & Accuracy & Accuracy \\
 \hline
-ShowUI-Web & 36.43\% & 86.77\% & 63.73\% & 48.24\% \\
-AutoGUI & 34.54\% & 87.68\% & 63.02\% & 47.06\% \\
-PC-Agent-E & 34.28\% & 87.29\% & 63.73\% & 47.84\% \\
-WaveUI & 33.40\% & 87.16\% & 63.02\% & 44.71\% \\
-Omniact & 33.21\% & 87.16\% & 62.12\% & 44.90\% \\
-ShowUI-Desktop & 32.01\% & 85.21\% & 60.68\% & 42.16\% \\
-UGround & 31.82\% & 85.99\% & 63.73\% & 41.76\% \\
-Pixmo Points & 30.68\% & 86.64\% & 61.04\% & 42.16\% \\
-SeeClick & 29.22\% & 84.82\% & 61.94\% & 43.53\% \\
+ShowUI-Web & 36.43\% & 86.77\% & 48.24\% \\
+AutoGUI & 34.54\% & 87.68\% & 47.06\% \\
+PC-Agent-E & 34.28\% & 87.29\% & 47.84\% \\
+WaveUI & 33.40\% & 87.16\% & 44.71\% \\
+Omniact & 33.21\% & 87.16\% & 44.90\% \\
+ShowUI-Desktop & 32.01\% & 85.21\% & 42.16\% \\
+UGround & 31.82\% & 85.99\% & 41.76\% \\
+Pixmo Points & 30.68\% & 86.64\% & 42.16\% \\
+SeeClick & 29.22\% & 84.82\% & 43.53\% \\
 \hline
 \end{tabular}
 \caption{Performance of individual data sources on downstream benchmarks. Each data source was trained separately on Qwen 2.5 VL 7B with 4.9k samples.}
 \label{tab:individual_data_sources}
 \end{table}
-Table~\ref{tab:individual_data_sources} reveals substantial variation in data source quality across benchmarks. The top three performing data sources for ScreenSpot Pro are ShowUI-Web (36.43\%), AutoGUI (34.54\%), and PC-Agent-E (34.28\%). For ScreenSpot V2, AutoGUI (87.68\%), PC-Agent-E (87.29\%), and Omniact/WaveUI (87.16\%) achieve the highest accuracies. On Showdown Clicks, ShowUI-Web, PC-Agent-E, and UGround tie at 63.73\%, followed by WaveUI and AutoGUI at 63.02\%. For OS-World G, ShowUI-Web (48.24\%), PC-Agent-E (47.84\%), and AutoGUI (47.06\%) demonstrate superior performance.
+Table~\ref{tab:individual_data_sources} reveals substantial variation in data source quality across benchmarks. The top three performing data sources for ScreenSpot Pro are ShowUI-Web (36.43\%), AutoGUI (34.54\%), and PC-Agent-E (34.28\%). For ScreenSpot V2, AutoGUI (87.68\%), PC-Agent-E (87.29\%), and Omniact/WaveUI (87.16\%) achieve the highest accuracies. For OS-World G, ShowUI-Web (48.24\%), PC-Agent-E (47.84\%), and AutoGUI (47.06\%) demonstrate superior performance.
 
 Overall, ShowUI-Web exhibits consistently strong performance across all benchmarks, particularly excelling on ScreenSpot Pro and OS-World G. PC-Agent-E demonstrates robust and balanced performance across all evaluation metrics, while AutoGUI achieves the highest ScreenSpot V2 accuracy alongside strong ScreenSpot Pro performance.
 
@@ -61,40 +60,40 @@ Based on these data source experiments, we investigated the effect of removing t
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lccc}
+\begin{tabular}{lcc}
 \hline
-Data Pool & SS Pro & SS V2 & Showdown Clicks \\
- & Accuracy & Accuracy & Accuracy \\
+Data Pool & SS Pro & SS V2 \\
+ & Accuracy & Accuracy \\
 \hline
-All Data Sources & 45.22\% & 91.05\% & 66.97\% \\
-Remove Bottom 3 on SS Pro & 45.03\% & 90.14\% & 68.94\% \\
-(SeeClick, Pixmo Points, UGround) & & & \\
-Remove Worst one on SS Pro & 44.78\% & 90.79\% & 67.68\% \\
-(Pixmo Points) & & & \\
+All Data Sources & 45.22\% & 91.05\% \\
+Remove Bottom 3 on SS Pro & 45.03\% & 90.14\% \\
+(SeeClick, Pixmo Points, UGround) & & \\
+Remove Worst one on SS Pro & 44.78\% & 90.79\% \\
+(Pixmo Points) & & \\
 \hline
 \end{tabular}
 \caption{Impact of removing poorest performing data sources on downstream task performance.}
 \label{tab:data_source_removal}
 \end{table}
-As shown in Table~\ref{tab:data_source_removal}, removing the bottom three data sources does not yield consistent improvements across benchmarks. While Showdown Clicks accuracy increases slightly (68.94\% vs. 66.97\%), ScreenSpot Pro and ScreenSpot V2 accuracies decrease marginally. Given these mixed results, we conclude that it is beneficial to retain all data sources in the training pool to maximize overall performance.
+As shown in Table~\ref{tab:data_source_removal}, removing the bottom three data sources does not yield consistent improvements across benchmarks. ScreenSpot Pro and ScreenSpot V2 accuracies decrease marginally. Given these mixed results, we conclude that it is beneficial to retain all data sources in the training pool to maximize overall performance. However, during RL training we find that these data sources have problematic ambiguous annotations and ultimately exclude them from the RL data pool (Section~\ref{sec:dapo}).
 \paragraph{Data Sampling and Scale}
-To investigate the impact of training set size on model performance, we conduct a series of ablation studies with varying data scales. We implement a two-stage filtering strategy: hard samples are filtered using GTA1-7B, while easy samples are filtered using Qwen2.5-VL-7B. From this filtered pool, we sample data from each source at different scales (10k, 20k, 35k, and 80k samples), exploring both sampling with and without replacement. As shown in Table~\ref{tab:data_scaling}, we observe consistent performance improvements with increased data scale on ScreenSpot Pro, with accuracy improving from 45.22\% at 10k samples to 49.65\% at 80k samples when combined with enhanced prompting and additional in-house data. Performance on ScreenSpot V2 and Showdown Clicks benchmarks remains relatively stable across different scales, suggesting that model capacity and data quality play complementary roles in determining final performance.
+To investigate the impact of training set size on model performance, we conduct a series of ablation studies with varying data scales. We implement a two-stage filtering strategy: hard samples are filtered using GTA1-7B, while easy samples are filtered using Qwen2.5-VL-7B. From this filtered pool, we sample data from each source at different scales (10k, 20k, 35k, and 80k samples), exploring both sampling with and without replacement. As shown in Table~\ref{tab:data_scaling}, we observe consistent performance improvements with increased data scale on ScreenSpot Pro, with accuracy improving from 45.22\% at 10k samples to 49.65\% at 80k samples when combined with enhanced prompting and additional in-house data. Performance on ScreenSpot V2 remains relatively stable across different scales, suggesting that model capacity and data quality play complementary roles in determining final performance.
 
 \begin{table}[h]
 \centering
 \caption{Impact of Training Data Scale on Model Performance}
 \label{tab:data_scaling}
-\begin{tabular}{lccc}
+\begin{tabular}{lcc}
 \hline
-\textbf{Configuration} & \textbf{SS Pro} & \textbf{SS V2} & \textbf{Showdown} \\
- & \textbf{Acc.} & \textbf{Acc.} & \textbf{Clicks Acc.} \\
+\textbf{Configuration} & \textbf{SS Pro} & \textbf{SS V2} \\
+ & \textbf{Acc.} & \textbf{Acc.} \\
 \hline
-10k (w/o replacement) & 45.22\% & 91.05\% & 66.97\% \\
-10k + best prompt & 46.23\% & --- & 67.50\% \\
-20k (w/ replacement) & 45.41\% & 90.66\% & 66.61\% \\
-20k (w/o replacement) & 46.55\% & 90.27\% & 67.14\% \\
-35k (w/o replacement) & 47.18\% & 90.66\% & 69.12\% \\
-80k + improvements & 49.65\% & 90.79\% & 68.40\% \\
+10k (w/o replacement) & 45.22\% & 91.05\% \\
+10k + best prompt & 46.23\% & --- \\
+20k (w/ replacement) & 45.41\% & 90.66\% \\
+20k (w/o replacement) & 46.55\% & 90.27\% \\
+35k (w/o replacement) & 47.18\% & 90.66\% \\
+80k + improvements & 49.65\% & 90.79\% \\
 \hline
 \end{tabular}
 \end{table}

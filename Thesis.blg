@@ -8,51 +8,49 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
-Warning--I didn't find a database entry for "screenspotv2"
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 46 entries,
+You've used 55 entries,
             4024 wiz_defined-function locations,
-            1017 strings with 24568 characters,
-and the built_in function-call counts, 39692 in all, are:
-= -- 2185
-> -- 2703
+            1057 strings with 26623 characters,
+and the built_in function-call counts, 44695 in all, are:
+= -- 2549
+> -- 2908
 < -- 17
-+ -- 1343
-- -- 666
-* -- 2049
-:= -- 5352
-add.period$ -- 94
-call.type$ -- 46
-change.case$ -- 51
++ -- 1443
+- -- 716
+* -- 2282
+:= -- 6170
+add.period$ -- 112
+call.type$ -- 55
+change.case$ -- 64
 chr.to.int$ -- 45
-cite$ -- 46
-duplicate$ -- 2763
-empty$ -- 2997
-format.name$ -- 706
-if$ -- 8909
+cite$ -- 55
+duplicate$ -- 3142
+empty$ -- 3411
+format.name$ -- 764
+if$ -- 10004
 int.to.chr$ -- 0
-int.to.str$ -- 46
-missing$ -- 950
-newline$ -- 253
-num.names$ -- 46
-pop$ -- 2875
+int.to.str$ -- 55
+missing$ -- 1058
+newline$ -- 296
+num.names$ -- 55
+pop$ -- 3193
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2622
+skip$ -- 2981
 stack$ -- 0
-substring$ -- 160
-swap$ -- 2113
+substring$ -- 177
+swap$ -- 2366
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 46
+type$ -- 55
 warning$ -- 0
-while$ -- 54
-width$ -- 48
-write$ -- 497
-(There was 1 warning)
+while$ -- 63
+width$ -- 57
+write$ -- 592

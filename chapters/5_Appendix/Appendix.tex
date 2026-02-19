@@ -43,16 +43,16 @@ We want to understand how scaling the data impacts the SFT process. We trained Q
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lcccc}
+\begin{tabular}{lcc}
 \hline
-Rewriting Strategy & SS Pro & SS V2 & Showdown Clicks & OS-World G \\
- & Accuracy & Accuracy & Accuracy & Accuracy \\
+Rewriting Strategy & SS Pro & SS V2 \\
+ & Accuracy & Accuracy \\
 \hline
-No Rewriting & 45.22\% & 91.05\% & 66.97\% & N/A \\
-Rewritten Prompts using LLM & 42.25\% & 88.84\% & 66.24\% & N/A \\
-(Qwen3 4B) & & & & \\
-Image-aware Synthetic Prompts & 39.27\% & 85.86\% & 67.14\% & N/A \\
-(Qwen 2.5 VL 7B) & & & & \\
+No Rewriting & 45.22\% & 91.05\% \\
+Rewritten Prompts using LLM & 42.25\% & 88.84\% \\
+(Qwen3 4B) & & \\
+Image-aware Synthetic Prompts & 39.27\% & 85.86\% \\
+(Qwen 2.5 VL 7B) & & \\
 \hline
 \end{tabular}
 \caption{Impact of prompt rewriting strategies on downstream task performance.}
@@ -217,23 +217,48 @@ XML tags:
 
 We trained Qwen 2.5 VL 7B on 10k samples with different training prompts to investigate two questions: (1) whether the base Qwen model's verbose tool-calling computer-use prompt is necessary for good performance, and (2) the impact of including image resolution in the prompt.
 
-We find that the default prompt is sufficient for the model to perform well, achieving competitive results across benchmarks. The impact of including image resolution in the prompt is mixed---while it slightly improves performance on ScreenSpot V2 and Showdown Clicks, it actually decreases performance on ScreenSpot Pro.
+We find that the default prompt is sufficient for the model to perform well, achieving competitive results across benchmarks. The impact of including image resolution in the prompt is mixed---while it slightly improves performance on ScreenSpot V2, it actually decreases performance on ScreenSpot Pro.
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lcccc}
+\begin{tabular}{lcc}
 \hline
-Prompt & SS Pro & SS V2 & Showdown Clicks & OS-World G \\
- & Accuracy & Accuracy & Accuracy & Accuracy \\
+Prompt & SS Pro & SS V2 \\
+ & Accuracy & Accuracy \\
 \hline
-Qwen Tool Calling Prompt + Image Resolution & 37.76\% & 88.59\% & 61.94\% & N/A \\
-Default Prompt + Image Resolution & 36.12\% & 88.59\% & 66.43\% & N/A \\
-Default Prompt & 39.03\% & 87.68\% & 64.09\% & N/A \\
+Qwen Tool Calling Prompt + Image Resolution & 37.76\% & 88.59\% \\
+Default Prompt + Image Resolution & 36.12\% & 88.59\% \\
+Default Prompt & 39.03\% & 87.68\% \\
 \hline
 \end{tabular}
 \caption{Impact of training prompt on downstream task performance for Qwen 2.5 VL 7B trained on 10k samples.}
 \label{tab:prompt_ablation}
 \end{table}
+
+\section{Cold-Start SFT Budget}
+\label{sec:coldstart}
+
+Since \cite{qin2025uitars15} report a progressive training pipeline with continual SFT followed by RL, we conducted an experiment to understand the interaction between SFT and RL. We conducted cold-start experiments in which Qwen2.5-VL-7B-Instruct models are first fine-tuned on varying amounts of SFT data (1k, 3.3k, 10k, and 63k samples, each for a single epoch), and then trained with GRPO on the full 63k data pool for one epoch (63k was the size of our dataset at that time of the project). This experiment isolates how much the SFT initialization matters for subsequent RL gains.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/rl_coldstart_scaling_overlay.png}
+\caption{Cold-start SFT budget experiment. Models fine-tuned on varying amounts of SFT data (1k, 3.3k, 10k, 63k) are subsequently trained with GRPO. RL performance scales monotonically with SFT data budget, confirming that RL benefits from a stronger initialization.}
+\label{fig:rl_coldstart}
+\end{figure}
+
+As shown in Figure~\ref{fig:rl_coldstart}, RL performance scales monotonically with SFT data budget, confirming that RL benefits from a stronger initialization and motivating our choice of the 63k SFT model as the starting point for subsequent experiments.
+
+\section{RL Hyperparameter Ablations}
+\label{sec:rl_ablations}
+
+We ablate key RL hyperparameters---sampling temperature, learning rate, and KL penalty weight---to establish robust defaults for all subsequent experiments.
+
+\paragraph{Temperature.}
+Using the 10k SFT model, we compare temperatures of 0.65, 0.85, and 1.0. Temperature controls the diversity of rollouts and thus the exploration--exploitation trade-off during RL training.
+
+\paragraph{Learning Rate and KL Weight.}
+We compare our default hyperparameters (LR = $1 \times 10^{-6}$, KL coef = $1 \times 10^{-2}$) with parameters inspired by UI-Venus~\cite{gu2025uivenus} (LR = $4 \times 10^{-7}$, KL coef = $4 \times 10^{-3}$) on the 63k SFT model. Results (Section~\ref{sec:results_ablations}) show robustness to moderate variations in these hyperparameters.
 
 \section{Hyperparameter Search and Model Configuration}
 
@@ -259,15 +284,15 @@ We performed a learning rate sweep for Qwen 2.5 VL 7B on the 10k model-filtered 
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lccc}
+\begin{tabular}{lcc}
 \hline
-Learning Rate & ScreenSpot Pro & ScreenSpot V2 & Showdown Clicks \\
- & Accuracy & Accuracy & Accuracy \\
+Learning Rate & ScreenSpot Pro & ScreenSpot V2 \\
+ & Accuracy & Accuracy \\
 \hline
-1e-5 & 32.57\% & 80.02\% & 53.68\% \\
-5e-6 & 38.83\% & 87.80\% & 63.01\% \\
-\textbf{1e-6} & \textbf{45.35\%} & \textbf{90.27\%} & \textbf{67.50\%} \\
-5e-7 & 38.07\% & 89.10\% & 65.17\% \\
+1e-5 & 32.57\% & 80.02\% \\
+5e-6 & 38.83\% & 87.80\% \\
+\textbf{1e-6} & \textbf{45.35\%} & \textbf{90.27\%} \\
+5e-7 & 38.07\% & 89.10\% \\
 \hline
 \end{tabular}
 \caption{Learning rate sweep results. The optimal learning rate of 1e-6 (bold) achieves the best performance across all benchmarks.}

@@ -38,62 +38,49 @@
 \contentsline {paragraph}{Hypothesis Testing}{11}{section*.30}%
 \contentsline {paragraph}{OmniParser Filtering}{12}{section*.31}%
 \contentsline {paragraph}{Difficulty Filtering}{13}{section*.33}%
-\contentsline {paragraph}{Overrepresentation of Text}{14}{section*.34}%
-\contentsline {paragraph}{Data Source Analysis}{14}{section*.35}%
-\contentsline {paragraph}{Data Sampling and Scale}{15}{section*.38}%
-\contentsline {paragraph}{Additional Experiments}{16}{section*.40}%
+\contentsline {paragraph}{Data Source Analysis}{14}{section*.34}%
+\contentsline {paragraph}{Data Sampling and Scale}{16}{section*.37}%
+\contentsline {paragraph}{Additional Experiments}{16}{section*.39}%
 \contentsline {section}{\numberline {2.3}Supplemental Data}{16}{section.2.3}%
-\contentsline {paragraph}{Performance Analysis by Image Resolution and Aspect Ratio}{17}{section*.41}%
-\contentsline {paragraph}{UI Vision and JEDI}{18}{section*.46}%
-\contentsline {paragraph}{Supplemental Data Experiments}{18}{section*.47}%
-\contentsline {paragraph}{Video Data Collection}{19}{section*.49}%
+\contentsline {paragraph}{Performance Analysis by Image Resolution and Aspect Ratio}{17}{section*.40}%
+\contentsline {paragraph}{UI Vision and JEDI}{19}{section*.45}%
+\contentsline {paragraph}{Supplemental Data Experiments}{19}{section*.46}%
+\contentsline {paragraph}{Video Data Collection}{19}{section*.48}%
 \contentsline {paragraph}{DOM Tree Methods}{20}{section*.51}%
 \contentsline {paragraph}{Data Augmentation}{20}{section*.52}%
-\contentsline {subparagraph}{Composing High-Resolution Frames.}{20}{section*.53}%
+\contentsline {subparagraph}{Composing High-Resolution Frames.}{21}{section*.53}%
 \contentsline {subparagraph}{Random Image Upscaling.}{21}{section*.55}%
-\contentsline {section}{\numberline {2.4}Training}{21}{section.2.4}%
-\contentsline {paragraph}{Stabilizing RL Training}{21}{section*.57}%
-\contentsline {chapter}{\numberline {3}Results}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Grounding Benchmark Evaluation}{23}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}ScreenSpot-Pro}{23}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}OS-World-G}{23}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Performance with Refusal}{24}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Comparison with Prior Work}{24}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}OS-World Agent Evaluation}{24}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{25}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Implementation Details}{25}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Automated Evaluation Results}{25}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Variance Across Runs}{26}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Trajectory Release}{26}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Human Evaluation}{26}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Methodology}{26}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Human Evaluation Results}{26}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Detailed Results}{27}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Summary}{27}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Reproducibility Challenges in Agent Evaluation}{28}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Non-Deterministic Planning Models}{28}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Evaluation Prompt Versioning}{29}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Incomplete Evaluation Coverage}{29}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Ambiguous Task Specifications}{29}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Recommendations for Future Benchmarks}{30}{subsection.4.1.5}%
-\contentsline {section}{\numberline {4.2}Limitations}{30}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Dataset Limitations}{30}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Model Limitations}{30}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Evaluation Limitations}{31}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Future Directions}{31}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Scaling and Efficiency}{31}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Dataset Expansion}{31}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Training Methodology}{32}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Agent Architecture}{32}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Evaluation and Analysis}{32}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Conclusion}{32}{section.4.4}%
-\contentsline {chapter}{Bibliography}{34}{chapter*.59}%
+\contentsline {section}{\numberline {2.4}Training}{22}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Initial GRPO Setup}{22}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Reward Function}{22}{subsection.2.4.2}%
+\contentsline {paragraph}{Sparse vs.\ Dense Reward Function.}{23}{section*.58}%
+\contentsline {paragraph}{Entropy Decay Problem}{24}{section*.60}%
+\contentsline {subsection}{\numberline {2.4.3}DAPO: Dynamic Sampling and Asymmetric Clipping}{25}{subsection.2.4.3}%
+\contentsline {paragraph}{Dynamic Sampling.}{25}{section*.61}%
+\contentsline {paragraph}{Asymmetric Clipping.}{25}{section*.62}%
+\contentsline {paragraph}{Removing Ambiguous Data Sources in RL stage.}{26}{section*.63}%
+\contentsline {paragraph}{Application to 7B Models.}{26}{section*.64}%
+\contentsline {subsection}{\numberline {2.4.4}Scaling to Gelato-30B-A3B}{26}{subsection.2.4.4}%
+\contentsline {chapter}{\numberline {3}Results}{30}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Benchmarking Performance}{30}{section.3.1}%
+\contentsline {paragraph}{Performance with Refusal}{30}{section*.70}%
+\contentsline {section}{\numberline {3.2}OS-World Agent}{30}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{31}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Reproducibility Issues}{31}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Human Evaluation}{32}{subsection.3.2.3}%
+\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{33}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conclusion}{33}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Future Work}{35}{chapter.5}%
+\contentsline {chapter}{Bibliography}{36}{chapter*.72}%
 \contentsline {chapter}{\numberline {A}Appendix}{A-1}{appendix.U}%
 \contentsline {section}{\numberline {A.1}Supplemental Data}{A-1}{section.U.1}%
 \contentsline {section}{\numberline {A.2}Instruction Relabeling Experiments}{A-2}{section.U.2}%
-\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.62}%
+\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.75}%
 \contentsline {section}{\numberline {A.3}Training Prompt Ablation}{A-2}{section.U.3}%
-\contentsline {section}{\numberline {A.4}Hyperparameter Search and Model Configuration}{A-3}{section.U.4}%
-\contentsline {subsection}{\numberline {A.4.1}Vision Tower Fine-tuning}{A-3}{subsection.U.4.1}%
-\contentsline {subsection}{\numberline {A.4.2}Learning Rate Search}{A-3}{subsection.U.4.2}%
+\contentsline {section}{\numberline {A.4}Cold-Start SFT Budget}{A-2}{section.U.4}%
+\contentsline {section}{\numberline {A.5}RL Hyperparameter Ablations}{A-3}{section.U.5}%
+\contentsline {paragraph}{Temperature.}{A-3}{section*.83}%
+\contentsline {paragraph}{Learning Rate and KL Weight.}{A-3}{section*.84}%
+\contentsline {section}{\numberline {A.6}Hyperparameter Search and Model Configuration}{A-3}{section.U.6}%
+\contentsline {subsection}{\numberline {A.6.1}Vision Tower Fine-tuning}{A-3}{subsection.U.6.1}%
+\contentsline {subsection}{\numberline {A.6.2}Learning Rate Search}{A-4}{subsection.U.6.2}%
