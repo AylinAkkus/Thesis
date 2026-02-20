@@ -62,15 +62,13 @@ Figure~\ref{fig:resolution_aspect_analysis} visualizes the relationship between 
 \label{fig:resolution_aspect_heatmap}
 \end{figure}
 
-- Additionally, using prior models for difficulty filtering or annotation is problematic, because these models do not perform well in this domain either. Filtering would probably lead to discard all the collected data.We therefore employ different strategies to collect data.
+- Additionally, using prior models for difficulty filtering is problematic, because these models do not perform well in this domain either. Filtering would probably lead to discard all the collected data. We therefore employ different strategies to collect data.
 
 \paragraph{UI Vision and JEDI}
 To improve robustness on professional desktop applications, we incorporate UI-Vision \cite{nayak2025uivision} as additional training data. We do not use UI-Vision for evaluation, as it is not yet widely adopted as a standard benchmark for reporting final model performance. Instead, we treat it purely as supplementary supervision to increase coverage of desktop UI elements and interaction patterns.
-UI-Vision is a desktop-centric GUI dataset consisting of densely annotated screenshots collected from real-world applications. It provides bounding boxes for UI elements, semantic labels, and interaction-related metadata across a diverse set of professional and productivity software. Compared to web-based GUI datasets, UI-Vision focuses on complex desktop environments where structured APIs are typically unavailable and manual annotation requires domain knowledge. This makes it particularly valuable for improving model exposure to professional application layouts and visual element grounding. We normalize, resize and convert the UI Vision dataset to the same format as the other datasets. Importantly, we do not apply the entire filtering pipeline like before to these datasets. We obtain 5,733 samples from UI Vision.
-
-We normalize, resize and convert the UI Vision \cite{nayak2025uivision} and JEDI \cite{xie2025jedi} datasets to the same format as the other datasets. Importantly, we do not apply the entire filtering pipeline like before to these datasets.
-We obtain 5,733 samples from UI Vision and 18,032 samples from JEDI.
-We added UI-Vision and Jedi to the data pool. UI-Vision is a dataset of UI elements that we collected from Youtube and Jedi is a dataset of UI elements that we collected from Jedi.
+UI-Vision is a desktop-centric GUI dataset consisting of densely annotated screenshots collected from real-world applications. It provides bounding boxes for UI elements, semantic labels, and interaction-related metadata across a diverse set of professional and productivity software. Compared to web-based GUI datasets, UI-Vision focuses on complex desktop environments where structured APIs are typically unavailable and manual annotation requires domain knowledge. This makes it particularly valuable for improving model exposure to professional application layouts and visual element grounding.
+The JEDI dataset \cite{xie2025jedi} includes large-scale grounding data sourced not only from web interfaces but also from real-world desktop and professional applications, incorporating screenshots and structured metadata from production software (e.g., office tools, system apps) and agent rollouts in environments like WindowsAgentArena.
+We normalize, resize and convert the UI Vision \cite{nayak2025uivision} and JEDI \cite{xie2025jedi} datasets to the same format as the other datasets. Importantly, we do not apply the entire filtering pipeline like before to these datasets. We finally obtain 5,733 samples from UI Vision and 18,032 samples from JEDI.
 
 \paragraph{Supplemental Data Experiments}
 We conducted experiments using DeepSpeed ZeRO Stage 3 on 4 nodes with 4 40GB A100 GPUs at a batch size of 16. Table~\ref{tab:supplemental_data_results} shows the impact of adding UI-Vision and JEDI data to the training set.
@@ -95,14 +93,13 @@ SFT-7B (63k) + all data (BS 8, 2 nodes) & 1e-6 & 48.26\% & 60.4\% \\
 \end{table}
 
 \paragraph{Video Data Collection}
-% todo make a picture of the pipeline
-We also construct an automated pipeline for collecting and annotating screen frames from GUI tutorial videos to supplement our training data. The pipeline comprises four stages: video acquisition, frame extraction, frame sampling, and instruction generation.
+We also construct an automated pipeline for collecting and annotating screen frames from GUI tutorial videos to supplement our training data. The pipeline, illustrated in Figure~\ref{fig:video_annotation_pipeline}, comprises four stages: video acquisition, frame extraction, frame sampling, and instruction generation.
 
-In the first stage, we manually curated a list of approximately 120 tutorial videos spanning over 80 professional applications, including 3ds~Max, ANSYS, Adobe Creative Suite, Blender, MATLAB, and Vivado, among others (see Table~\ref{tab:youtube_apps} in the Appendix for the full list). Videos are downloaded at their highest available quality, covering tutorials in both English and Chinese to increase linguistic and visual diversity.
+In the first stage, we manually curated a list of approximately 120 tutorial videos spanning over 80 professional applications, including 3ds~Max, ANSYS, Adobe Creative Suite, Blender, MATLAB, and Vivado, among others (see Table~\ref{tab:youtube_apps} in the Appendix for the full list). Videos are downloaded at their highest available quality.
 
 In the second stage, we extract unique screen-like frames from each downloaded video using PySceneDetect. For each detected scene transition, the mid-frame is selected as a representative sample. We then apply a series of heuristic filters to remove non-screen content: face detection via OpenCV cascade classifiers excludes frames containing presenter overlays, while additional filters discard introductory and concluding segments, low-variance or solid-color frames, and grayscale frames. To eliminate near-duplicate content within each video, we perform perceptual deduplication using pHash.
 
-In the third stage, we sample a fixed number of frames (default: 250) across a set of target professional applications from the extracted frame pool. The sampling procedure employs keyword-based application matching to handle naming variations, allocates frames in a balanced manner across applications, partitions by tutorial language, and selects evenly spaced frames within each application to maximize temporal diversity.
+In the third stage, we sample a fixed number of frames (default: 250) across a set of target professional applications from the extracted frame pool. The sampling procedure selects evenly spaced frames within each application to maximize temporal diversity.
 
 In the fourth stage, we construct the final instruction dataset from the sampled frames. Natural language instructions are generated using Claude, producing structured instruction--target pairs for each screenshot. Each training sample consists of a single screenshot paired with two instructions corresponding to distinct UI segments. To mitigate redundancy, we deduplicate samples within each video using token-level overlap thresholds.
 
@@ -114,6 +111,13 @@ In the fourth stage, we construct the final instruction dataset from the sampled
 \end{figure}
 
 We added the in-house professional app data we collected from Youtube to the training data, added it to the model difficulty filtered data and sampled 10k samples total. We find that the performance slightly improves from 45.22% to 46.11% on SS Pro, as shown in Table~\ref{tab:youtube_professional_data}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/VideoAnnotationPipeline.png}
+\caption{Video data collection and annotation pipeline. Tutorial videos are processed through scene detection to extract representative frames, which are then filtered to remove non-screen content (e.g.\ presenter overlays, intro/outro segments, solid-color frames). A fixed number of frames per application is subsampled for temporal diversity, and finally Claude generates natural language grounding instructions paired with each screen frame.}
+\label{fig:video_annotation_pipeline}
+\end{figure}
 
 \begin{table}[h]
 \centering
@@ -129,9 +133,6 @@ We added the in-house professional app data we collected from Youtube to the tra
 \hline
 \end{tabular}
 \end{table}
-
-\paragraph{DOM Tree Methods}
-For VSCode, Cursor and For Word, PowerPoint, Excel
 
 \paragraph{Data Augmentation}
 We investigate two data augmentation strategies aimed at improving model performance on high-resolution screenshots, as evaluated on the ScreenSpot-Pro benchmark.

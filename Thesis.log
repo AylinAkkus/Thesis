@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 FEB 2026 23:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  20 FEB 2026 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -856,7 +856,7 @@ Chapter 1.
 
 
 ]
-Overfull \hbox (2.85698pt too wide) in paragraph at lines 84--91
+Overfull \hbox (2.85698pt too wide) in paragraph at lines 83--90
 []\T1/cmr/bx/n/10.95 Training Data Com-po-si-tion: \T1/cmr/m/n/10.95 Mir-ror-in
 g the chal-lenges faced by language-
  []
@@ -951,18 +951,28 @@ File: figures/Omniparser.png Graphic file (type png)
 <use figures/Omniparser.png>
 Package pdftex.def Info: figures/Omniparser.png  used on input line 15.
 (pdftex.def)             Requested size: 343.25766pt x 214.53387pt.
-<figures/FilteringAblation.png, id=356, 642.4803pt x 642.4803pt>
+
+
+LaTeX Warning: Reference `fig:filtering_pipeline' on page 13 undefined on input
+ line 23.
+
+<figures/FilteringPipeline.png, id=356, 1684.2925pt x 931.48pt>
+File: figures/FilteringPipeline.png Graphic file (type png)
+<use figures/FilteringPipeline.png>
+Package pdftex.def Info: figures/FilteringPipeline.png  used on input line 27.
+(pdftex.def)             Requested size: 381.4pt x 210.92421pt.
+<figures/FilteringAblation.png, id=357, 642.4803pt x 642.4803pt>
 File: figures/FilteringAblation.png Graphic file (type png)
 <use figures/FilteringAblation.png>
-Package pdftex.def Info: figures/FilteringAblation.png  used on input line 25.
+Package pdftex.def Info: figures/FilteringAblation.png  used on input line 32.
 (pdftex.def)             Requested size: 190.7pt x 190.69666pt.
-<figures/FilteringAllEvals.png, id=357, 859.2903pt x 570.933pt>
+<figures/FilteringAllEvals.png, id=358, 859.2903pt x 570.933pt>
 File: figures/FilteringAllEvals.png Graphic file (type png)
 <use figures/FilteringAllEvals.png>
-Package pdftex.def Info: figures/FilteringAllEvals.png  used on input line 26.
+Package pdftex.def Info: figures/FilteringAllEvals.png  used on input line 33.
 (pdftex.def)             Requested size: 190.7pt x 126.70332pt.
 
-Overfull \hbox (19.42162pt too wide) in paragraph at lines 25--28
+Overfull \hbox (19.42162pt too wide) in paragraph at lines 32--35
 [][] []
  []
 
@@ -970,16 +980,15 @@ Overfull \hbox (19.42162pt too wide) in paragraph at lines 25--28
 
 [13 <./figures/Omniparser.png (PNG copy)>]
 
-[14 <./figures/FilteringAblation.png> <./figures/FilteringAllEvals.png>]
-Overfull \hbox (7.6297pt too wide) in paragraph at lines 55--56
+[14 <./figures/FilteringPipeline.png> <./figures/FilteringAblation.png> <./figu
+res/FilteringAllEvals.png>]
+Overfull \hbox (7.6297pt too wide) in paragraph at lines 63--64
 []\T1/cmr/m/n/10.95 Overall, ShowUI-Web ex-hibits con-sis-tently strong per-for
 -mance across all bench-
  []
 
 
-Overfull \hbox (7.03514pt too wide) in paragraph at lines 63--75
- [][] 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
@@ -987,15 +996,22 @@ Overfull \hbox (7.03514pt too wide) in paragraph at lines 63--75
 
 [16]
 
-[17]
-<figures/accuracy_by_resolution_and_aspect.png, id=411, 1727.253pt x 573.342pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/accuracy_by_resolution_and_aspect.png, id=403, 1727.253pt x 573.342pt>
 
 File: figures/accuracy_by_resolution_and_aspect.png Graphic file (type png)
 <use figures/accuracy_by_resolution_and_aspect.png>
 Package pdftex.def Info: figures/accuracy_by_resolution_and_aspect.png  used on
  input line 53.
 (pdftex.def)             Requested size: 305.12115pt x 101.28119pt.
-<figures/accuracy_heatmap_resolution_aspect.png, id=412, 933.7284pt x 717.882pt
+
+
+[17]
+<figures/accuracy_heatmap_resolution_aspect.png, id=416, 933.7284pt x 717.882pt
 >
 File: figures/accuracy_heatmap_resolution_aspect.png Graphic file (type png)
 <use figures/accuracy_heatmap_resolution_aspect.png>
@@ -1004,34 +1020,53 @@ n input line 60.
 (pdftex.def)             Requested size: 305.12115pt x 234.57954pt.
 
 
-[18 <./figures/accuracy_by_resolution_and_aspect.png> <./figures/accuracy_heatm
-ap_resolution_aspect.png>]
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19]
-<figures/ProfessionalAppData.png, id=435, 3854.4pt x 1606.0pt>
+
+
+[18 <./figures/accuracy_by_resolution_and_aspect.png>]
+
+[19 <./figures/accuracy_heatmap_resolution_aspect.png>]
+
+LaTeX Warning: Reference `fig:video_annotation_pipeline' on page 20 undefined o
+n input line 96.
+
+<figures/ProfessionalAppData.png, id=439, 3854.4pt x 1606.0pt>
 File: figures/ProfessionalAppData.png Graphic file (type png)
 <use figures/ProfessionalAppData.png>
-Package pdftex.def Info: figures/ProfessionalAppData.png  used on input line 11
-1.
+Package pdftex.def Info: figures/ProfessionalAppData.png  used on input line 10
+8.
 (pdftex.def)             Requested size: 381.4pt x 158.89401pt.
+<figures/VideoAnnotationPipeline.png, id=440, 1674.255pt x 614.295pt>
+File: figures/VideoAnnotationPipeline.png Graphic file (type png)
+<use figures/VideoAnnotationPipeline.png>
+Package pdftex.def Info: figures/VideoAnnotationPipeline.png  used on input lin
+e 117.
+(pdftex.def)             Requested size: 381.4pt x 139.9351pt.
 
 
 [20]
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
 [21 <./figures/ProfessionalAppData.png (PNG copy)>])
 (./chapters/2_Methodology/4_Training.tex
-<figures/grpo_63k_qwen25vl_refined_label.png, id=465, 794.97pt x 433.62pt>
+
+[22 <./figures/VideoAnnotationPipeline.png>]
+<figures/grpo_63k_qwen25vl_refined_label.png, id=481, 578.16pt x 346.896pt>
 File: figures/grpo_63k_qwen25vl_refined_label.png Graphic file (type png)
 <use figures/grpo_63k_qwen25vl_refined_label.png>
 Package pdftex.def Info: figures/grpo_63k_qwen25vl_refined_label.png  used on i
 nput line 15.
-(pdftex.def)             Requested size: 183.07036pt x 99.85622pt.
+(pdftex.def)             Requested size: 183.07036pt x 109.83919pt.
 
 Underfull \hbox (badness 4886) in paragraph at lines 16--16
 []\T1/cmr/m/n/10 (a) |GRPO on base Qwen2.5-VL-7B-
  []
 
-<figures/GRPO_63k_Qwen2.5VL-63k-SFT.png, id=466, 794.97pt x 433.62pt>
+<figures/GRPO_63k_Qwen2.5VL-63k-SFT.png, id=482, 794.97pt x 433.62pt>
 File: figures/GRPO_63k_Qwen2.5VL-63k-SFT.png Graphic file (type png)
 <use figures/GRPO_63k_Qwen2.5VL-63k-SFT.png>
 Package pdftex.def Info: figures/GRPO_63k_Qwen2.5VL-63k-SFT.png  used on input 
@@ -1039,11 +1074,11 @@ line 22.
 (pdftex.def)             Requested size: 183.07036pt x 99.85622pt.
 
 
-[22]
-
 [23 <./figures/grpo_63k_qwen25vl_refined_label.png> <./figures/GRPO_63k_Qwen2.5
 VL-63k-SFT.png>]
-<figures/dense_vs_sparse_reward.png, id=487, 859.65166pt x 354.123pt>
+
+[24]
+<figures/dense_vs_sparse_reward.png, id=505, 859.65166pt x 354.123pt>
 File: figures/dense_vs_sparse_reward.png Graphic file (type png)
 <use figures/dense_vs_sparse_reward.png>
 Package pdftex.def Info: figures/dense_vs_sparse_reward.png  used on input line
@@ -1051,7 +1086,7 @@ Package pdftex.def Info: figures/dense_vs_sparse_reward.png  used on input line
 (pdftex.def)             Requested size: 381.4pt x 157.11682pt.
 
 
-[24 <./figures/dense_vs_sparse_reward.png>]
+[25 <./figures/dense_vs_sparse_reward.png>]
 Overfull \hbox (5.92369pt too wide) in paragraph at lines 94--95
  []\T1/cmr/bx/n/10.95 Dynamic Sam-pling.[] \T1/cmr/m/n/10.95 Rather than re-ly-
 ing solely on our a pri-ori fil-ter-ing pipeline,
@@ -1059,28 +1094,25 @@ ing solely on our a pri-ori fil-ter-ing pipeline,
 
 
 
-[25]
-<figures/DAPO_screenspot_prro.png, id=507, 722.7pt x 433.62pt>
+[26]
+<figures/DAPO_screenspot_prro.png, id=527, 722.7pt x 433.62pt>
 File: figures/DAPO_screenspot_prro.png Graphic file (type png)
 <use figures/DAPO_screenspot_prro.png>
 Package pdftex.def Info: figures/DAPO_screenspot_prro.png  used on input line 1
 09.
 (pdftex.def)             Requested size: 183.07036pt x 109.84052pt.
-<figures/DAPO_Osworld.png, id=508, 455.301pt x 339.669pt>
+<figures/DAPO_Osworld.png, id=528, 455.301pt x 339.669pt>
 File: figures/DAPO_Osworld.png Graphic file (type png)
 <use figures/DAPO_Osworld.png>
 Package pdftex.def Info: figures/DAPO_Osworld.png  used on input line 116.
 (pdftex.def)             Requested size: 183.07036pt x 136.57524pt.
-<figures/FinalRecipeComparison.png, id=510, 658.6206pt x 351.4731pt>
+<figures/FinalRecipeComparison.png, id=530, 658.6206pt x 351.4731pt>
 File: figures/FinalRecipeComparison.png Graphic file (type png)
 <use figures/FinalRecipeComparison.png>
 Package pdftex.def Info: figures/FinalRecipeComparison.png  used on input line 
 128.
 (pdftex.def)             Requested size: 343.25766pt x 183.18538pt.
-
-
-[26 <./figures/DAPO_screenspot_prro.png> <./figures/DAPO_Osworld.png>]
-<figures/RLProgression.png, id=523, 722.7pt x 614.295pt>
+<figures/RLProgression.png, id=533, 722.7pt x 614.295pt>
 File: figures/RLProgression.png Graphic file (type png)
 <use figures/RLProgression.png>
 Package pdftex.def Info: figures/RLProgression.png  used on input line 141.
@@ -1091,18 +1123,20 @@ Overfull \hbox (6.8884pt too wide) in paragraph at lines 146--147
 led per-category
  []
 
-<figures/FinalPerformance.png, id=526, 859.5312pt x 355.8093pt>
+<figures/FinalPerformance.png, id=536, 859.5312pt x 355.8093pt>
 File: figures/FinalPerformance.png Graphic file (type png)
 <use figures/FinalPerformance.png>
 Package pdftex.def Info: figures/FinalPerformance.png  used on input line 150.
 (pdftex.def)             Requested size: 381.4pt x 157.88672pt.
 )) (./chapters/3_Results/Results.tex
 
-[27 <./figures/FinalRecipeComparison.png>]
+[27 <./figures/DAPO_screenspot_prro.png> <./figures/DAPO_Osworld.png>]
 
-[28 <./figures/RLProgression.png>]
+[28 <./figures/FinalRecipeComparison.png>]
 
-[29 <./figures/FinalPerformance.png>]
+[29 <./figures/RLProgression.png>]
+
+[30 <./figures/FinalPerformance.png>]
 Chapter 3.
 
 Overfull \hbox (6.8884pt too wide) in paragraph at lines 8--9
@@ -1116,39 +1150,37 @@ Package pdftex.def Info: figures/FinalPerformance.png  used on input line 12.
 (pdftex.def)             Requested size: 381.4pt x 157.88672pt.
 
 
-[30
+[31
 
 ]
-<figures/gelato-fig7.png, id=556, 650.43pt x 303.534pt>
+<figures/gelato-fig7.png, id=574, 650.43pt x 303.534pt>
 File: figures/gelato-fig7.png Graphic file (type png)
 <use figures/gelato-fig7.png>
 Package pdftex.def Info: figures/gelato-fig7.png  used on input line 39.
 (pdftex.def)             Requested size: 381.4pt x 177.99045pt.
 )
 
-[31] (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
+[32] (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
 
-[32 <./figures/gelato-fig7.png>]
+[33 <./figures/gelato-fig7.png>]
 Chapter 4.
 
 
-[33
+[34
 
 ]
 
-[34]
+[35]
 Chapter 5.
 ) (./Thesis.bbl
-
-[35
-
-]
 
 [36
 
 ]
 
-[37]
+[37
+
+]
 
 [38]
 
@@ -1157,6 +1189,8 @@ Chapter 5.
 [40]
 
 [41]
+
+[42]
 Underfull \hbox (badness 1097) in paragraph at lines 473--478
 \T1/cmr/m/n/10.95 [On-line]. Avail-able: [][]$https : / / github . com / xlang-
 []ai / OSWorld / blob /
@@ -1170,7 +1204,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 473--478
 
 )
 
-[42] (./chapters/5_Appendix/Appendix.tex
+[43] (./chapters/5_Appendix/Appendix.tex
 Overfull \hbox (53.37962pt too wide) in paragraph at lines 11--37
  [][] 
  []
@@ -1181,15 +1215,9 @@ Overfull \hbox (53.37962pt too wide) in paragraph at lines 11--37
 
 
 ]
-Overfull \hbox (60.31082pt too wide) in paragraph at lines 46--58
- [][] 
- []
-
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 76.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1200,9 +1228,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (135.76886pt too wide) in paragraph at lines 224--234
- [][] 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1210,7 +1236,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 [2]
-<figures/rl_coldstart_scaling_overlay.png, id=701, 867.24pt x 289.08pt>
+<figures/rl_coldstart_scaling_overlay.png, id=723, 867.24pt x 289.08pt>
 File: figures/rl_coldstart_scaling_overlay.png Graphic file (type png)
 <use figures/rl_coldstart_scaling_overlay.png>
 Package pdftex.def Info: figures/rl_coldstart_scaling_overlay.png  used on inpu
@@ -1252,45 +1278,108 @@ L3 programming layer <2025-01-18>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 25897 strings out of 473190
- 475679 string characters out of 5715801
+ 25930 strings out of 473190
+ 476548 string characters out of 5715801
  1325231 words of memory out of 5000000
- 48341 multiletter control sequences out of 15000+600000
+ 48357 multiletter control sequences out of 15000+600000
  582100 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,10n,132p,1310b,1294s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
-/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/l
-ocal/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/loc
-al/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local
-/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/t
-exlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/tex
-live/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texli
-ve/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive
-/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2
-025/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/202
-5/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/
-texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texm
-f-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-
-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-di
-st/fonts/type1/public/cm-super/sfsc1095.pfb></usr/local/texlive/2025/texmf-dist
-/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/f
-onts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fon
-ts/type1/public/cm-super/sftt1000.pfb>
-Output written on Thesis.pdf (55 pages, 7436412 bytes).
+
+pdfTeX warning (dest): name{figure.caption.82} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.71} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.59} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.57} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.56} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.54} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.74} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.47} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.43} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.85} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.76} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.81} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.38} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.35} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{chapter*.72} has been referenced but does not exist
+, replaced by a fixed one
+
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loc
+al/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local
+/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/tex
+live/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texli
+ve/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive
+/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2
+025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/202
+5/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/cm-super/sfsc1095.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fon
+ts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts
+/type1/public/cm-super/sftt1000.pfb>
+Output written on Thesis.pdf (56 pages, 7787289 bytes).
 PDF statistics:
- 1130 PDF objects out of 1200 (max. 8388607)
- 974 compressed objects within 10 object streams
- 334 named destinations out of 1000 (max. 500000)
- 425 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1158 PDF objects out of 1200 (max. 8388607)
+ 997 compressed objects within 10 object streams
+ 351 named destinations out of 1000 (max. 500000)
+ 435 words of extra memory for PDF output out of 10000 (max. 10000000)
 

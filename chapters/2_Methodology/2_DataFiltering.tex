@@ -20,11 +20,19 @@ We leverage OmniParser's YOLO detector to validate the spatial alignment between
 
 \paragraph{Difficulty Filtering}
 Inspired by \cite{yuan2025segui} difficulty filtering. However, they only sample too easy samples and not too hard samples.
-To filter samples by difficulty, we use Qwen2.5VL-7B (for autofiltering) or SE-3B \cite{yuan2025segui} for easy sample filtering, and GTA1-7B \cite{yang2025gta1}, UI-7B \cite{gu2025uivenus}, or SE-3B for hard sample filtering. To validate this approach, we conduct detailed ablations by fine-tuning Qwen2.5-7B-VL on a source-balanced 10k subset and evaluating on ScreenSpot-Pro[3]. We find that using Qwen2.5-7B-VL as the difficulty filter and GTA1-7B-2507 as the alignment filter produces a +9 percentage point accuracy gain over unfiltered data and outperforms other filtering model combinations.
+To filter samples by difficulty, we use Qwen2.5VL-7B (for autofiltering) or SE-3B \cite{yuan2025segui} for easy sample filtering, and GTA1-7B \cite{yang2025gta1}, UI-7B \cite{gu2025uivenus}, or SE-3B for hard sample filtering. Together with the OmniParser bbox alignment step, these components form the complete filtering pipeline illustrated in Figure~\ref{fig:filtering_pipeline}. To validate this approach, we conduct detailed ablations by fine-tuning Qwen2.5-7B-VL on a source-balanced 10k subset and evaluating on ScreenSpot-Pro[3]. We find that using Qwen2.5-7B-VL as the difficulty filter and GTA1-7B-2507 as the alignment filter produces a +9 percentage point accuracy gain over unfiltered data and outperforms other filtering model combinations.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/FilteringPipeline.png}
+\caption{Overview of the complete data filtering pipeline. The raw data pool is processed through three filtering stages: OmniParser YOLO for bbox alignment filtering (removing samples where the ground truth does not overlap with any detected UI element), Qwen2.5VL-7B for easy sample filtering, and GTA1-7B for hard sample filtering. Only samples that pass all three stages are retained as high-quality training data.}
+\label{fig:filtering_pipeline}
+\end{figure}
 
 \includegraphics[width=0.5\textwidth]{figures/FilteringAblation.png}
 \includegraphics[width=0.5\textwidth]{figures/FilteringAllEvals.png}
 While it might seem that filtering out hard samples with a stronger model like GTA1-7B would limit the model in becoming better than that model, this is - counterintuitively - not the case. Previous work has shown that filtering a data pool using a weaker CLIP model can produce a stronger CLIP model when trained on the filtered data pool \cite{fang2023datafilteringnetworks}. An intuitive explanation might be that the trained model is able to learn cleaner representations of the data.
+
 
 \paragraph{Data Source Analysis}
 In the previous filtering pipeline, we trained on a balanced set from all data sources. Our current data pool comprises a mixture of multiple data sources, and we seek to determine which sources have the greatest impact on downstream task performance. To investigate this, we trained Qwen 2.5 VL 7B on each data source separately, capping the number of samples at 4.9k to control for the confounding effect of data repetition.
