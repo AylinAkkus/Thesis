@@ -49,8 +49,8 @@ In the previous filtering pipeline, we trained on a balanced set from all data s
 Data Source & SS Pro & SS V2 & OS-World G \\
  & Accuracy & Accuracy & Accuracy \\
 \hline
-ShowUI-Web & 36.43\% & 86.77\% & 48.24\% \\
-AutoGUI & 34.54\% & 87.68\% & 47.06\% \\
+ShowUI-Web & \textbf{36.43\%} & 86.77\% & \textbf{48.24\%} \\
+AutoGUI & 34.54\% & \textbf{87.68\%} & 47.06\% \\
 PC-Agent-E & 34.28\% & 87.29\% & 47.84\% \\
 WaveUI & 33.40\% & 87.16\% & 44.71\% \\
 Omniact & 33.21\% & 87.16\% & 44.90\% \\
@@ -63,7 +63,7 @@ SeeClick & 29.22\% & 84.82\% & 43.53\% \\
 \caption{Performance of individual data sources on downstream benchmarks. Each data source was trained separately on Qwen 2.5 VL 7B with 4.9k samples.}
 \label{tab:individual_data_sources}
 \end{table}
-Table~\ref{tab:individual_data_sources} reveals substantial variation in data source quality across benchmarks. The top three performing data sources for ScreenSpot Pro are ShowUI-Web (36.43\%), AutoGUI (34.54\%), and PC-Agent-E (34.28\%). For ScreenSpot V2, AutoGUI (87.68\%), PC-Agent-E (87.29\%), and Omniact/WaveUI (87.16\%) achieve the highest accuracies. For OS-World G, ShowUI-Web (48.24\%), PC-Agent-E (47.84\%), and AutoGUI (47.06\%) demonstrate superior performance.
+Table~\ref{tab:individual_data_sources} reveals substantial variation in data source quality across benchmarks. AutoGUI and PC-Agent-E consistently rank among the top sources on all three benchmarks, with ShowUI-Web also performing strongly on ScreenSpot-Pro and OS-World-G. In contrast, SeeClick and PixMo Points are consistently the weakest sources.
 
 Overall, ShowUI-Web exhibits consistently strong performance across all benchmarks, particularly excelling on ScreenSpot Pro and OS-World G. PC-Agent-E demonstrates robust and balanced performance across all evaluation metrics, while AutoGUI achieves the highest ScreenSpot V2 accuracy alongside strong ScreenSpot Pro performance.
 
@@ -78,7 +78,7 @@ Based on these data source experiments, we investigated the effect of removing t
 Data Pool & SS Pro & SS V2 \\
  & Accuracy & Accuracy \\
 \hline
-All Data Sources & 45.22\% & 91.05\% \\
+All Data Sources & \textbf{45.22\%} & \textbf{91.05\%} \\
 Remove Bottom 3 on SS Pro & 45.03\% & 90.14\% \\
 (SeeClick, Pixmo Points, UGround) & & \\
 Remove Worst one on SS Pro & 44.78\% & 90.79\% \\

@@ -29,7 +29,7 @@ r_{i,t}(\theta) = \frac{\pi_\theta(o_{i,t} \mid q,\, o_{i,<t})}{\pi_{\theta_{\te
 \label{eq:grpo_ratio}
 \end{equation}
 \paragraph{RL vs.\ SFT.}
-Our first RL experiment applied GRPO to both the Qwen2.5-VL-7B-Instruct base model and a model already fine-tuned with one round of SFT on the training data, to see if we could improve performance beyond the SFT baseline. We used 8 rollouts per prompt at temperature 1.1 with KL divergence disabled, training on a pool of approximately 63k samples. As shown in Figure~\ref{fig:initial_grpo}, RL did not boost performance beyond the SFT baseline in either setting: when applied on top of the already fine-tuned model, evaluation performance fluctuated around the SFT level, while when applied on top of the base model, it plateaued before reaching the SFT level. We later addressed this issue by implementing DAPO~\cite{yu2025dapo}-style dynamic sampling and asymmetric clipping (Section~\ref{sec:dapo}). We later addressed this issue by implementing DAPO~\cite{yu2025dapo}-style dynamic sampling and asymmetric clipping.
+Our first RL experiment applied GRPO to both the Qwen2.5-VL-7B-Instruct base model and a model already fine-tuned with one round of SFT on the training data, to see if we could improve performance beyond the SFT baseline. We used 8 rollouts per prompt at temperature 1.1 with KL divergence disabled, training on a pool of approximately 63k samples. As shown in Figure~\ref{fig:initial_grpo}, RL did not boost performance beyond the SFT baseline in either setting: when applied on top of the already fine-tuned model, evaluation performance fluctuated around the SFT level, while when applied on top of the base model, it plateaued before reaching the SFT level. We later addressed this issue by implementing DAPO~\cite{yu2025dapo}-style dynamic sampling and asymmetric clipping (Section~\ref{sec:dapo}).
 
 \begin{figure}[t]
 \centering
@@ -79,12 +79,7 @@ The dense reward normalizes the distance by the viewport dimensions $W \times H$
 \left(\frac{y - c_y}{H}\right)^{\!2}
 },
 \]
-and its maximum over the viewport corners:
-\[
-\tilde{d}_{\max}
-= \max_{(x_c,\,y_c)\,\in\,\{(0,0),\,(W,0),\,(W,H),\,(0,H)\}}
-\tilde{d}(x_c, y_c).
-\]
+and $\tilde{d}_{\max} = \max_{\mathbf{v}} \tilde{d}(\mathbf{v})$, where $\mathbf{v}$ ranges over the four viewport corners $(0,0)$, $(W,0)$, $(W,H)$, $(0,H)$.
 The dense reward is then:
 \[
 r_{\text{dense}}(x, y)
@@ -126,7 +121,7 @@ However, as RL progresses and the model gets better, certain prompts are solved 
 We incorporate key techniques from DAPO~\cite{yu2025dapo}: (1)~removing the KL-divergence term, (2)~clipping the probability ratio asymmetrically, and (3)~skipping zero-advantage rollouts via dynamic sampling.
 
 \paragraph{Dynamic Sampling.}
-Rather than relying solely on our a priori filtering pipeline (Section~\ref{sec:data_filtering}), DAPO performs online oversampling during training. For each batch, more prompts are sampled than needed, rollouts are generated, and prompts where the mean reward falls below a threshold $\tau_{\text{low}}$ or above $\tau_{\text{high}}$ are discarded. We set $\tau_{\text{low}} = 0.01$ and $\tau_{\text{high}} = 0.5$, which ensures that each training batch contains only prompts with non-trivial advantage signal. This approach complements our a~priori filtering by additionally removing prompts that become too easy during training.
+Rather than relying solely on our a priori filtering pipeline (Section~\ref{sec:data_filtering}), DAPO performs online oversampling during training. For each batch, more prompts are sampled than needed, rollouts are generated, and prompts where the advantage is not in a defined range are discarded. This approach complements our a~priori filtering by additionally removing prompts that become too easy during training and stabilizing the gradient in a batch of prompts.
 
 \paragraph{Asymmetric Clipping.}
 Standard GRPO clips the probability ratio symmetrically at $[1 - \epsilon, 1 + \epsilon]$. DAPO introduces an asymmetric upper clip $\epsilon_{\text{high}} > \epsilon_{\text{low}}$, which allows the policy to increase the probability of high-advantage actions more aggressively than it decreases the probability of low-advantage ones. We set $\epsilon_{\text{low}} = 0.2$ and $\epsilon_{\text{high}} = 0.28$ following the DAPO recommendations.
@@ -135,10 +130,13 @@ Standard GRPO clips the probability ratio symmetrically at $[1 - \epsilon, 1 + \
 \paragraph{Removing Ambiguous Data Sources in the RL Stage.}
 While SeeClick, PixMo, and UGround were the weakest in earlier SFT experiments, excluding them did not yield consistent improvements. Yet in the RL stage we find that these data points have problematic ambiguous annotations that prohibit the model from solving them consistently. We therefore remove them from the RL training set. The remaining sources form the Click-100k RL training set.
 
+\medskip
+We additionally conducted cold-start experiments to study the interaction between SFT data budget and subsequent RL gains (Appendix~\ref{sec:coldstart}), and hyperparameter ablations for sampling temperature, learning rate, and KL penalty weight to establish robust defaults (Appendix~\ref{sec:rl_ablations}).
+
 \subsection{Applying Data and Training Recipe}
 We apply the DAPO modifications on top of UI-TARS-1.5-7B~\cite{qin2025uitars15}---a slightly stronger model trained from Qwen2.5-VL-7B-Instruct, and the same base model used to train GTA1-7B-2507~\cite{yang2025gta1}---to enable a direct comparison between our data and training recipe and GTA1's.
 
-Figure~\ref{fig:recipe_comparison} summarizes the comparison between our data and training recipe and GTA1's. Starting from the same UI-TARS-1.5-7B base model (42.2\% ScreenSpot-Pro, 52.8\% OS-World-G), the GTA recipe improves performance to 50.1\% and 55.3\%, respectively. The Gelato recipe pushes further to 50.8\% on ScreenSpot-Pro and 59.0\% on OS-World-G, demonstrating that our curated data and DAPO training pipeline yield consistent gains over GTA1's recipe on the same base model.
+Starting from the same UI-TARS-1.5-7B base model (42.2\% ScreenSpot-Pro, 52.8\% OS-World-G), the GTA recipe improves performance to 50.1\% and 55.3\%, respectively. The Gelato recipe pushes further to 50.8\% on ScreenSpot-Pro and 59.0\% on OS-World-G, demonstrating that our curated data and DAPO training pipeline yield consistent gains over GTA1's recipe on the same base model. More details are provided in Chapter~\ref{ch:results}.
 
 \subsection{Scaling to Gelato-30B-A3B}
 \label{sec:gelato_30b}

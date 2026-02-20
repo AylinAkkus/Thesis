@@ -47,22 +47,22 @@
 \contentsline {subsection}{\numberline {2.2.5}Additional Experiments}{19}{subsection.2.2.5}%
 \contentsline {section}{\numberline {2.3}Supplemental Data}{21}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Performance Analysis by Image Resolution and Aspect Ratio}{21}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Data Augmentation}{21}{subsection.2.3.2}%
-\contentsline {paragraph}{Composing High-Resolution Frames.}{21}{section*.39}%
-\contentsline {paragraph}{Random Image Upscaling.}{22}{section*.41}%
+\contentsline {subsection}{\numberline {2.3.2}Data Augmentation}{22}{subsection.2.3.2}%
+\contentsline {paragraph}{Composing High-Resolution Frames.}{22}{section*.39}%
+\contentsline {paragraph}{Random Image Upscaling.}{23}{section*.41}%
 \contentsline {subsection}{\numberline {2.3.3}Professional Application Data}{23}{subsection.2.3.3}%
 \contentsline {paragraph}{UI Vision and JEDI}{23}{section*.43}%
-\contentsline {paragraph}{Video Data Collection}{24}{section*.45}%
+\contentsline {paragraph}{Video Data Collection}{25}{figure.caption.46}%
 \contentsline {section}{\numberline {2.4}Training}{27}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Initial GRPO Setup}{27}{subsection.2.4.1}%
 \contentsline {paragraph}{RL vs.\ SFT.}{27}{section*.49}%
 \contentsline {subsection}{\numberline {2.4.2}Reward Function}{28}{subsection.2.4.2}%
 \contentsline {paragraph}{Sparse Reward.}{28}{section*.51}%
-\contentsline {paragraph}{Dense Reward.}{29}{section*.52}%
+\contentsline {paragraph}{Dense Reward.}{28}{section*.52}%
 \contentsline {subsection}{\numberline {2.4.3}DAPO: Dynamic Sampling and Asymmetric Clipping}{29}{subsection.2.4.3}%
 \contentsline {paragraph}{Dynamic Sampling.}{30}{section*.53}%
 \contentsline {paragraph}{Asymmetric Clipping.}{30}{section*.54}%
-\contentsline {paragraph}{Removing Ambiguous Data Sources in the RL Stage.}{31}{section*.55}%
+\contentsline {paragraph}{Removing Ambiguous Data Sources in the RL Stage.}{30}{section*.55}%
 \contentsline {subsection}{\numberline {2.4.4}Applying Data and Training Recipe}{31}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Scaling to Gelato-30B-A3B}{31}{subsection.2.4.5}%
 \contentsline {chapter}{\numberline {3}Results}{33}{chapter.3}%
@@ -80,23 +80,19 @@
 \contentsline {section}{\numberline {3.4}Evaluation Summary}{37}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Conclusion and Future Work}{39}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Conclusion}{39}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Future Work}{40}{section.4.2}%
-\contentsline {paragraph}{From Grounding to End-to-End Agents.}{40}{section*.66}%
-\contentsline {paragraph}{Long-Horizon Reasoning.}{40}{section*.67}%
-\contentsline {paragraph}{Trajectory-Level Reward Models.}{40}{section*.68}%
-\contentsline {paragraph}{Professional Application Coverage.}{40}{section*.69}%
-\contentsline {chapter}{Bibliography}{41}{chapter*.70}%
+\contentsline {section}{\numberline {4.2}Limitations and Future Work}{40}{section.4.2}%
+\contentsline {chapter}{Bibliography}{41}{chapter*.66}%
 \contentsline {chapter}{\numberline {A}Appendix}{A-1}{appendix.U}%
 \contentsline {section}{\numberline {A.1}Data Source Examples}{A-1}{section.U.1}%
-\contentsline {section}{\numberline {A.2}Supplemental Data}{A-2}{section.U.2}%
+\contentsline {section}{\numberline {A.2}YouTube Tutorial Application List}{A-2}{section.U.2}%
 \contentsline {section}{\numberline {A.3}Claude Prompt for Video Frame Annotation}{A-2}{section.U.3}%
 \contentsline {section}{\numberline {A.4}Instruction Relabeling Experiments}{A-2}{section.U.4}%
-\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.75}%
+\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.71}%
 \contentsline {section}{\numberline {A.5}Training Prompt Ablation}{A-4}{section.U.5}%
 \contentsline {section}{\numberline {A.6}Cold-Start SFT Budget}{A-5}{section.U.6}%
 \contentsline {section}{\numberline {A.7}RL Hyperparameter Ablations}{A-5}{section.U.7}%
-\contentsline {paragraph}{Temperature.}{A-5}{section*.83}%
-\contentsline {paragraph}{Learning Rate and KL Weight.}{A-5}{section*.84}%
+\contentsline {paragraph}{Temperature.}{A-5}{section*.79}%
+\contentsline {paragraph}{Learning Rate and KL Weight.}{A-5}{section*.80}%
 \contentsline {section}{\numberline {A.8}Hyperparameter Search and Model Configuration}{A-5}{section.U.8}%
 \contentsline {subsection}{\numberline {A.8.1}Vision Tower Fine-tuning}{A-5}{subsection.U.8.1}%
 \contentsline {subsection}{\numberline {A.8.2}Learning Rate Search}{A-5}{subsection.U.8.2}%

@@ -3,30 +3,27 @@
 
 \section{Conclusion}
 
-This thesis presented Gelato-30B-A3B, a state-of-the-art grounding model for GUI computer-use tasks. Through careful data curation, model-based filtering, and reinforcement learning with DAPO, we achieved significant improvements over prior work on multiple benchmarks. Our key contributions are:
+This thesis presented Gelato-30B-A3B, a state-of-the-art grounding model for GUI computer-use tasks. Through careful data curation, model-based filtering, collection of supplemental data, and reinforcement learning with DAPO, we achieved significant improvements over prior work on multiple benchmarks. Importantly, we give deatiled insights into the development of the dataset and the training recipe. Our key contributions are:
 
 \begin{itemize}
     \item \textbf{Click-100k}: A high-quality, open-source grounding dataset built through principled filtering and enrichment of eight public data sources, supplemented with in-house professional application data.
-    \item \textbf{Filtering methodology}: A model-based filtering pipeline that uses existing grounding models as difficulty and alignment judges, yielding a +9~pp accuracy gain over unfiltered data.
-    \item \textbf{Training recipe}: An effective RL training recipe based on GRPO with DAPO-style dynamic sampling and asymmetric clipping, which consistently improves over SFT baselines.
-    \item \textbf{State-of-the-art grounding}: 63.88\% on ScreenSpot-Pro and 69.15\%\,/\,74.65\% on OS-World-G\,/\,OS-World-G (Refined), surpassing both GTA1-32B and Qwen3-VL-235B-A22B-Instruct.
-    \item \textbf{Agent performance}: 61.85\% success rate on OS-World (human evaluation), outperforming GTA1-32B in the same agent harness.
+    \item \textbf{Filtering methodology}: A model-based filtering pipeline that uses existing grounding models as difficulty and alignment judges with strong empirical ablation studies.
+    \item \textbf{Supplemental data collection}: A pipeline for collecting and annotating screen frames extracted from GUI tutorial videos, enabling the acquisition of training data for underrepresented domains that lack access to rich APIs typically available on the web.
+    \item \textbf{Training recipe}: An effective RL training recipe based on GRPO with DAPO-style dynamic sampling and asymmetric clipping, which improves over SFT baselines.
+    \item \textbf{State-of-the-art grounding}: 63.88\% on ScreenSpot-Pro and 69.15\%\,/\,74.65\% on OS-World-G\,/\,OS-World-G (Refined), surpassing strong baselines such as GTA1-32B, UI-TARS-1.5-7B, and Qwen3-VL-235B-A22B-Instruct.
+    \item \textbf{Agent performance}: 61.85\% success rate on OS-World (human evaluation), outperforming previous state-of-the-art grounding model GTA1-32B in the same agent harness.
 \end{itemize}
 
-Grounding models remain a critical component of computer-use agents, whether in two-stage or end-to-end paradigms. As the field pushes toward more capable and general-purpose agents, continued improvements in grounding accuracy, efficiency, and robustness will be essential. By open-sourcing Click-100k, our trained models, and all evaluation artifacts, we aim to help close the gap between frontier and open-source efforts and accelerate progress in this area.
+Grounding models remain a critical component of computer-use agents, whether in two-stage or end-to-end paradigms. As the field pushes toward more capable and general-purpose agents, continued research in data collection, filtering, and training will be essential. By open-sourcing Click-100k, our trained models, and all evaluation artifacts, we aim to help close the gap between frontier and open-source efforts and accelerate progress in this area.
 
-\section{Future Work}
+\section{Limitations and Future Work}
 
-While Gelato-30B-A3B advances the state of the art in GUI grounding, significant challenges remain on the path toward truly reliable computer-use agents. Even frontier models struggle to operate reliably across diverse applications and long-horizon tasks. We identify several promising directions for future work.
+While Gelato-30B-A3B advances the state of the art in GUI grounding, significant challenges remain on the path toward truly reliable computer-use agents. Even frontier models struggle to operate reliably across diverse applications and long-horizon tasks.
 
-\paragraph{From Grounding to End-to-End Agents.}
-Gelato operates as a grounding module within a two-stage pipeline and relies on a proprietary planning model (GPT-5). Training an open-weights end-to-end agent that jointly handles planning and grounding remains an important goal. A key bottleneck is the scarcity of high-quality trajectory data: collecting multi-step interaction traces across diverse applications is expensive and difficult to scale. As stronger computer-use models become available, they may serve as trajectory collectors, enabling open-source efforts to generate the training data needed for end-to-end agents.
+A central limitation of our work is that Gelato operates as a grounding module within a two-stage pipeline and relies on a proprietary planning model (GPT-5). Training an open-weights end-to-end agent that jointly handles planning and grounding remains an important goal. The key bottleneck here is the scarcity of high-quality trajectory data: collecting multi-step interaction traces across diverse applications is expensive and difficult to scale. As stronger computer-use models become available, they may serve as trajectory collectors, enabling open-source efforts to generate the training data needed for end-to-end agents.
 
-\paragraph{Long-Horizon Reasoning.}
-Current agents struggle with tasks that require long sequences of interdependent actions, particularly in professional applications where a single task may involve dozens of steps across multiple dialog boxes and menus. Improving reasoning capabilities on such long-horizon tasks---including hierarchical planning, efficient context management, and recovery from intermediate errors---is an important direction.
+Closely related is the challenge of long-horizon reasoning. Current agents struggle with tasks that require long sequences of interdependent actions, particularly in professional applications where a single task may involve dozens of steps across multiple dialog boxes and menus. Improving reasoning capabilities on such long-horizon tasks---including hierarchical planning, efficient context management, and recovery from intermediate errors---is an important direction for future work.
 
-\paragraph{Trajectory-Level Reward Models.}
-Our evaluation revealed significant difficulties with automated verifiers on the OS-World benchmark, where evaluation functions often fail to recognize valid alternative solutions. More broadly, reliable supervision of multi-step trajectories remains an open problem that must be addressed for future advances in trajectory-based data collection, evaluation, and RL training.
+Another open problem is the development of trajectory-level reward models. Our evaluation revealed significant difficulties with automated verifiers on the OS-World benchmark, where evaluation functions often fail to recognize valid alternative solutions. More broadly, reliable supervision of multi-step trajectories must be addressed for future advances in trajectory-based data collection, evaluation, and RL training.
 
-\paragraph{Professional Application Coverage.}
-Despite our efforts to supplement training data with professional application screenshots (Section~\ref{sec:video_data_collection}), coverage of specialized software remains limited. Professional applications are inherently harder to collect data for and annotate, and models consequently perform worse in these domains. As stronger computer-use models become available, they could be leveraged to annotate additional professional application data at scale, which could then be open-sourced to benefit the broader research community.
+Finally, despite our efforts to supplement training data with professional application screenshots (Section~\ref{sec:video_data_collection}), coverage of specialized software remains limited. Professional applications are inherently harder to collect data for and annotate, and models consequently perform worse in these domains. As stronger computer-use models become available, they could be leveraged to annotate additional professional application data at scale, which could then be open-sourced to benefit the broader research community.

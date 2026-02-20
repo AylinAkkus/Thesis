@@ -12,9 +12,9 @@ Figure~\ref{fig:data_source_samples} shows representative examples from six of t
 \label{fig:data_source_samples}
 \end{figure}
 
-\section{Supplemental Data}
+\section{YouTube Tutorial Application List}
 
-This section contains supplemental information and data that supports the main thesis content.
+This section lists the professional applications covered by the YouTube tutorial data collection pipeline described in Section~\ref{sec:video_data_collection}.
 
 \begin{table}[h]
 \centering
@@ -376,7 +376,7 @@ We ablate key RL hyperparameters---sampling temperature, learning rate, and KL p
 Using the 10k SFT model, we compare temperatures of 0.65, 0.85, and 1.0. Temperature controls the diversity of rollouts and thus the exploration--exploitation trade-off during RL training.
 
 \paragraph{Learning Rate and KL Weight.}
-We compare our default hyperparameters (LR = $1 \times 10^{-6}$, KL coef = $1 \times 10^{-2}$) with parameters inspired by UI-Venus~\cite{gu2025uivenus} (LR = $4 \times 10^{-7}$, KL coef = $4 \times 10^{-3}$) on the 63k SFT model. Results (Section~\ref{sec:results_ablations}) show robustness to moderate variations in these hyperparameters.
+We compare our default hyperparameters (LR = $1 \times 10^{-6}$, KL coef = $1 \times 10^{-2}$) with parameters inspired by UI-Venus~\cite{gu2025uivenus} (LR = $4 \times 10^{-7}$, KL coef = $4 \times 10^{-3}$) on the 63k SFT model. Our results show robustness to moderate variations in these hyperparameters.
 
 \section{Hyperparameter Search and Model Configuration}
 

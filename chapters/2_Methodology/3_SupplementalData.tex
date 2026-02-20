@@ -13,7 +13,7 @@ The analysis reveals three distinct observations:
     \item Surprisingly, model performance is also weak at low resolutions (2--3\,MP).
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/accuracy_by_resolution_and_aspect.png}
 \caption{Model performance on the ScreenSpot Pro benchmark stratified by image resolution (left) and aspect ratio (right). The dashed red line indicates overall accuracy (46.5\%). Bar labels show per-category accuracy and sample count ($n$). The model achieves 736 correct predictions out of 1,581 total samples.}
@@ -28,7 +28,7 @@ We investigate two data augmentation strategies aimed at improving model perform
 \paragraph{Composing High-Resolution Frames.}
 To expose the model to high-resolution inputs during training, we experiment with synthetically composing dual-screen and large desktop montages. Specifically, we construct dual-screen samples with high aspect ratio by concatenating pairs of randomly selected frames from different data sources, comprising around 20\% of the augmented dataset. Additionally, we overlay random frames onto large desktop background images to simulate multi-window desktop environments. In this initial experiment, no verification is performed to ensure that instructions from different constituent frames do not spatially collide. As shown in Table~\ref{tab:composed_frames}, this naive composition strategy leads to a substantial degradation in ScreenSpot-Pro accuracy, decreasing from 45.22\% to 36.94\%.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Effect of composing high-resolution frames on ScreenSpot-Pro accuracy.}
 \label{tab:composed_frames}
@@ -45,7 +45,7 @@ Composed High-Resolution Frames & 36.94\% \\
 \paragraph{Random Image Upscaling.}
 Motivated by findings from Phi-Ground~\cite{zhang2025phiground}, which reported an 8 percentage point improvement on ScreenSpot-Pro through random image upscaling during training, we evaluate a similar strategy. We randomly resize training images up to a maximum resolution of 4 megapixels. However, as shown in Table~\ref{tab:random_resize}, this approach does not yield improvements in our setting: ScreenSpot-Pro accuracy decreases slightly from 45.22\% to 44.14\%, while ScreenSpot~V2 accuracy drops more notably from 91.05\% to 88.45\%.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Effect of random image upscaling on benchmark accuracy.}
 \label{tab:random_resize}
@@ -71,7 +71,7 @@ We normalize, resize, and convert the UI-Vision \cite{nayak2025uivision} and JED
 
 To evaluate the impact of these supplemental sources, we fine-tune the model by incrementally adding UI-Vision and JEDI samples to the existing 38k-sample training set and compare against the baseline. Results are reported in Table~\ref{tab:supplemental_data_results}.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Impact of supplemental data on model performance. Adding UI-Vision and JEDI progressively improves OS-World-G while recovering ScreenSpot Pro accuracy at sufficient data scale.}
 \label{tab:supplemental_data_results}
@@ -92,6 +92,13 @@ SFT-7B (63k) + UI-Vision + all JEDI & 50.09\% & 60.1\% \\
 Adding UI-Vision alone initially decreases ScreenSpot Pro accuracy from 49.3\% to 47.6\%, while improving OS-World-G from 57.4\% to 58.6\%. As more JEDI data is incorporated, OS-World-G continues to improve, reaching 60.8\% with 5k JEDI samples. With the full JEDI set (63k total samples), ScreenSpot Pro recovers to 50.09\%---on par with the baseline---while OS-World-G remains substantially higher at 60.1\%. Notably, simply training the baseline for a second epoch yields only marginal gains on ScreenSpot Pro (50.16\%) and a decrease on OS-World-G (56.0\%), indicating that the improvements from supplemental data are not attributable to increased training steps alone.
 
 \paragraph{Video Data Collection}
+\begin{figure}[H]
+    {\large\textbf{Video Data Collection and Annotation Pipeline}}\vspace{0.5em}
+    \centering
+    \includegraphics[width=\textwidth]{figures/VideoAnnotationPipeline.png}
+    \caption{Video data collection and annotation pipeline. Tutorial videos are processed through scene detection to extract representative frames, which are then filtered to remove non-screen content (e.g.\ presenter overlays, intro/outro segments, solid-color frames). A fixed number of frames per application is subsampled for temporal diversity, and finally Claude generates natural language grounding instructions paired with each screen frame.}
+    \label{fig:video_annotation_pipeline}
+    \end{figure}
 \label{sec:video_data_collection}
 We additionally construct an automated pipeline for collecting and annotating screen frames from GUI tutorial videos to supplement our training data. The pipeline, illustrated in Figure~\ref{fig:video_annotation_pipeline}, comprises four stages: video acquisition, frame extraction, frame sampling, and instruction generation.
 
@@ -103,7 +110,7 @@ In the third stage, we sample a fixed number of frames (default: 250) across a s
 
 In the fourth stage, we construct the final instruction dataset from the sampled frames. Natural language instructions are generated using Claude, producing structured instruction--target pairs for each screenshot (the full prompt is provided in Appendix~\ref{sec:appendix_claude_video_prompt}). Each training sample consists of a single screenshot paired with two instructions corresponding to distinct UI segments. 
 
-\begin{figure}[t]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/ProfessionalAppData.png}
 \caption{Examples of professional application screenshots collected via our video data pipeline, spanning Adobe Illustrator, AutoCAD, Stata, PyCharm, Vivado, and OriginPro. Each frame is paired with a natural language grounding instruction generated by Claude.}
@@ -112,15 +119,7 @@ In the fourth stage, we construct the final instruction dataset from the sampled
 
 We incorporate the in-house professional application data collected from YouTube into the model-difficulty-filtered training set and sample 10k samples in total. As shown in Table~\ref{tab:youtube_professional_data}, this yields a modest improvement from 45.22\% to 46.11\% on ScreenSpot Pro.
 
-\begin{figure}[t]
-{\large\textbf{Video Data Collection and Annotation Pipeline}}\vspace{0.5em}
-\centering
-\includegraphics[width=\textwidth]{figures/VideoAnnotationPipeline.png}
-\caption{Video data collection and annotation pipeline. Tutorial videos are processed through scene detection to extract representative frames, which are then filtered to remove non-screen content (e.g.\ presenter overlays, intro/outro segments, solid-color frames). A fixed number of frames per application is subsampled for temporal diversity, and finally Claude generates natural language grounding instructions paired with each screen frame.}
-\label{fig:video_annotation_pipeline}
-\end{figure}
-
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Impact of In-house Professional Application Data}
 \label{tab:youtube_professional_data}

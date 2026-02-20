@@ -103,15 +103,3 @@ With human evaluation corrections (Figure~\ref{fig:osworld_agent}), Gelato-30B-A
 
 \medskip
 Note that this is not a comprehensive manual evaluation---we focused on clearly problematic tasks that were straightforward to verify. A more extensive human evaluation could reveal additional cases where automated metrics underestimate performance.
-
-\section{Evaluation Summary}
-
-Our evaluation demonstrates that Gelato-30B-A3B achieves state-of-the-art performance across multiple benchmarks:
-
-\begin{enumerate}
-    \item \textbf{Isolated grounding}: Surpasses specialized grounding models and much larger VLMs on both ScreenSpot-Pro and OS-World-G.
-    \item \textbf{Superior data and training recipe}: The performance gains can be attributed to our curated Click-100k dataset and DAPO-based training recipe, as demonstrated by the controlled comparison against GTA1 on the same base model.
-    \item \textbf{End-to-end agent performance}: Outperforms GTA1-32B and other end-to-end computer-use models on OS-World under both automated and human evaluation.
-\end{enumerate}
-
-These results validate our approach to data curation, filtering, and RL training, demonstrating that careful attention to data quality and training methodology yields significant improvements in grounding model capabilities.
