@@ -1,26 +1,31 @@
+\clearpage
 \section{Data Filtering}
 \label{sec:data_filtering}
 
-\paragraph{Hypothesis Testing}
-To enable empirical testing of our data recipe, we require fast iterative evaluation. At this stage we therefore employ offline benchmarks (ScreenSpot-Pro, ScreenSpot v2, and OS-World), which provide significantly faster evaluation compared to online agentic benchmarks. Furthermore, we use supervised fine-tuning (SFT) on Qwen2.5-VL to accelerate iteration compared to reinforcement learning approaches. We make the assumption that online agentic performance will transfer from our suite of offline benchmarks and that data recipes which work well with SFT will work well with RL.
+\subsection{Iterative Evaluation}
+Developing an effective data recipe requires rapid empirical iteration. To enable this, we make two design choices that prioritize evaluation speed. First, we employ offline benchmarks---ScreenSpot-Pro, ScreenSpot V2, and OS-World---which can be evaluated in minutes, in contrast to online agentic benchmarks that require provisioning virtual machines and executing multi-step trajectories. Second, we use supervised fine-tuning (SFT) on Qwen2.5-VL rather than reinforcement learning, as SFT provides substantially faster training cycles. We operate under the assumption that data recipes that improve offline benchmark performance under SFT will transfer to online agentic settings and to RL-based training.
+
+\subsection{Construction of Filtering Pipeline}
+\paragraph{Balanced Weighting of Data Sources}
+To ensure that the filtering pipeline is not biased towards any particular data source, we balance the data pool by sampling up to 50k samples from each source (or the maximum available if fewer than 50k exist).
 
 \paragraph{OmniParser Filtering}
-Inspired by \cite{yang2025gta1} IoU overlap.
-To address the data quality issues described above, we employ model-based filtering using the detection component of OmniParser \cite{lu2024omniparser}, a vision-based screen parsing system. OmniParser's detection model is YOLO-based and identifies interactable UI elements by producing bounding boxes without requiring access to underlying code structures or accessibility trees, as illustrated in Figure~\ref{fig:omniparser_yolo}. This approach enables parsing of diverse GUI environments---including web browsers, desktop applications, and mobile interfaces---where traditional DOM-based methods are unavailable or unreliable.
+To address the misaligned bounding box annotations identified in Section~\ref{sec:data_curation}, we adopt a vision-based validation approach inspired by the IoU overlap strategy of \cite{yang2025gta1}. Specifically, we employ OmniParser \cite{lu2024omniparser}, a screen parsing system built on a YOLO-based detection model that identifies interactable UI elements by producing bounding boxes directly from screenshot pixels, without requiring access to underlying code structures or accessibility trees (Figure~\ref{fig:omniparser_yolo}). This purely visual approach enables robust parsing across diverse GUI environments---including web browsers and desktop applications---where traditional DOM-based methods are unavailable or unreliable.
 
-We leverage OmniParser's YOLO detector to validate the spatial alignment between instruction targets and actual UI elements. Specifically, we discard training samples where the ground truth click location lies outside all detected UI element bounding boxes, as illustrated in Figure~\ref{fig:data_quality}. This filtering step effectively removes misaligned annotations that would otherwise introduce noise during training. For element classification (distinguishing text-based from icon-based UI elements), we apply EasyOCR to the detected bounding box regions. By operating purely on visual features, this approach generalizes across application types and platforms, making it particularly valuable for desktop-centric datasets where structured metadata is scarce.
+We use OmniParser's detected bounding boxes to validate the spatial alignment between ground truth annotations and actual UI elements. Concretely, we discard any training sample whose ground truth click location falls outside all detected element bounding boxes, as illustrated in Figure~\ref{fig:data_quality}. This filtering step removes misaligned annotations that would otherwise introduce noise during training. Because the method operates purely on visual features, it generalizes across application types and platforms, making it particularly valuable for desktop-centric datasets where structured metadata is scarce.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Omniparser.png}
-\caption{OmniParser filtering pipeline. The system detects UI elements and their bounding boxes (shown as colored rectangles), enabling validation of ground truth annotations. Samples where the target click location (red dot) falls outside all detected elements are filtered out as misaligned.}
+\caption{OmniParser filtering pipeline. The system detects UI elements and their bounding boxes (shown as colored rectangles), enabling validation of ground truth annotations. Samples where the target click location falls outside all detected elements are filtered out as misaligned.}
 \label{fig:omniparser_yolo}
 \end{figure}
 
 
 \paragraph{Difficulty Filtering}
-Inspired by \cite{yuan2025segui} difficulty filtering. However, they only sample too easy samples and not too hard samples.
-To filter samples by difficulty, we use Qwen2.5VL-7B (for autofiltering) or SE-3B \cite{yuan2025segui} for easy sample filtering, and GTA1-7B \cite{yang2025gta1}, UI-7B \cite{gu2025uivenus}, or SE-3B for hard sample filtering. Together with the OmniParser bbox alignment step, these components form the complete filtering pipeline illustrated in Figure~\ref{fig:filtering_pipeline}. To validate this approach, we conduct detailed ablations by fine-tuning Qwen2.5-7B-VL on a source-balanced 10k subset and evaluating on ScreenSpot-Pro[3]. We find that using Qwen2.5-7B-VL as the difficulty filter and GTA1-7B-2507 as the alignment filter produces a +9 percentage point accuracy gain over unfiltered data and outperforms other filtering model combinations.
+Our difficulty filtering is inspired by \cite{yuan2025segui}, who filter out overly easy samples. However, their approach does not address overly difficult samples. We observe that ambiguous and unclear instructions---as identified among the data quality issues in Section~\ref{sec:data_curation}---are not captured by OmniParser alignment or easy-sample filtering alone, motivating an additional hard-sample filtering stage.
+
+To filter samples by difficulty, we use either Qwen2.5-VL-7B or SE-3B \cite{yuan2025segui} for easy sample filtering, and GTA1-7B \cite{yang2025gta1}, UI-7B \cite{gu2025uivenus}, or SE-3B for hard sample filtering. Together with the OmniParser bounding box alignment step, these components form the complete filtering pipeline illustrated in Figure~\ref{fig:filtering_pipeline}. To validate this approach, we conduct detailed ablations by fine-tuning Qwen2.5-VL-7B on a source-balanced 10k subset and evaluating on ScreenSpot-Pro. We find that using Qwen2.5-VL-7B as the easy-sample filter and GTA1-7B as the hard-sample filter produces a +9 percentage point accuracy gain over unfiltered data and outperforms all other filtering model combinations. Furthermore, we find strong empirical evidence that hard-sample filtering is beneficial: adding GTA1-7B filtering on top of Qwen2.5-VL-7B filtering alone yields an additional +5.5 percentage point gain.
 
 \begin{figure}[t]
 \centering
@@ -31,11 +36,11 @@ To filter samples by difficulty, we use Qwen2.5VL-7B (for autofiltering) or SE-3
 
 \includegraphics[width=0.5\textwidth]{figures/FilteringAblation.png}
 \includegraphics[width=0.5\textwidth]{figures/FilteringAllEvals.png}
-While it might seem that filtering out hard samples with a stronger model like GTA1-7B would limit the model in becoming better than that model, this is - counterintuitively - not the case. Previous work has shown that filtering a data pool using a weaker CLIP model can produce a stronger CLIP model when trained on the filtered data pool \cite{fang2023datafilteringnetworks}. An intuitive explanation might be that the trained model is able to learn cleaner representations of the data.
+While it might seem that filtering out hard samples with a stronger model like GTA1-7B would prevent the trained model from surpassing it, this is---counterintuitively---not the case. Previous work has shown that filtering a data pool using a weaker CLIP model can produce a stronger CLIP model when trained on the filtered data \cite{fang2023datafilteringnetworks}. One plausible explanation is that removing noisy or ambiguous samples enables the model to learn cleaner representations.
 
 
-\paragraph{Data Source Analysis}
-In the previous filtering pipeline, we trained on a balanced set from all data sources. Our current data pool comprises a mixture of multiple data sources, and we seek to determine which sources have the greatest impact on downstream task performance. To investigate this, we trained Qwen 2.5 VL 7B on each data source separately, capping the number of samples at 4.9k to control for the confounding effect of data repetition.
+\subsection{Data Source Analysis}
+In the previous filtering pipeline, we trained on a balanced set from all data sources. However, we are interested in identifying the performance of individual data sources. To investigate this, we trained Qwen 2.5 VL 7B on each data source separately, capping the number of samples at 4.9k to control for the confounding effect of data repetition.
 
 \begin{table}[h]
 \centering
@@ -64,7 +69,7 @@ Overall, ShowUI-Web exhibits consistently strong performance across all benchmar
 
 Conversely, SeeClick and Pixmo Points represent the poorest performing data sources, achieving the lowest (29.22\%) and second-lowest (30.68\%) ScreenSpot Pro accuracies, respectively.
 
-Based on these data source experiments, we investigated the effect of removing the poorest performing data sources from the training pool. Specifically, we removed the bottom three data sources ranked by ScreenSpot Pro performance: SeeClick, Pixmo Points, and UGround. Subsequently, we trained the model on the remaining data sources and sampled 10k samples using the optimal filtering approach identified in our ablation studies.
+Based on these data source experiments, we investigated the effect of removing the poorest performing data sources from the training pool. Specifically, we removed the bottom three data sources ranked by ScreenSpot Pro performance: SeeClick, Pixmo Points, and UGround. Subsequently, we trained the model on the remaining data sources in our filtered data pool sampling 10k samples.
 
 \begin{table}[h]
 \centering
@@ -80,31 +85,20 @@ Remove Worst one on SS Pro & 44.78\% & 90.79\% \\
 (Pixmo Points) & & \\
 \hline
 \end{tabular}
-\caption{Impact of removing poorest performing data sources on downstream task performance.}
+\caption{Impact of removing poorest performing data sources on downstream task performance at equal data scale.}
 \label{tab:data_source_removal}
 \end{table}
-As shown in Table~\ref{tab:data_source_removal}, removing the bottom three data sources does not yield consistent improvements across benchmarks. ScreenSpot Pro and ScreenSpot V2 accuracies decrease marginally. Given these mixed results, we conclude that it is beneficial to retain all data sources in the training pool to maximize overall performance. However, during RL training we find that these data sources have problematic ambiguous annotations and ultimately exclude them from the RL data pool (Section~\ref{sec:dapo}).
-\paragraph{Data Sampling and Scale}
-To investigate the impact of training set size on model performance, we conduct a series of ablation studies with varying data scales. We implement a two-stage filtering strategy: hard samples are filtered using GTA1-7B, while easy samples are filtered using Qwen2.5-VL-7B. From this filtered pool, we sample data from each source at different scales (10k, 20k, 35k, and 80k samples), exploring both sampling with and without replacement. As shown in Table~\ref{tab:data_scaling}, we observe consistent performance improvements with increased data scale on ScreenSpot Pro, with accuracy improving from 45.22\% at 10k samples to 49.65\% at 80k samples when combined with enhanced prompting and additional in-house data. Performance on ScreenSpot V2 remains relatively stable across different scales, suggesting that model capacity and data quality play complementary roles in determining final performance.
+As shown in Table~\ref{tab:data_source_removal}, removing the bottom three data sources at this stage does not yield consistent improvements across benchmarks. ScreenSpot Pro and ScreenSpot V2 accuracies decrease marginally. Given these mixed results, we conclude that it is beneficial to retain all data sources in the training pool to maximize overall performance. However, during RL training we find that these data sources contain problematic ambiguous annotations and ultimately exclude them from the RL data pool (Section~\ref{sec:dapo}).
 
-\begin{table}[h]
+\subsection{Data Sampling and Scale}
+To investigate the impact of training set size on model performance, we conduct a series of ablation studies with varying data scales. From our filtered pool, we sample data from each source at different scales (10k, 20k, 35k, and 80k samples). As shown in Figure~\ref{fig:data_scaling}, we observe consistent performance improvements with increased data scale on ScreenSpot Pro, with accuracy improving from 45.22\% at 10k samples to 49.65\% at 80k samples when combined with enhanced prompting and additional in-house data. Performance on ScreenSpot V2 remains relatively stable across different scales, suggesting that model capacity and data quality play complementary roles in determining final performance.
+
+\begin{figure}[h]
 \centering
-\caption{Impact of Training Data Scale on Model Performance}
-\label{tab:data_scaling}
-\begin{tabular}{lcc}
-\hline
-\textbf{Configuration} & \textbf{SS Pro} & \textbf{SS V2} \\
- & \textbf{Acc.} & \textbf{Acc.} \\
-\hline
-10k (w/o replacement) & 45.22\% & 91.05\% \\
-10k + best prompt & 46.23\% & --- \\
-20k (w/ replacement) & 45.41\% & 90.66\% \\
-20k (w/o replacement) & 46.55\% & 90.27\% \\
-35k (w/o replacement) & 47.18\% & 90.66\% \\
-80k + improvements & 49.65\% & 90.79\% \\
-\hline
-\end{tabular}
-\end{table}
+\includegraphics[width=0.85\textwidth]{figures/DataScaling.png}
+\caption{Impact of training data scale on grounding accuracy. ScreenSpot Pro (left axis) shows consistent improvement with increasing data, while ScreenSpot V2 (right axis) remains relatively stable across scales.}
+\label{fig:data_scaling}
+\end{figure}
 
-\paragraph{Additional Experiments}
-We conducted several additional experiments to optimize the training process, including training prompts, instruction rewriting, vision tower configuration, and learning rate tuning. Our hyperparameter search revealed that a learning rate of 1e-6 yields optimal performance, and that full fine-tuning (including the vision tower) significantly outperforms freezing the vision tower. We also found that the default training prompt is sufficient and that verbose tool-calling prompts do not improve performance. We experimented with rewriting exisiting instructions using LLM-based approaches (Qwen3 4B) as well as image-aware synthetic prompts (Qwen 2.5 VL 7B) to improve the quality of the instructions. Detailed results and ablations for these experiments are provided in the Appendix (see Tables~\ref{tab:prompt_ablation}, \ref{tab:prompt_rewriting}, \ref{tab:vision_tower}, and \ref{tab:learning_rate_sweep}).
+\subsection{Additional Experiments}
+We conducted several additional experiments to optimize the training process, including training prompts, instruction rewriting, vision tower configuration, and learning rate tuning. Our hyperparameter search revealed that a learning rate of 1e-6 yields optimal performance, and that full fine-tuning (including the vision tower) significantly outperforms freezing the vision tower. We also found that the default training prompt is sufficient and that verbose tool-calling prompts do not improve performance. We experimented with rewriting existing instructions using LLM-based approaches (Qwen3-4B) as well as image-aware synthetic prompts (Qwen2.5-VL-7B) to improve instruction quality; however, this did not improve performance. Detailed results and ablations for these experiments are provided in the Appendix (see Tables~\ref{tab:prompt_ablation}, \ref{tab:prompt_rewriting}, \ref{tab:vision_tower}, and \ref{tab:learning_rate_sweep}).

@@ -48,6 +48,112 @@ Xcode & & & \\
 \end{tabular}
 \end{table}
 
+\section{Claude Prompt for Video Frame Annotation}
+\label{sec:appendix_claude_video_prompt}
+
+The following prompt was used with Claude to generate structured grounding instructions from professional application screenshots collected via the video data pipeline (Section~\ref{sec:video_data_collection}).
+
+\begin{figure}[p]
+\vspace*{-2em}
+\begin{lstlisting}[
+  basicstyle=\ttfamily\tiny,
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{black!5},
+  xleftmargin=0.5em,
+  xrightmargin=0.5em,
+  aboveskip=0.3em,
+  belowskip=0.3em,
+  abovecaptionskip=0.5em,
+  belowcaptionskip=0pt,
+  caption={Prompt template used for Claude-based annotation of professional application screenshots.},
+  label={lst:claude_video_prompt}
+]
+Analyze this user interface image and provide helpful
+instructions for using this application.
+
+First, identify the main segments/regions of the interface
+(e.g., "top toolbar", "left sidebar", "main canvas",
+"color palette popup", "file menu dropdown", etc.).
+
+Then, generate 20-30 diverse, specific instructions
+organized by these segments. Focus on:
+
+1. Common tasks a user might want to accomplish
+2. How to navigate and use the visible features
+3. Workflow suggestions and tips
+4. Specific actions related to the tools and functions shown
+
+CRITICAL INSTRUCTION REQUIREMENTS:
+- All instructions must be written in English (US), even
+  if the interface uses another language
+- ALL instructions must be LEFT CLICK based actions only
+  (no right click, typing, keyboard shortcuts, drag/drop)
+- Each instruction must be VERY exact and require only a
+  SINGLE LEFT CLICK to accomplish
+- Instructions must be concise: 1-15 words maximum
+  (1 word if applicable)
+- Be VERY specific in your instructions
+- Reference specific UI elements and their purposes
+- Provide actionable guidance that users can follow by
+  left clicking
+- Include both beginner and intermediate level left click
+  actions
+- Vary instruction structure: use diverse phrasings like
+  "Open...", "Access...", "View...", "Save...",
+  "Navigate to...", "Switch to...", "Add...", "Remove...",
+  "Select...", etc.
+- Avoid starting every instruction with "Click" - use
+  natural action verbs that imply left clicking
+- Focus on what's actually visible and left clickable in
+  the interface
+- Pay special attention to dynamic elements: open tabs,
+  dropdowns, pop-ups, context menus, modal dialogs, and
+  expandable sections if they exist
+- Avoid overly verbose descriptions
+
+Return your response as a JSON object with this exact
+format:
+{
+  "interface_description": "Brief description of what
+    type of interface this is and its main purpose",
+  "segments": {
+    "segment_name_1": {
+      "description": "Brief description of this screen
+        segment",
+      "instructions": [
+        "Specific instruction 1",
+        "Specific instruction 2",
+        ...
+      ]
+    },
+    "segment_name_2": {
+      "description": "Brief description of this screen
+        segment",
+      "instructions": [
+        "Specific instruction 1",
+        "Specific instruction 2",
+        ...
+      ]
+    }
+  }
+}
+
+DO NOT hypothesize features not visible in the image.
+Only provide instructions based on what you can clearly
+see.
+
+REMEMBER: ALL instructions must be accomplished with a
+SINGLE LEFT CLICK only. No right click, typing, keyboard
+shortcuts, or multi-step actions.
+Use diverse instruction phrasings - examples: "Open File
+menu", "Save document", "View project structure",
+"Access settings", "Navigate to homepage", "Switch tabs",
+"Add new item", "Close dialog", "Expand dropdown",
+"Select tab".
+\end{lstlisting}
+\end{figure}
+
 \section{Instruction Relabeling Experiments}
 
 \paragraph{Instruction Relabeling}

@@ -1,144 +1,32 @@
+\clearpage
 \section{Supplemental Data}
-After assembling the data pool (Section~\ref{sec:data_curation}) and filtering it (Section~\ref{sec:data_filtering}), we evaluate performance and look for systematic weaknesses of the models to identify underrepresented areas of the training data.
-We specifically focus on the ScreenSpot Pro benchmark, because performance of even closed source models is poor on this benchmark.
-- Screenspot Pro is heavy on professional applications. This is a gap in many GUI models because data is much harder to collect due to missing APIs and domain knowledge for annotation. Furthermore it contains a lot of very large images, screens with multiple windows and complex layouts.
+After assembling the data pool (Section~\ref{sec:data_curation}) and filtering it (Section~\ref{sec:data_filtering}), we evaluate performance and identify systematic weaknesses to locate underrepresented areas in the training data.
+We specifically focus on the ScreenSpot Pro benchmark, on which even closed-source models achieve poor performance. ScreenSpot Pro is dominated by professional applications, a domain that poses a significant gap for many GUI models because data collection is substantially more difficult due to the absence of structured APIs and the domain expertise required for annotation. Furthermore, the benchmark contains many high-resolution images, multi-window layouts, and complex screen configurations.
 
-\paragraph{Performance Analysis by Image Resolution and Aspect Ratio}
+\subsection{Performance Analysis by Image Resolution and Aspect Ratio}
 To better understand the characteristics of challenging samples in our evaluation set, we analyze model performance across different image resolutions and aspect ratios. We evaluate the 20k sample (without replacement) trained model on ScreenSpot Pro, stratifying performance by megapixel count and aspect ratio.
 
-The analysis reveals three distinct categories of challenging samples. First, single-screen samples at low resolutions (2-3MP) and aspect ratios around 1.8 prove most difficult, achieving only 15.79\% accuracy. Second, dual-screen samples at high resolutions (6-8MP) and wide aspect ratios (3.6) present substantial challenges, with 43.75\% accuracy. Third, ultra-high resolution single-screen samples (>8MP) yield 32.19\% accuracy, suggesting that extreme resolutions strain the model's visual processing capabilities.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lccc}
-\hline
-Image Resolution & SS Pro Accuracy & Sample Count & Coverage \\
-\hline
-2-3 MP & 15.79\% & 19 & 1.2\% \\
-3-4 MP & 54.49\% & 613 & 38.8\% \\
-4-5 MP & 44.92\% & 236 & 14.9\% \\
-5-6 MP & 67.78\% & 90 & 5.7\% \\
-6-8 MP & 43.75\% & 272 & 17.2\% \\
->8 MP & 32.19\% & 351 & 22.2\% \\
-\hline
-\textbf{Overall} & \textbf{46.55\%} & \textbf{1,581} & \textbf{100\%} \\
-\hline
-\end{tabular}
-\caption{Model performance stratified by image resolution on ScreenSpot Pro. The model achieves 736 correct predictions out of 1,581 total samples.}
-\label{tab:resolution_performance}
-\end{table}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lccc}
-\hline
-Aspect Ratio & SS Pro Accuracy & Sample Count & Coverage \\
-\hline
-1.5 & 56.17\% & 308 & 19.5\% \\
-1.6 & 57.14\% & 147 & 9.3\% \\
-1.8 & 43.33\% & 884 & 55.9\% \\
-3.6 & 39.67\% & 242 & 15.3\% \\
-\hline
-\textbf{Overall} & \textbf{46.55\%} & \textbf{1,581} & \textbf{100\%} \\
-\hline
-\end{tabular}
-\caption{Model performance stratified by aspect ratio on ScreenSpot Pro. Ultra-wide displays (3.6 aspect ratio) present significant challenges.}
-\label{tab:aspect_ratio_performance}
-\end{table}
-
-Figure~\ref{fig:resolution_aspect_analysis} visualizes the relationship between image characteristics and model performance. The heatmap (Figure~\ref{fig:resolution_aspect_heatmap}) illustrates that performance degradation is particularly pronounced at the extremes: low-resolution standard displays and high-resolution ultra-wide configurations. These findings suggest that expanding training data coverage in these underrepresented regions could yield targeted performance improvements.
+The analysis reveals three distinct observations:
+\begin{itemize}
+    \item The most common aspect ratio is 16:9 (approximately 1.78), and model performance decreases as we move toward ultra-wide aspect ratios (3.6).
+    \item Performance declines with increasing image size, which we attribute to the resizing of images to a maximum of 4\,MP to control prompt length---this downsampling may remove fine-grained visual details necessary for accurate grounding.
+    \item Surprisingly, model performance is also weak at low resolutions (2--3\,MP).
+\end{itemize}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/accuracy_by_resolution_and_aspect.png}
-\caption{Model performance across different image resolutions and aspect ratios on ScreenSpot Pro. Error bars indicate 95\% confidence intervals.}
-\label{fig:resolution_aspect_analysis}
+\includegraphics[width=\textwidth]{figures/accuracy_by_resolution_and_aspect.png}
+\caption{Model performance on the ScreenSpot Pro benchmark stratified by image resolution (left) and aspect ratio (right). The dashed red line indicates overall accuracy (46.5\%). Bar labels show per-category accuracy and sample count ($n$). The model achieves 736 correct predictions out of 1,581 total samples.}
+\label{fig:resolution_aspect_performance}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{figures/accuracy_heatmap_resolution_aspect.png}
-\caption{Performance heatmap showing accuracy by resolution and aspect ratio combinations. Darker regions indicate lower accuracy, highlighting performance bottlenecks at extreme configurations.}
-\label{fig:resolution_aspect_heatmap}
-\end{figure}
+To mitigate these weaknesses, we explore data augmentation strategies.
 
-- Additionally, using prior models for difficulty filtering is problematic, because these models do not perform well in this domain either. Filtering would probably lead to discard all the collected data. We therefore employ different strategies to collect data.
-
-\paragraph{UI Vision and JEDI}
-To improve robustness on professional desktop applications, we incorporate UI-Vision \cite{nayak2025uivision} as additional training data. We do not use UI-Vision for evaluation, as it is not yet widely adopted as a standard benchmark for reporting final model performance. Instead, we treat it purely as supplementary supervision to increase coverage of desktop UI elements and interaction patterns.
-UI-Vision is a desktop-centric GUI dataset consisting of densely annotated screenshots collected from real-world applications. It provides bounding boxes for UI elements, semantic labels, and interaction-related metadata across a diverse set of professional and productivity software. Compared to web-based GUI datasets, UI-Vision focuses on complex desktop environments where structured APIs are typically unavailable and manual annotation requires domain knowledge. This makes it particularly valuable for improving model exposure to professional application layouts and visual element grounding.
-The JEDI dataset \cite{xie2025jedi} includes large-scale grounding data sourced not only from web interfaces but also from real-world desktop and professional applications, incorporating screenshots and structured metadata from production software (e.g., office tools, system apps) and agent rollouts in environments like WindowsAgentArena.
-We normalize, resize and convert the UI Vision \cite{nayak2025uivision} and JEDI \cite{xie2025jedi} datasets to the same format as the other datasets. Importantly, we do not apply the entire filtering pipeline like before to these datasets. We finally obtain 5,733 samples from UI Vision and 18,032 samples from JEDI.
-
-\paragraph{Supplemental Data Experiments}
-We conducted experiments using DeepSpeed ZeRO Stage 3 on 4 nodes with 4 40GB A100 GPUs at a batch size of 16. Table~\ref{tab:supplemental_data_results} shows the impact of adding UI-Vision and JEDI data to the training set.
-
-\begin{table}[h]
-\centering
-\caption{Impact of Supplemental Data on Model Performance}
-\label{tab:supplemental_data_results}
-\small
-\begin{tabular}{lrcc}
-\hline
-\textbf{Model Configuration} & \textbf{LR} & \textbf{SS Pro} & \textbf{OS-World-G} \\
-\hline
-SFT-7B (38k) & 1e-6 & 49.3\% & 57.4\% \\
-SFT-7B (38k) - 2 epochs & 1e-6 & 50.16\% & 56.0\% \\
-SFT-7B (44k) + UI-Vision + YT icons & 1e-6 & 47.6\% & 58.6\% \\
-SFT-7B (49k) + UI-Vision + YT + 5k JEDI & 1e-6 & 47.9\% & 60.8\% \\
-SFT-7B (63k) + UI-Vision + YT + all JEDI & 1e-6 & 50.09\% & 60.1\% \\
-SFT-7B (63k) + all data (BS 8, 2 nodes) & 1e-6 & 48.26\% & 60.4\% \\
-\hline
-\end{tabular}
-\end{table}
-
-\paragraph{Video Data Collection}
-We also construct an automated pipeline for collecting and annotating screen frames from GUI tutorial videos to supplement our training data. The pipeline, illustrated in Figure~\ref{fig:video_annotation_pipeline}, comprises four stages: video acquisition, frame extraction, frame sampling, and instruction generation.
-
-In the first stage, we manually curated a list of approximately 120 tutorial videos spanning over 80 professional applications, including 3ds~Max, ANSYS, Adobe Creative Suite, Blender, MATLAB, and Vivado, among others (see Table~\ref{tab:youtube_apps} in the Appendix for the full list). Videos are downloaded at their highest available quality.
-
-In the second stage, we extract unique screen-like frames from each downloaded video using PySceneDetect. For each detected scene transition, the mid-frame is selected as a representative sample. We then apply a series of heuristic filters to remove non-screen content: face detection via OpenCV cascade classifiers excludes frames containing presenter overlays, while additional filters discard introductory and concluding segments, low-variance or solid-color frames, and grayscale frames. To eliminate near-duplicate content within each video, we perform perceptual deduplication using pHash.
-
-In the third stage, we sample a fixed number of frames (default: 250) across a set of target professional applications from the extracted frame pool. The sampling procedure selects evenly spaced frames within each application to maximize temporal diversity.
-
-In the fourth stage, we construct the final instruction dataset from the sampled frames. Natural language instructions are generated using Claude, producing structured instruction--target pairs for each screenshot. Each training sample consists of a single screenshot paired with two instructions corresponding to distinct UI segments. To mitigate redundancy, we deduplicate samples within each video using token-level overlap thresholds.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/ProfessionalAppData.png}
-\caption{Examples of professional application screenshots collected via our video data pipeline, spanning Adobe Illustrator, AutoCAD, Stata, PyCharm, Vivado, and OriginPro. Each frame is paired with a natural language grounding instruction generated by Claude.}
-\label{fig:professional_app_data}
-\end{figure}
-
-We added the in-house professional app data we collected from Youtube to the training data, added it to the model difficulty filtered data and sampled 10k samples total. We find that the performance slightly improves from 45.22% to 46.11% on SS Pro, as shown in Table~\ref{tab:youtube_professional_data}.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/VideoAnnotationPipeline.png}
-\caption{Video data collection and annotation pipeline. Tutorial videos are processed through scene detection to extract representative frames, which are then filtered to remove non-screen content (e.g.\ presenter overlays, intro/outro segments, solid-color frames). A fixed number of frames per application is subsampled for temporal diversity, and finally Claude generates natural language grounding instructions paired with each screen frame.}
-\label{fig:video_annotation_pipeline}
-\end{figure}
-
-\begin{table}[h]
-\centering
-\caption{Impact of In-house Professional Application Data}
-\label{tab:youtube_professional_data}
-\small
-\begin{tabular}{lccc}
-\hline
-\textbf{Data Configuration} & \textbf{SS Pro} & \textbf{SS V2} & \textbf{Showdown} \\
-\hline
-10k baseline & 45.22\% & 91.05\% & 66.97\% \\
-10k + in-house prof. app data & 46.11\% & 90.27\% & 67.50\% \\
-\hline
-\end{tabular}
-\end{table}
-
-\paragraph{Data Augmentation}
+\subsection{Data Augmentation}
 We investigate two data augmentation strategies aimed at improving model performance on high-resolution screenshots, as evaluated on the ScreenSpot-Pro benchmark.
 
-\subparagraph{Composing High-Resolution Frames.}
-To expose the model to high-resolution inputs during training, we experiment with synthetically composing dual-screen and large desktop montages. Specifically, we construct dual-screen samples by concatenating pairs of randomly selected frames from different data sources, comprising 20\% of the augmented dataset. Additionally, we overlay random frames onto large desktop background images to simulate multi-window desktop environments. In this initial experiment, no verification is performed to ensure that instructions from different constituent frames do not spatially collide. As shown in Table~\ref{tab:composed_frames}, this naive composition strategy leads to a substantial degradation in ScreenSpot-Pro accuracy, decreasing from 45.22\% to 36.94\%.
+\paragraph{Composing High-Resolution Frames.}
+To expose the model to high-resolution inputs during training, we experiment with synthetically composing dual-screen and large desktop montages. Specifically, we construct dual-screen samples with high aspect ratio by concatenating pairs of randomly selected frames from different data sources, comprising around 20\% of the augmented dataset. Additionally, we overlay random frames onto large desktop background images to simulate multi-window desktop environments. In this initial experiment, no verification is performed to ensure that instructions from different constituent frames do not spatially collide. As shown in Table~\ref{tab:composed_frames}, this naive composition strategy leads to a substantial degradation in ScreenSpot-Pro accuracy, decreasing from 45.22\% to 36.94\%.
 
 \begin{table}[h]
 \centering
@@ -154,7 +42,7 @@ Composed High-Resolution Frames & 36.94\% \\
 \end{tabular}
 \end{table}
 
-\subparagraph{Random Image Upscaling.}
+\paragraph{Random Image Upscaling.}
 Motivated by findings from Phi-Ground~\cite{zhang2025phiground}, which reported an 8 percentage point improvement on ScreenSpot-Pro through random image upscaling during training, we evaluate a similar strategy. We randomly resize training images up to a maximum resolution of 4 megapixels. However, as shown in Table~\ref{tab:random_resize}, this approach does not yield improvements in our setting: ScreenSpot-Pro accuracy decreases slightly from 45.22\% to 44.14\%, while ScreenSpot~V2 accuracy drops more notably from 91.05\% to 88.45\%.
 
 \begin{table}[h]
@@ -173,3 +61,79 @@ Random resize up to 4MP & 44.14\% & 88.45\% \\
 \end{table}
 
 These results suggest that naive augmentation strategies for high-resolution inputs---whether through frame composition or random upscaling---do not transfer effectively to our training setup and may introduce noise that degrades grounding performance.
+
+\subsection{Professional Application Data}
+\paragraph{UI Vision and JEDI}
+To improve robustness on professional desktop applications which are underrepresented in comparison to web data, we incorporate UI-Vision \cite{nayak2025uivision} as additional training data. We do not use UI-Vision for evaluation, as it is not yet widely adopted as a standard benchmark for reporting final model performance. Instead, we treat it purely as supplementary supervision to increase coverage of desktop UI elements and interaction patterns.
+UI-Vision provides bounding boxes for UI elements, semantic labels, and interaction-related metadata across a diverse set of professional and productivity software. Compared to web-based GUI datasets, UI-Vision focuses on complex desktop environments where structured APIs are typically unavailable and manual annotation requires domain knowledge. This makes it particularly valuable for improving model exposure to professional application layouts and visual element grounding.
+The JEDI dataset \cite{xie2025jedi} includes large-scale grounding data sourced not only from web interfaces but also from real-world desktop and professional applications, incorporating screenshots and structured metadata from production software (e.g., office tools, system apps) and agent rollouts in environments like WindowsAgentArena.
+We normalize, resize, and convert the UI-Vision \cite{nayak2025uivision} and JEDI \cite{xie2025jedi} datasets to the same format as the other datasets. Importantly, we do not apply the full filtering pipeline to these datasets, as the prior models used for difficulty filtering do not perform well in this domain either---applying such filtering would likely discard the majority of the collected data. After preprocessing, we obtain 5,733 samples from UI-Vision and 18,032 samples from JEDI.
+
+To evaluate the impact of these supplemental sources, we fine-tune the model by incrementally adding UI-Vision and JEDI samples to the existing 38k-sample training set and compare against the baseline. Results are reported in Table~\ref{tab:supplemental_data_results}.
+
+\begin{table}[h]
+\centering
+\caption{Impact of supplemental data on model performance. Adding UI-Vision and JEDI progressively improves OS-World-G while recovering ScreenSpot Pro accuracy at sufficient data scale.}
+\label{tab:supplemental_data_results}
+\small
+\begin{tabular}{lcc}
+\hline
+\textbf{Model Configuration} & \textbf{SS Pro} & \textbf{OS-World-G} \\
+\hline
+SFT-7B (38k) & 49.3\% & 57.4\% \\
+SFT-7B (38k) - 2 epochs & 50.16\% & 56.0\% \\
+SFT-7B (44k) + UI-Vision & 47.6\% & 58.6\% \\
+SFT-7B (49k) + UI-Vision + 5k JEDI & 47.9\% & 60.8\% \\
+SFT-7B (63k) + UI-Vision + all JEDI & 50.09\% & 60.1\% \\
+\hline
+\end{tabular}
+\end{table}
+
+Adding UI-Vision alone initially decreases ScreenSpot Pro accuracy from 49.3\% to 47.6\%, while improving OS-World-G from 57.4\% to 58.6\%. As more JEDI data is incorporated, OS-World-G continues to improve, reaching 60.8\% with 5k JEDI samples. With the full JEDI set (63k total samples), ScreenSpot Pro recovers to 50.09\%---on par with the baseline---while OS-World-G remains substantially higher at 60.1\%. Notably, simply training the baseline for a second epoch yields only marginal gains on ScreenSpot Pro (50.16\%) and a decrease on OS-World-G (56.0\%), indicating that the improvements from supplemental data are not attributable to increased training steps alone.
+
+\paragraph{Video Data Collection}
+\label{sec:video_data_collection}
+We additionally construct an automated pipeline for collecting and annotating screen frames from GUI tutorial videos to supplement our training data. The pipeline, illustrated in Figure~\ref{fig:video_annotation_pipeline}, comprises four stages: video acquisition, frame extraction, frame sampling, and instruction generation.
+
+In the first stage, we manually curate a list of approximately 120 tutorial videos spanning over 80 professional applications, including 3ds~Max, ANSYS, Adobe Creative Suite, Blender, MATLAB, and Vivado, among others (see Table~\ref{tab:youtube_apps} in the Appendix for the full list). Videos are downloaded at their highest available quality.
+
+In the second stage, we extract unique screen-like frames from each downloaded video using PySceneDetect. For each detected scene transition, the mid-frame is selected as a representative sample. We then apply a series of heuristic filters to remove non-screen content: face detection via OpenCV cascade classifiers excludes frames containing presenter overlays, while additional filters discard introductory and concluding segments, low-variance or solid-color frames, and grayscale frames. To eliminate near-duplicate content within each video, we perform perceptual deduplication using pHash.
+
+In the third stage, we sample a fixed number of frames (default: 250) across a set of target professional applications from the extracted frame pool. The sampling procedure selects evenly spaced frames within each application to maximize temporal diversity.
+
+In the fourth stage, we construct the final instruction dataset from the sampled frames. Natural language instructions are generated using Claude, producing structured instruction--target pairs for each screenshot (the full prompt is provided in Appendix~\ref{sec:appendix_claude_video_prompt}). Each training sample consists of a single screenshot paired with two instructions corresponding to distinct UI segments. 
+
+\begin{figure}[t]
+\centering
+{\large\textbf{Video Annotation Pipeline}}\vspace{0.5em}
+\includegraphics[width=\textwidth]{figures/ProfessionalAppData.png}
+\caption{Examples of professional application screenshots collected via our video data pipeline, spanning Adobe Illustrator, AutoCAD, Stata, PyCharm, Vivado, and OriginPro. Each frame is paired with a natural language grounding instruction generated by Claude.}
+\label{fig:professional_app_data}
+\end{figure}
+
+We incorporate the in-house professional application data collected from YouTube into the model-difficulty-filtered training set and sample 10k samples in total. As shown in Table~\ref{tab:youtube_professional_data}, this yields a modest improvement from 45.22\% to 46.11\% on ScreenSpot Pro.
+
+\begin{figure}[t]
+{\large\textbf{Video DataCollection and Annotation Pipeline}}\vspace{0.5em}
+\centering
+\includegraphics[width=\textwidth]{figures/VideoAnnotationPipeline.png}
+\caption{Video data collection and annotation pipeline. Tutorial videos are processed through scene detection to extract representative frames, which are then filtered to remove non-screen content (e.g.\ presenter overlays, intro/outro segments, solid-color frames). A fixed number of frames per application is subsampled for temporal diversity, and finally Claude generates natural language grounding instructions paired with each screen frame.}
+\label{fig:video_annotation_pipeline}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Impact of In-house Professional Application Data}
+\label{tab:youtube_professional_data}
+\small
+\begin{tabular}{lc}
+\hline
+\textbf{Data Configuration} & \textbf{SS Pro} \\
+\hline
+10k baseline & 45.22\% \\
+10k + in-house prof. app data & 46.11\% \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+
