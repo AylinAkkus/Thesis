@@ -28,8 +28,8 @@ where the per-token probability ratio is:
 r_{i,t}(\theta) = \frac{\pi_\theta(o_{i,t} \mid q,\, o_{i,<t})}{\pi_{\theta_{\text{old}}}(o_{i,t} \mid q,\, o_{i,<t})}.
 \label{eq:grpo_ratio}
 \end{equation}
-\paragraph{RL vs SFT}
-Our first RL experiment applied GRPO to both the Qwen2.5-VL-7B-Instruct base model and a model already trained with one round of SFT on the training data to see if we could improve performance beyond the SFT baseline. We used 8 rollouts per prompt at temperature 1.1 with KL divergence disabled, training on a pool of approximately 63k samples. As shown in Figure~\ref{fig:initial_grpo}, RL did not boost performance beyond the SFT baseline in either setting: ScreenSpot-Pro accuracy remained flat around the SFT level, while OS-World-G (refined) showed only marginal fluctuation. We later addressed this issue by implementing DAPO~\cite{yu2025dapo}-style dynamic sampling and asymmetric clipping.
+\paragraph{RL vs.\ SFT.}
+Our first RL experiment applied GRPO to both the Qwen2.5-VL-7B-Instruct base model and a model already fine-tuned with one round of SFT on the training data, to see if we could improve performance beyond the SFT baseline. We used 8 rollouts per prompt at temperature 1.1 with KL divergence disabled, training on a pool of approximately 63k samples. As shown in Figure~\ref{fig:initial_grpo}, RL did not boost performance beyond the SFT baseline in either setting: when applied on top of the already fine-tuned model, evaluation performance fluctuated around the SFT level, while when applied on top of the base model, it plateaued before reaching the SFT level. We later addressed this issue by implementing DAPO~\cite{yu2025dapo}-style dynamic sampling and asymmetric clipping (Section~\ref{sec:dapo}). We later addressed this issue by implementing DAPO~\cite{yu2025dapo}-style dynamic sampling and asymmetric clipping.
 
 \begin{figure}[t]
 \centering
@@ -53,31 +53,45 @@ Our first RL experiment applied GRPO to both the Qwen2.5-VL-7B-Instruct base mod
 \subsection{Reward Function}
 \label{sec:reward_function}
 
-Unlike mathematical reasoning tasks where reward is binary (correct/incorrect), GUI grounding allows for a natural continuous reward signal based on spatial proximity. Both our reward functions are based on the Euclidean distance $d = \lVert (x, y) - (c_x, c_y) \rVert$ between the predicted point $(x, y)$ and the center $(c_x, c_y)$ of the ground truth region $R$; they differ only in the normalization constant and in whether a signal is provided outside $R$.
+Unlike mathematical reasoning tasks where reward is binary (correct/incorrect), GUI grounding allows for a natural continuous reward signal based on spatial proximity. We define two reward functions---\emph{sparse} and \emph{dense}---that both measure the distance between the predicted point $(x, y)$ and the center $(c_x, c_y)$ of the ground truth bounding box $R$, but differ in how this distance is normalized and whether a signal is provided outside $R$. We do not include a format reward, as the model's output format (a coordinate pair) is simple and reliably learned during SFT.
 
 \medskip
-We implement a \emph{sparse} reward function that assigns non-zero reward only when the predicted coordinate falls inside the ground truth region:
+\paragraph{Sparse Reward.}
+The sparse reward assigns a non-zero signal only when the prediction falls inside $R$. Let $d = \lVert (x, y) - (c_x, c_y) \rVert$ be the Euclidean distance from the prediction to the box center, and let $d_R$ be the maximum distance from the center to any corner of $R$ (i.e.\ the half-diagonal of the bounding box). The sparse reward is:
 \[
 r_{\text{sparse}}(x, y) = \begin{cases}
 1 - \dfrac{d}{d_R} & \text{if } (x, y) \in R, \\[6pt]
-0 & \text{otherwise,}
+0 & \text{otherwise.}
 \end{cases}
 \]
-where $d_R$ is the maximum distance from the center to any corner of $R$ (i.e.\ the half-diagonal of the bounding box). This reward is maximal (1.0) when the prediction coincides with the region center and decreases smoothly toward zero at the corners. We do not include a format reward, as the model's output format (a coordinate pair) is simple and reliably learned during SFT.
+This reward is maximal ($1.0$) when the prediction coincides with the region center and decreases linearly toward zero at the corners.
 
 \medskip
-\paragraph{Sparse vs.\ Dense Reward Function.}
-Inspired by \cite{yuan2025segui}, who use a dense reward function, we ablate our sparse reward against a dense variant.
-The \emph{dense} reward provides a distance-based signal over the entire viewport, rather than only inside the ground truth region. The motivation is that for hard samples with small bounding boxes, the sparse reward assigns zero reward to predictions that are close but just outside the region boundary, providing no gradient signal to improve.
+\paragraph{Dense Reward.}
+Inspired by \cite{yuan2025segui}, who use a dense reward function, we ablate our sparse reward against a dense variant. The \emph{dense} reward provides a distance-based signal over the entire viewport, rather than only inside $R$. The motivation is that for hard samples with small bounding boxes, the sparse reward assigns zero to predictions that are close but just outside the region boundary, providing no gradient signal to improve.
 
-Using the same distance $d$, the dense reward is defined as:
+The dense reward normalizes the distance by the viewport dimensions $W \times H$ to account for varying aspect ratios. We define the normalized distance to the box center:
 \[
-r_{\text{dense}}(x, y) = \begin{cases}
-1.0 + \left(1 - \dfrac{d}{D_v}\right)^2 & \text{if } (x, y) \in R, \\[6pt]
-\left(1 - \dfrac{d}{D_v}\right)^2 & \text{otherwise,}
-\end{cases}
+\tilde{d}(x,y)
+= \sqrt{
+\left(\frac{x - c_x}{W}\right)^{\!2}
++
+\left(\frac{y - c_y}{H}\right)^{\!2}
+},
 \]
-where $D_v = \sqrt{W^2 + H^2}$ is the viewport diagonal. Predictions inside $R$ receive a base reward of $1.0$ plus a smooth bonus that peaks at the box center, while predictions outside $R$ still receive a continuous signal that decays smoothly with distance. This ensures that near-misses receive positive reward rather than zero, providing useful gradient signal even for hard samples. In contrast, the sparse reward provides no learning signal whatsoever for predictions outside $R$, regardless of proximity.
+and its maximum over the viewport corners:
+\[
+\tilde{d}_{\max}
+= \max_{(x_c,\,y_c)\,\in\,\{(0,0),\,(W,0),\,(W,H),\,(0,H)\}}
+\tilde{d}(x_c, y_c).
+\]
+The dense reward is then:
+\[
+r_{\text{dense}}(x, y)
+= \left(1 - \frac{\tilde{d}(x,y)}{\tilde{d}_{\max}}\right)^{\!2}
++ \mathbf{1}\!\big[(x,y) \in R\big].
+\]
+Predictions inside $R$ receive a base reward of $1.0$ plus a smooth bonus that peaks at the box center, while predictions outside $R$ still receive a continuous signal that decays smoothly with distance. This ensures that near-misses receive positive reward rather than zero, providing useful gradient signal even for hard samples. In contrast, the sparse reward provides no learning signal whatsoever for predictions outside $R$, regardless of proximity.
 
 We compare the two reward functions under identical training conditions, starting from Qwen2.5-VL-7B-Instruct after one round of SFT and performing RL on the same training data with the GRPO algorithm (Figure~\ref{fig:dense_vs_sparse_reward}). Despite the richer gradient signal, the dense reward does not consistently outperform the sparse variant: performance is comparable on ScreenSpot-Pro and slightly worse on OS-World-G. We therefore retain the sparse reward for all subsequent experiments.
 
@@ -89,8 +103,7 @@ We compare the two reward functions under identical training conditions, startin
 \end{figure}
 
 \subsection{DAPO: Dynamic Sampling and Asymmetric Clipping}
-
-In GRPO, if all outputs $\{o_i\}_{i=1}^{G}$ of a particular prompt are correct and receive the same reward, the resulting advantage for this group is zero. A zero advantage yields zero policy gradients, shrinking the effective gradient magnitude and increasing the noise sensitivity of the batch gradient, thereby degrading sample efficiency.
+Previously, we observed difficulties improving performance beyond the SFT baseline in our initial GRPO experiments (Section~\ref{sec:initial_grpo}). We hypothesize that this is due to the fact that in GRPO, if all outputs $\{o_i\}_{i=1}^{G}$ of a particular prompt are correct or wrong and receive the same reward, the resulting advantage for this group is zero. A zero advantage yields zero policy gradients, shrinking the effective gradient magnitude and increasing the noise sensitivity of the batch gradient, thereby degrading sample efficiency.
 
 \medskip
 \noindent Let the intended batch size be $B$ and the effective batch size be $B_{\text{eff}}$. Then
@@ -132,34 +145,7 @@ While SeeClick, PixMo, and UGround were the weakest in earlier SFT experiments, 
 \subsection{Applying Data and Training Recipe}
 We apply the DAPO modifications on top of UI-TARS-1.5-7B~\cite{qin2025uitars15}---a slightly stronger model trained from Qwen2.5-VL-7B-Instruct, and the same base model used to train GTA1-7B-2507~\cite{yang2025gta1}---to enable a direct comparison between our data and training recipe and GTA1's.
 
-
-\begin{figure}[t]
-\centering
-\begin{subfigure}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/DAPO_screenspot_prro.png}
-    \caption{ScreenSpot-Pro accuracy over training steps.}
-    \label{fig:dapo_sspro}
-\end{subfigure}
-\hfill
-\begin{subfigure}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/DAPO_Osworld.png}
-    \caption{OS-World-G accuracy over training steps.}
-    \label{fig:dapo_osworld}
-\end{subfigure}
-\caption{DAPO training on UI-TARS-1.5-7B with the Click-100k dataset. Solid lines show our DAPO run; dashed lines indicate the GTA1-7B-2507 baseline. On both benchmarks, DAPO training steadily improves accuracy and ultimately surpasses the GTA1 baseline.}
-\label{fig:dapo_training}
-\end{figure}
-
 Figure~\ref{fig:recipe_comparison} summarizes the comparison between our data and training recipe and GTA1's. Starting from the same UI-TARS-1.5-7B base model (42.2\% ScreenSpot-Pro, 52.8\% OS-World-G), the GTA recipe improves performance to 50.1\% and 55.3\%, respectively. The Gelato recipe pushes further to 50.8\% on ScreenSpot-Pro and 59.0\% on OS-World-G, demonstrating that our curated data and DAPO training pipeline yield consistent gains over GTA1's recipe on the same base model.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.9\textwidth]{figures/FinalRecipeComparison.png}
-\caption{Comparison of training recipes applied to the same UI-TARS-1.5-7B base model. The Gelato recipe (DAPO on Click-100k) outperforms the GTA recipe on both ScreenSpot-Pro (+8.6~pp over base, +0.7~pp over GTA) and OS-World-G (+6.2~pp over base, +3.7~pp over GTA).}
-\label{fig:recipe_comparison}
-\end{figure}
 
 \subsection{Scaling to Gelato-30B-A3B}
 \label{sec:gelato_30b}
@@ -173,12 +159,3 @@ Having established the Gelato recipe on 7B models, we scale to a larger base mod
 \label{fig:rl_progression}
 \end{figure}
 
-\medskip
-Figure~\ref{fig:final_performance} places Gelato-30B-A3B in context against leading models. Despite using only 3B active parameters per token, Gelato-30B-A3B achieves \textbf{63.8\%} on ScreenSpot-Pro and \textbf{69.1\%} on OS-World-G, outperforming GTA1-32B, Qwen3-VL-235B-Instruct, and OpenCUA-72B on both benchmarks. Detailed per-category results are presented in Section~\ref{sec:results_gelato30b}.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/FinalPerformance.png}
-\caption{Final benchmark comparison of Gelato-30B-A3B against leading models. \textbf{Left:} OS-World-G accuracy. \textbf{Right:} ScreenSpot-Pro accuracy. Gelato-30B-A3B achieves the highest accuracy on both benchmarks despite having fewer active parameters than all competitors.}
-\label{fig:final_performance_methodology}
-\end{figure}

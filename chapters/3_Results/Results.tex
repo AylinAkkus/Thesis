@@ -1,11 +1,21 @@
 \chapter{Results}
 \label{ch:results}
-\section{Benchmarking Performance}
+
+In this chapter, we present comprehensive evaluation results for Gelato-30B-A3B. We evaluate on isolated grounding benchmarks (ScreenSpot-Pro and OS-World-G) to measure grounding accuracy, and on the full OS-World agent benchmark to assess end-to-end agent performance. We also compare against prior state-of-the-art models.
+
+\section{Grounding Benchmark Evaluation}
 \label{sec:results_gelato30b}
-To evaluate the overall effectiveness of the Gelato training recipe, we compare it against the leading open-source model, GTA1 \cite{yang2025gta1}. We initialize RL training from UI-TARS-1.5-7B \cite{qin2025uitars} (as done for GTA1-7B-2507) and train on Click-100k until convergence (255 steps). Gelato outperforms GTA1-7B-2507 on both offline benchmarks ScreenSpot-Pro and OS-World-G, with particularly large improvements on OS-World-G.
 
+\paragraph{Gelato vs. GTA1 recipe} First we compare the Gelato training recipe to the GTA1 training recipe. We initialize RL training from UI-TARS-1.5-7B and train on Click-100k until convergence (255 steps) using DAPO. Gelato outperforms GTA1-7B-2507 on both ScreenSpot-Pro and OS-World-G, with particularly large improvements on OS-World-G. ref \ref{fig:recipe_comparison}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/FinalRecipeComparison.png}
+    \caption{Comparison of training recipes applied to the same UI-TARS-1.5-7B base model. The Gelato recipe (DAPO on Click-100k) outperforms the GTA recipe on both ScreenSpot-Pro (+8.6~pp over base, +0.7~pp over GTA) and OS-World-G (+6.2~pp over base, +3.7~pp over GTA).}
+    \label{fig:recipe_comparison}
+    \end{figure}
 
-Figure~\ref{fig:final_performance} places Gelato-30B-A3B in context against leading models. Despite using only 3B active parameters per token, Gelato-30B-A3B achieves \textbf{63.8\%} on ScreenSpot-Pro and \textbf{69.1\%} on OS-World-G, outperforming GTA1-32B, Qwen3-VL-235B-Instruct, and OpenCUA-72B on both benchmarks. Detailed per-category results are presented in Section~\ref{sec:results_gelato30b}.
+\medskip
+\paragraph{Gelato vs. other models} Figure~\ref{fig:final_performance} places Gelato-30B-A3B in context against leading models. Despite using only 3B active parameters per token, Gelato-30B-A3B achieves \textbf{63.8\%} on ScreenSpot-Pro and \textbf{69.1\%} on OS-World-G, outperforming GTA1-32B, Qwen3-VL-235B-Instruct, and OpenCUA-72B on both benchmarks.
 
 \begin{figure}[t]
 \centering
@@ -15,24 +25,52 @@ Figure~\ref{fig:final_performance} places Gelato-30B-A3B in context against lead
 \end{figure}
 
 \paragraph{Performance with Refusal}
-We elicit refusal behavior, the ability to decline grounding when the target element cannot be located, from Gelato-30B-A3B without explicitly training for it. By appending ``If you cannot find the element, return refusal'' to the instruction prompt and including refusal cases in the evaluation (previously treated as zero-accuracy), we raise overall accuracy on OS-World-G to 69.15\% (+1.96~pp) and on OS-World-G (Refined) to 74.65\% (+1.25~pp).
 
-\section{OS-World Agent}
+The OS-World G benchmark includes a refusal subset where the correct answer is to refuse to ground the instruction. We elicit refusal behavior---the ability to decline grounding when the target element cannot be located---from Gelato-30B-A3B without explicitly training for it. By appending ``If you cannot find the element, return refusal'' to the instruction prompt and including refusal cases in the evaluation (previously treated as zero-accuracy), we raise overall accuracy on OS-World-G to \textbf{69.15\%} (+1.96~pp) and on OS-World-G (Refined) to \textbf{74.65\%} (+1.25~pp).
 
-To measure end-to-end agent performance, we evaluate Gelato-30B-A3B on the OS-World benchmark as the grounding module together with GPT-5.
+\section{OS-World Agent Evaluation}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lcccc}
+\hline
+\textbf{Model} & \textbf{Params (Active)} & \textbf{Architecture} & \textbf{TTS} & \textbf{OS-World (\%)} \\
+\hline
+Qwen2.5-VL-32B-Instruct & 32B & End-to-End & -- & 8.83 \\
+UI-TARS-7B & 7B & End-to-End & -- & 24.6 \\
+Qwen3-VL-30B-A3B-Instruct & 30B (3B) & End-to-End & -- & 38.1 \\
+UI-TARS-1.5-7B & 7B & End-to-End & -- & 42.5 \\
+UI-TARS-2 & -- & End-to-End & \checkmark & 47.5 \\
+GTA1-32B + GPT-5 & 32B & Two-Stage & \checkmark & 56.97 $\pm$ 1.47 \\
+\textbf{Gelato-30B-A3B + GPT-5} & \textbf{30B (3B)} & \textbf{Two-Stage} & -- & \textbf{58.71 $\pm$ 0.66} \\
+\hline
+\end{tabular}
+\caption{Open-weights agent performance on OS-World (automated evaluation). \emph{Architecture}: End-to-End models handle both planning and grounding; Two-Stage models use a separate planner (GPT-5) and grounding module. \emph{TTS}: test-time scaling, where the model generates multiple candidates and selects the best one.}
+\label{tab:osworld_agents}
+\end{table}
 
 \subsection{Agent Harness}
-We evaluate Gelato-30B-A3B as a computer-use agent on OS-World using the GTA1.5 agent framework. \cite{osworld_gta15_agent}. The agent uses GPT-5 as a planning model and has a maximum of 50 steps, waiting 3 seconds between actions. We made minor modifications to the agent code, including a change to properly invoke the spreadsheet cell modification tool and an additional delay between trajectory completion and evaluation to ensure the VM state fully updates.
 
-\subsection{Reproducibility Issues}
-We found that many of the issues discussed in the EpochAI article critiquing OS-World \cite{brand2025osworld} significantly affect reproducibility. Benchmarking agent performance proved challenging due to:
+We evaluate Gelato-30B-A3B as a computer-use agent on OS-World using the GTA1.5 agent framework~\cite{osworld_gta15_agent}. The agent architecture combines:
+\begin{itemize}
+    \item \textbf{Planning model}: GPT-5 generates high-level action plans
+    \item \textbf{Grounding model}: Gelato-30B-A3B grounds instructions to specific UI locations
+    \item \textbf{Action execution}: The system executes clicks, keyboard input, and other actions
+\end{itemize}
+The agent has a maximum of 50 steps per task and waits 3 seconds between actions to allow the interface to update. We made minor modifications to the agent code, including a fix to the spreadsheet cell modification tool invocation and an additional delay between trajectory completion and evaluation to ensure the VM state fully updates.
+
+\paragraph{Reproducibility Issues}
+
+We found that many of the issues discussed in the EpochAI article critiquing OS-World~\cite{brand2025osworld} significantly affect reproducibility. Benchmarking agent performance proved challenging due to:
 \begin{enumerate}
     \item Non-deterministic planner behavior combined with insufficient trial repetitions, making fair comparison against prior work difficult.
     \item Changing evaluation prompts without explicit versioning.
     \item Incomplete evaluation coverage and ambiguous task specifications that fail to recognize valid alternative solutions.
 \end{enumerate}
 
-To enable fair comparison, we ran three trials for both Gelato-30B-A3B and GTA1-32B in the same agent harness. Gelato-30B-A3B achieves \textbf{58.71 $\pm$ 0.66\%} success rate on OS-World automated evaluation, performing on par or above GTA1-32B (\textbf{56.97 $\pm$ 1.47\%} success rate).
+\paragraph{Automated Evaluation Results}
+
+To enable fair comparison, we conducted three independent trials for both Gelato-30B-A3B and GTA1-32B in the same agent harness. The experiments were conducted in a fixed snapshot of OS-World to ensure reproducibility. Gelato-30B-A3B achieves \textbf{58.71 $\pm$ 0.66\%} success rate on OS-World automated evaluation, performing on par or above GTA1-32B (\textbf{56.97 $\pm$ 1.47\%} success rate).
 
 \begin{figure}[t]
 \centering
@@ -41,6 +79,37 @@ To enable fair comparison, we ran three trials for both Gelato-30B-A3B and GTA1-
 \label{fig:osworld_agent}
 \end{figure}
 
-\subsection{Human Evaluation}
+\section{Human Evaluation}
 
-We manually identified 20 tasks where the evaluation function is incomprehensive or the task specification is ambiguous. For each task, we review all agent trajectories and determine whether the task was successfully completed (Figure~\ref{fig:osworld_agent}). With human evaluation corrections, Gelato-30B-A3B achieves \textbf{61.85 $\pm$ 0.79\%} success rate compared to the automated evaluation result of \textbf{58.71 $\pm$ 0.66\%}. Similarly, GTA1-32B achieves \textbf{59.47 $\pm$ 1.27\%} success rate with human evaluation compared to \textbf{56.97 $\pm$ 1.47\%} on automated evaluation.
+Automated evaluation metrics can underestimate agent performance due to incomplete task specifications and ambiguous evaluation criteria. To measure true performance, we conduct human evaluation on a subset of tasks.
+
+\subsection{Methodology}
+
+We manually identified 20 tasks where the automated evaluation function is incomprehensive or the task specification is ambiguous. For each task, we review all agent trajectories across all runs and determine whether the task was successfully completed according to the intended goal.
+
+Common issues with automated evaluation include:
+\begin{itemize}
+    \item Evaluation functions that check only one valid solution path when multiple valid approaches exist
+    \item Timing issues where the evaluation runs before the final state is saved
+    \item Over-specific checks that reject valid alternative solutions
+\end{itemize}
+
+\subsection{Human Evaluation Results}
+
+With human evaluation corrections (Figure~\ref{fig:osworld_agent}), Gelato-30B-A3B achieves \textbf{61.85 $\pm$ 0.79\%} success rate compared to the automated evaluation result of \textbf{58.71 $\pm$ 0.66\%}. Similarly, GTA1-32B achieves \textbf{59.47 $\pm$ 1.27\%} success rate with human evaluation compared to \textbf{56.97 $\pm$ 1.47\%} on automated evaluation. This amounts to a +3.14~pp gain for Gelato-30B-A3B and a +2.50~pp gain for GTA1-32B, confirming that automated evaluation significantly underestimates true agent performance. Importantly, the relative ranking between models remains consistent: Gelato-30B-A3B maintains its advantage over GTA1-32B under human evaluation.
+
+\medskip
+This is not a comprehensive manual evaluation---we focused on clearly problematic tasks that were also straightforward to verify. A more extensive human evaluation could reveal additional cases where automated metrics underestimate performance.
+
+\section{Evaluation Summary}
+
+Our comprehensive evaluation demonstrates that Gelato-30B-A3B achieves state-of-the-art performance across multiple benchmarks:
+
+\begin{enumerate}
+    \item \textbf{Isolated grounding}: Surpasses specialized grounding models and much larger VLMs on ScreenSpot-Pro and OS-World-G
+    \item \textbf{End-to-end agent performance}: Outperforms GTA1-32B on OS-World with both automated and human evaluation
+    \item \textbf{Refusal capability}: Successfully elicits refusal behavior without explicit training, improving performance on ambiguous cases
+    \item \textbf{Consistency}: Shows low variance across multiple evaluation runs, indicating robust performance
+\end{enumerate}
+
+These results validate our approach to data curation, filtering, and RL training, demonstrating that careful attention to data quality and training methodology yields significant improvements in grounding model capabilities.

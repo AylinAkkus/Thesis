@@ -51,6 +51,7 @@
 \citation{yang2025gta1}
 \citation{yuan2025segui}
 \@writefile{toc}{\contentsline {paragraph}{Language-based vs. Vision-based Agents}{3}{section*.6}\protected@file@percent }
+\newlabel{par:end_to_end_vs_two_stage}{{1.2.1}{3}{End-to-End vs. Two-Stage Agents}{section*.7}{}}
 \@writefile{toc}{\contentsline {paragraph}{End-to-End vs. Two-Stage Agents}{3}{section*.7}\protected@file@percent }
 \BKM@entry{id=7,dest={73756273656374696F6E2E312E322E32},srcline={1}}{5C3337365C3337375C303030315C3030302E5C303030325C3030302E5C303030325C3030305C3034305C303030475C303030555C303030495C3030305C3034305C303030475C303030725C3030306F5C303030755C3030306E5C303030645C303030695C3030306E5C303030675C3030305C3034305C303030445C303030615C303030745C303030615C303030735C303030655C303030745C30303073}
 \@writefile{toc}{\contentsline {paragraph}{GUI Grounding}{4}{section*.8}\protected@file@percent }
@@ -215,7 +216,7 @@
 \citation{zheng2025easyr1}
 \BKM@entry{id=28,dest={73756273656374696F6E2E322E342E31},srcline={6}}{5C3337365C3337375C303030325C3030302E5C303030345C3030302E5C303030315C3030305C3034305C303030495C3030306E5C303030695C303030745C303030695C303030615C3030306C5C3030305C3034305C303030475C303030525C303030505C3030304F5C3030305C3034305C303030535C303030655C303030745C303030755C30303070}
 \citation{yu2025dapo}
-\BKM@entry{id=29,dest={73756273656374696F6E2E322E342E32},srcline={53}}{5C3337365C3337375C303030325C3030302E5C303030345C3030302E5C303030325C3030305C3034305C303030525C303030655C303030775C303030615C303030725C303030645C3030305C3034305C303030465C303030755C3030306E5C303030635C303030745C303030695C3030306F5C3030306E}
+\citation{yu2025dapo}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Training}{27}{section.2.4}\protected@file@percent }
 \newlabel{sec:training}{{2.4}{27}{Training}{section.2.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Initial GRPO Setup}{27}{subsection.2.4.1}\protected@file@percent }
@@ -223,7 +224,8 @@
 \newlabel{eq:grpo_advantage}{{2.1}{27}{Initial GRPO Setup}{equation.2.1}{}}
 \newlabel{eq:grpo_objective}{{2.2}{27}{Initial GRPO Setup}{equation.2.2}{}}
 \newlabel{eq:grpo_ratio}{{2.3}{27}{Initial GRPO Setup}{equation.2.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{RL vs SFT}{27}{section*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{RL vs.\ SFT.}{27}{section*.49}\protected@file@percent }
+\BKM@entry{id=29,dest={73756273656374696F6E2E322E342E32},srcline={53}}{5C3337365C3337375C303030325C3030302E5C303030345C3030302E5C303030325C3030305C3034305C303030525C303030655C303030775C303030615C303030725C303030645C3030305C3034305C303030465C303030755C3030306E5C303030635C303030745C303030695C3030306F5C3030306E}
 \citation{yuan2025segui}
 \newlabel{fig:initial_grpo_base}{{2.9a}{28}{GRPO on base Qwen2.5-VL-7B-Instruct (RL only, no SFT)}{figure.caption.50}{}}
 \newlabel{sub@fig:initial_grpo_base}{{a}{28}{GRPO on base Qwen2.5-VL-7B-Instruct (RL only, no SFT)}{figure.caption.50}{}}
@@ -233,80 +235,81 @@
 \newlabel{fig:initial_grpo}{{2.9}{28}{Initial GRPO experiments. Validation accuracy on ScreenSpot-Pro (orange) and OS-World-G refined (blue) over training steps. Dashed lines indicate the SFT baseline. In both settings, RL training fails to improve over the SFT checkpoint, motivating the subsequent improvements to the training pipeline}{figure.caption.50}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Reward Function}{28}{subsection.2.4.2}\protected@file@percent }
 \newlabel{sec:reward_function}{{2.4.2}{28}{Reward Function}{subsection.2.4.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Sparse vs.\ Dense Reward Function.}{28}{section*.51}\protected@file@percent }
-\BKM@entry{id=30,dest={73756273656374696F6E2E322E342E33},srcline={91}}{5C3337365C3337375C303030325C3030302E5C303030345C3030302E5C303030335C3030305C3034305C303030445C303030415C303030505C3030304F5C3030303A5C3030305C3034305C303030445C303030795C3030306E5C303030615C3030306D5C303030695C303030635C3030305C3034305C303030535C303030615C3030306D5C303030705C3030306C5C303030695C3030306E5C303030675C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030415C303030735C303030795C3030306D5C3030306D5C303030655C303030745C303030725C303030695C303030635C3030305C3034305C303030435C3030306C5C303030695C303030705C303030705C303030695C3030306E5C30303067}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Comparison of sparse and dense reward functions in GRPO training. \textbf  {Left:} ScreenSpot-Pro accuracy. \textbf  {Right:} OS-World-G accuracy. The sparse reward (orange, dashed) performs comparably or slightly better than the dense variant (blue, solid), despite providing no signal outside the ground truth region.}}{29}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:dense_vs_sparse_reward}{{2.10}{29}{Comparison of sparse and dense reward functions in GRPO training. \textbf {Left:} ScreenSpot-Pro accuracy. \textbf {Right:} OS-World-G accuracy. The sparse reward (orange, dashed) performs comparably or slightly better than the dense variant (blue, solid), despite providing no signal outside the ground truth region}{figure.caption.52}{}}
+\@writefile{toc}{\contentsline {paragraph}{Sparse Reward.}{28}{section*.51}\protected@file@percent }
+\BKM@entry{id=30,dest={73756273656374696F6E2E322E342E33},srcline={105}}{5C3337365C3337375C303030325C3030302E5C303030345C3030302E5C303030335C3030305C3034305C303030445C303030415C303030505C3030304F5C3030303A5C3030305C3034305C303030445C303030795C3030306E5C303030615C3030306D5C303030695C303030635C3030305C3034305C303030535C303030615C3030306D5C303030705C3030306C5C303030695C3030306E5C303030675C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030415C303030735C303030795C3030306D5C3030306D5C303030655C303030745C303030725C303030695C303030635C3030305C3034305C303030435C3030306C5C303030695C303030705C303030705C303030695C3030306E5C30303067}
+\@writefile{toc}{\contentsline {paragraph}{Dense Reward.}{29}{section*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}DAPO: Dynamic Sampling and Asymmetric Clipping}{29}{subsection.2.4.3}\protected@file@percent }
 \citation{yu2025dapo}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}DAPO: Dynamic Sampling and Asymmetric Clipping}{30}{subsection.2.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Comparison of sparse and dense reward functions in GRPO training. \textbf  {Left:} ScreenSpot-Pro accuracy. \textbf  {Right:} OS-World-G accuracy. The sparse reward (orange, dashed) performs comparably or slightly better than the dense variant (blue, solid), despite providing no signal outside the ground truth region.}}{30}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:dense_vs_sparse_reward}{{2.10}{30}{Comparison of sparse and dense reward functions in GRPO training. \textbf {Left:} ScreenSpot-Pro accuracy. \textbf {Right:} OS-World-G accuracy. The sparse reward (orange, dashed) performs comparably or slightly better than the dense variant (blue, solid), despite providing no signal outside the ground truth region}{figure.caption.53}{}}
 \newlabel{sec:dapo}{{2.4.3}{30}{DAPO: Dynamic Sampling and Asymmetric Clipping}{subsection.2.4.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Dynamic Sampling.}{30}{section*.53}\protected@file@percent }
-\BKM@entry{id=31,dest={73756273656374696F6E2E322E342E34},srcline={132}}{5C3337365C3337375C303030325C3030302E5C303030345C3030302E5C303030345C3030305C3034305C303030415C303030705C303030705C3030306C5C303030795C303030695C3030306E5C303030675C3030305C3034305C303030445C303030615C303030745C303030615C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030545C303030725C303030615C303030695C3030306E5C303030695C3030306E5C303030675C3030305C3034305C303030525C303030655C303030635C303030695C303030705C30303065}
+\BKM@entry{id=31,dest={73756273656374696F6E2E322E342E34},srcline={145}}{5C3337365C3337375C303030325C3030302E5C303030345C3030302E5C303030345C3030305C3034305C303030415C303030705C303030705C3030306C5C303030795C303030695C3030306E5C303030675C3030305C3034305C303030445C303030615C303030745C303030615C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030545C303030725C303030615C303030695C3030306E5C303030695C3030306E5C303030675C3030305C3034305C303030525C303030655C303030635C303030695C303030705C30303065}
 \citation{qin2025uitars15}
 \citation{yang2025gta1}
-\newlabel{fig:dapo_sspro}{{2.11a}{31}{ScreenSpot-Pro accuracy over training steps}{figure.caption.56}{}}
-\newlabel{sub@fig:dapo_sspro}{{a}{31}{ScreenSpot-Pro accuracy over training steps}{figure.caption.56}{}}
-\newlabel{fig:dapo_osworld}{{2.11b}{31}{OS-World-G accuracy over training steps}{figure.caption.56}{}}
-\newlabel{sub@fig:dapo_osworld}{{b}{31}{OS-World-G accuracy over training steps}{figure.caption.56}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces DAPO training on UI-TARS-1.5-7B with the Click-100k dataset. Solid lines show our DAPO run; dashed lines indicate the GTA1-7B-2507 baseline. On both benchmarks, DAPO training steadily improves accuracy and ultimately surpasses the GTA1 baseline.}}{31}{figure.caption.56}\protected@file@percent }
-\newlabel{fig:dapo_training}{{2.11}{31}{DAPO training on UI-TARS-1.5-7B with the Click-100k dataset. Solid lines show our DAPO run; dashed lines indicate the GTA1-7B-2507 baseline. On both benchmarks, DAPO training steadily improves accuracy and ultimately surpasses the GTA1 baseline}{figure.caption.56}{}}
-\@writefile{toc}{\contentsline {paragraph}{Asymmetric Clipping.}{31}{section*.54}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Removing Ambiguous Data Sources in the RL Stage.}{31}{section*.55}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Applying Data and Training Recipe}{31}{subsection.2.4.4}\protected@file@percent }
-\BKM@entry{id=32,dest={73756273656374696F6E2E322E342E35},srcline={164}}{5C3337365C3337375C303030325C3030302E5C303030345C3030302E5C303030355C3030305C3034305C303030535C303030635C303030615C3030306C5C303030695C3030306E5C303030675C3030305C3034305C303030745C3030306F5C3030305C3034305C303030475C303030655C3030306C5C303030615C303030745C3030306F5C3030302D5C303030335C303030305C303030425C3030302D5C303030415C303030335C30303042}
+\BKM@entry{id=32,dest={73756273656374696F6E2E322E342E35},srcline={150}}{5C3337365C3337375C303030325C3030302E5C303030345C3030302E5C303030355C3030305C3034305C303030535C303030635C303030615C3030306C5C303030695C3030306E5C303030675C3030305C3034305C303030745C3030306F5C3030305C3034305C303030475C303030655C3030306C5C303030615C303030745C3030306F5C3030302D5C303030335C303030305C303030425C3030302D5C303030415C303030335C30303042}
 \citation{qwen2025qwen3vl}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Comparison of training recipes applied to the same UI-TARS-1.5-7B base model. The Gelato recipe (DAPO on Click-100k) outperforms the GTA recipe on both ScreenSpot-Pro (+8.6~pp over base, +0.7~pp over GTA) and OS-World-G (+6.2~pp over base, +3.7~pp over GTA).}}{32}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:recipe_comparison}{{2.12}{32}{Comparison of training recipes applied to the same UI-TARS-1.5-7B base model. The Gelato recipe (DAPO on Click-100k) outperforms the GTA recipe on both ScreenSpot-Pro (+8.6~pp over base, +0.7~pp over GTA) and OS-World-G (+6.2~pp over base, +3.7~pp over GTA)}{figure.caption.57}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.5}Scaling to Gelato-30B-A3B}{32}{subsection.2.4.5}\protected@file@percent }
-\newlabel{sec:gelato_30b}{{2.4.5}{32}{Scaling to Gelato-30B-A3B}{subsection.2.4.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Gelato-30B-A3B training progression over 100 DAPO steps. \textbf  {Top left:} training reward. \textbf  {Top right:} average evaluation accuracy. \textbf  {Bottom left:} ScreenSpot-Pro accuracy. \textbf  {Bottom right:} OS-World-G accuracy. Dashed lines indicate GTA1-32B and Qwen3-VL-235B baselines. The green cross marks the best checkpoint at step~84.}}{33}{figure.caption.58}\protected@file@percent }
-\newlabel{fig:rl_progression}{{2.13}{33}{Gelato-30B-A3B training progression over 100 DAPO steps. \textbf {Top left:} training reward. \textbf {Top right:} average evaluation accuracy. \textbf {Bottom left:} ScreenSpot-Pro accuracy. \textbf {Bottom right:} OS-World-G accuracy. Dashed lines indicate GTA1-32B and Qwen3-VL-235B baselines. The green cross marks the best checkpoint at step~84}{figure.caption.58}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Final benchmark comparison of Gelato-30B-A3B against leading models. \textbf  {Left:} OS-World-G accuracy. \textbf  {Right:} ScreenSpot-Pro accuracy. Gelato-30B-A3B achieves the highest accuracy on both benchmarks despite having fewer active parameters than all competitors.}}{34}{figure.caption.59}\protected@file@percent }
-\newlabel{fig:final_performance_methodology}{{2.14}{34}{Final benchmark comparison of Gelato-30B-A3B against leading models. \textbf {Left:} OS-World-G accuracy. \textbf {Right:} ScreenSpot-Pro accuracy. Gelato-30B-A3B achieves the highest accuracy on both benchmarks despite having fewer active parameters than all competitors}{figure.caption.59}{}}
+\@writefile{toc}{\contentsline {paragraph}{Dynamic Sampling.}{31}{section*.54}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Asymmetric Clipping.}{31}{section*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Removing Ambiguous Data Sources in the RL Stage.}{31}{section*.56}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Applying Data and Training Recipe}{31}{subsection.2.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.5}Scaling to Gelato-30B-A3B}{31}{subsection.2.4.5}\protected@file@percent }
+\newlabel{sec:gelato_30b}{{2.4.5}{31}{Scaling to Gelato-30B-A3B}{subsection.2.4.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Gelato-30B-A3B training progression over 100 DAPO steps. \textbf  {Top left:} training reward. \textbf  {Top right:} average evaluation accuracy. \textbf  {Bottom left:} ScreenSpot-Pro accuracy. \textbf  {Bottom right:} OS-World-G accuracy. Dashed lines indicate GTA1-32B and Qwen3-VL-235B baselines. The green cross marks the best checkpoint at step~84.}}{32}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:rl_progression}{{2.11}{32}{Gelato-30B-A3B training progression over 100 DAPO steps. \textbf {Top left:} training reward. \textbf {Top right:} average evaluation accuracy. \textbf {Bottom left:} ScreenSpot-Pro accuracy. \textbf {Bottom right:} OS-World-G accuracy. Dashed lines indicate GTA1-32B and Qwen3-VL-235B baselines. The green cross marks the best checkpoint at step~84}{figure.caption.57}{}}
 \BKM@entry{id=33,open,dest={636861707465722E33},srcline={1}}{5C3337365C3337375C303030335C3030305C3034305C303030525C303030655C303030735C303030755C3030306C5C303030745C30303073}
-\BKM@entry{id=34,dest={73656374696F6E2E332E31},srcline={3}}{5C3337365C3337375C303030335C3030302E5C303030315C3030305C3034305C303030425C303030655C3030306E5C303030635C303030685C3030306D5C303030615C303030725C3030306B5C303030695C3030306E5C303030675C3030305C3034305C303030505C303030655C303030725C303030665C3030306F5C303030725C3030306D5C303030615C3030306E5C303030635C30303065}
-\citation{yang2025gta1}
-\citation{qin2025uitars}
-\BKM@entry{id=35,dest={73656374696F6E2E332E32},srcline={20}}{5C3337365C3337375C303030335C3030302E5C303030325C3030305C3034305C3030304F5C303030535C3030302D5C303030575C3030306F5C303030725C3030306C5C303030645C3030305C3034305C303030415C303030675C303030655C3030306E5C30303074}
-\BKM@entry{id=36,dest={73756273656374696F6E2E332E322E31},srcline={24}}{5C3337365C3337375C303030335C3030302E5C303030325C3030302E5C303030315C3030305C3034305C303030415C303030675C303030655C3030306E5C303030745C3030305C3034305C303030485C303030615C303030725C3030306E5C303030655C303030735C30303073}
-\citation{osworld_gta15_agent}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Results}{35}{chapter.3}\protected@file@percent }
+\BKM@entry{id=34,dest={73656374696F6E2E332E31},srcline={6}}{5C3337365C3337375C303030335C3030302E5C303030315C3030305C3034305C303030475C303030725C3030306F5C303030755C3030306E5C303030645C303030695C3030306E5C303030675C3030305C3034305C303030425C303030655C3030306E5C303030635C303030685C3030306D5C303030615C303030725C3030306B5C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
+\BKM@entry{id=35,dest={73656374696F6E2E332E32},srcline={31}}{5C3337365C3337375C303030335C3030302E5C303030325C3030305C3034305C3030304F5C303030535C3030302D5C303030575C3030306F5C303030725C3030306C5C303030645C3030305C3034305C303030415C303030675C303030655C3030306E5C303030745C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Results}{33}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:results}{{3}{35}{Results}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Benchmarking Performance}{35}{section.3.1}\protected@file@percent }
-\newlabel{sec:results_gelato30b}{{3.1}{35}{Benchmarking Performance}{section.3.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Performance with Refusal}{35}{section*.61}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}OS-World Agent}{35}{section.3.2}\protected@file@percent }
-\BKM@entry{id=37,dest={73756273656374696F6E2E332E322E32},srcline={27}}{5C3337365C3337375C303030335C3030302E5C303030325C3030302E5C303030325C3030305C3034305C303030525C303030655C303030705C303030725C3030306F5C303030645C303030755C303030635C303030695C303030625C303030695C3030306C5C303030695C303030745C303030795C3030305C3034305C303030495C303030735C303030735C303030755C303030655C30303073}
+\newlabel{ch:results}{{3}{33}{Results}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Grounding Benchmark Evaluation}{33}{section.3.1}\protected@file@percent }
+\newlabel{sec:results_gelato30b}{{3.1}{33}{Grounding Benchmark Evaluation}{section.3.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Gelato vs. GTA1 recipe}{33}{section*.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Gelato vs. other models}{33}{section*.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Performance with Refusal}{33}{section*.62}\protected@file@percent }
+\BKM@entry{id=36,dest={73756273656374696F6E2E332E322E31},srcline={52}}{5C3337365C3337375C303030335C3030302E5C303030325C3030302E5C303030315C3030305C3034305C303030415C303030675C303030655C3030306E5C303030745C3030305C3034305C303030485C303030615C303030725C3030306E5C303030655C303030735C30303073}
+\citation{osworld_gta15_agent}
 \citation{brand2025osworld}
-\BKM@entry{id=38,dest={73756273656374696F6E2E332E322E33},srcline={44}}{5C3337365C3337375C303030335C3030302E5C303030325C3030302E5C303030335C3030305C3034305C303030485C303030755C3030306D5C303030615C3030306E5C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Final benchmark comparison of Gelato-30B-A3B against leading models. \textbf  {Left:} OS-World-G accuracy. \textbf  {Right:} ScreenSpot-Pro accuracy. Gelato-30B-A3B achieves the highest accuracy on both benchmarks despite having fewer active parameters than all competitors.}}{36}{figure.caption.60}\protected@file@percent }
-\newlabel{fig:final_performance}{{3.1}{36}{Final benchmark comparison of Gelato-30B-A3B against leading models. \textbf {Left:} OS-World-G accuracy. \textbf {Right:} ScreenSpot-Pro accuracy. Gelato-30B-A3B achieves the highest accuracy on both benchmarks despite having fewer active parameters than all competitors}{figure.caption.60}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{36}{subsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Reproducibility Issues}{36}{subsection.3.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces OS-World agent performance across three runs with GPT-5 planner. Automated evaluation underestimates performance due to incomplete task specifications. Human evaluation shows Gelato-30B-A3B achieves \textbf  {61.85\%} success rate vs.\ GTA1-32B's \textbf  {59.47\%}.}}{37}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:osworld_agent}{{3.2}{37}{OS-World agent performance across three runs with GPT-5 planner. Automated evaluation underestimates performance due to incomplete task specifications. Human evaluation shows Gelato-30B-A3B achieves \textbf {61.85\%} success rate vs.\ GTA1-32B's \textbf {59.47\%}}{figure.caption.62}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Human Evaluation}{37}{subsection.3.2.3}\protected@file@percent }
-\BKM@entry{id=39,open,dest={636861707465722E34},srcline={1}}{5C3337365C3337375C303030345C3030305C3034305C303030435C3030306F5C3030306E5C303030635C3030306C5C303030755C303030735C303030695C3030306F5C3030306E5C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030465C303030755C303030745C303030755C303030725C303030655C3030305C3034305C303030575C3030306F5C303030725C3030306B}
-\BKM@entry{id=40,dest={73656374696F6E2E342E31},srcline={4}}{5C3337365C3337375C303030345C3030302E5C303030315C3030305C3034305C303030435C3030306F5C3030306E5C303030635C3030306C5C303030755C303030735C303030695C3030306F5C3030306E}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Comparison of training recipes applied to the same UI-TARS-1.5-7B base model. The Gelato recipe (DAPO on Click-100k) outperforms the GTA recipe on both ScreenSpot-Pro (+8.6~pp over base, +0.7~pp over GTA) and OS-World-G (+6.2~pp over base, +3.7~pp over GTA).}}{34}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:recipe_comparison}{{3.1}{34}{Comparison of training recipes applied to the same UI-TARS-1.5-7B base model. The Gelato recipe (DAPO on Click-100k) outperforms the GTA recipe on both ScreenSpot-Pro (+8.6~pp over base, +0.7~pp over GTA) and OS-World-G (+6.2~pp over base, +3.7~pp over GTA)}{figure.caption.59}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}OS-World Agent Evaluation}{34}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{34}{subsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Reproducibility Issues}{34}{section*.64}\protected@file@percent }
+\BKM@entry{id=37,dest={73656374696F6E2E332E33},srcline={82}}{5C3337365C3337375C303030335C3030302E5C303030335C3030305C3034305C303030485C303030755C3030306D5C303030615C3030306E5C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E}
+\BKM@entry{id=38,dest={73756273656374696F6E2E332E332E31},srcline={86}}{5C3337365C3337375C303030335C3030302E5C303030335C3030302E5C303030315C3030305C3034305C3030304D5C303030655C303030745C303030685C3030306F5C303030645C3030306F5C3030306C5C3030306F5C303030675C30303079}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Final benchmark comparison of Gelato-30B-A3B against leading models. \textbf  {Left:} OS-World-G accuracy. \textbf  {Right:} ScreenSpot-Pro accuracy. Gelato-30B-A3B achieves the highest accuracy on both benchmarks despite having fewer active parameters than all competitors.}}{35}{figure.caption.61}\protected@file@percent }
+\newlabel{fig:final_performance}{{3.2}{35}{Final benchmark comparison of Gelato-30B-A3B against leading models. \textbf {Left:} OS-World-G accuracy. \textbf {Right:} ScreenSpot-Pro accuracy. Gelato-30B-A3B achieves the highest accuracy on both benchmarks despite having fewer active parameters than all competitors}{figure.caption.61}{}}
+\@writefile{toc}{\contentsline {paragraph}{Automated Evaluation Results}{35}{section*.65}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Human Evaluation}{35}{section.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Methodology}{35}{subsection.3.3.1}\protected@file@percent }
+\BKM@entry{id=39,dest={73756273656374696F6E2E332E332E32},srcline={97}}{5C3337365C3337375C303030335C3030302E5C303030335C3030302E5C303030325C3030305C3034305C303030485C303030755C3030306D5C303030615C3030306E5C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030525C303030655C303030735C303030755C3030306C5C303030745C30303073}
+\BKM@entry{id=40,dest={73656374696F6E2E332E34},srcline={104}}{5C3337365C3337375C303030335C3030302E5C303030345C3030305C3034305C303030455C303030765C303030615C3030306C5C303030755C303030615C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030535C303030755C3030306D5C3030306D5C303030615C303030725C30303079}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Open-weights agent performance on OS-World (automated evaluation). \emph  {Architecture}: End-to-End models handle both planning and grounding; Two-Stage models use a separate planner (GPT-5) and grounding module. \emph  {TTS}: test-time scaling, where the model generates multiple candidates and selects the best one.}}{36}{table.caption.63}\protected@file@percent }
+\newlabel{tab:osworld_agents}{{3.1}{36}{Open-weights agent performance on OS-World (automated evaluation). \emph {Architecture}: End-to-End models handle both planning and grounding; Two-Stage models use a separate planner (GPT-5) and grounding module. \emph {TTS}: test-time scaling, where the model generates multiple candidates and selects the best one}{table.caption.63}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Human Evaluation Results}{36}{subsection.3.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces OS-World agent performance across three runs with GPT-5 planner. Automated evaluation underestimates performance due to incomplete task specifications. Human evaluation shows Gelato-30B-A3B achieves \textbf  {61.85\%} success rate vs.\ GTA1-32B's \textbf  {59.47\%}.}}{37}{figure.caption.66}\protected@file@percent }
+\newlabel{fig:osworld_agent}{{3.3}{37}{OS-World agent performance across three runs with GPT-5 planner. Automated evaluation underestimates performance due to incomplete task specifications. Human evaluation shows Gelato-30B-A3B achieves \textbf {61.85\%} success rate vs.\ GTA1-32B's \textbf {59.47\%}}{figure.caption.66}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Evaluation Summary}{37}{section.3.4}\protected@file@percent }
+\BKM@entry{id=41,open,dest={636861707465722E34},srcline={1}}{5C3337365C3337375C303030345C3030305C3034305C303030435C3030306F5C3030306E5C303030635C3030306C5C303030755C303030735C303030695C3030306F5C3030306E5C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030465C303030755C303030745C303030755C303030725C303030655C3030305C3034305C303030575C3030306F5C303030725C3030306B}
+\BKM@entry{id=42,dest={73656374696F6E2E342E31},srcline={4}}{5C3337365C3337375C303030345C3030302E5C303030315C3030305C3034305C303030435C3030306F5C3030306E5C303030635C3030306C5C303030755C303030735C303030695C3030306F5C3030306E}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{38}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Conclusion}{38}{section.4.1}\protected@file@percent }
-\BKM@entry{id=41,open,dest={636861707465722E35},srcline={24}}{5C3337365C3337375C303030355C3030305C3034305C303030465C303030755C303030745C303030755C303030725C303030655C3030305C3034305C303030575C3030306F5C303030725C3030306B}
+\BKM@entry{id=43,open,dest={636861707465722E35},srcline={24}}{5C3337365C3337375C303030355C3030305C3034305C303030465C303030755C303030745C303030755C303030725C303030655C3030305C3034305C303030575C3030306F5C303030725C3030306B}
 \bibstyle{IEEEtran}
 \bibdata{references}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Future Work}{40}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\BKM@entry{id=42,open,dest={636861707465722A2E3633},srcline={2}}{5C3337365C3337375C303030425C303030695C303030625C3030306C5C303030695C3030306F5C303030675C303030725C303030615C303030705C303030685C30303079}
+\BKM@entry{id=44,open,dest={636861707465722A2E3637},srcline={2}}{5C3337365C3337375C303030425C303030695C303030625C3030306C5C303030695C3030306F5C303030675C303030725C303030615C303030705C303030685C30303079}
 \bibcite{kaplan2020scaling}{1}
 \bibcite{hestness2017deeplearningscalingpredictable}{2}
 \bibcite{aghajanyan2023scalinglawsgenerativemixedmodal}{3}
 \bibcite{cherti2023reproducible}{4}
 \bibcite{openai2024gpt4technicalreport}{5}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{41}{chapter*.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{41}{chapter*.67}\protected@file@percent }
 \bibcite{rombach2022highresolutionimagesynthesislatent}{6}
 \bibcite{radford2021learningtransferablevisualmodels}{7}
 \bibcite{sambasivan2021datacascades}{8}
@@ -357,53 +360,53 @@
 \bibcite{zheng2025easyr1}{53}
 \bibcite{osworld_gta15_agent}{54}
 \bibcite{brand2025osworld}{55}
-\BKM@entry{id=43,open,dest={617070656E6469782E55},srcline={1}}{5C3337365C3337375C303030415C3030305C3034305C303030415C303030705C303030705C303030655C3030306E5C303030645C303030695C30303078}
-\BKM@entry{id=44,dest={73656374696F6E2E552E31},srcline={3}}{5C3337365C3337375C303030415C3030302E5C303030315C3030305C3034305C303030445C303030615C303030745C303030615C3030305C3034305C303030535C3030306F5C303030755C303030725C303030635C303030655C3030305C3034305C303030455C303030785C303030615C3030306D5C303030705C3030306C5C303030655C30303073}
-\BKM@entry{id=45,dest={73656374696F6E2E552E32},srcline={15}}{5C3337365C3337375C303030415C3030302E5C303030325C3030305C3034305C303030535C303030755C303030705C303030705C3030306C5C303030655C3030306D5C303030655C3030306E5C303030745C303030615C3030306C5C3030305C3034305C303030445C303030615C303030745C30303061}
+\BKM@entry{id=45,open,dest={617070656E6469782E55},srcline={1}}{5C3337365C3337375C303030415C3030305C3034305C303030415C303030705C303030705C303030655C3030306E5C303030645C303030695C30303078}
+\BKM@entry{id=46,dest={73656374696F6E2E552E31},srcline={3}}{5C3337365C3337375C303030415C3030302E5C303030315C3030305C3034305C303030445C303030615C303030745C303030615C3030305C3034305C303030535C3030306F5C303030755C303030725C303030635C303030655C3030305C3034305C303030455C303030785C303030615C3030306D5C303030705C3030306C5C303030655C30303073}
+\BKM@entry{id=47,dest={73656374696F6E2E552E32},srcline={15}}{5C3337365C3337375C303030415C3030302E5C303030325C3030305C3034305C303030535C303030755C303030705C303030705C3030306C5C303030655C3030306D5C303030655C3030306E5C303030745C303030615C3030306C5C3030305C3034305C303030445C303030615C303030745C30303061}
 \@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix}{A-1}{appendix.U}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {A.1}Data Source Examples}{A-1}{section.U.1}\protected@file@percent }
 \newlabel{sec:appendix_data_sources}{{A.1}{A-1}{Data Source Examples}{section.U.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Example training samples from six data sources in Click-100k. Each panel shows a screenshot with its associated grounding instruction (italic text below). The data pool covers web browsing, desktop applications, and professional software across Windows, macOS, and Linux environments.}}{A-1}{figure.caption.65}\protected@file@percent }
-\newlabel{fig:data_source_samples}{{A.1}{A-1}{Example training samples from six data sources in Click-100k. Each panel shows a screenshot with its associated grounding instruction (italic text below). The data pool covers web browsing, desktop applications, and professional software across Windows, macOS, and Linux environments}{figure.caption.65}{}}
-\BKM@entry{id=46,dest={73656374696F6E2E552E33},srcline={51}}{5C3337365C3337375C303030415C3030302E5C303030335C3030305C3034305C303030435C3030306C5C303030615C303030755C303030645C303030655C3030305C3034305C303030505C303030725C3030306F5C3030306D5C303030705C303030745C3030305C3034305C303030665C3030306F5C303030725C3030305C3034305C303030565C303030695C303030645C303030655C3030306F5C3030305C3034305C303030465C303030725C303030615C3030306D5C303030655C3030305C3034305C303030415C3030306E5C3030306E5C3030306F5C303030745C303030615C303030745C303030695C3030306F5C3030306E}
-\BKM@entry{id=47,dest={73656374696F6E2E552E34},srcline={157}}{5C3337365C3337375C303030415C3030302E5C303030345C3030305C3034305C303030495C3030306E5C303030735C303030745C303030725C303030755C303030635C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030525C303030655C3030306C5C303030615C303030625C303030655C3030306C5C303030695C3030306E5C303030675C3030305C3034305C303030455C303030785C303030705C303030655C303030725C303030695C3030306D5C303030655C3030306E5C303030745C30303073}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Example training samples from six data sources in Click-100k. Each panel shows a screenshot with its associated grounding instruction (italic text below). The data pool covers web browsing, desktop applications, and professional software across Windows, macOS, and Linux environments.}}{A-1}{figure.caption.69}\protected@file@percent }
+\newlabel{fig:data_source_samples}{{A.1}{A-1}{Example training samples from six data sources in Click-100k. Each panel shows a screenshot with its associated grounding instruction (italic text below). The data pool covers web browsing, desktop applications, and professional software across Windows, macOS, and Linux environments}{figure.caption.69}{}}
+\BKM@entry{id=48,dest={73656374696F6E2E552E33},srcline={51}}{5C3337365C3337375C303030415C3030302E5C303030335C3030305C3034305C303030435C3030306C5C303030615C303030755C303030645C303030655C3030305C3034305C303030505C303030725C3030306F5C3030306D5C303030705C303030745C3030305C3034305C303030665C3030306F5C303030725C3030305C3034305C303030565C303030695C303030645C303030655C3030306F5C3030305C3034305C303030465C303030725C303030615C3030306D5C303030655C3030305C3034305C303030415C3030306E5C3030306E5C3030306F5C303030745C303030615C303030745C303030695C3030306F5C3030306E}
+\BKM@entry{id=49,dest={73656374696F6E2E552E34},srcline={157}}{5C3337365C3337375C303030415C3030302E5C303030345C3030305C3034305C303030495C3030306E5C303030735C303030745C303030725C303030755C303030635C303030745C303030695C3030306F5C3030306E5C3030305C3034305C303030525C303030655C3030306C5C303030615C303030625C303030655C3030306C5C303030695C3030306E5C303030675C3030305C3034305C303030455C303030785C303030705C303030655C303030725C303030695C3030306D5C303030655C3030306E5C303030745C30303073}
 \@writefile{toc}{\contentsline {section}{\numberline {A.2}Supplemental Data}{A-2}{section.U.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Complete list of professional applications covered by the YouTube tutorial data collection pipeline.}}{A-2}{table.caption.66}\protected@file@percent }
-\newlabel{tab:youtube_apps}{{A.1}{A-2}{Complete list of professional applications covered by the YouTube tutorial data collection pipeline}{table.caption.66}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Complete list of professional applications covered by the YouTube tutorial data collection pipeline.}}{A-2}{table.caption.70}\protected@file@percent }
+\newlabel{tab:youtube_apps}{{A.1}{A-2}{Complete list of professional applications covered by the YouTube tutorial data collection pipeline}{table.caption.70}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.3}Claude Prompt for Video Frame Annotation}{A-2}{section.U.3}\protected@file@percent }
 \newlabel{sec:appendix_claude_video_prompt}{{A.3}{A-2}{Claude Prompt for Video Frame Annotation}{section.U.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.4}Instruction Relabeling Experiments}{A-2}{section.U.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.68}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.72}\protected@file@percent }
 \newlabel{lst:claude_video_prompt}{{A.1}{A-3}{Prompt template used for Claude-based annotation of professional application screenshots}{lstlisting.U.1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.1}{\ignorespaces Prompt template used for Claude-based annotation of professional application screenshots.}}{A-3}{lstlisting.U.1}\protected@file@percent }
-\BKM@entry{id=48,dest={73656374696F6E2E552E35},srcline={232}}{5C3337365C3337375C303030415C3030302E5C303030355C3030305C3034305C303030545C303030725C303030615C303030695C3030306E5C303030695C3030306E5C303030675C3030305C3034305C303030505C303030725C3030306F5C3030306D5C303030705C303030745C3030305C3034305C303030415C303030625C3030306C5C303030615C303030745C303030695C3030306F5C3030306E}
-\BKM@entry{id=49,dest={73656374696F6E2E552E36},srcline={356}}{5C3337365C3337375C303030415C3030302E5C303030365C3030305C3034305C303030435C3030306F5C3030306C5C303030645C3030302D5C303030535C303030745C303030615C303030725C303030745C3030305C3034305C303030535C303030465C303030545C3030305C3034305C303030425C303030755C303030645C303030675C303030655C30303074}
+\BKM@entry{id=50,dest={73656374696F6E2E552E35},srcline={232}}{5C3337365C3337375C303030415C3030302E5C303030355C3030305C3034305C303030545C303030725C303030615C303030695C3030306E5C303030695C3030306E5C303030675C3030305C3034305C303030505C303030725C3030306F5C3030306D5C303030705C303030745C3030305C3034305C303030415C303030625C3030306C5C303030615C303030745C303030695C3030306F5C3030306E}
+\BKM@entry{id=51,dest={73656374696F6E2E552E36},srcline={356}}{5C3337365C3337375C303030415C3030302E5C303030365C3030305C3034305C303030435C3030306F5C3030306C5C303030645C3030302D5C303030535C303030745C303030615C303030725C303030745C3030305C3034305C303030535C303030465C303030545C3030305C3034305C303030425C303030755C303030645C303030675C303030655C30303074}
 \citation{qin2025uitars15}
-\@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Impact of prompt rewriting strategies on downstream task performance.}}{A-4}{table.caption.69}\protected@file@percent }
-\newlabel{tab:prompt_rewriting}{{A.2}{A-4}{Impact of prompt rewriting strategies on downstream task performance}{table.caption.69}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Impact of prompt rewriting strategies on downstream task performance.}}{A-4}{table.caption.73}\protected@file@percent }
+\newlabel{tab:prompt_rewriting}{{A.2}{A-4}{Impact of prompt rewriting strategies on downstream task performance}{table.caption.73}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.5}Training Prompt Ablation}{A-4}{section.U.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.3}{\ignorespaces Impact of training prompt on downstream task performance for Qwen 2.5 VL 7B trained on 10k samples.}}{A-4}{table.caption.74}\protected@file@percent }
-\newlabel{tab:prompt_ablation}{{A.3}{A-4}{Impact of training prompt on downstream task performance for Qwen 2.5 VL 7B trained on 10k samples}{table.caption.74}{}}
-\BKM@entry{id=50,dest={73656374696F6E2E552E37},srcline={370}}{5C3337365C3337375C303030415C3030302E5C303030375C3030305C3034305C303030525C3030304C5C3030305C3034305C303030485C303030795C303030705C303030655C303030725C303030705C303030615C303030725C303030615C3030306D5C303030655C303030745C303030655C303030725C3030305C3034305C303030415C303030625C3030306C5C303030615C303030745C303030695C3030306F5C3030306E5C30303073}
+\@writefile{lot}{\contentsline {table}{\numberline {A.3}{\ignorespaces Impact of training prompt on downstream task performance for Qwen 2.5 VL 7B trained on 10k samples.}}{A-4}{table.caption.78}\protected@file@percent }
+\newlabel{tab:prompt_ablation}{{A.3}{A-4}{Impact of training prompt on downstream task performance for Qwen 2.5 VL 7B trained on 10k samples}{table.caption.78}{}}
+\BKM@entry{id=52,dest={73656374696F6E2E552E37},srcline={370}}{5C3337365C3337375C303030415C3030302E5C303030375C3030305C3034305C303030525C3030304C5C3030305C3034305C303030485C303030795C303030705C303030655C303030725C303030705C303030615C303030725C303030615C3030306D5C303030655C303030745C303030655C303030725C3030305C3034305C303030415C303030625C3030306C5C303030615C303030745C303030695C3030306F5C3030306E5C30303073}
 \citation{gu2025uivenus}
-\BKM@entry{id=51,dest={73656374696F6E2E552E38},srcline={381}}{5C3337365C3337375C303030415C3030302E5C303030385C3030305C3034305C303030485C303030795C303030705C303030655C303030725C303030705C303030615C303030725C303030615C3030306D5C303030655C303030745C303030655C303030725C3030305C3034305C303030535C303030655C303030615C303030725C303030635C303030685C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C3030304D5C3030306F5C303030645C303030655C3030306C5C3030305C3034305C303030435C3030306F5C3030306E5C303030665C303030695C303030675C303030755C303030725C303030615C303030745C303030695C3030306F5C3030306E}
-\BKM@entry{id=52,dest={73756273656374696F6E2E552E382E31},srcline={383}}{5C3337365C3337375C303030415C3030302E5C303030385C3030302E5C303030315C3030305C3034305C303030565C303030695C303030735C303030695C3030306F5C3030306E5C3030305C3034305C303030545C3030306F5C303030775C303030655C303030725C3030305C3034305C303030465C303030695C3030306E5C303030655C3030302D5C303030745C303030755C3030306E5C303030695C3030306E5C30303067}
-\BKM@entry{id=53,dest={73756273656374696F6E2E552E382E32},srcline={400}}{5C3337365C3337375C303030415C3030302E5C303030385C3030302E5C303030325C3030305C3034305C3030304C5C303030655C303030615C303030725C3030306E5C303030695C3030306E5C303030675C3030305C3034305C303030525C303030615C303030745C303030655C3030305C3034305C303030535C303030655C303030615C303030725C303030635C30303068}
+\BKM@entry{id=53,dest={73656374696F6E2E552E38},srcline={381}}{5C3337365C3337375C303030415C3030302E5C303030385C3030305C3034305C303030485C303030795C303030705C303030655C303030725C303030705C303030615C303030725C303030615C3030306D5C303030655C303030745C303030655C303030725C3030305C3034305C303030535C303030655C303030615C303030725C303030635C303030685C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C3030304D5C3030306F5C303030645C303030655C3030306C5C3030305C3034305C303030435C3030306F5C3030306E5C303030665C303030695C303030675C303030755C303030725C303030615C303030745C303030695C3030306F5C3030306E}
+\BKM@entry{id=54,dest={73756273656374696F6E2E552E382E31},srcline={383}}{5C3337365C3337375C303030415C3030302E5C303030385C3030302E5C303030315C3030305C3034305C303030565C303030695C303030735C303030695C3030306F5C3030306E5C3030305C3034305C303030545C3030306F5C303030775C303030655C303030725C3030305C3034305C303030465C303030695C3030306E5C303030655C3030302D5C303030745C303030755C3030306E5C303030695C3030306E5C30303067}
+\BKM@entry{id=55,dest={73756273656374696F6E2E552E382E32},srcline={400}}{5C3337365C3337375C303030415C3030302E5C303030385C3030302E5C303030325C3030305C3034305C3030304C5C303030655C303030615C303030725C3030306E5C303030695C3030306E5C303030675C3030305C3034305C303030525C303030615C303030745C303030655C3030305C3034305C303030535C303030655C303030615C303030725C303030635C30303068}
 \@writefile{toc}{\contentsline {section}{\numberline {A.6}Cold-Start SFT Budget}{A-5}{section.U.6}\protected@file@percent }
 \newlabel{sec:coldstart}{{A.6}{A-5}{Cold-Start SFT Budget}{section.U.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.7}RL Hyperparameter Ablations}{A-5}{section.U.7}\protected@file@percent }
 \newlabel{sec:rl_ablations}{{A.7}{A-5}{RL Hyperparameter Ablations}{section.U.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Temperature.}{A-5}{section*.76}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Learning Rate and KL Weight.}{A-5}{section*.77}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Temperature.}{A-5}{section*.80}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Learning Rate and KL Weight.}{A-5}{section*.81}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {A.8}Hyperparameter Search and Model Configuration}{A-5}{section.U.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.8.1}Vision Tower Fine-tuning}{A-5}{subsection.U.8.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.8.2}Learning Rate Search}{A-5}{subsection.U.8.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.4}{\ignorespaces Comparison of full fine-tuning versus freezing the vision tower for Qwen 2.5 VL 7B.}}{A-6}{table.caption.78}\protected@file@percent }
-\newlabel{tab:vision_tower}{{A.4}{A-6}{Comparison of full fine-tuning versus freezing the vision tower for Qwen 2.5 VL 7B}{table.caption.78}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.5}{\ignorespaces Learning rate sweep results. The optimal learning rate of 1e-6 (bold) achieves the best performance across all benchmarks.}}{A-6}{table.caption.79}\protected@file@percent }
-\newlabel{tab:learning_rate_sweep}{{A.5}{A-6}{Learning rate sweep results. The optimal learning rate of 1e-6 (bold) achieves the best performance across all benchmarks}{table.caption.79}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.4}{\ignorespaces Comparison of full fine-tuning versus freezing the vision tower for Qwen 2.5 VL 7B.}}{A-6}{table.caption.82}\protected@file@percent }
+\newlabel{tab:vision_tower}{{A.4}{A-6}{Comparison of full fine-tuning versus freezing the vision tower for Qwen 2.5 VL 7B}{table.caption.82}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.5}{\ignorespaces Learning rate sweep results. The optimal learning rate of 1e-6 (bold) achieves the best performance across all benchmarks.}}{A-6}{table.caption.83}\protected@file@percent }
+\newlabel{tab:learning_rate_sweep}{{A.5}{A-6}{Learning rate sweep results. The optimal learning rate of 1e-6 (bold) achieves the best performance across all benchmarks}{table.caption.83}{}}
 \newlabel{lst:cleaning_prompt}{{A.2}{A-7}{Prompt template used for instruction cleaning}{lstlisting.U.2}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.2}{\ignorespaces Prompt template used for instruction cleaning.}}{A-7}{lstlisting.U.2}\protected@file@percent }
 \newlabel{lst:prompt_default}{{A.3}{A-8}{Default Prompt (no resolution)}{lstlisting.U.3}{}}
@@ -412,6 +415,6 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.4}{\ignorespaces Default Prompt + Image Resolution.}}{A-8}{lstlisting.U.4}\protected@file@percent }
 \newlabel{lst:prompt_qwen_tool}{{A.5}{A-9}{Qwen Tool Calling Prompt + Image Resolution (abbreviated)}{lstlisting.U.5}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.5}{\ignorespaces Qwen Tool Calling Prompt + Image Resolution (abbreviated).}}{A-9}{lstlisting.U.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces Cold-start SFT budget experiment. Models fine-tuned on varying amounts of SFT data (1k, 3.3k, 10k, 63k) are subsequently trained with GRPO. RL performance scales monotonically with SFT data budget, confirming that RL benefits from a stronger initialization.}}{A-9}{figure.caption.75}\protected@file@percent }
-\newlabel{fig:rl_coldstart}{{A.2}{A-9}{Cold-start SFT budget experiment. Models fine-tuned on varying amounts of SFT data (1k, 3.3k, 10k, 63k) are subsequently trained with GRPO. RL performance scales monotonically with SFT data budget, confirming that RL benefits from a stronger initialization}{figure.caption.75}{}}
-\gdef \@abspage@last{62}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces Cold-start SFT budget experiment. Models fine-tuned on varying amounts of SFT data (1k, 3.3k, 10k, 63k) are subsequently trained with GRPO. RL performance scales monotonically with SFT data budget, confirming that RL benefits from a stronger initialization.}}{A-9}{figure.caption.79}\protected@file@percent }
+\newlabel{fig:rl_coldstart}{{A.2}{A-9}{Cold-start SFT budget experiment. Models fine-tuned on varying amounts of SFT data (1k, 3.3k, 10k, 63k) are subsequently trained with GRPO. RL performance scales monotonically with SFT data budget, confirming that RL benefits from a stronger initialization}{figure.caption.79}{}}
+\gdef \@abspage@last{63}
