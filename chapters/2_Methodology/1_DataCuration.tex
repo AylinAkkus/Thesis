@@ -1,43 +1,61 @@
-\section{Data Curation}
+\section{Data Pool}
 \label{sec:data_curation}
 
-We curate our training data from existing datasets for web and desktop GUI grounding. Each dataset sample contains a screenshot image, a natural language instruction describing the desired interaction, and ground truth bounding box coordinates for the target UI element. Our data curation pipeline draws from eight complementary sources: ShowUI \cite{lin2024showui} (covering both web and desktop environments), AutoGUI \cite{li2025autogui}, PC-Agent-E \cite{he2025pcagente}, WaveUI \cite{agentsea2024waveui}, OS-Atlas \cite{wu2024osatlas}, UGround \cite{gou2024uground}, PixMo \cite{deitke2024molmo}, and SeeClick \cite{cheng2024seeclick}. Table~\ref{tab:dataset_statistics} summarizes the scale and composition of these datasets, yielding approximately 9.8 million training samples.
-
-\begin{table}[h]
-\centering
-\caption{Dataset Statistics}
-\label{tab:dataset_statistics}
-\begin{tabular}{lrr}
-\hline
-\textbf{Dataset} & \textbf{\# of Samples} & \textbf{\# Text Tokens (M)} \\
-\hline
-AutoGUI & 701,861 & 52.22 \\
-PC-Agent-E & 27,782 & 42.09 \\
-WaveUI & 24,977 & 1.74 \\
-SeeClick & 27,193 & 1.80 \\
-OS-ATLAS & 61,534 & 4.12 \\
-UGround & 8,290,455 & 618.48 \\
-ShowUI-Web & 598,856 & 40.48 \\
-ShowUI-Desktop & 7,496 & 0.48 \\
-PixMo Points & 92,477 & 5.81 \\
-\hline
-\textbf{Total} & \textbf{9,832,631} & \textbf{767.22} \\
-\hline
-\end{tabular}
-\end{table}
+\subsection{Data Sources}
+We curate our training data from existing datasets for web and desktop GUI grounding. Each dataset sample contains a screenshot image, a natural language instruction describing the desired interaction, and ground truth bounding box coordinates for the target UI element. Our data pool draws from eight complementary sources: ShowUI \cite{lin2024showui}, AutoGUI \cite{li2025autogui}, PC-Agent-E \cite{he2025pcagente}, WaveUI \cite{agentsea2024waveui}, OS-Atlas \cite{wu2024osatlas}, UGround \cite{gou2024uground}, PixMo \cite{deitke2024molmo}, and SeeClick \cite{cheng2024seeclick}.
 
 \paragraph{Normalization}
-To ensure consistency across heterogeneous data sources, we normalize all grounding datasets into a unified format. This normalization process includes partitioning mobile and desktop samples into separate subsets and filtering the data to retain only click action annotations relevant to our grounding task.
-\paragraph{Processing}
-Two datasets require additional preprocessing to extract suitable training samples. For PC-Agent-E, we extract individual click actions from recorded computer-use trajectories and generate corresponding natural language instructions by processing each action's reasoning chain through Claude 3.7 Sonnet. For PixMo Points, we employ Qwen2.5-7B-VL as a filtering mechanism to identify and retain only samples depicting valid computer screen images.
+Since the collected datasets differ substantially in schema and annotation procedure, we apply a normalization step to consolidate them into a unified format. First, we partition samples by platform, discarding mobile samples. Second, because the source datasets span a spectrum from full interaction trajectories to isolated point annotations and encompass diverse action types (e.g., clicks, drags, text input), we extract and retain only click-action annotations pertinent to our grounding objective, discarding all other action types. The resulting annotation schema thus reduces to a triple of (image, instruction, bounding box). Table~\ref{tab:dataset_statistics} summarizes the resulting scale and composition of the normalized data pool, which comprises approximately 9.8 million training samples. Representative examples from six sources are shown in Figure~\ref{fig:data_source_samples} in the Appendix.
+
+\begin{table}[h]
+    \centering
+    \caption{Dataset Statistics}
+    \label{tab:dataset_statistics}
+    \begin{tabular}{lrr}
+    \hline
+    \textbf{Dataset} & \textbf{Number of Samples} & \textbf{Number of Tokens (M)} \\
+    \hline
+    AutoGUI & 701,861 & 52.22 \\
+    PC-Agent-E & 27,782 & 42.09 \\
+    WaveUI & 24,977 & 1.74 \\
+    SeeClick & 27,193 & 1.80 \\
+    OS-ATLAS & 61,534 & 4.12 \\
+    UGround & 8,290,455 & 618.48 \\
+    ShowUI-Web & 598,856 & 40.48 \\
+    ShowUI-Desktop & 7,496 & 0.48 \\
+    PixMo Points & 92,477 & 5.81 \\
+    \hline
+    \textbf{Total} & \textbf{9,832,631} & \textbf{767.22} \\
+    \hline
+    \end{tabular}
+    \end{table}
+
+\subsection{Additional Processing}
+Two datasets require additional preprocessing to extract suitable training samples. For PC-Agent-E, we extract individual click actions from recorded computer-use trajectories and generate corresponding natural language instructions by summarizing each action's reasoning chain with Claude 3.7 Sonnet. Since PixMo Points is a general-purpose grounding dataset not specifically designed for computer-use tasks, we employ Qwen2.5-7B-VL as a classifier to identify and retain only samples depicting valid computer screen images.
 
 \paragraph{Resizing}
-Both Qwen2.5-VL \cite{qwen2025qwen25vl} and Qwen3-VL \cite{qwen2025qwen3vl} employ flexible patching mechanisms, where input images are dynamically resized to multiples of 28 pixels before being processed by the Vision Transformer (ViT). Failure to account for this preprocessing step can result in coordinate misalignment between predictions and ground truth annotations. To prevent such artifacts, we standardize all training and evaluation images by resizing them to dimensions that are multiples of 28 prior to model input.
-\paragraph{Coordinate System}
-The two model families employ distinct coordinate representation schemes. While Qwen2.5-VL uses absolute pixel coordinates, Qwen3-VL adopts a normalized coordinate system scaled to the range [0, 1000]. They report that this normalization improves robustness to variations in image resolution and aspect ratio across diverse inputs, while also simplifying post-processing and enhancing the usability of predicted coordinates in downstream applications. To maintain consistency with each model's native representation, we adapt our data preparation accordingly: absolute coordinates for Qwen2.5-VL experiments (facilitating direct comparison with other models built on the same backbone) and normalized coordinates for Qwen3-VL experiments.
+Since our work, as well as previous efforts, builds on top of the Qwen2.5-VL \cite{qwen2025qwen25vl} and Qwen3-VL \cite{qwen2025qwen3vl} model families, careful attention to architecture-specific preprocessing is required. Both models employ flexible patching mechanisms in which input images are dynamically resized to dimensions that are multiples of 28 pixels before being processed by the Vision Transformer (ViT). Failing to account for this resizing step can introduce coordinate misalignment between model predictions and ground truth annotations. To prevent such artifacts, we standardize all training and evaluation images by resizing them to the nearest valid dimensions prior to model input.
 
-\paragraph{Data Quality Issues}
-After normalization, we apply additional filtering to eliminate noisy and trivial samples. As illustrated in Figure~\ref{fig:data_quality}, the main quality issues we encounter are: (1) overly simple interactions, such as trivial hyperlink clicks, which are easy to generate since they do not require sophisticated semantic understanding of GUI interfaces and can be bootstrapped from their text content; (2) misaligned instructions, where the instruction text and target region diverge due to artifacts from dataset creation errors; and (3) ambiguous tasks that lack sufficient context for precise grounding. These quality issues are systematically addressed through our filtering pipeline, which we describe in detail in Section~\ref{sec:data_filtering}.
+\paragraph{Resolution} To determine an appropriate image resolution for training, we conduct a preliminary study on the sensitivity of grounding performance to input resolution. Specifically, we evaluate GTA1 \cite{yang2025gta1} on two offline benchmarks---ScreenSpot Pro and ScreenSpot V2---while varying the maximum pixel budget from 1\,MP to 12\,MP. As shown in Figure~\ref{fig:resolution_impact}, the two benchmarks exhibit markedly different resolution dependencies. ScreenSpot Pro, which targets fine-grained elements in professional applications, benefits substantially from higher resolution: accuracy nearly doubles from 25.2\% at 1\,MP to a peak of 49.7\% at 4\,MP, before exhibiting diminishing returns at larger budgets. In contrast, ScreenSpot V2 already achieves strong performance at 1\,MP (89.5\%) and peaks at 2\,MP (91.8\%), with marginal degradation at higher resolutions. Based on these findings, we set the maximum resolution to 4\,MP for all training data, as this provides the best trade-off between grounding accuracy and computational cost.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/resolution_impact_benchmarks_gta1_7b.png}
+\caption{Impact of maximum pixel budget on grounding accuracy for GTA1-7B. ScreenSpot Pro shows a strong positive correlation with resolution up to 4\,MP, while ScreenSpot V2 is largely resolution-invariant.}
+\label{fig:resolution_impact}
+\end{figure}
+
+\paragraph{Coordinate System}
+A further architectural distinction concerns coordinate representation. Qwen2.5-VL operates with absolute pixel coordinates, whereas Qwen3-VL adopts a normalized coordinate system scaled to the range $[0, 1000]$, which is reported to improve robustness to variations in image resolution and aspect ratio while simplifying post-processing. To maintain consistency with each model's native representation, we adapt the data preparation accordingly: absolute coordinates for Qwen2.5-VL experiments---facilitating direct comparison with other models built on the same backbone---and normalized coordinates for Qwen3-VL experiments.
+
+\subsection{Data Quality Issues}
+After assembling the data pool, we conduct a manual quality assessment by inspecting samples alongside their instructions and ground truth bounding boxes. As illustrated in Figure~\ref{fig:data_quality}, we identify three prevalent quality issues:
+\begin{itemize}
+    \item \textbf{Overly simple interactions}, such as ``Click on Health Conditions'', which can be trivially resolved through optical character recognition alone without requiring deeper semantic understanding of the GUI layout.
+    \item \textbf{Misaligned annotations}, where the instruction text and target region diverge due to annotation errors in the source datasets.
+    \item \textbf{Ambiguous tasks} that lack sufficient context for precise grounding or have multiple possible target regions.
+\end{itemize}
+We address these quality issues through a systematic filtering pipeline, described in Section~\ref{sec:data_filtering}.
 
 \begin{figure}[h]
 \centering

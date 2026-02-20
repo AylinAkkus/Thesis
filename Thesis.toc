@@ -28,58 +28,61 @@
 \contentsline {section}{\numberline {1.4}Contributions}{8}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Thesis Structure}{9}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Methodology}{10}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Data Curation}{10}{section.2.1}%
-\contentsline {paragraph}{Normalization}{10}{section*.24}%
-\contentsline {paragraph}{Processing}{11}{section*.25}%
-\contentsline {paragraph}{Resizing}{11}{section*.26}%
-\contentsline {paragraph}{Coordinate System}{11}{section*.27}%
-\contentsline {paragraph}{Data Quality Issues}{11}{section*.28}%
-\contentsline {section}{\numberline {2.2}Data Filtering}{11}{section.2.2}%
-\contentsline {paragraph}{Hypothesis Testing}{11}{section*.30}%
-\contentsline {paragraph}{OmniParser Filtering}{12}{section*.31}%
-\contentsline {paragraph}{Difficulty Filtering}{13}{section*.33}%
-\contentsline {paragraph}{Data Source Analysis}{15}{section*.35}%
-\contentsline {paragraph}{Data Sampling and Scale}{16}{section*.38}%
-\contentsline {paragraph}{Additional Experiments}{17}{section*.40}%
-\contentsline {section}{\numberline {2.3}Supplemental Data}{17}{section.2.3}%
-\contentsline {paragraph}{Performance Analysis by Image Resolution and Aspect Ratio}{17}{section*.41}%
-\contentsline {paragraph}{UI Vision and JEDI}{18}{section*.46}%
-\contentsline {paragraph}{Supplemental Data Experiments}{19}{section*.47}%
-\contentsline {paragraph}{Video Data Collection}{20}{section*.49}%
-\contentsline {paragraph}{Data Augmentation}{21}{section*.53}%
-\contentsline {subparagraph}{Composing High-Resolution Frames.}{21}{section*.54}%
-\contentsline {subparagraph}{Random Image Upscaling.}{21}{section*.56}%
-\contentsline {section}{\numberline {2.4}Training}{23}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Initial GRPO Setup}{23}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Reward Function}{24}{subsection.2.4.2}%
-\contentsline {paragraph}{Sparse vs.\ Dense Reward Function.}{24}{section*.59}%
-\contentsline {paragraph}{Entropy Decay Problem}{25}{section*.61}%
-\contentsline {subsection}{\numberline {2.4.3}DAPO: Dynamic Sampling and Asymmetric Clipping}{26}{subsection.2.4.3}%
-\contentsline {paragraph}{Dynamic Sampling.}{26}{section*.62}%
-\contentsline {paragraph}{Asymmetric Clipping.}{26}{section*.63}%
-\contentsline {paragraph}{Removing Ambiguous Data Sources in RL stage.}{26}{section*.64}%
-\contentsline {paragraph}{Application to 7B Models.}{26}{section*.65}%
-\contentsline {subsection}{\numberline {2.4.4}Scaling to Gelato-30B-A3B}{27}{subsection.2.4.4}%
-\contentsline {chapter}{\numberline {3}Results}{31}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Benchmarking Performance}{31}{section.3.1}%
-\contentsline {paragraph}{Performance with Refusal}{31}{section*.71}%
-\contentsline {section}{\numberline {3.2}OS-World Agent}{31}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{32}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Reproducibility Issues}{32}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Human Evaluation}{33}{subsection.3.2.3}%
-\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{34}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Conclusion}{34}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Future Work}{36}{chapter.5}%
-\contentsline {chapter}{Bibliography}{37}{chapter*.73}%
+\contentsline {section}{\numberline {2.1}Data Pool}{10}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Data Sources}{10}{subsection.2.1.1}%
+\contentsline {paragraph}{Normalization}{10}{section*.23}%
+\contentsline {subsection}{\numberline {2.1.2}Additional Processing}{10}{subsection.2.1.2}%
+\contentsline {paragraph}{Resizing}{11}{section*.25}%
+\contentsline {paragraph}{Resolution}{11}{section*.26}%
+\contentsline {paragraph}{Coordinate System}{12}{section*.28}%
+\contentsline {subsection}{\numberline {2.1.3}Data Quality Issues}{12}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Data Filtering}{13}{section.2.2}%
+\contentsline {paragraph}{Hypothesis Testing}{13}{section*.30}%
+\contentsline {paragraph}{OmniParser Filtering}{13}{section*.31}%
+\contentsline {paragraph}{Difficulty Filtering}{14}{section*.33}%
+\contentsline {paragraph}{Data Source Analysis}{16}{section*.35}%
+\contentsline {paragraph}{Data Sampling and Scale}{17}{section*.38}%
+\contentsline {paragraph}{Additional Experiments}{18}{section*.40}%
+\contentsline {section}{\numberline {2.3}Supplemental Data}{18}{section.2.3}%
+\contentsline {paragraph}{Performance Analysis by Image Resolution and Aspect Ratio}{19}{section*.41}%
+\contentsline {paragraph}{UI Vision and JEDI}{20}{section*.46}%
+\contentsline {paragraph}{Supplemental Data Experiments}{20}{section*.47}%
+\contentsline {paragraph}{Video Data Collection}{21}{section*.49}%
+\contentsline {paragraph}{Data Augmentation}{23}{section*.53}%
+\contentsline {subparagraph}{Composing High-Resolution Frames.}{23}{section*.54}%
+\contentsline {subparagraph}{Random Image Upscaling.}{23}{section*.56}%
+\contentsline {section}{\numberline {2.4}Training}{24}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Initial GRPO Setup}{24}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Reward Function}{25}{subsection.2.4.2}%
+\contentsline {paragraph}{Sparse vs.\ Dense Reward Function.}{25}{section*.59}%
+\contentsline {paragraph}{Entropy Decay Problem}{26}{section*.61}%
+\contentsline {subsection}{\numberline {2.4.3}DAPO: Dynamic Sampling and Asymmetric Clipping}{27}{subsection.2.4.3}%
+\contentsline {paragraph}{Dynamic Sampling.}{27}{section*.62}%
+\contentsline {paragraph}{Asymmetric Clipping.}{28}{section*.63}%
+\contentsline {paragraph}{Removing Ambiguous Data Sources in RL stage.}{28}{section*.64}%
+\contentsline {paragraph}{Application to 7B Models.}{28}{section*.65}%
+\contentsline {subsection}{\numberline {2.4.4}Scaling to Gelato-30B-A3B}{29}{subsection.2.4.4}%
+\contentsline {chapter}{\numberline {3}Results}{32}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Benchmarking Performance}{32}{section.3.1}%
+\contentsline {paragraph}{Performance with Refusal}{32}{section*.71}%
+\contentsline {section}{\numberline {3.2}OS-World Agent}{32}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Agent Harness}{33}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Reproducibility Issues}{33}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Human Evaluation}{34}{subsection.3.2.3}%
+\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conclusion}{35}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Future Work}{37}{chapter.5}%
+\contentsline {chapter}{Bibliography}{38}{chapter*.73}%
 \contentsline {chapter}{\numberline {A}Appendix}{A-1}{appendix.U}%
-\contentsline {section}{\numberline {A.1}Supplemental Data}{A-1}{section.U.1}%
-\contentsline {section}{\numberline {A.2}Instruction Relabeling Experiments}{A-2}{section.U.2}%
-\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.76}%
-\contentsline {section}{\numberline {A.3}Training Prompt Ablation}{A-2}{section.U.3}%
-\contentsline {section}{\numberline {A.4}Cold-Start SFT Budget}{A-2}{section.U.4}%
-\contentsline {section}{\numberline {A.5}RL Hyperparameter Ablations}{A-3}{section.U.5}%
-\contentsline {paragraph}{Temperature.}{A-3}{section*.84}%
-\contentsline {paragraph}{Learning Rate and KL Weight.}{A-3}{section*.85}%
-\contentsline {section}{\numberline {A.6}Hyperparameter Search and Model Configuration}{A-3}{section.U.6}%
-\contentsline {subsection}{\numberline {A.6.1}Vision Tower Fine-tuning}{A-3}{subsection.U.6.1}%
-\contentsline {subsection}{\numberline {A.6.2}Learning Rate Search}{A-4}{subsection.U.6.2}%
+\contentsline {section}{\numberline {A.1}Data Source Examples}{A-1}{section.U.1}%
+\contentsline {section}{\numberline {A.2}Supplemental Data}{A-2}{section.U.2}%
+\contentsline {section}{\numberline {A.3}Instruction Relabeling Experiments}{A-2}{section.U.3}%
+\contentsline {paragraph}{Instruction Relabeling}{A-2}{section*.77}%
+\contentsline {section}{\numberline {A.4}Training Prompt Ablation}{A-3}{section.U.4}%
+\contentsline {section}{\numberline {A.5}Cold-Start SFT Budget}{A-3}{section.U.5}%
+\contentsline {section}{\numberline {A.6}RL Hyperparameter Ablations}{A-4}{section.U.6}%
+\contentsline {paragraph}{Temperature.}{A-4}{section*.85}%
+\contentsline {paragraph}{Learning Rate and KL Weight.}{A-4}{section*.86}%
+\contentsline {section}{\numberline {A.7}Hyperparameter Search and Model Configuration}{A-4}{section.U.7}%
+\contentsline {subsection}{\numberline {A.7.1}Vision Tower Fine-tuning}{A-4}{subsection.U.7.1}%
+\contentsline {subsection}{\numberline {A.7.2}Learning Rate Search}{A-4}{subsection.U.7.2}%
