@@ -93,14 +93,7 @@ r_{\text{dense}}(x, y)
 \]
 Predictions inside $R$ receive a base reward of $1.0$ plus a smooth bonus that peaks at the box center, while predictions outside $R$ still receive a continuous signal that decays smoothly with distance. This ensures that near-misses receive positive reward rather than zero, providing useful gradient signal even for hard samples. In contrast, the sparse reward provides no learning signal whatsoever for predictions outside $R$, regardless of proximity.
 
-We compare the two reward functions under identical training conditions, starting from Qwen2.5-VL-7B-Instruct after one round of SFT and performing RL on the same training data with the GRPO algorithm (Figure~\ref{fig:dense_vs_sparse_reward}). Despite the richer gradient signal, the dense reward does not consistently outperform the sparse variant: performance is comparable on ScreenSpot-Pro and slightly worse on OS-World-G. We therefore retain the sparse reward for all subsequent experiments.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/dense_vs_sparse_reward.png}
-\caption{Comparison of sparse and dense reward functions in GRPO training. \textbf{Left:} ScreenSpot-Pro accuracy. \textbf{Right:} OS-World-G accuracy. The sparse reward (orange, dashed) performs comparably or slightly better than the dense variant (blue, solid), despite providing no signal outside the ground truth region.}
-\label{fig:dense_vs_sparse_reward}
-\end{figure}
+We compare the two reward functions under identical training conditions, starting from Qwen2.5-VL-7B-Instruct after one round of SFT and performing RL on the same training data with the GRPO algorithm. Despite the richer gradient signal, the dense reward does not consistently outperform the sparse variant: performance is comparable on ScreenSpot-Pro and slightly worse on OS-World-G. We therefore retain the sparse reward for all subsequent experiments.
 
 \subsection{DAPO: Dynamic Sampling and Asymmetric Clipping}
 Previously, we observed difficulties improving performance beyond the SFT baseline in our initial GRPO experiments (Section~\ref{sec:initial_grpo}). We hypothesize that this is due to the fact that in GRPO, if all outputs $\{o_i\}_{i=1}^{G}$ of a particular prompt are correct or wrong and receive the same reward, the resulting advantage for this group is zero. A zero advantage yields zero policy gradients, shrinking the effective gradient magnitude and increasing the noise sensitivity of the batch gradient, thereby degrading sample efficiency.

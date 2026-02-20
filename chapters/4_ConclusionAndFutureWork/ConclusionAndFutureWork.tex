@@ -3,22 +3,30 @@
 
 \section{Conclusion}
 
-This thesis presented Gelato-30B-A3B, a state-of-the-art grounding model for GUI computer-use tasks. Through careful data pool construction, novel filtering approaches, and effective reinforcement learning training, we achieved significant improvements over prior work on multiple benchmarks.
-
-Our key contributions include:
+This thesis presented Gelato-30B-A3B, a state-of-the-art grounding model for GUI computer-use tasks. Through careful data curation, model-based filtering, and reinforcement learning with DAPO, we achieved significant improvements over prior work on multiple benchmarks. Our key contributions are:
 
 \begin{itemize}
-    \item \textbf{Click-100k}: A high-quality, open-source dataset built through principled filtering and enrichment
-    \item \textbf{Filtering methodology}: Model-based difficulty and alignment filtering that significantly improves dataset quality
-    \item \textbf{Training recipe}: Effective RL training approach building on GRPO with practical simplifications
-    \item \textbf{Strong results}: State-of-the-art performance on ScreenSpot-Pro (63.88\%) and OS-World-G (69.15\% / 74.65\%)
-    \item \textbf{Agent performance}: Demonstrated end-to-end agent improvements on OS-World (61.85\% with human evaluation)
+    \item \textbf{Click-100k}: A high-quality, open-source grounding dataset built through principled filtering and enrichment of eight public data sources, supplemented with in-house professional application data.
+    \item \textbf{Filtering methodology}: A model-based filtering pipeline that uses existing grounding models as difficulty and alignment judges, yielding a +9~pp accuracy gain over unfiltered data.
+    \item \textbf{Training recipe}: An effective RL training recipe based on GRPO with DAPO-style dynamic sampling and asymmetric clipping, which consistently improves over SFT baselines.
+    \item \textbf{State-of-the-art grounding}: 63.88\% on ScreenSpot-Pro and 69.15\%\,/\,74.65\% on OS-World-G\,/\,OS-World-G (Refined), surpassing both GTA1-32B and Qwen3-VL-235B-A22B-Instruct.
+    \item \textbf{Agent performance}: 61.85\% success rate on OS-World (human evaluation), outperforming GTA1-32B in the same agent harness.
 \end{itemize}
 
-Beyond these technical contributions, our work highlights important challenges in agent evaluation and reproducibility. The ~3 percentage point gap between automated and human evaluation, combined with non-deterministic planning models and incomplete evaluation functions, suggests that the field needs more rigorous evaluation practices.
+Grounding models remain a critical component of computer-use agents, whether in two-stage or end-to-end paradigms. As the field pushes toward more capable and general-purpose agents, continued improvements in grounding accuracy, efficiency, and robustness will be essential. By open-sourcing Click-100k, our trained models, and all evaluation artifacts, we aim to help close the gap between frontier and open-source efforts and accelerate progress in this area.
 
-Looking forward, grounding models remain a critical component of computer-use agents. As we push toward more capable and general-purpose agents, continued improvements in grounding accuracy, efficiency, and robustness will be essential. We hope that our open-source release of Click-100k, trained models, and evaluation artifacts will accelerate progress in this important area.
+\section{Future Work}
 
-The path to truly general-purpose computer-use agents is long, but strong grounding models like Gelato represent an important step forward. By combining high-quality data, effective training methods, and rigorous evaluation, we can continue to narrow the gap between human and machine capabilities in navigating digital interfaces.
+While Gelato-30B-A3B advances the state of the art in GUI grounding, significant challenges remain on the path toward truly reliable computer-use agents. Even frontier models struggle to operate reliably across diverse applications and long-horizon tasks. We identify several promising directions for future work.
 
-\chapter{Future Work}
+\paragraph{From Grounding to End-to-End Agents.}
+Gelato operates as a grounding module within a two-stage pipeline and relies on a proprietary planning model (GPT-5). Training an open-weights end-to-end agent that jointly handles planning and grounding remains an important goal. A key bottleneck is the scarcity of high-quality trajectory data: collecting multi-step interaction traces across diverse applications is expensive and difficult to scale. As stronger computer-use models become available, they may serve as trajectory collectors, enabling open-source efforts to generate the training data needed for end-to-end agents.
+
+\paragraph{Long-Horizon Reasoning.}
+Current agents struggle with tasks that require long sequences of interdependent actions, particularly in professional applications where a single task may involve dozens of steps across multiple dialog boxes and menus. Improving reasoning capabilities on such long-horizon tasks---including hierarchical planning, efficient context management, and recovery from intermediate errors---is an important direction.
+
+\paragraph{Trajectory-Level Reward Models.}
+Our evaluation revealed significant difficulties with automated verifiers on the OS-World benchmark, where evaluation functions often fail to recognize valid alternative solutions. More broadly, reliable supervision of multi-step trajectories remains an open problem that must be addressed for future advances in trajectory-based data collection, evaluation, and RL training.
+
+\paragraph{Professional Application Coverage.}
+Despite our efforts to supplement training data with professional application screenshots (Section~\ref{sec:video_data_collection}), coverage of specialized software remains limited. Professional applications are inherently harder to collect data for and annotate, and models consequently perform worse in these domains. As stronger computer-use models become available, they could be leveraged to annotate additional professional application data at scale, which could then be open-sourced to benefit the broader research community.

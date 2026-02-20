@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  20 FEB 2026 18:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  20 FEB 2026 20:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,46 +731,54 @@ Package: arydshln 2019/02/21 v1.76
 \adl@everyvbox=\toks47
 \adl@LTpagetotal=\dimen285
 )
+(/usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count348
+\float@exts=\toks48
+\float@box=\box69
+\@float@everytoks=\toks49
+\@floatcapt=\box70
+)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count348
-\l__pdf_internal_box=\box69
+\l__color_backend_stack_int=\count349
+\l__pdf_internal_box=\box71
 )
 (./Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count349
+\scratchcounter=\count350
 \scratchdimen=\dimen286
-\scratchbox=\box70
-\nofMPsegments=\count350
-\nofMParguments=\count351
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count352
+\scratchbox=\box72
+\nofMPsegments=\count351
+\nofMParguments=\count352
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count353
 \MPscratchDim=\dimen287
-\MPnumerator=\count353
-\makeMPintoPDFobject=\count354
-\everyMPtoPDFconversion=\toks49
+\MPnumerator=\count354
+\makeMPintoPDFobject=\count355
+\everyMPtoPDFconversion=\toks51
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -780,9 +788,10 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 25.
-\c@lstlisting=\count355
+Package hyperref Info: Link coloring ON on input line 26.
+\c@lstlisting=\count356
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package epstopdf Info: Source file: <figures/eth_logo_black.eps>
 (epstopdf)                    date: 2026-02-03 10:56:40
@@ -793,13 +802,13 @@ f>
 (epstopdf)                    size: 14056 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/eth_logo_black-eps
 -converted-to.pdf figures/eth_logo_black.eps>
-(epstopdf)             \includegraphics on input line 29.
+(epstopdf)             \includegraphics on input line 30.
 Package epstopdf Info: Output file is already uptodate.
 <figures/eth_logo_black-eps-converted-to.pdf, id=7, 191.71625pt x 57.21375pt>
 File: figures/eth_logo_black-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/eth_logo_black-eps-converted-to.pdf>
 Package pdftex.def Info: figures/eth_logo_black-eps-converted-to.pdf  used on i
-nput line 29.
+nput line 30.
 (pdftex.def)             Requested size: 177.66374pt x 47.17624pt.
 
 
@@ -816,7 +825,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.55     \item I
+l.56     \item I
                  did not participate in the video annotation process for the...
 [1
 
@@ -842,13 +851,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [4
 
-]
-
-[5])
+])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
 
+
+[5]
 
 [6] (./chapters/1_Introduction/Introduction.tex
 Chapter 1.
@@ -869,7 +878,7 @@ g the chal-lenges faced by language-
 [2]
 
 [3]
-<figures/LanguageGrounding.png, id=256, 867.24pt x 487.8225pt>
+<figures/LanguageGrounding.png, id=250, 867.24pt x 487.8225pt>
 File: figures/LanguageGrounding.png Graphic file (type png)
 <use figures/LanguageGrounding.png>
 Package pdftex.def Info: figures/LanguageGrounding.png  used on input line 37.
@@ -879,7 +888,7 @@ Underfull \hbox (badness 5696) in paragraph at lines 38--38
 []\T1/cmr/m/n/10 (a) |Language-based ground-ing: The
  []
 
-<figures/VisualGroundingTask.png, id=258, 867.24pt x 487.8225pt>
+<figures/VisualGroundingTask.png, id=252, 867.24pt x 487.8225pt>
 File: figures/VisualGroundingTask.png Graphic file (type png)
 <use figures/VisualGroundingTask.png>
 Package pdftex.def Info: figures/VisualGroundingTask.png  used on input line 44
@@ -955,7 +964,7 @@ Overfull \hbox (17.54861pt too wide) in paragraph at lines 38--39
 at-ten-tion to architecture-
  []
 
-<figures/resolution_impact_benchmarks_gta1_7b.png, id=377, 569.84895pt x 352.67
+<figures/resolution_impact_benchmarks_gta1_7b.png, id=371, 569.84895pt x 352.67
 76pt>
 File: figures/resolution_impact_benchmarks_gta1_7b.png Graphic file (type png)
 <use figures/resolution_impact_benchmarks_gta1_7b.png>
@@ -968,7 +977,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 [12]
-<figures/DataQuality.png, id=389, 2569.6pt x 1686.3pt>
+<figures/DataQuality.png, id=383, 2569.6pt x 1686.3pt>
 File: figures/DataQuality.png Graphic file (type png)
 <use figures/DataQuality.png>
 Package pdftex.def Info: figures/DataQuality.png  used on input line 63.
@@ -982,7 +991,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [13 <./figures/resolution_impact_benchmarks_gta1_7b.png>]
 
 [14 <./figures/DataQuality.png (PNG copy)>]
-<figures/Omniparser.png, id=405, 1284.8pt x 803.0pt>
+<figures/Omniparser.png, id=399, 1284.8pt x 803.0pt>
 File: figures/Omniparser.png Graphic file (type png)
 <use figures/Omniparser.png>
 Package pdftex.def Info: figures/Omniparser.png  used on input line 19.
@@ -996,17 +1005,17 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [15
 
 ]
-<figures/FilteringPipeline.png, id=421, 1288.815pt x 712.6625pt>
+<figures/FilteringPipeline.png, id=415, 1288.815pt x 712.6625pt>
 File: figures/FilteringPipeline.png Graphic file (type png)
 <use figures/FilteringPipeline.png>
 Package pdftex.def Info: figures/FilteringPipeline.png  used on input line 32.
 (pdftex.def)             Requested size: 381.4pt x 210.89694pt.
-<figures/FilteringAblation.png, id=422, 642.4803pt x 642.4803pt>
+<figures/FilteringAblation.png, id=416, 642.4803pt x 642.4803pt>
 File: figures/FilteringAblation.png Graphic file (type png)
 <use figures/FilteringAblation.png>
 Package pdftex.def Info: figures/FilteringAblation.png  used on input line 37.
 (pdftex.def)             Requested size: 190.7pt x 190.69666pt.
-<figures/FilteringAllEvals.png, id=423, 859.2903pt x 570.933pt>
+<figures/FilteringAllEvals.png, id=417, 859.2903pt x 570.933pt>
 File: figures/FilteringAllEvals.png Graphic file (type png)
 <use figures/FilteringAllEvals.png>
 Package pdftex.def Info: figures/FilteringAllEvals.png  used on input line 38.
@@ -1033,7 +1042,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 [18]
-<figures/DataScaling.png, id=450, 499.8675pt x 317.5062pt>
+<figures/DataScaling.png, id=444, 499.8675pt x 317.5062pt>
 File: figures/DataScaling.png Graphic file (type png)
 <use figures/DataScaling.png>
 Package pdftex.def Info: figures/DataScaling.png  used on input line 98.
@@ -1047,7 +1056,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [19]
 
 [20 <./figures/DataScaling.png>]
-<figures/accuracy_by_resolution_and_aspect.png, id=472, 1149.45435pt x 514.2010
+<figures/accuracy_by_resolution_and_aspect.png, id=466, 1149.45435pt x 514.2010
 5pt>
 File: figures/accuracy_by_resolution_and_aspect.png Graphic file (type png)
 <use figures/accuracy_by_resolution_and_aspect.png>
@@ -1081,25 +1090,25 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 [23]
-<figures/ProfessionalAppData.png, id=505, 3854.4pt x 1606.0pt>
+<figures/ProfessionalAppData.png, id=499, 3854.4pt x 1606.0pt>
 File: figures/ProfessionalAppData.png Graphic file (type png)
 <use figures/ProfessionalAppData.png>
 Package pdftex.def Info: figures/ProfessionalAppData.png  used on input line 10
-9.
+8.
 (pdftex.def)             Requested size: 381.4pt x 158.89401pt.
 
 
 [24]
-Overfull \hbox (16.5864pt too wide) in paragraph at lines 114--115
+Overfull \hbox (16.5864pt too wide) in paragraph at lines 113--114
 []\T1/cmr/m/n/10.95 We in-cor-po-rate the in-house pro-fes-sional ap-pli-ca-tio
 n data col-lected from YouTube
  []
 
-<figures/VideoAnnotationPipeline.png, id=516, 1674.255pt x 614.295pt>
+<figures/VideoAnnotationPipeline.png, id=510, 1674.255pt x 614.295pt>
 File: figures/VideoAnnotationPipeline.png Graphic file (type png)
 <use figures/VideoAnnotationPipeline.png>
 Package pdftex.def Info: figures/VideoAnnotationPipeline.png  used on input lin
-e 119.
+e 118.
 (pdftex.def)             Requested size: 381.4pt x 139.9351pt.
 
 
@@ -1107,7 +1116,7 @@ e 119.
 
 [26 <./figures/VideoAnnotationPipeline.png>])
 (./chapters/2_Methodology/4_Training.tex
-<figures/grpo_63k_qwen25vl_refined_label.png, id=538, 722.7pt x 397.485pt>
+<figures/grpo_63k_qwen25vl_refined_label.png, id=532, 722.7pt x 397.485pt>
 File: figures/grpo_63k_qwen25vl_refined_label.png Graphic file (type png)
 <use figures/grpo_63k_qwen25vl_refined_label.png>
 Package pdftex.def Info: figures/grpo_63k_qwen25vl_refined_label.png  used on i
@@ -1118,7 +1127,7 @@ Underfull \hbox (badness 4886) in paragraph at lines 39--39
 []\T1/cmr/m/n/10 (a) |GRPO on base Qwen2.5-VL-7B-
  []
 
-<figures/GRPO_63k_Qwen2.5VL-63k-SFT.png, id=539, 794.97pt x 433.62pt>
+<figures/GRPO_63k_Qwen2.5VL-63k-SFT.png, id=533, 794.97pt x 433.62pt>
 File: figures/GRPO_63k_Qwen2.5VL-63k-SFT.png Graphic file (type png)
 <use figures/GRPO_63k_Qwen2.5VL-63k-SFT.png>
 Package pdftex.def Info: figures/GRPO_63k_Qwen2.5VL-63k-SFT.png  used on input 
@@ -1132,107 +1141,113 @@ line 45.
 
 [28 <./figures/grpo_63k_qwen25vl_refined_label.png> <./figures/GRPO_63k_Qwen2.5
 VL-63k-SFT.png>]
-<figures/dense_vs_sparse_reward.png, id=569, 859.65166pt x 354.123pt>
-File: figures/dense_vs_sparse_reward.png Graphic file (type png)
-<use figures/dense_vs_sparse_reward.png>
-Package pdftex.def Info: figures/dense_vs_sparse_reward.png  used on input line
- 100.
-(pdftex.def)             Requested size: 381.4pt x 157.11682pt.
-
 
 [29]
-Overfull \hbox (11.7583pt too wide) in paragraph at lines 133--134
+Overfull \hbox (11.7583pt too wide) in paragraph at lines 126--127
 []\T1/cmr/m/n/10.95 We in-cor-po-rate key tech-niques from DAPO [[]]: (1) re-mo
 v-ing the KL-divergence
  []
 
 
-Overfull \hbox (2.8976pt too wide) in paragraph at lines 136--137
+Overfull \hbox (2.8976pt too wide) in paragraph at lines 129--130
  []\T1/cmr/bx/n/10.95 Dynamic Sam-pling.[] \T1/cmr/m/n/10.95 Rather than re-ly-
 ing solely on our a pri-ori fil-ter-ing pipeline
  []
 
 
-Overfull \hbox (5.21387pt too wide) in paragraph at lines 136--137
+Overfull \hbox (5.21387pt too wide) in paragraph at lines 129--130
 \T1/cmr/m/n/10.95 batch, more prompts are sam-pled than needed, roll-outs are g
 en-er-ated, and prompts
  []
 
 
 
-[30 <./figures/dense_vs_sparse_reward.png>]
-Overfull \hbox (19.19151pt too wide) in paragraph at lines 148--149
+[30]
+Overfull \hbox (19.19151pt too wide) in paragraph at lines 141--142
 \T1/cmr/m/n/10.95 and GTA1's. Start-ing from the same UI-TARS-1.5-7B base model
  (42.2% ScreenSpot-
  []
 
-
-
-[31]
-<figures/RLProgression.png, id=601, 722.7pt x 614.295pt>
+<figures/RLProgression.png, id=584, 722.7pt x 614.295pt>
 File: figures/RLProgression.png Graphic file (type png)
 <use figures/RLProgression.png>
-Package pdftex.def Info: figures/RLProgression.png  used on input line 157.
+Package pdftex.def Info: figures/RLProgression.png  used on input line 150.
 (pdftex.def)             Requested size: 381.4pt x 324.18753pt.
 )) (./chapters/3_Results/Results.tex
 
+[31]
+
 [32 <./figures/RLProgression.png>]
 Chapter 3.
-<figures/FinalRecipeComparison.png, id=609, 658.6206pt x 351.4731pt>
+<figures/FinalRecipeComparison.png, id=599, 658.6206pt x 351.4731pt>
 File: figures/FinalRecipeComparison.png Graphic file (type png)
 <use figures/FinalRecipeComparison.png>
 Package pdftex.def Info: figures/FinalRecipeComparison.png  used on input line 
-12.
-(pdftex.def)             Requested size: 343.25766pt x 183.18538pt.
-<figures/FinalPerformance.png, id=611, 859.5312pt x 355.8093pt>
+14.
+(pdftex.def)             Requested size: 266.97882pt x 142.47453pt.
+
+
+[33
+
+ <./figures/FinalRecipeComparison.png>]
+<figures/FinalPerformance.png, id=607, 859.5312pt x 355.8093pt>
 File: figures/FinalPerformance.png Graphic file (type png)
 <use figures/FinalPerformance.png>
-Package pdftex.def Info: figures/FinalPerformance.png  used on input line 22.
+Package pdftex.def Info: figures/FinalPerformance.png  used on input line 25.
 (pdftex.def)             Requested size: 381.4pt x 157.88672pt.
 
-Overfull \hbox (86.31035pt too wide) in paragraph at lines 35--48
+
+[34 <./figures/FinalPerformance.png>]
+Overfull \hbox (9.04768pt too wide) in paragraph at lines 48--50
+\T1/cmr/m/n/10.95 EpochAI ar-ti-cle cri-tiquing OS-World [[]] sig-nif-i-cantly 
+af-fect re-pro-ducibil-ity. Bench-
+ []
+
+<figures/gelato-fig7.png, id=619, 650.43pt x 303.534pt>
+File: figures/gelato-fig7.png Graphic file (type png)
+<use figures/gelato-fig7.png>
+Package pdftex.def Info: figures/gelato-fig7.png  used on input line 60.
+(pdftex.def)             Requested size: 381.4pt x 177.99045pt.
+
+
+[35]
+Overfull \hbox (1.09001pt too wide) in paragraph at lines 67--81
  [][] 
  []
 
 
 
-[33
+[36 <./figures/gelato-fig7.png>]
 
-]
-Overfull \hbox (9.04768pt too wide) in paragraph at lines 64--66
-\T1/cmr/m/n/10.95 EpochAI ar-ti-cle cri-tiquing OS-World [[]] sig-nif-i-cantly 
-af-fect re-pro-ducibil-ity. Bench-
+[37]) (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
+
+[38]
+Chapter 4.
+
+Overfull \hbox (19.08176pt too wide) in paragraph at lines 12--13
+[]\T1/cmr/bx/n/10.95 State-of-the-art ground-ing\T1/cmr/m/n/10.95 : 63.88% on S
+creenSpot-Pro and 69.15%/74.65%
+ []
+
+
+Overfull \hbox (7.82686pt too wide) in paragraph at lines 16--17
+[]\T1/cmr/m/n/10.95 Grounding mod-els re-main a crit-i-cal com-po-nent of compu
+ter-use agents, whether
  []
 
 
 
-[34 <./figures/FinalRecipeComparison.png>]
-<figures/gelato-fig7.png, id=630, 650.43pt x 303.534pt>
-File: figures/gelato-fig7.png Graphic file (type png)
-<use figures/gelato-fig7.png>
-Package pdftex.def Info: figures/gelato-fig7.png  used on input line 77.
-(pdftex.def)             Requested size: 381.4pt x 177.99045pt.
+[39
 
+])
+Overfull \hbox (1.00043pt too wide) in paragraph at lines 32--84
+ []\T1/cmr/bx/n/10.95 Professional Ap-pli-ca-tion Cov-er-age.[] \T1/cmr/m/n/10.
+95 De-spite our ef-forts to sup-ple-ment train-
+ []
 
-[35 <./figures/FinalPerformance.png>]
+(./Thesis.bbl
 
-[36]) (./chapters/4_ConclusionAndFutureWork/ConclusionAndFutureWork.tex
-
-[37 <./figures/gelato-fig7.png>]
-Chapter 4.
-
-
-[38
-
-]
-
-[39]
-Chapter 5.
-) (./Thesis.bbl
-
-[40
-
-]
+[40]
 
 [41
 
@@ -1261,7 +1276,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 473--478
 )
 
 [47] (./chapters/5_Appendix/Appendix.tex
-<figures/data_source_samples.png, id=775, 910.24065pt x 560.8152pt>
+<figures/data_source_samples.png, id=769, 910.24065pt x 560.8152pt>
 File: figures/data_source_samples.png Graphic file (type png)
 <use figures/data_source_samples.png>
 Package pdftex.def Info: figures/data_source_samples.png  used on input line 10
@@ -1300,7 +1315,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 [4]
-<figures/rl_coldstart_scaling_overlay.png, id=887, 867.24pt x 289.08pt>
+<figures/rl_coldstart_scaling_overlay.png, id=882, 867.24pt x 289.08pt>
 File: figures/rl_coldstart_scaling_overlay.png Graphic file (type png)
 <use figures/rl_coldstart_scaling_overlay.png>
 Package pdftex.def Info: figures/rl_coldstart_scaling_overlay.png  used on inpu
@@ -1347,19 +1362,23 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 26056 strings out of 473190
- 478345 string characters out of 5715801
- 1413562 words of memory out of 5000000
- 48380 multiletter control sequences out of 15000+600000
+ 26106 strings out of 473190
+ 478945 string characters out of 5715801
+ 1414545 words of memory out of 5000000
+ 48426 multiletter control sequences out of 15000+600000
  582413 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,12n,132p,1310b,1299s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,12n,132p,1310b,1301s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-pdfTeX warning (dest): name{figure.caption.58} has been referenced but does not
- exist, replaced by a fixed one
+pdfTeX warning (dest): name{table.caption.69} has been referenced but does not 
+exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.65} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.82} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.72} has been referenced but does not 
 exist, replaced by a fixed one
 
 
@@ -1367,28 +1386,16 @@ pdfTeX warning (dest): name{table.caption.77} has been referenced but does not
 exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.68} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.64} has been referenced but does not
+pdfTeX warning (dest): name{figure.caption.68} has been referenced but does not
  exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{chapter*.62} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter*.66} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{subsection.3.2.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.1.1} has been referenced but does not 
-exist, replaced by a fixed one
+pdfTeX warning (dest): name{chapter.5} has been referenced but does not exist, 
+replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
@@ -1400,30 +1407,29 @@ al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
 texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
-e/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/te
-xlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/
-texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/te
-xlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texl
-ive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texliv
-e/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/
-2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/20
-25/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025
-/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2025/t
-exmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/tex
-mf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf
--dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dis
-t/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/
-fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fo
-nts/type1/public/cm-super/sfsc1095.pfb></usr/local/texlive/2025/texmf-dist/font
-s/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/
-type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/ty
-pe1/public/cm-super/sftt1000.pfb>
-Output written on Thesis.pdf (63 pages, 8502336 bytes).
+e/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/te
+xlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texl
+ive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texliv
+e/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/
+2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/20
+25/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2025
+/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2025/t
+exmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/tex
+mf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2025/texmf
+-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-d
+ist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/
+fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fo
+nts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/font
+s/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/
+type1/public/cm-super/sfsc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/ty
+pe1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type
+1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/
+public/cm-super/sftt1000.pfb>
+Output written on Thesis.pdf (63 pages, 8419655 bytes).
 PDF statistics:
- 1405 PDF objects out of 1440 (max. 8388607)
- 1226 compressed objects within 13 object streams
+ 1396 PDF objects out of 1440 (max. 8388607)
+ 1221 compressed objects within 13 object streams
  454 named destinations out of 1000 (max. 500000)
- 563 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 558 words of extra memory for PDF output out of 10000 (max. 10000000)
 
